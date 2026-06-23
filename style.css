@@ -96,3 +96,26 @@ footer {
   background: #3D2C1F;
   color: white;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3D2C1F;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #B08D57;
+}
