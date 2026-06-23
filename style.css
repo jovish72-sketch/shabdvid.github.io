@@ -119,3 +119,21 @@ nav a {
 nav a:hover {
   color: #B08D57;
 }
+
+.hero {
+  min-height: 85vh;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
+    url('hero-bg.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  color: white;
+}
