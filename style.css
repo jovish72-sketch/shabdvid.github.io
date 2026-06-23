@@ -24,8 +24,13 @@ margin: auto;
 /* HEADER */
 
 header {
-background: #F7F3EE;
-padding: 30px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  background: transparent;
+  z-index: 1000;
 }
 
 nav {
