@@ -46,14 +46,16 @@ flex-wrap: wrap;
 }
 
 .tagline {
-color: #8b7355;
-margin-top: 10px;
+  color: rgba(255,255,255,0.8);
+  margin-top: 30px;
+  margin-left: 20px;
+  font-size: 18px;
 }
 
-nav ul {
-display: flex;
-gap: 25px;
-list-style: none;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 nav a {
