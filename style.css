@@ -23,6 +23,24 @@ max-width: 1200px;
 margin: auto;
 }
 
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.tagline {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.85);
+  font-size: 18px;
+}
+
 /* HEADER */
 
 header {
