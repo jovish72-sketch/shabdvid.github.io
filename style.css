@@ -49,11 +49,11 @@ nav {
   flex-direction: column;
 }
 
-.logo {
-  max-height: 80px;
-  width: auto;
-  object-fit: contain;
+.logo .logo {
+  width: 280px;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .tagline {
