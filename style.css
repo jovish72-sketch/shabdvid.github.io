@@ -182,10 +182,7 @@ blockquote {
     width: 200px;
   }
 
-  .tagline {
-    font-size: 14px;
-  }
-
+  
   .about-section {
     flex-direction: column;
   }
