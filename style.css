@@ -39,28 +39,30 @@ header {
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* BRAND */
+
 .brand {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 20px;
+  gap: 0;
 }
 
 .logo {
   width: 250px;
   height: auto;
   display: block;
+  margin-bottom: -15px;
 }
 
 .tagline {
-  margin-top: 8px;
-  margin-left: 4px;
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255,255,255,0.9);
+  margin: 0;
+  padding: 0;
 }
 
 /* MENU */
@@ -68,8 +70,8 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 50px;
-  margin-top: 20px;
+  gap: 45px;
+  margin-top: 10px;
 }
 
 nav ul li a {
