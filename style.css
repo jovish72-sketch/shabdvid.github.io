@@ -50,8 +50,10 @@ nav {
 }
 
 .logo {
-  height: 100px;
+  max-height: 80px;
   width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .tagline {
