@@ -30,7 +30,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 40px 0;
+  padding: 50px 0;
   z-index: 1000;
 }
 
@@ -58,8 +58,8 @@ nav {
 
 .tagline {
   margin-top: 15px;
-  font-size: 18px;
-  color: rgba(255,255,255,0.85);
+  font-size: 20px;
+  color: rgba(255,255,255,0.9);
 }
 
 /* MENU */
