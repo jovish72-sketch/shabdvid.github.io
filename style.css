@@ -47,6 +47,7 @@ nav {
 .brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .logo {
@@ -56,7 +57,7 @@ nav {
 }
 
 .tagline {
-  margin-top: 15px;
+  margin-top: 12px;
   font-size: 20px;
   color: rgba(255,255,255,0.9);
 }
@@ -72,8 +73,8 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 nav ul li a:hover {
