@@ -449,15 +449,19 @@ nav ul li a:hover{
 
 .photo-name{
 
-    text-align:center;
+    width:380px;
 
-    margin-top:20px;
+    text-align:center;
 
     font-size:32px;
 
-    font-weight:bold;
+    font-weight:700;
 
     color:#3D2C1F;
+
+    margin-top:20px;
+
+    white-space:nowrap;
 
 }
 
@@ -487,14 +491,17 @@ nav ul li a:hover{
 
 .about-content h3{
 
-    font-size:48px;
+    font-size:24px;
 
-    color:#3D2C1F;
+    color:#8C6A45;
 
-    margin-bottom:15px;
+    font-weight:500;
+
+    margin-bottom:30px;
+
+    line-height:1.5;
 
 }
-
 
 /* ==========================================
    DESIGNATION
