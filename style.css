@@ -398,6 +398,8 @@ nav ul li a:hover{
     justify-content:space-between;
     gap:80px;
 
+    padding-top:80px;
+
 }
 
 /* ---------- LEFT ---------- */
