@@ -638,6 +638,36 @@ blockquote{
 }
 
 /* ==========================================
+   SERVICE BUTTON
+========================================== */
+
+.service-btn{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    color:#B68B54;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.service-btn:hover{
+
+    color:#3D2C1F;
+
+    transform:translateX(8px);
+
+}
+
+/* ==========================================
    SERVICES SECTION
 ========================================== */
 
