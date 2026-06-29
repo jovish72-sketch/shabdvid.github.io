@@ -387,202 +387,248 @@ nav ul li a:hover{
    END OF PART 1
 ========================================== */
 
-/* =====================================================
-   PART 3
-   ABOUT SECTION
-===================================================== */
-
-
 /* ==========================================
    ABOUT SECTION
-========================================== */
-
-#about{
-
-    background:#F7F3EE;
-
-    padding:120px 0;
-
-}
-
-
-/* ==========================================
-   ABOUT LAYOUT
 ========================================== */
 
 .about-section{
 
     display:flex;
-
-    justify-content:space-between;
-
     align-items:center;
-
+    justify-content:space-between;
     gap:80px;
 
 }
 
-
-/* ==========================================
-   ABOUT IMAGE
-========================================== */
+/* ---------- LEFT ---------- */
 
 .about-image{
 
     flex:1;
+    text-align:center;
 
 }
 
 .about-image img{
 
     width:100%;
-
     max-width:380px;
-
     border-radius:20px;
-
     display:block;
-
+    margin:0 auto;
     box-shadow:0 20px 50px rgba(0,0,0,.18);
 
 }
 
 .photo-name{
 
-    width:380px;
-
-    text-align:center;
-
-    font-size:32px;
-
+    margin-top:25px;
+    font-size:42px;
     font-weight:700;
-
     color:#3D2C1F;
-
-    margin-top:20px;
-
-    white-space:nowrap;
+    line-height:1.2;
 
 }
 
+.photo-title{
 
-/* ==========================================
-   ABOUT SMALL TITLE
-========================================== */
-
-.about-content h2{
-
+    margin-top:10px;
     font-size:18px;
-
-    letter-spacing:3px;
-
-    color:#B68B54;
-
-    margin-bottom:10px;
-
-    text-transform:uppercase;
+    color:#8C6A45;
+    letter-spacing:1px;
 
 }
 
+/* ---------- RIGHT ---------- */
 
-/* ==========================================
-   NAME
-========================================== */
+.about-content{
+
+    flex:1.5;
+
+}
 
 .about-content h3{
 
-    font-size:24px;
-
-    color:#8C6A45;
-
-    font-weight:500;
-
+    font-size:46px;
+    color:#3D2C1F;
     margin-bottom:30px;
-
-    line-height:1.5;
+    line-height:1.35;
 
 }
-
-/* ==========================================
-   DESIGNATION
-========================================== */
-
-.about-content h4{
-
-    font-size:24px;
-
-    color:#777;
-
-    font-weight:400;
-
-    margin-bottom:30px;
-
-}
-
-
-/* ==========================================
-   INTRO PARAGRAPH
-========================================== */
 
 .about-content p{
 
-    font-size:18px;
-
+    font-size:19px;
     line-height:1.9;
-
-    color:#444;
-
-    margin-bottom:40px;
-
-}
-
-
-/* ==========================================
-   STATS AREA
-========================================== */
-
-.about-stats{
-
-    display:flex;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-
+    color:#555;
     margin-bottom:45px;
 
 }
 
+/* ---------- STATS ---------- */
 
-/* ==========================================
-   STAT CARD
-========================================== */
+.about-stats{
+
+    display:flex;
+    gap:25px;
+    margin-bottom:45px;
+    flex-wrap:wrap;
+
+}
 
 .stat-card{
 
-    background:#FFFFFF;
-
-    padding:25px;
-
-    min-width:170px;
-
-    border-radius:18px;
-
-    text-align:center;
-
+    background:#fff;
+    width:170px;
+    height:170px;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 
-    transition:.30s;
+}
+
+.stat-card h4{
+
+    font-size:36px;
+    color:#8C6A45;
+    margin-bottom:12px;
 
 }
 
+.stat-card span{
 
-.stat-card:hover{
-
-    transform:translateY(-8px);
+    text-align:center;
+    line-height:1.5;
+    font-size:18px;
+    color:#444;
 
 }
 
+/* ---------- QUOTE ---------- */
+
+blockquote{
+
+    border-left:6px solid #B68B54;
+    padding-left:25px;
+    font-size:24px;
+    line-height:1.8;
+    font-style:italic;
+    color:#666;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .about-section{
+
+        flex-direction:column;
+        text-align:center;
+
+    }
+
+    .about-content{
+
+        flex:1;
+
+    }
+
+    .about-content h3{
+
+        font-size:36px;
+
+    }
+
+    .about-stats{
+
+        justify-content:center;
+
+    }
+
+    blockquote{
+
+        text-align:left;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .photo-name{
+
+        font-size:34px;
+
+    }
+
+    .photo-title{
+
+        font-size:16px;
+
+    }
+
+    .about-content h3{
+
+        font-size:30px;
+
+    }
+
+    .about-content p{
+
+        font-size:17px;
+
+    }
+
+    .stat-card{
+
+        width:150px;
+        height:150px;
+
+    }
+
+    blockquote{
+
+        font-size:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .about-image img{
+
+        max-width:280px;
+
+    }
+
+    .photo-name{
+
+        font-size:28px;
+
+    }
+
+    .about-content h3{
+
+        font-size:26px;
+
+    }
+
+    .stat-card{
+
+        width:100%;
+        height:auto;
+        padding:30px 15px;
+
+    }
+
+}
 
 /* ==========================================
    STAT NUMBER
