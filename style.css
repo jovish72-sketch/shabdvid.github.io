@@ -195,6 +195,8 @@ nav ul li a:hover{
 
     min-height:100vh;
 
+    margin-bottom:40px;
+
     background:
     linear-gradient(
         rgba(0,0,0,0.45),
