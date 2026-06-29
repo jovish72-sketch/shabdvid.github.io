@@ -1,13 +1,182 @@
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:Arial,Helvetica,sans-serif;background:#F7F3EE;color:#2f2f2f;line-height:1.7;}
-.container{width:90%;max-width:1280px;margin:auto;}
-header{position:absolute;top:0;left:0;width:100%;z-index:999;padding:30px 0;}
-nav{display:flex;justify-content:space-between;align-items:center;}
-.brand{display:flex;flex-direction:column;align-items:flex-start;}
-.logo{width:250px;height:auto;display:block;}
-nav ul{list-style:none;display:flex;gap:42px;}
-nav ul li a{text-decoration:none;color:#fff;font-size:18px;font-weight:bold;transition:.3s;}nav ul li a:hover{color:#D4AF37;}
-.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('wallpaper.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;}
-section{padding:90px 0;}section h2{font-size:42px;color:#3D2C1F;margin-bottom:25px;}
-.about-section{display:flex;align-items:center;justify-content:space-between;gap:70px;}.about-image{flex:1;}.about-image img{width:100%;max-width:380px;display:block;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.15);} .about-content{flex:1.4;} .about-content h2{text-align:left;} .about-content h3{font-size:44px;color:#3D2C1F;margin-bottom:10px;} .about-content h4{font-size:22px;color:#8B6A3E;margin-bottom:25px;font-weight:500;} .about-content p{font-size:18px;margin-bottom:30px;} .about-stats{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:35px;} .stat-card{background:#fff;padding:22px;min-width:170px;border-radius:16px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.08);} .stat-card h5{font-size:34px;color:#8B6A3E;margin-bottom:8px;} blockquote{border-left:4px solid #D4AF37;padding-left:18px;color:#555;font-style:italic;font-size:20px;} @media(max-width:900px){header{position:relative;background:#3D2C1F;}nav{flex-direction:column;gap:25px;}nav ul{flex-wrap:wrap;justify-content:center;gap:20px;}.logo{width:190px;}.about-section{flex-direction:column;text-align:center;}.about-content h2{text-align:center;}.about-stats{justify-content:center;}.about-image img{max-width:280px;}}
+/* =====================================================
+   SHABDVID WEBSITE
+   STYLE.CSS
+   VERSION 2.0
+
+   PART 1
+   ---------------------------------------
+   1. RESET
+   2. BODY
+   3. CONTAINER
+   4. HEADER
+   5. NAVIGATION
+   6. LOGO
+   7. MENU
+===================================================== */
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* ==========================================
+   HTML
+========================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#F7F3EE;
+
+    color:#333333;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1280px;
+
+    margin:auto;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    padding:35px 0;
+
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.brand{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    width:250px;
+
+    height:auto;
+
+    display:block;
+
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:45px;
+
+}
+
+
+nav ul li{
+
+    list-style:none;
+
+}
+
+
+nav ul li a{
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.30s;
+
+}
+
+
+nav ul li a:hover{
+
+    color:#D4AF37;
+
+}
+
+
+/* ==========================================
+   END OF PART 1
+========================================== */
