@@ -447,6 +447,19 @@ nav ul li a:hover{
 
 }
 
+.photo-name{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:#3D2C1F;
+
+}
 
 /* ==========================================
    ABOUT CONTENT
