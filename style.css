@@ -693,7 +693,8 @@ blockquote{
 
 .detail-box{
 
-    background:#ffffff;
+    background:#FDF9F4;
+    border:1px solid #E7D6C2;
 
     padding:20px 25px;
 
