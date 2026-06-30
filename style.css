@@ -685,6 +685,8 @@ blockquote{
 
 .about-details{
 
+    max-width:600px;   
+
     margin-top:20px;
 
 }
@@ -693,9 +695,9 @@ blockquote{
 
     background:#ffffff;
 
-    padding:25px 35px;
+    padding:20px 25px;
 
-    border-radius:20px;
+    border-radius:18px;
 
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 
@@ -703,11 +705,11 @@ blockquote{
 
 .detail-box h4{
 
-    font-size:28px;
+    font-size:22px;
 
     color:#3D2C1F;
 
-    margin-bottom:25px;
+    margin-bottom:15px;
 
 }
 
@@ -719,13 +721,13 @@ blockquote{
 
 .detail-box li{
 
-    margin-bottom:18px;
+    margin-bottom:10px;
 
-    font-size:19px;
+    font-size:17px;
 
     color:#555;
 
-    line-height:1.8;
+    line-height:1.6;
 
 }
 
