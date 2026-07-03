@@ -515,19 +515,15 @@ nav ul li a:hover{
 
 blockquote{
 
-    margin-top:50px;
-
     border-left:6px solid #B68B54;
-
     padding-left:25px;
-
     font-size:24px;
-
     line-height:1.8;
-
     font-style:italic;
-
     color:#666;
+
+    margin-top:40px;
+    margin-bottom:80px;
 
 }
 
