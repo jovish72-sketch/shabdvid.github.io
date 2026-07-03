@@ -1622,3 +1622,112 @@ blockquote{
     padding-left:8px;
 
 }
+/* ==========================================
+   PHILOSOPHY SECTION
+========================================== */
+
+#philosophy{
+
+    background:#3D2C1F;
+
+    padding:120px 0;
+
+}
+
+.philosophy-box{
+
+    max-width:950px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.philosophy-title{
+
+    display:inline-block;
+
+    color:#D4AF37;
+
+    font-size:17px;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+.philosophy-box h2{
+
+    color:#ffffff;
+
+    font-size:38px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+    font-weight:500;
+
+}
+
+.philosophy-hindi{
+
+    color:#E8D5B5;
+
+    font-size:21px;
+
+    line-height:2;
+
+    font-style:italic;
+
+    margin-bottom:35px;
+
+}
+
+.philosophy-text{
+
+    color:#F3F3F3;
+
+    font-size:19px;
+
+    line-height:2;
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+.philosophy-btn{
+
+    display:inline-block;
+
+    margin-top:45px;
+
+    padding:16px 38px;
+
+    border:2px solid #D4AF37;
+
+    color:#D4AF37;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    transition:.35s;
+
+    font-weight:bold;
+
+}
+
+.philosophy-btn:hover{
+
+    background:#D4AF37;
+
+    color:#3D2C1F;
+
+}
