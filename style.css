@@ -1524,3 +1524,104 @@ blockquote{
     }
 
 }
+/* ==========================================
+   PROJECTS SECTION
+========================================== */
+
+#projects{
+
+    padding:120px 0;
+
+    background:#ffffff;
+
+}
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-top:60px;
+
+}
+
+.project-card{
+
+    background:#FDF9F4;
+
+    border:1px solid #E7D6C2;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#B68B54;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.project-card span{
+
+    font-size:46px;
+
+    display:block;
+
+    margin-bottom:18px;
+
+}
+
+.project-card h3{
+
+    font-size:24px;
+
+    color:#3D2C1F;
+
+    margin-bottom:15px;
+
+}
+
+.project-card p{
+
+    font-size:16px;
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:22px;
+
+}
+
+.project-btn{
+
+    color:#B68B54;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.project-btn:hover{
+
+    color:#3D2C1F;
+
+    padding-left:8px;
+
+}
