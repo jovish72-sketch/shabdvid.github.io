@@ -14,7 +14,43 @@
    7. MENU
 ===================================================== */
 
+/* ==========================================
+   GLOBAL SECTION SPACING
+========================================== */
 
+section{
+
+    padding:100px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title h5{
+
+    margin:0 0 15px;
+
+}
+
+.section-title h2{
+
+    margin:0 0 20px;
+
+}
+
+.section-title p{
+
+    max-width:850px;
+
+    margin:0 auto;
+
+}
 /* ==========================================
    RESET
 ========================================== */
@@ -391,9 +427,7 @@ nav ul li a:hover{
 ========================================== */
 #about{
 
-    padding:120px 0 100px;
-
-}
+    }
 
 .about-section{
 
@@ -522,8 +556,7 @@ blockquote{
     font-style:italic;
     color:#666;
 
-    margin-top:40px;
-    margin-bottom:80px;
+    margin:40px 0;
 
 }
 
@@ -672,8 +705,6 @@ blockquote{
 ========================================== */
 
 #services{
-
-    padding:120px 0;
 
     background:#F8F5F1;
 
@@ -1523,8 +1554,6 @@ blockquote{
 
 #projects{
 
-    padding:120px 0;
-
     background:#ffffff;
 
 }
@@ -1625,10 +1654,6 @@ blockquote{
 #philosophy{
 
     background:#3D2C1F;
-
-    padding:160px 0 120px;
-
-    margin-top:70px;
 
 }
 
@@ -1734,8 +1759,6 @@ blockquote{
 ========================================== */
 
 #contact{
-
-    padding:70px 0;
 
     background:#F8F5F1;
 
@@ -2175,8 +2198,6 @@ footer{
 
 #showcase{
 
-    padding:120px 0;
-
     background:#ffffff;
 
 }
@@ -2267,8 +2288,6 @@ text-align:center;
 ========================================== */
 
 #creating{
-
-    padding:140px 0 120px;
 
     background:#F8F5F1;
 
