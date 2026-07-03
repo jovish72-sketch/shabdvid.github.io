@@ -1630,7 +1630,9 @@ blockquote{
 
     background:#3D2C1F;
 
-    padding:120px 0;
+    padding:160px 0 120px;
+
+    margin-top:70px;
 
 }
 
@@ -2270,7 +2272,7 @@ text-align:center;
 
 #creating{
 
-    padding:120px 0;
+    padding:140px 0 120px;
 
     background:#F8F5F1;
 
