@@ -1920,3 +1920,133 @@ blockquote{
     }
 
 }
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width:992px){
+
+    .about-section{
+        flex-direction:column;
+        text-align:center;
+        gap:50px;
+    }
+
+    .about-image img{
+        max-width:320px;
+        margin:auto;
+    }
+
+    .photo-name,
+    .photo-title{
+        text-align:center;
+    }
+
+    .about-content h3{
+        font-size:38px;
+    }
+
+    .about-details{
+        grid-template-columns:1fr;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .projects-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+@media (max-width:768px){
+
+    header{
+
+        position:relative;
+
+        background:#3D2C1F;
+
+        padding:20px 0;
+
+    }
+
+    nav{
+
+        flex-direction:column;
+
+        gap:25px;
+
+    }
+
+    nav ul{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:18px;
+
+    }
+
+    .logo{
+
+        width:180px;
+
+    }
+
+    section{
+
+        padding:60px 0;
+
+    }
+
+    h2{
+
+        font-size:34px;
+
+    }
+
+    .about-content h3{
+
+        font-size:34px;
+
+        text-align:center;
+
+    }
+
+    .about-content p{
+
+        text-align:center;
+
+    }
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-cta{
+
+        padding:45px 25px;
+
+    }
+
+    .contact-cta h3{
+
+        font-size:30px;
+
+    }
+
+}
