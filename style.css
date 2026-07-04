@@ -215,7 +215,9 @@ HERO
 
     min-height:110vh;
 
-    background-size:102%;
+    background-image:url("wallpaper.jpg");
+
+    background-size:104%;
 
     background-position:center center;
 
