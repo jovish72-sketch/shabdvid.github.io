@@ -210,10 +210,11 @@ nav ul li a:hover{
 /*==============================
 HERO
 ==============================*/
-
 .hero{
 
     position:relative;
+
+    width:100%;
 
     height:100vh;
 
@@ -225,49 +226,13 @@ HERO
 
     overflow:hidden;
 
-}
+    background-image:url("wallpaper.jpg");
 
-.hero-image{
+    background-repeat:no-repeat;
 
-    width:100%;
+    background-position:center center;
 
-    height:100%;
-
-    object-fit:contain;
-
-    object-position:center bottom;
-
-}
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:rgba(0,0,0,.18);
-
-}
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    text-align:center;
-
-    margin-top:90px;
-}
-
-    .hero-content h1{
-
-    font-size:54px;
-
-    line-height:1.2;
-
-    letter-spacing:.5px;
+    background-size:cover;
 
 }
 
