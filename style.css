@@ -189,9 +189,9 @@ HERO
 
     background-image:url("wallpaper.jpg");
 
-    background-size:cover;
+    background-size:115%;
 
-    background-position:center;
+    background-position:center center;
 
     background-repeat:no-repeat;
 
