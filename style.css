@@ -1579,11 +1579,13 @@ padding:30px;
 
 .about-intro{
 
+    max-width:900px;
+
     position:relative;
 
-    margin-bottom:45px;
+    padding-left:45px;
 
-    padding-left:35px;
+    margin-bottom:50px;
 
 }
 
@@ -1595,18 +1597,17 @@ padding:30px;
 
     left:0;
 
-    top:10px;
+    top:8px;
+
+    bottom:8px;
 
     width:3px;
 
-    height:85%;
-
     background:#C89A52;
 
-    border-radius:10px;
+    border-radius:20px;
 
 }
-
 .about-intro h3{
 
     font-family:'Cormorant Garamond',serif;
@@ -1615,17 +1616,21 @@ padding:30px;
 
     color:#8A5A22;
 
-    margin-bottom:18px;
+     margin-bottom:25px;
 
 }
 
 .about-intro p{
 
-    font-size:19px;
+    font-size:20px;
 
-    line-height:1.9;
+    line-height:2;
 
     color:#555;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 
 }
 
