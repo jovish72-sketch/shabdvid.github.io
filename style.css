@@ -282,20 +282,6 @@ nav ul li a:hover::after{
     z-index:1;
 
 }
-    url("wallpaper.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
 
 /* Hero Content */
 
