@@ -104,7 +104,9 @@ nav{
 
 .logo img{
 
-    width:205px;
+    width:240px;
+
+    transition:.35s;
 
 }
 
@@ -128,6 +130,36 @@ nav ul li a{
 
     transition:.35s;
 
+    position:relative;
+
+    padding-bottom:8px;
+
+}
+
+av ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#C79B5B;
+
+    transition:.35s;
+
+}
+
+nav ul li a:hover::after{
+
+    width:100%;
+
 }
 
 nav ul li a:hover{
@@ -135,7 +167,6 @@ nav ul li a:hover{
     color:#C79B5B;
 
 }
-
 
 
 /*==============================
@@ -186,21 +217,16 @@ HERO
 
     text-align:center;
 
-    margin-top:130px;
-
+    margin-top:90px;
 }
 
-.hero-content h1{
+    .hero-content h1{
 
-    font-family:'Cormorant Garamond',serif;
+    font-size:54px;
 
-    font-size:74px;
+    line-height:1.2;
 
-    font-weight:500;
-
-    color:#fff;
-
-    letter-spacing:1px;
+    letter-spacing:.5px;
 
 }
 
