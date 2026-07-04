@@ -227,11 +227,11 @@ HERO
 
     background-image:url("wallpaper.jpg");
 
-     background-size:100% auto;
+    background-size:100% auto;
 
-    background-position:center bottom;
-
-     background-repeat:no-repeat;
+    background-position:center 80px;
+    
+    background-repeat:no-repeat;
 
 }
 
