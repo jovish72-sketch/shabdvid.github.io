@@ -122,17 +122,55 @@ nav ul{
 
 nav ul li a{
 
+    position:relative;
+
     color:#fff;
 
     font-size:17px;
 
     font-weight:500;
 
-    transition:.35s;
+    padding:8px 0;
 
-    position:relative;
+    transition:color .35s ease;
 
-    padding-bottom:8px;
+}
+
+/* Gold Underline Animation */
+
+nav ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:0;
+
+    width:0;
+
+    height:2.5px;
+
+    background:#C79B5B;
+
+    border-radius:10px;
+
+    transform:translateX(-50%);
+
+    transition:width .35s ease;
+
+}
+
+nav ul li a:hover{
+
+    color:#fff;
+
+}
+
+nav ul li a:hover::after{
+
+    width:100%;
 
 }
 
@@ -164,7 +202,7 @@ nav ul li a:hover::after{
 
 nav ul li a:hover{
 
-    color:#C79B5B;
+    color:#fff;
 
 }
 
