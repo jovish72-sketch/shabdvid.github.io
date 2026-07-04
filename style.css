@@ -213,9 +213,7 @@ HERO
 
 .hero{
 
-    height:100vh;
-
-    background-image:url("wallpaper.jpg");
+    min-height:110vh;
 
     background-size:108%;
 
