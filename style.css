@@ -1857,3 +1857,26 @@ font-size:22px;
 /* ======================================================
    END OF VERSION 3.0
 ======================================================*/
+/* ==========================================
+GOVERNMENT HERO
+========================================== */
+
+.government-hero{
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.55),
+
+    rgba(0,0,0,.55)
+
+    ),
+
+    url("government-banner.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
