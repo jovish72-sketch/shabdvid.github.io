@@ -266,7 +266,7 @@ nav ul li a:hover::after{
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     overflow:hidden;
 
@@ -276,9 +276,15 @@ nav ul li a:hover::after{
 
     background-size:cover;
 
-    background-position:center;
-
+    background-position:center bottom;
+   
     background-repeat:no-repeat;
+
+}
+
+.hero .container{
+
+    width:min(1280px,90%);
 
 }
 
@@ -287,6 +293,8 @@ nav ul li a:hover::after{
 .hero-content{
 
     display:flex;
+
+    padding-top:40px;
 
     flex-direction:column;
 
@@ -297,17 +305,10 @@ nav ul li a:hover::after{
 }
 
 .hero-content h1{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:76px;
-
-    line-height:1.1;
-
-    color:#fff;
-
-    margin-bottom:25px;
-
+    font-size:62px;
+    line-height:1.05;
+    max-width:720px;
+    margin-bottom:35px;
 }
 .hero-content h2{
 
@@ -328,6 +329,8 @@ nav ul li a:hover::after{
     font-size:20px;
 
     line-height:1.9;
+
+    max-width:720px;
 
     margin-bottom:40px;
 
@@ -445,6 +448,8 @@ header{
 
     top:0;
 
+    height:78px;
+
     left:0;
 
     width:100%;
@@ -477,7 +482,7 @@ gap:18px;
 
 .logo{
 
-width:180px;
+width:190px;
 
 }
 
