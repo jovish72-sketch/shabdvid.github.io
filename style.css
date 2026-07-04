@@ -1276,3 +1276,297 @@ padding:30px;
 }
 
 }
+/*====================================
+            ABOUT SECTION
+====================================*/
+
+.about{
+
+    padding:120px 0;
+
+    background:#F8F5EF;
+
+}
+
+.about .container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+}
+
+
+/* Heading */
+
+.about-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.about-title span{
+
+    display:block;
+
+    color:#B68B54;
+
+    font-size:14px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.about-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:64px;
+
+    color:#2F2118;
+
+    margin-bottom:12px;
+
+}
+
+.about-title p{
+
+    font-size:24px;
+
+    color:#A67C3D;
+
+}
+
+
+/* Main Layout */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:360px 1fr;
+
+    gap:60px;
+
+    align-items:flex-start;
+
+}
+/*====================================
+        PROFILE CARD
+====================================*/
+
+.profile-card{
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.10);
+
+    transition:.35s ease;
+
+}
+
+.profile-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.profile-card img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.profile-info{
+
+    background:#2F2118;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px 25px;
+
+}
+
+.profile-info h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.profile-info h4{
+
+    color:#D7A85E;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    margin-bottom:18px;
+
+}
+
+.profile-info p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#ECECEC;
+
+}
+
+
+/*====================================
+        RIGHT SIDE CARDS
+====================================*/
+
+.about-right{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.info-card{
+
+    background:#ffffff;
+
+    border:1px solid #E7D8BF;
+
+    border-radius:22px;
+
+    padding:35px 28px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+}
+
+.card-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:#F7F1E8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:34px;
+
+    border:1px solid #E2C89B;
+
+}
+
+.info-card h3{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:34px;
+
+    color:#2F2118;
+
+    margin-bottom:22px;
+
+}
+
+.info-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.info-card li{
+
+    position:relative;
+
+    padding-left:22px;
+
+    margin-bottom:15px;
+
+    line-height:1.7;
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+.info-card li::before{
+
+    content:"•";
+
+    position:absolute;
+
+    left:0;
+
+    color:#B68B54;
+
+    font-size:22px;
+
+}
+.about-right{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    align-items:stretch;
+
+}
+
+.info-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
