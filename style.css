@@ -104,9 +104,9 @@ nav{
 
 .logo img{
 
-    width:240px;
+    width:200px;
 
-    transition:.35s;
+    transition:.35s ease;
 
 }
 
