@@ -1494,7 +1494,7 @@ height:70vh;
 }
 
 /* ==========================================
-        TRUSTED BY
+            TRUSTED BY
 ========================================== */
 
 .clients{
@@ -1509,16 +1509,15 @@ height:70vh;
 
 .logo-slider{
 
-    width:100%;
+    position:relative;
 
     overflow:hidden;
 
-    position:relative;
+    width:100%;
 
     margin-top:60px;
 
 }
-
 
 /* Left Fade */
 
@@ -1536,12 +1535,11 @@ height:70vh;
 
     height:100%;
 
-    background:linear-gradient(to right,#ffffff,transparent);
+    background:linear-gradient(to right,#fff,transparent);
 
-    z-index:2;
+    z-index:10;
 
 }
-
 
 /* Right Fade */
 
@@ -1559,12 +1557,11 @@ height:70vh;
 
     height:100%;
 
-    background:linear-gradient(to left,#ffffff,transparent);
+    background:linear-gradient(to left,#fff,transparent);
 
-    z-index:2;
+    z-index:10;
 
 }
-
 
 .logo-track{
 
@@ -1572,11 +1569,11 @@ height:70vh;
 
     align-items:center;
 
-    gap:80px;
+    gap:35px;
 
     width:max-content;
 
-    animation:scrollLogos 35s linear infinite;
+    animation:clientSlider 40s linear infinite;
 
 }
 
@@ -1586,25 +1583,115 @@ height:70vh;
 
 }
 
-.logo-track img{
+/* ===========================
+        CLIENT CARD
+=========================== */
 
-    .logo-track img{
+.client-logo{
 
-    height:90px;
-    width:auto;
-    object-fit:contain;
-    transition:.35s ease;
-    opacity:1;
-    filter:none;
+    width:220px;
+
+    height:130px;
+
+    background:#ffffff;
+
+    border:1px solid #ece3d3;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.35s;
+
 }
 
-.logo-track img:hover{
+.client-logo:hover{
 
-    opacity:1;
+    transform:translateY(-8px);
 
-    filter:none;
+    border-color:#C89A52;
 
-    transform:scale(1.08);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.client-logo img{
+
+    max-width:150px;
+
+    max-height:80px;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+
+/* ===========================
+        ANIMATION
+=========================== */
+
+@keyframes clientSlider{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/* ===========================
+        RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.client-logo{
+
+width:170px;
+
+height:100px;
+
+}
+
+.client-logo img{
+
+max-width:120px;
+
+max-height:60px;
+
+}
+
+.logo-track{
+
+gap:20px;
+
+}
+
+.logo-slider::before,
+
+.logo-slider::after{
+
+width:60px;
+
+}
 
 }
 
