@@ -1498,12 +1498,20 @@ height:70vh;
 ========================================== */
 .clients .section-heading{
 
+    width:100%;
+
     text-align:center;
 
-    max-width:820px;
+}
 
-    margin:0 auto;
-        
+.clients .section-heading span,
+.clients .section-heading h2,
+.clients .section-heading p{
+
+    margin-left:auto;
+
+    margin-right:auto;
+
 }
 
 .clients .section-heading p{
