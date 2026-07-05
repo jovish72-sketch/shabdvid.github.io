@@ -1588,18 +1588,14 @@ height:70vh;
 
 .logo-track img{
 
-    height:60px;
+    .logo-track img{
 
+    height:90px;
     width:auto;
-
     object-fit:contain;
-
-    transition:.35s;
-
+    transition:.35s ease;
     opacity:1;
-
     filter:none;
-
 }
 
 .logo-track img:hover{
