@@ -1492,3 +1492,171 @@ height:70vh;
 }
 
 }
+
+/* ==========================================
+        TRUSTED BY
+========================================== */
+
+.clients{
+
+    padding:120px 0;
+
+    background:#ffffff;
+
+    overflow:hidden;
+
+}
+
+.logo-slider{
+
+    width:100%;
+
+    overflow:hidden;
+
+    position:relative;
+
+    margin-top:60px;
+
+}
+
+
+/* Left Fade */
+
+.logo-slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:120px;
+
+    height:100%;
+
+    background:linear-gradient(to right,#ffffff,transparent);
+
+    z-index:2;
+
+}
+
+
+/* Right Fade */
+
+.logo-slider::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    top:0;
+
+    width:120px;
+
+    height:100%;
+
+    background:linear-gradient(to left,#ffffff,transparent);
+
+    z-index:2;
+
+}
+
+
+.logo-track{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:80px;
+
+    width:max-content;
+
+    animation:scrollLogos 35s linear infinite;
+
+}
+
+.logo-slider:hover .logo-track{
+
+    animation-play-state:paused;
+
+}
+
+.logo-track img{
+
+    height:60px;
+
+    width:auto;
+
+    object-fit:contain;
+
+    transition:.35s;
+
+    opacity:.75;
+
+    filter:grayscale(100%);
+
+}
+
+.logo-track img:hover{
+
+    opacity:1;
+
+    filter:none;
+
+    transform:scale(1.08);
+
+}
+
+
+/* Infinite Animation */
+
+@keyframes scrollLogos{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+
+
+/* ==========================================
+        MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.logo-track{
+
+gap:50px;
+
+}
+
+.logo-track img{
+
+height:42px;
+
+}
+
+.logo-slider::before,
+
+.logo-slider::after{
+
+width:60px;
+
+}
+
+}
