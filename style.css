@@ -1491,19 +1491,20 @@ height:70vh;
 
 }
 
-        /* ==========================================
+/* ==========================================
             TRUSTED BY
 ========================================== */
 
 .clients{
 
-    padding:90px 0 50px;
-
     background:#ffffff;
+
+    padding:90px 0 60px;
 
     overflow:hidden;
 
 }
+
 
 /* ===========================
         HEADING
@@ -1511,13 +1512,11 @@ height:70vh;
 
 .clients .section-heading{
 
-    width:100%;
+    text-align:center;
 
     max-width:900px;
 
-    margin:0 auto 35px;
-
-    text-align:center;
+    margin:0 auto 45px;
 
 }
 
@@ -1531,9 +1530,9 @@ height:70vh;
 
     letter-spacing:5px;
 
-    color:#C89A52;
-
     text-transform:uppercase;
+
+    color:#C89A52;
 
     margin-bottom:15px;
 
@@ -1541,9 +1540,9 @@ height:70vh;
 
 .clients .section-heading h2{
 
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond', serif;
 
-    font-size:56px;
+    font-size:54px;
 
     font-weight:600;
 
@@ -1565,9 +1564,10 @@ height:70vh;
 
     color:#666;
 
-    line-height:1.9;
+    line-height:1.8;
 
 }
+
 
 /* ===========================
         SLIDER
@@ -1581,9 +1581,8 @@ height:70vh;
 
     position:relative;
 
-    margin-top:20px;
-
 }
+
 
 /* Left Fade */
 
@@ -1597,15 +1596,16 @@ height:70vh;
 
     top:0;
 
-    width:140px;
+    width:120px;
 
     height:100%;
 
     background:linear-gradient(to right,#ffffff,transparent);
 
-    z-index:5;
+    z-index:10;
 
 }
+
 
 /* Right Fade */
 
@@ -1619,16 +1619,18 @@ height:70vh;
 
     top:0;
 
-    width:140px;
+    width:120px;
 
     height:100%;
 
     background:linear-gradient(to left,#ffffff,transparent);
 
-    z-index:5;
+    z-index:10;
 
 }
-        /* ===========================
+
+        
+/* ===========================
         LOGO TRACK
 =========================== */
 
@@ -1638,11 +1640,11 @@ height:70vh;
 
     align-items:center;
 
-    gap:30px;
+    gap:28px;
 
     width:max-content;
 
-    animation:clientSlider 38s linear infinite;
+    animation:clientSlider 35s linear infinite;
 
 }
 
@@ -1659,13 +1661,13 @@ height:70vh;
 
 .client-logo{
 
-    width:185px;
+    width:180px;
 
     height:120px;
 
     background:#ffffff;
 
-    border:1px solid #E9DFC9;
+    border:1px solid #E8DDC8;
 
     border-radius:18px;
 
@@ -1677,18 +1679,18 @@ height:70vh;
 
     flex-shrink:0;
 
-    position:relative;
-
     overflow:hidden;
 
-    box-shadow:0 10px 28px rgba(0,0,0,.06);
+    position:relative;
+
+    box-shadow:0 8px 22px rgba(0,0,0,.05);
 
     transition:all .35s ease;
 
 }
 
 
-/* Gold Line */
+/* Gold Bottom Line */
 
 .client-logo::after{
 
@@ -1719,7 +1721,7 @@ height:70vh;
 
     border-color:#C89A52;
 
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
 
 }
 
@@ -1736,9 +1738,9 @@ height:70vh;
 
 .client-logo img{
 
-    max-width:140px;
+    max-width:135px;
 
-    max-height:80px;
+    max-height:75px;
 
     width:auto;
 
@@ -1746,7 +1748,7 @@ height:70vh;
 
     object-fit:contain;
 
-    transition:.35s ease;
+    transition:.35s;
 
 }
 
@@ -1755,19 +1757,20 @@ height:70vh;
     transform:scale(1.08);
 
 }
-        /* ===========================
+
+/* ===========================
         ANIMATION
 =========================== */
 
 @keyframes clientSlider{
 
-    from{
+    0%{
 
         transform:translateX(0);
 
     }
 
-    to{
+    100%{
 
         transform:translateX(-50%);
 
@@ -1782,17 +1785,19 @@ height:70vh;
 
 @media (max-width:1200px){
 
-    .logo-track{
-
-        gap:25px;
-
-    }
-
     .client-logo{
 
         width:170px;
 
         height:110px;
+
+    }
+
+    .client-logo img{
+
+        max-width:125px;
+
+        max-height:70px;
 
     }
 
@@ -1803,13 +1808,13 @@ height:70vh;
 
     .clients{
 
-        padding:80px 0 45px;
+        padding:80px 0 50px;
 
     }
 
     .clients .section-heading h2{
 
-        font-size:46px;
+        font-size:44px;
 
     }
 
@@ -1819,19 +1824,9 @@ height:70vh;
 
     }
 
-    .client-logo{
+    .logo-track{
 
-        width:160px;
-
-        height:105px;
-
-    }
-
-    .client-logo img{
-
-        max-width:125px;
-
-        max-height:70px;
+        gap:22px;
 
     }
 
@@ -1848,15 +1843,15 @@ height:70vh;
 
     .clients .section-heading span{
 
-        letter-spacing:3px;
-
         font-size:12px;
+
+        letter-spacing:3px;
 
     }
 
     .clients .section-heading h2{
 
-        font-size:36px;
+        font-size:34px;
 
     }
 
@@ -1864,23 +1859,15 @@ height:70vh;
 
         font-size:15px;
 
-        line-height:1.7;
-
-    }
-
-    .logo-track{
-
-        gap:18px;
+        max-width:90%;
 
     }
 
     .client-logo{
 
-        width:140px;
+        width:145px;
 
-        height:90px;
-
-        border-radius:14px;
+        height:95px;
 
     }
 
@@ -1892,11 +1879,17 @@ height:70vh;
 
     }
 
+    .logo-track{
+
+        gap:18px;
+
+    }
+
     .logo-slider::before,
 
     .logo-slider::after{
 
-        width:55px;
+        width:60px;
 
     }
 
@@ -1913,13 +1906,7 @@ height:70vh;
 
     .clients .section-heading h2{
 
-        font-size:30px;
-
-    }
-
-    .logo-track{
-
-        gap:15px;
+        font-size:28px;
 
     }
 
@@ -1935,9 +1922,14 @@ height:70vh;
 
         max-width:90px;
 
-        max-height:50px;
+        max-height:45px;
+
+    }
+
+    .logo-track{
+
+        gap:15px;
 
     }
 
 }
-
