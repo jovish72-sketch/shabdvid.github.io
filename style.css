@@ -1491,18 +1491,33 @@ height:70vh;
 
 }
 
-}
-
-/* ==========================================
+        /* ==========================================
             TRUSTED BY
 ========================================== */
+
+.clients{
+
+    padding:90px 0 50px;
+
+    background:#ffffff;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+        HEADING
+=========================== */
+
 .clients .section-heading{
 
+    width:100%;
+
+    max-width:900px;
+
+    margin:0 auto 35px;
+
     text-align:center;
-
-    max-width:850px;
-
-    margin:0 auto 30px;
 
 }
 
@@ -1510,11 +1525,31 @@ height:70vh;
 
     display:block;
 
-    margin-bottom:12px;
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    color:#C89A52;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
 
 }
 
 .clients .section-heading h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:56px;
+
+    font-weight:600;
+
+    color:#2F2118;
+
+    line-height:1.15;
 
     margin-bottom:18px;
 
@@ -1522,32 +1557,31 @@ height:70vh;
 
 .clients .section-heading p{
 
-    max-width:700px;
+    max-width:720px;
 
     margin:0 auto;
 
-    line-height:1.8;
+    font-size:18px;
+
+    color:#666;
+
+    line-height:1.9;
 
 }
 
-.clients{
+/* ===========================
+        SLIDER
+=========================== */
 
-    padding:70px 0 35px;
-
-    background:#ffffff;
-
-    overflow:hidden;
-
-}
 .logo-slider{
-
-    position:relative;
-
-    overflow:hidden;
 
     width:100%;
 
-    margin-top:25px;
+    overflow:hidden;
+
+    position:relative;
+
+    margin-top:20px;
 
 }
 
@@ -1563,13 +1597,13 @@ height:70vh;
 
     top:0;
 
-    width:120px;
+    width:140px;
 
     height:100%;
 
-    background:linear-gradient(to right,#fff,transparent);
+    background:linear-gradient(to right,#ffffff,transparent);
 
-    z-index:10;
+    z-index:5;
 
 }
 
@@ -1585,15 +1619,18 @@ height:70vh;
 
     top:0;
 
-    width:120px;
+    width:140px;
 
     height:100%;
 
-    background:linear-gradient(to left,#fff,transparent);
+    background:linear-gradient(to left,#ffffff,transparent);
 
-    z-index:10;
+    z-index:5;
 
 }
+        /* ===========================
+        LOGO TRACK
+=========================== */
 
 .logo-track{
 
@@ -1601,11 +1638,11 @@ height:70vh;
 
     align-items:center;
 
-    gap:35px;
+    gap:30px;
 
     width:max-content;
 
-    animation:clientSlider 40s linear infinite;
+    animation:clientSlider 38s linear infinite;
 
 }
 
@@ -1614,6 +1651,7 @@ height:70vh;
     animation-play-state:paused;
 
 }
+
 
 /* ===========================
         CLIENT CARD
@@ -1627,9 +1665,9 @@ height:70vh;
 
     background:#ffffff;
 
-    border:1px solid #ece3d3;
+    border:1px solid #E9DFC9;
 
-    border-radius:20px;
+    border-radius:18px;
 
     display:flex;
 
@@ -1639,15 +1677,45 @@ height:70vh;
 
     flex-shrink:0;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 28px rgba(0,0,0,.06);
+
+    transition:all .35s ease;
+
+}
+
+
+/* Gold Line */
+
+.client-logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:3px;
+
+    background:#C89A52;
 
     transition:.35s;
 
 }
 
+
+/* Hover */
+
 .client-logo:hover{
 
-    transform:translateY(-8px) scale(1.03);
+    transform:translateY(-8px);
 
     border-color:#C89A52;
 
@@ -1655,11 +1723,22 @@ height:70vh;
 
 }
 
+.client-logo:hover::after{
+
+    width:100%;
+
+}
+
+
+/* ===========================
+        LOGO IMAGE
+=========================== */
+
 .client-logo img{
 
-    max-width:145px;
+    max-width:140px;
 
-    max-height:90px;
+    max-height:80px;
 
     width:auto;
 
@@ -1667,9 +1746,16 @@ height:70vh;
 
     object-fit:contain;
 
+    transition:.35s ease;
+
 }
 
-/* ===========================
+.client-logo:hover img{
+
+    transform:scale(1.08);
+
+}
+        /* ===========================
         ANIMATION
 =========================== */
 
@@ -1689,89 +1775,169 @@ height:70vh;
 
 }
 
+
 /* ===========================
         RESPONSIVE
 =========================== */
 
-@media(max-width:768px){
+@media (max-width:1200px){
 
-.client-logo{
+    .logo-track{
 
-width:170px;
-
-height:100px;
-
-}
-
-.client-logo img{
-
-max-width:120px;
-
-max-height:60px;
-
-}
-
-.logo-track{
-
-gap:20px;
-
-}
-
-.logo-slider::before,
-
-.logo-slider::after{
-
-width:60px;
-
-}
-
-}
-
-
-/* Infinite Animation */
-
-@keyframes scrollLogos{
-
-    from{
-
-        transform:translateX(0);
+        gap:25px;
 
     }
 
-    to{
+    .client-logo{
 
-        transform:translateX(-50%);
+        width:170px;
+
+        height:110px;
 
     }
 
 }
 
 
+@media (max-width:992px){
 
-/* ==========================================
-        MOBILE
-========================================== */
+    .clients{
 
-@media(max-width:768px){
+        padding:80px 0 45px;
 
-.logo-track{
+    }
 
-gap:50px;
+    .clients .section-heading h2{
+
+        font-size:46px;
+
+    }
+
+    .clients .section-heading p{
+
+        font-size:17px;
+
+    }
+
+    .client-logo{
+
+        width:160px;
+
+        height:105px;
+
+    }
+
+    .client-logo img{
+
+        max-width:125px;
+
+        max-height:70px;
+
+    }
 
 }
 
-.logo-track img{
 
-height:42px;
+@media (max-width:768px){
+
+    .clients{
+
+        padding:70px 0 40px;
+
+    }
+
+    .clients .section-heading span{
+
+        letter-spacing:3px;
+
+        font-size:12px;
+
+    }
+
+    .clients .section-heading h2{
+
+        font-size:36px;
+
+    }
+
+    .clients .section-heading p{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+    .logo-track{
+
+        gap:18px;
+
+    }
+
+    .client-logo{
+
+        width:140px;
+
+        height:90px;
+
+        border-radius:14px;
+
+    }
+
+    .client-logo img{
+
+        max-width:105px;
+
+        max-height:55px;
+
+    }
+
+    .logo-slider::before,
+
+    .logo-slider::after{
+
+        width:55px;
+
+    }
 
 }
 
-.logo-slider::before,
 
-.logo-slider::after{
+@media (max-width:480px){
 
-width:60px;
+    .clients{
+
+        padding:60px 0 35px;
+
+    }
+
+    .clients .section-heading h2{
+
+        font-size:30px;
+
+    }
+
+    .logo-track{
+
+        gap:15px;
+
+    }
+
+    .client-logo{
+
+        width:125px;
+
+        height:80px;
+
+    }
+
+    .client-logo img{
+
+        max-width:90px;
+
+        max-height:50px;
+
+    }
 
 }
 
-}
