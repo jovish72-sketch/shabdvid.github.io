@@ -1596,9 +1596,9 @@ height:70vh;
 
     transition:.35s;
 
-    opacity:.75;
+    opacity:1;
 
-    filter:grayscale(100%);
+    filter:none;
 
 }
 
