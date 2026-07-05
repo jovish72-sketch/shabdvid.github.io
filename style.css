@@ -1496,21 +1496,19 @@ height:70vh;
 /* ==========================================
             TRUSTED BY
 ========================================== */
-.clients .section-heading{
-
-    width:100%;
+.clients .section-title{
 
     text-align:center;
 
+    margin-bottom:35px;
+
 }
 
-.clients .section-heading span,
-.clients .section-heading h2,
-.clients .section-heading p{
+.clients .section-title p{
 
-    margin-left:auto;
+    max-width:700px;
 
-    margin-right:auto;
+    margin:15px auto 0;
 
 }
 
