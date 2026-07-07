@@ -281,15 +281,9 @@ ul{
 
 .hero-content{
 
-   .paper{
-
     position:absolute;
 
-    top:105px;
-
-    left:50%;
-
-    transform:translateX(-50%);
+    inset:0;
 
 }
 
@@ -301,20 +295,13 @@ ul{
 
     position:absolute;
 
-    top:12%;
+    top:105px;
 
     left:50%;
 
-   transform:translateX(-50%);
-
-    width:420px;
-
-    text-align:center;
-
-    animation:paperFloat 5s ease-in-out infinite;
+    transform:translateX(-50%);
 
 }
-
 /* Typing Text */
 
 .paper h1{
@@ -387,7 +374,7 @@ ul{
 
 }
 
-* Paper Glow While Typing */
+/* Paper Glow While Typing */
 
 .paper.typing{
 
