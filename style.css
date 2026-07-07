@@ -542,7 +542,7 @@ section{
 
     text-align:center;
 
-    transform:translateY(-220px);
+    transform:translateY(-110px);
 
     opacity:0;
 
@@ -702,39 +702,18 @@ transform:translateY(18px);
 
 
 /* =====================================================
-                HERO STATS SECTION
-===================================================== */
-
-.hero-stats-section{
-
-    padding:0 0 110px;
-
-    margin-top:-65px;
-
-    position:relative;
-
-    z-index:10;
-
-}
-
-
-/* =====================================================
-                STATS BOX
+                HERO STATS
 ===================================================== */
 
 .hero-stats{
 
-   position:absolute;
-
-   left:50%;
-
-   top:120px;
-
-   transform:translateX(-50%);
-
-    width:720px;
+    width:760px;
 
     max-width:90%;
+
+    margin:35px auto 0;
+
+    padding:24px 35px;
 
     display:flex;
 
@@ -742,32 +721,25 @@ transform:translateY(18px);
 
     align-items:center;
 
-    padding:22px 30px;
+    background:rgba(25,20,16,.25);
 
-    background:rgba(18,18,18,.22);
+    backdrop-filter:blur(18px);
 
-    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(18px);
 
     border:1px solid rgba(255,255,255,.15);
 
-    border-radius:18px;
+    border-radius:22px;
 
-    box-shadow:0 18px 45px rgba(0,0,0,.18);
-
-    z-index:20;
+    box-shadow:0 20px 45px rgba(0,0,0,.22);
 
 }
 
-
-/* =====================================================
-                    STAT
-===================================================== */
-
 .stat{
 
-    text-align:center;
-
     flex:1;
+
+    text-align:center;
 
     position:relative;
 
@@ -789,7 +761,7 @@ transform:translateY(18px);
 
     height:70px;
 
-    background:#E7D8C3;
+    background:rgba(255,255,255,.18);
 
 }
 
@@ -797,28 +769,25 @@ transform:translateY(18px);
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:62px;
+    font-size:48px;
 
-    color:#C89A52;
+    color:#D4A85D;
 
-    margin-bottom:12px;
+    margin-bottom:8px;
 
 }
 
 .stat p{
 
-    font-size:16px;
+    font-size:14px;
 
-    color:#666;
-
-    font-weight:600;
-
-    letter-spacing:2px;
+    color:#ffffff;
 
     text-transform:uppercase;
 
-}
+    letter-spacing:2px;
 
+}
 
 /* =====================================================
                 HERO RESPONSIVE
