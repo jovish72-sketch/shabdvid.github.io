@@ -532,6 +532,8 @@ section{
 
 .hero-content{
 
+   position:relative;
+
     width:100%;
 
     max-width:900px;
@@ -722,13 +724,13 @@ transform:translateY(18px);
 
 .hero-stats{
 
-    position:absolute;
+   position:absolute;
 
-    top:170px;
+   left:50%;
 
-    left:50%;
+   top:120px;
 
-    transform:translateX(-50%);
+   transform:translateX(-50%);
 
     width:720px;
 
