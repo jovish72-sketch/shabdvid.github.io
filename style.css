@@ -532,36 +532,19 @@ section{
 
 .hero-content{
 
-   position:relative;
+    position:relative;
 
     width:100%;
-
     max-width:900px;
-
     margin:0 auto;
 
     text-align:center;
 
     transform:translateY(-110px);
 
-    opacity:0;
-
-    transition:
-
-    opacity 1s ease,
-
-    transform 1s ease;
-
-}
-
-.hero-content.show{
-
     opacity:1;
 
-    transform:translateY(-220px);
-
 }
-
 
 /* =====================================================
                     HERO TAG
@@ -710,6 +693,8 @@ transform:translateY(18px);
     width:760px;
 
     max-width:90%;
+
+   margin-top:20px;
 
     margin:35px auto 0;
 
