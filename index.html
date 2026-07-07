@@ -2022,10 +2022,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const intro = document.getElementById("intro-screen");
 
-const hero = document.querySelector(".hero-content");
-
-const header = document.querySelector(".header");
-
 if(intro){
 
     intro.addEventListener("click",()=>{
@@ -2034,14 +2030,14 @@ if(intro){
 
         setTimeout(()=>{
 
-            hero.classList.add("show");
+            intro.style.display="none";
 
-        },350);
+        },1000);
 
     });
 
 }
-
+   
     /* ==========================================
             FADE IN ANIMATION
     ========================================== */
