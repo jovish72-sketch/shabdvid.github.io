@@ -873,6 +873,104 @@ display:none;
 }
 
 }
+
+/* =====================================================
+                HERO ENTRY ANIMATION
+===================================================== */
+
+.hero-tag{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.hero-title{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:fadeUp 1s ease .25s forwards;
+
+}
+
+.hero-line{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:fadeUp 1s ease .45s forwards;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* =====================================================
+                HERO TITLE EFFECT
+===================================================== */
+
+.hero-title{
+
+    text-shadow:
+
+    0 5px 25px rgba(0,0,0,.25);
+
+}
+
+
+/* =====================================================
+                HERO TAG EFFECT
+===================================================== */
+
+.hero-tag{
+
+    position:relative;
+
+}
+
+.hero-tag::before,
+
+.hero-tag::after{
+
+    content:"";
+
+    display:inline-block;
+
+    width:55px;
+
+    height:1px;
+
+    background:rgba(212,168,93,.55);
+
+    margin:0 15px;
+
+    vertical-align:middle;
+
+}
 /* =====================================================
                         ABOUT
 ===================================================== */
