@@ -468,9 +468,8 @@ section{
 
 }
 
-
 /* =====================================================
-                    HERO
+                        HERO
 ===================================================== */
 
 .hero{
@@ -487,14 +486,9 @@ section{
 
     overflow:hidden;
 
-    background:#1d130d;
+    background:#1D130D;
 
 }
-
-
-/* =====================================================
-                HERO IMAGE
-===================================================== */
 
 .hero-image{
 
@@ -512,11 +506,6 @@ section{
 
 }
 
-
-/* =====================================================
-                HERO OVERLAY
-===================================================== */
-
 .hero-overlay{
 
     position:absolute;
@@ -524,21 +513,11 @@ section{
     inset:0;
 
     background:
-
     linear-gradient(
-
-        rgba(20,12,8,.18),
-
-        rgba(20,12,8,.45)
-
-    );
+    rgba(20,12,8,.25),
+    rgba(20,12,8,.48));
 
 }
-
-
-/* =====================================================
-                HERO CONTENT
-===================================================== */
 
 .hero-container{
 
@@ -550,176 +529,84 @@ section{
 
 .hero-content{
 
-    max-width:820px;
+    text-align:center;
+
+    max-width:900px;
 
     margin:auto;
 
-    text-align:center;
-
-    animation:heroFade 1.2s ease;
-
 }
 
 
 /* =====================================================
-                    PAPER
+                    HERO TAG
 ===================================================== */
 
-.paper{
+.hero-tag{
 
-    margin-bottom:45px;
+    display:block;
 
-    animation:paperFloat 6s ease-in-out infinite;
+    margin-bottom:18px;
 
-    filter:
-
-    drop-shadow(
-
-    0 12px 30px rgba(0,0,0,.18)
-
-    );
-
-}
-
-.paper h1{
-
-    font-size:66px;
-
-    line-height:1.25;
-
-    color:#2F2118;
-
-    text-shadow:
-
-    0 3px 10px rgba(255,255,255,.22);
-
-}
-
-
-/* =====================================================
-                    CURSOR
-===================================================== */
-
-.cursor::after{
-
-    content:"|";
-
-    animation:blink .8s infinite;
-
-}
-
-@keyframes blink{
-
-50%{
-
-opacity:0;
-
-}
-
-}
-
-
-/* =====================================================
-                HERO SUBTITLE
-===================================================== */
-
-.hero-subtitle{
-
-    max-width:760px;
-
-    margin:0 auto 45px;
-
-    color:#F5F2EC;
-
-    font-size:20px;
-
-    line-height:1.9;
-
-}
-
-
-/* =====================================================
-                HERO BUTTONS
-===================================================== */
-
-.hero-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-}
-
-
-/* =====================================================
-                HERO STATS
-===================================================== */
-
-.hero-stats{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:70px;
-
-    margin-top:65px;
-
-    padding:28px 45px;
-
-    background:
-
-    rgba(255,255,255,.08);
-
-    backdrop-filter:blur(14px);
-
-    border:
-
-    1px solid rgba(255,255,255,.18);
-
-    border-radius:20px;
-
-    box-shadow:
-
-    0 20px 45px rgba(0,0,0,.15);
-
-}
-
-.stat{
-
-    text-align:center;
-
-}
-
-.stat h3{
-
-    font-size:48px;
-
-    color:var(--primary);
-
-    margin-bottom:6px;
-
-}
-
-.stat p{
-
-    color:#fff;
+    color:#D4A85D;
 
     font-size:15px;
 
-    text-transform:uppercase;
+    font-weight:600;
 
-    letter-spacing:1px;
+    letter-spacing:7px;
+
+    text-transform:uppercase;
 
 }
 
 
 /* =====================================================
-            SCROLL INDICATOR
+                    HERO TITLE
+===================================================== */
+
+.hero-title{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:92px;
+
+    font-weight:600;
+
+    color:#F8F5EF;
+
+    letter-spacing:4px;
+
+    line-height:1;
+
+    margin-bottom:25px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+                    HERO LINE
+===================================================== */
+
+.hero-line{
+
+    font-size:24px;
+
+    color:#EFE7DB;
+
+    font-weight:300;
+
+    letter-spacing:2px;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+                SCROLL INDICATOR
 ===================================================== */
 
 .scroll-indicator{
@@ -738,9 +625,9 @@ opacity:0;
 
     width:28px;
 
-    height:46px;
+    height:48px;
 
-    border:2px solid rgba(255,255,255,.8);
+    border:2px solid rgba(255,255,255,.85);
 
     border-radius:30px;
 
@@ -760,13 +647,13 @@ opacity:0;
 
     border-radius:30px;
 
-    background:#fff;
+    background:#ffffff;
 
-    animation:scrollMouse 2s infinite;
+    animation:scrollDown 2s infinite;
 
 }
 
-@keyframes scrollMouse{
+@keyframes scrollDown{
 
 0%{
 
@@ -788,46 +675,200 @@ transform:translateY(18px);
 
 
 /* =====================================================
-            HERO ANIMATION
+                HERO STATS SECTION
 ===================================================== */
 
-@keyframes heroFade{
+.hero-stats-section{
 
-from{
+    padding:0 0 110px;
 
-opacity:0;
+    margin-top:-65px;
 
-transform:translateY(40px);
+    position:relative;
 
-}
-
-to{
-
-opacity:1;
-
-transform:none;
+    z-index:10;
 
 }
 
+
+/* =====================================================
+                STATS BOX
+===================================================== */
+
+.hero-stats{
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    align-items:center;
+
+    padding:45px;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.10);
+
+    border:1px solid #E8DCC8;
+
 }
 
-@keyframes paperFloat{
 
-0%{
+/* =====================================================
+                    STAT
+===================================================== */
 
-transform:translateY(0);
+.stat{
+
+    text-align:center;
+
+    flex:1;
+
+    position:relative;
 
 }
 
-50%{
+.stat:not(:last-child)::after{
 
-transform:translateY(-8px);
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:1px;
+
+    height:70px;
+
+    background:#E7D8C3;
 
 }
 
-100%{
+.stat h3{
 
-transform:translateY(0);
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:62px;
+
+    color:#C89A52;
+
+    margin-bottom:12px;
+
+}
+
+.stat p{
+
+    font-size:16px;
+
+    color:#666;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+                HERO RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+.hero-title{
+
+font-size:68px;
+
+}
+
+.hero-line{
+
+font-size:20px;
+
+}
+
+.hero-stats{
+
+flex-direction:column;
+
+gap:35px;
+
+}
+
+.stat::after{
+
+display:none;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.hero{
+
+height:85vh;
+
+}
+
+.hero-title{
+
+font-size:48px;
+
+letter-spacing:2px;
+
+}
+
+.hero-tag{
+
+font-size:13px;
+
+letter-spacing:5px;
+
+}
+
+.hero-line{
+
+font-size:18px;
+
+line-height:1.7;
+
+padding:0 20px;
+
+}
+
+.hero-stats{
+
+padding:35px 25px;
+
+}
+
+.stat h3{
+
+font-size:46px;
+
+}
+
+.stat p{
+
+font-size:14px;
+
+}
+
+.scroll-indicator{
+
+display:none;
 
 }
 
