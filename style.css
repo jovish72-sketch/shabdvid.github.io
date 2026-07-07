@@ -532,17 +532,25 @@ section{
 
 .hero-content{
 
-    position:relative;
+    position:absolute;
+
+    top:120px;
+
+    left:50%;
+
+    transform:translateX(-50%);
 
     width:100%;
+
     max-width:900px;
-    margin:0 auto;
 
-    text-align:center;
+    display:flex;
 
-    transform:translateY(-110px);
+    justify-content:center;
 
-    opacity:1;
+    align-items:flex-start;
+
+    z-index:5;
 
 }
 
