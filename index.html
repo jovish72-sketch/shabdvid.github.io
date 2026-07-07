@@ -1071,11 +1071,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const messages = [
 
-        "Welcome to Shabdvid",
+`Welcome to Shabdvid`,
 
-        "Where Ideas Transform Into Meaningful Stories"
+`Where Ideas
+Transform Into
+Meaningful Stories`
 
-    ];
+];
 
     let messageIndex = 0;
     let charIndex = 0;
@@ -1098,7 +1100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(!deleting){
 
-            typing.textContent = currentText.substring(0,charIndex+1);
+            typing.innerHTML = currentText.substring(0,charIndex+1).replace(/\n/g,"<br>");
 
             charIndex++;
 
@@ -1114,7 +1116,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }else{
 
-            typing.textContent = currentText.substring(0,charIndex-1);
+           typing.innerHTML =
+currentText.substring(0,charIndex-1).replace(/\n/g,"<br>");
 
             charIndex--;
 
