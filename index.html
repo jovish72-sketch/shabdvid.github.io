@@ -1993,77 +1993,6 @@ Contact
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ==========================================
-            TYPING ANIMATION
-    ========================================== */
-
-    const typing = document.getElementById("typing");
-
-    const messages = [
-
-        "Welcome to Shabdvid",
-
-        "Where Ideas\nTransform Into\nMeaningful Stories"
-
-    ];
-
-    let messageIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typeWriter(){
-
-        const current = messages[messageIndex];
-
-        if(!deleting){
-
-            typing.innerHTML = current
-            .substring(0,charIndex+1)
-            .replace(/\n/g,"<br>");
-
-            charIndex++;
-
-            if(charIndex === current.length){
-
-                deleting = true;
-
-                setTimeout(typeWriter,2200);
-
-                return;
-
-            }
-
-        }else{
-
-            typing.innerHTML = current
-            .substring(0,charIndex-1)
-            .replace(/\n/g,"<br>");
-
-            charIndex--;
-
-            if(charIndex === 0){
-
-                deleting = false;
-
-                messageIndex++;
-
-                if(messageIndex >= messages.length){
-
-                    messageIndex = 0;
-
-                }
-
-            }
-
-        }
-
-        setTimeout(typeWriter,deleting ? 40 : 90);
-
-    }
-
-    typeWriter();
-
-
 
     /* ==========================================
             HEADER SCROLL
@@ -2102,8 +2031,6 @@ if(intro){
     });
 
 }
-
-});
 
     /* ==========================================
             FADE IN ANIMATION
