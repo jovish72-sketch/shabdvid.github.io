@@ -552,20 +552,19 @@ section{
 
     display:block;
 
-    margin-bottom:18px;
+    margin-bottom:8px;
 
     color:#D4A85D;
 
-    font-size:15px;
+    font-size:12px;
 
     font-weight:600;
 
-    letter-spacing:7px;
+    letter-spacing:4px;
 
     text-transform:uppercase;
 
 }
-
 
 /* =====================================================
                     HERO TITLE
@@ -575,19 +574,21 @@ section{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:78px;
+    font-size:72px;
 
     font-weight:600;
 
     color:#F8F5EF;
 
-    letter-spacing:4px;
+    line-height:.95;
 
-    line-height:1;
+    letter-spacing:2px;
 
-    margin-bottom:25px;
+    margin-bottom:8px;
 
     text-transform:uppercase;
+
+    text-shadow:0 5px 25px rgba(0,0,0,.25);
 
 }
 
@@ -598,20 +599,19 @@ section{
 
 .hero-line{
 
-    font-size:22px;
-  
-    margin-top:5px;
+    font-size:18px;
 
     color:#EFE7DB;
 
-    font-weight:300;
+    font-weight:400;
 
-    letter-spacing:2px;
+    letter-spacing:1px;
 
-    line-height:1.8;
+    line-height:1.4;
+
+    margin:0;
 
 }
-
 
 /* =====================================================
                 SCROLL INDICATOR
