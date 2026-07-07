@@ -261,6 +261,72 @@ ul{
     display:block;
 
 }
+
+/* ==========================================
+        HERO TYPING
+========================================== */
+
+.hero{
+
+    position:relative;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+.paper-text{
+
+    position:absolute;
+
+    top:26%;
+
+    left:50%;
+
+    transform:translateX(-50%) rotate(-1deg);
+
+    width:420px;
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    font-weight:600;
+
+    color:#2F2118;
+
+    line-height:1.4;
+
+}
+
+.cursor{
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
 /* ==========================================
         ABOUT
 ========================================== */
