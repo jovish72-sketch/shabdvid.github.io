@@ -1090,48 +1090,35 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const typing = document.getElementById("typing");
-    const paper = document.querySelector(".paper");
 
     const messages = [
 
-`Welcome to Shabdvid`,
+        "Welcome to Shabdvid",
 
-`Where Ideas
-Transform Into
-Meaningful Stories`
+        "Where Ideas\nTransform Into\nMeaningful Stories"
 
-];
+    ];
 
-    let messageIndex = 0;
-    let charIndex = 0;
+    let message = 0;
+    let char = 0;
     let deleting = false;
 
-    function animateTyping(){
+    function type(){
 
-        const currentText = messages[messageIndex];
-
-        /* Paper Shake */
-
-       paper.classList.add("typing");
-
-        setTimeout(() => {
-
-       paper.classList.remove("typing");
-
-        },80);
-
+        const current = messages[message];
 
         if(!deleting){
 
-            typing.innerHTML = currentText.substring(0,charIndex+1).replace(/\n/g,"<br>");
+            typing.innerHTML =
+            current.substring(0,char+1).replace(/\n/g,"<br>");
 
-            charIndex++;
+            char++;
 
-            if(charIndex === currentText.length){
+            if(char === current.length){
 
                 deleting = true;
 
-                setTimeout(animateTyping,2500);
+                setTimeout(type,2200);
 
                 return;
 
@@ -1139,20 +1126,20 @@ Meaningful Stories`
 
         }else{
 
-           typing.innerHTML =
-currentText.substring(0,charIndex-1).replace(/\n/g,"<br>");
+            typing.innerHTML =
+            current.substring(0,char-1).replace(/\n/g,"<br>");
 
-            charIndex--;
+            char--;
 
-            if(charIndex === 0){
+            if(char===0){
 
-                deleting = false;
+                deleting=false;
 
-                messageIndex++;
+                message++;
 
-                if(messageIndex >= messages.length){
+                if(message>=messages.length){
 
-                    messageIndex = 0;
+                    message=0;
 
                 }
 
@@ -1160,14 +1147,13 @@ currentText.substring(0,charIndex-1).replace(/\n/g,"<br>");
 
         }
 
-        setTimeout(animateTyping, deleting ? 45 : 120);
+        setTimeout(type,deleting?40:90);
 
     }
 
-    animateTyping();
+    type();
 
 });
-
 </script>   
 </body>
 
