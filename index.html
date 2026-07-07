@@ -2022,11 +2022,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const intro = document.getElementById("intro-screen");
 
+const hero = document.querySelector(".hero-content");
+
+const header = document.querySelector(".header");
+
 if(intro){
 
     intro.addEventListener("click",()=>{
 
         intro.classList.add("hide");
+
+        header.classList.add("show");
+
+        setTimeout(()=>{
+
+            hero.classList.add("show");
+
+        },350);
 
     });
 
