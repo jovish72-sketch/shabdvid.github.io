@@ -303,11 +303,11 @@ ul{
 
     position:absolute;
 
-    top:25%;
+    top:12%;
 
     left:50%;
 
-    transform:translateX(-50%) rotate(-1deg);
+   transform:translateX(-50%);
 
     width:420px;
 
@@ -327,7 +327,7 @@ ul{
 
     font-weight:600;
 
-    color:#2F2118;
+    color:#2a2017;
 
     line-height:1.4;
 
