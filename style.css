@@ -534,7 +534,7 @@ section{
 
     position:absolute;
 
-    top:55px;          /* Headerની નીચે અને Typewriterના ઉપર */
+    top:55px;        
 
     left:50%;
 
@@ -699,7 +699,7 @@ transform:translateY(18px);
 
     position:absolute;
 
-    top:-165px;
+    top:-260px;
 
     left:50%;
 
