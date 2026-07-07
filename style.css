@@ -698,6 +698,8 @@ transform:translateY(18px);
 
 .hero-stats{
 
+  top:100px;
+
     width:760px;
 
     max-width:90%;
