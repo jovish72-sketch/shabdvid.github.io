@@ -1053,12 +1053,17 @@
 
 </main>
 
-    <script>
+   <script>
 
 document.addEventListener("DOMContentLoaded", function(){
 
     const text = "Welcome to Shabdvid";
+
     const typing = document.getElementById("typing");
+
+    const sound = document.getElementById("typeSound");
+
+    const hero = document.querySelector(".hero");
 
     let i = 0;
 
@@ -1068,7 +1073,23 @@ document.addEventListener("DOMContentLoaded", function(){
 
             typing.textContent += text.charAt(i);
 
+            /* Play Sound */
+
+            sound.currentTime = 0;
+            sound.play().catch(()=>{});
+
+            /* Typewriter Shake */
+
+            hero.classList.add("typing");
+
+            setTimeout(function(){
+
+                hero.classList.remove("typing");
+
+            },70);
+
             i++;
+
             setTimeout(typeWriter,120);
 
         }
@@ -1079,8 +1100,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-</script>
-    
+</script>    
 </body>
 
 </html>
