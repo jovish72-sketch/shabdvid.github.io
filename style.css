@@ -534,7 +534,7 @@ section{
 
     position:absolute;
 
-    top:120px;
+    top:90px;          
 
     left:50%;
 
@@ -548,12 +548,13 @@ section{
 
     justify-content:center;
 
-    align-items:flex-start;
+    align-items:center;
+
+    text-align:center;
 
     z-index:5;
 
 }
-
 /* =====================================================
                     HERO TAG
 ===================================================== */
@@ -698,28 +699,24 @@ transform:translateY(18px);
 
 .hero-stats{
 
-  top:30px;
+    position:relative;
 
     width:760px;
-
     max-width:90%;
 
-   margin-top:20px;
+    margin:0 auto;
 
-    margin:35px auto 0;
+    transform:translateY(-110px);
 
     padding:24px 35px;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
     background:rgba(25,20,16,.25);
 
     backdrop-filter:blur(18px);
-
     -webkit-backdrop-filter:blur(18px);
 
     border:1px solid rgba(255,255,255,.15);
@@ -728,8 +725,9 @@ transform:translateY(18px);
 
     box-shadow:0 20px 45px rgba(0,0,0,.22);
 
-}
+    z-index:10;
 
+}
 .stat{
 
     flex:1;
