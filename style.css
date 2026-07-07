@@ -472,7 +472,7 @@ section{
                         HERO
 ===================================================== */
 
-.hero{
+    .hero{
 
     position:relative;
 
@@ -480,13 +480,15 @@ section{
 
     display:flex;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     align-items:center;
 
     overflow:hidden;
 
     background:#1D130D;
+
+    padding-top:120px;
 
 }
 
@@ -529,11 +531,15 @@ section{
 
 .hero-content{
 
-    text-align:center;
+    width:100%;
 
     max-width:900px;
 
-    margin:auto;
+    margin:0 auto;
+
+    text-align:center;
+
+    transform:translateY(-220px);
 
 }
 
@@ -569,7 +575,7 @@ section{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:92px;
+    font-size:78px;
 
     font-weight:600;
 
@@ -592,7 +598,9 @@ section{
 
 .hero-line{
 
-    font-size:24px;
+    font-size:22px;
+  
+    margin-top:5px;
 
     color:#EFE7DB;
 
