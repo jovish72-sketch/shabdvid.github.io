@@ -393,6 +393,18 @@ ul{
 
 }
 
+* Paper Glow While Typing */
+
+.paper.typing{
+
+    filter:brightness(1.03);
+
+    text-shadow:
+        0 0 2px rgba(255,255,255,.4),
+        0 0 8px rgba(255,255,255,.2);
+
+}
+
 @keyframes typeShake{
 
     0%{
