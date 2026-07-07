@@ -1064,52 +1064,85 @@
 
    <script>
 
-document.addEventListener("DOMContentLoaded", function(){
-
-    const text = "Welcome to Shabdvid";
+document.addEventListener("DOMContentLoaded", () => {
 
     const typing = document.getElementById("typing");
+    const paper = document.querySelector(".paper");
 
-    const sound = document.getElementById("typeSound");
+    const messages = [
 
-    const hero = document.querySelector(".hero");
+        "Welcome to Shabdvid",
 
-    let i = 0;
+        "Where Ideas Transform Into Meaningful Stories"
 
-    function typeWriter(){
+    ];
 
-        if(i < text.length){
+    let messageIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
-            typing.textContent += text.charAt(i);
+    function animateTyping(){
 
-            /* Play Sound */
+        const currentText = messages[messageIndex];
 
-            sound.currentTime = 0;
-            sound.play().catch(()=>{});
+        /* Paper Shake */
 
-            /* Typewriter Shake */
+        paper.classList.add("typing");
 
-            hero.classList.add("typing");
+        setTimeout(() => {
 
-            setTimeout(function(){
+            paper.classList.remove("typing");
 
-                hero.classList.remove("typing");
+        },60);
 
-            },70);
 
-            i++;
+        if(!deleting){
 
-            setTimeout(typeWriter,120);
+            typing.textContent = currentText.substring(0,charIndex+1);
+
+            charIndex++;
+
+            if(charIndex === currentText.length){
+
+                deleting = true;
+
+                setTimeout(animateTyping,2500);
+
+                return;
+
+            }
+
+        }else{
+
+            typing.textContent = currentText.substring(0,charIndex-1);
+
+            charIndex--;
+
+            if(charIndex === 0){
+
+                deleting = false;
+
+                messageIndex++;
+
+                if(messageIndex >= messages.length){
+
+                    messageIndex = 0;
+
+                }
+
+            }
 
         }
 
+        setTimeout(animateTyping, deleting ? 45 : 120);
+
     }
 
-    typeWriter();
+    animateTyping();
 
 });
 
-</script>    
+</script>   
 </body>
 
 </html>
