@@ -699,33 +699,29 @@ transform:translateY(18px);
 
 .hero-stats{
 
-    position:relative;
-
-    width:760px;
+    width:680px;
     max-width:90%;
 
     margin:0 auto;
 
-    transform:translateY(-350px);
+    transform:translateY(-110px);
 
-    padding:8px 19px;
+    padding:10px 25px;
 
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items:center;
 
-    background:rgba(25,20,16,.25);
+    background:rgba(25,20,16,.22);
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.12);
 
-    border-radius:22px;
+    border-radius:16px;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.22);
-
-    z-index:10;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
 
 }
 .stat{
