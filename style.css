@@ -717,16 +717,17 @@ transform:translateY(18px);
 
     align-items:center;
 
-    background:rgba(25,20,16,.22);
-
+   background:rgba(34,18,10,.42);
+  
     backdrop-filter:blur(16px);
     -webkit-backdrop-filter:blur(16px);
 
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(212,175,106,.28);
 
     border-radius:14px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    box-shadow:0 10px 30px rgba(0,0,0,.30),
+               0 0 18px rgba(212,175,106,.08);
 
     z-index:20;
 
@@ -757,11 +758,13 @@ transform:translateY(18px);
 
      height:24px;
 
-    background:rgba(255,255,255,.18);
+   background:rgba(212,175,106,.25);
 
 }
 
 .stat h3{
+
+    color:#D4AF6A;
 
     font-family:'Cormorant Garamond',serif;
 
@@ -774,6 +777,8 @@ transform:translateY(18px);
 }
 
 .stat p{
+
+  color:#F5EFE6;
 
     font-size:10px;
 
