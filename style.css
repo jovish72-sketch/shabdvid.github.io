@@ -697,29 +697,38 @@ transform:translateY(18px);
 
 .hero-stats{
 
-    width:560px;
+    position:absolute;
 
-    max-width:85%;
+    top:-165px;
 
-    margin:0;
+    left:50%;
 
-    padding:6px 18px;
+    transform:translateX(-50%);
+
+    width:760px;
+
+    max-width:90%;
+
+    padding:8px 20px;
 
     display:flex;
 
-    justify-content:space-around;
+    justify-content:space-between;
 
     align-items:center;
 
-    background:rgba(25,20,16,.20);
+    background:rgba(25,20,16,.22);
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
 
-    border:1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.12);
 
     border-radius:14px;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+    z-index:20;
 
 }
 .stat{
