@@ -534,7 +534,7 @@ section{
 
     position:absolute;
 
-    top:90px;          
+    top:55px;          /* Headerની નીચે અને Typewriterના ઉપર */
 
     left:50%;
 
@@ -548,11 +548,9 @@ section{
 
     justify-content:center;
 
-    align-items:center;
+    align-items:flex-start;
 
-    text-align:center;
-
-    z-index:5;
+    z-index:10;
 
 }
 /* =====================================================
@@ -699,29 +697,29 @@ transform:translateY(18px);
 
 .hero-stats{
 
-    width:680px;
-    max-width:90%;
+    width:560px;
 
-    margin:0 auto;
+    max-width:85%;
 
-    transform:translateY(-350px);
+    margin:0;
 
-    padding:10px 25px;
+    padding:6px 18px;
 
     display:flex;
+
     justify-content:space-around;
+
     align-items:center;
 
-    background:rgba(25,20,16,.22);
+    background:rgba(25,20,16,.20);
 
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
+    backdrop-filter:blur(14px);
 
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.10);
 
-    border-radius:16px;
+    border-radius:14px;
 
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 
 }
 .stat{
@@ -748,7 +746,7 @@ transform:translateY(18px);
 
     width:1px;
 
-    height:70px;
+     height:24px;
 
     background:rgba(255,255,255,.18);
 
@@ -758,23 +756,21 @@ transform:translateY(18px);
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:48px;
+    font-size:24px;
 
-    color:#D4A85D;
+    line-height:1;
 
-    margin-bottom:8px;
+    margin-bottom:0;
 
 }
 
 .stat p{
 
-    font-size:14px;
+    font-size:10px;
 
-    color:#ffffff;
+    letter-spacing:1px;
 
-    text-transform:uppercase;
-
-    letter-spacing:2px;
+    line-height:1;
 
 }
 
