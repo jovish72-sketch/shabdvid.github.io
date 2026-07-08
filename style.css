@@ -4224,3 +4224,68 @@ opacity:1;
 }
 
 }
+/* ==========================================
+        PROFILE DESIGNATIONS
+========================================== */
+
+.profile-role{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:15px;
+
+    color:#D4AF6A;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+.profile-designations{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin-top:18px;
+
+}
+
+.profile-designations span{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border:1px solid rgba(212,175,106,.25);
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    color:#F5EFE6;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    letter-spacing:.5px;
+
+    transition:.3s;
+
+}
+
+.profile-designations span:hover{
+
+    background:#D4AF6A;
+
+    color:#1B130D;
+
+    transform:translateX(5px);
+
+}
