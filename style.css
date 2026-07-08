@@ -4428,3 +4428,12 @@ opacity:1;
         0 5px 15px rgba(212,175,106,.08);
 
 }
+@media(max-width:768px){
+
+.about-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
