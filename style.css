@@ -850,7 +850,6 @@ transform:translateY(0);
 
     vertical-align:middle;
 
-}
 /* =====================================================
                     ABOUT SECTION
 ===================================================== */
@@ -924,20 +923,20 @@ transform:translateY(0);
 
     display:grid;
 
-    grid-template-columns:340px 1fr;
+    grid-template-columns:360px 1fr;
 
-    gap:70px;
+    gap:60px;
 
-    align-items:center;
+    align-items:start;
 
-    margin-bottom:70px;
+    margin-bottom:60px;
 
 }
 
 
-/* ==========================================
-        PROFILE CARD
-========================================== */
+/* =====================================================
+                    PROFILE CARD
+===================================================== */
 
 .about-profile{
 
@@ -945,9 +944,11 @@ transform:translateY(0);
 
     border-radius:28px;
 
-    background:#fff;
+    background:#ffffff;
 
-    box-shadow:0 18px 45px rgba(0,0,0,.12);
+    border:1px solid rgba(212,175,106,.25);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.10);
 
     transition:.35s;
 
@@ -959,16 +960,15 @@ transform:translateY(0);
 
 }
 
-
-/* ==========================================
-        IMAGE
-========================================== */
-
 .profile-image{
 
     width:100%;
 
     height:430px;
+
+    overflow:hidden;
+
+    position:relative;
 
 }
 
@@ -982,27 +982,56 @@ transform:translateY(0);
 
     display:block;
 
+    transition:.6s;
+
+}
+
+.about-profile:hover .profile-image img{
+
+    transform:scale(1.05);
+
+}
+
+.profile-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:120px;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(47,33,24,.85),
+
+        transparent
+
+    );
+
 }
 
 
-/* ==========================================
-        INFO PANEL
-========================================== */
+/* =====================================================
+                    PROFILE INFO
+===================================================== */
 
 .profile-info{
 
     background:#2F2118;
 
-    padding:35px 30px;
-
     text-align:center;
 
+    padding:35px 28px;
+
 }
-
-
-/* ==========================================
-        NAME
-========================================== */
 
 .profile-info h3{
 
@@ -1014,29 +1043,21 @@ transform:translateY(0);
 
 }
 
-
-/* ==========================================
-        ROLE
-========================================== */
-
 .profile-role{
 
     display:block;
 
     color:#D4AF6A;
 
-    font-size:15px;
+    font-size:13px;
 
-    letter-spacing:1px;
+    letter-spacing:2px;
 
-    margin-bottom:25px;
+    text-transform:uppercase;
+
+    margin-bottom:24px;
 
 }
-
-
-/* ==========================================
-        DESIGNATIONS
-========================================== */
 
 .profile-designations{
 
@@ -1050,19 +1071,25 @@ transform:translateY(0);
 
 .profile-designations span{
 
-    color:#F5E8D0;
-
-    font-size:15px;
+    color:#F5EFE6;
 
     padding-bottom:12px;
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
+    transition:.35s;
+
 }
 
 .profile-designations span:last-child{
 
-    border:none;
+    border-bottom:none;
+
+}
+
+.profile-designations span:hover{
+
+    color:#D4AF6A;
 
 }
 
@@ -1070,6 +1097,16 @@ transform:translateY(0);
 /* =====================================================
                     ABOUT CONTENT
 ===================================================== */
+
+.about-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
 
 .about-content h3{
 
@@ -1087,13 +1124,83 @@ transform:translateY(0);
 
     color:#555;
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 
 }
 
 
 /* =====================================================
-                    VISION / MISSION / VALUES
+                    ABOUT STATS
+===================================================== */
+
+.about-stats{
+
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+
+}
+
+.about-stat{
+
+    background:#ffffff;
+
+    border:1px solid rgba(212,175,106,.22);
+
+    border-radius:18px;
+
+    padding:24px 14px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.about-stat:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#D4AF6A;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+}
+
+.about-stat h3{
+
+    color:#C89A52;
+
+    font-size:42px;
+
+    line-height:1;
+
+    margin-bottom:8px;
+
+}
+
+.about-stat span{
+
+    display:block;
+
+    color:#666;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+/* =====================================================
+                VISION • MISSION • VALUES
 ===================================================== */
 
 .about-grid{
@@ -1104,25 +1211,25 @@ transform:translateY(0);
 
     gap:30px;
 
-    margin:80px 0;
+    margin:60px 0;
 
 }
 
 .info-card{
 
-    background:#fff;
+    background:#ffffff;
+
+    border:1px solid rgba(212,175,106,.20);
 
     border-radius:24px;
 
-    border:1px solid rgba(212,175,106,.25);
-
-    padding:40px 32px;
+    padding:40px 30px;
 
     text-align:center;
 
-    transition:.35s;
+    box-shadow:0 12px 30px rgba(0,0,0,.05);
 
-    box-shadow:0 10px 35px rgba(0,0,0,.05);
+    transition:.35s;
 
 }
 
@@ -1130,33 +1237,37 @@ transform:translateY(0);
 
     transform:translateY(-8px);
 
+    border-color:#D4AF6A;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
 }
 
 .info-icon{
 
-    width:80px;
+    width:75px;
 
-    height:80px;
+    height:75px;
 
-    margin:0 auto 25px;
+    margin:0 auto 24px;
 
     border-radius:50%;
 
-    display:flex;
+    background:#FBF5EC;
 
-    justify-content:center;
+    display:flex;
 
     align-items:center;
 
-    background:#FBF5EC;
+    justify-content:center;
 
-    font-size:34px;
+    font-size:32px;
 
 }
 
 .info-card h3{
 
-    font-size:36px;
+    font-size:34px;
 
     margin-bottom:18px;
 
@@ -1164,25 +1275,25 @@ transform:translateY(0);
 
 .info-card p{
 
-    font-size:17px;
+    color:#666;
 
     line-height:1.9;
 
-    color:#666;
+    font-size:17px;
 
 }
 
 .info-card ul{
 
-    margin-top:18px;
-
-    text-align:left;
+    margin-top:15px;
 
     padding-left:18px;
 
-    line-height:2;
+    text-align:left;
 
     color:#666;
+
+    line-height:2;
 
 }
 
@@ -1203,13 +1314,13 @@ transform:translateY(0);
 
     padding:35px 45px;
 
-    background:#FFFFFF;
+    background:#ffffff;
+
+    border:1px solid rgba(212,175,106,.20);
 
     border-radius:24px;
 
-    border:1px solid rgba(212,175,106,.25);
-
-    box-shadow:0 15px 40px rgba(0,0,0,.07);
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
 
 }
 
@@ -1227,9 +1338,9 @@ transform:translateY(0);
 
 .journey-icon{
 
-    width:72px;
+    width:70px;
 
-    height:72px;
+    height:70px;
 
     border-radius:50%;
 
@@ -1237,13 +1348,13 @@ transform:translateY(0);
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
     font-size:28px;
 
-    color:#B88A44;
+    color:#C89A52;
 
     flex-shrink:0;
 
@@ -1271,72 +1382,136 @@ transform:translateY(0);
 
     align-items:center;
 
-    gap:10px;
+    justify-content:center;
 
-    padding:15px 30px;
+    padding:16px 30px;
 
     border-radius:50px;
 
-    background:#D4AF6A;
+    background:#C89A52;
 
-    color:#fff;
-
-    text-decoration:none;
+    color:#ffffff;
 
     font-weight:600;
 
-    transition:.3s;
-
-    flex-shrink:0;
+    transition:.35s;
 
 }
 
 .journey-btn:hover{
 
-    background:#B88A44;
+    background:#A97835;
 
     transform:translateX(5px);
 
 }
 
-/* ===============================
-        Responsive
-================================ */
 
-@media(max-width:768px){
+/* =====================================================
+                    RESPONSIVE
+===================================================== */
 
-    .journey-card{
+@media(max-width:992px){
 
-        flex-direction:column;
+.about-wrapper{
 
-        text-align:center;
-
-        padding:30px 24px;
-
-    }
-
-    .journey-left{
-
-        flex-direction:column;
-
-        gap:18px;
-
-    }
-
-    .journey-content p{
-
-        max-width:100%;
-
-    }
-
-    .journey-btn{
-
-        margin-top:10px;
-
-    }
+grid-template-columns:1fr;
 
 }
 
+.about-profile{
+
+max-width:420px;
+
+margin:auto;
+
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.about{
+
+padding:90px 0;
+
+}
+
+.about .section-title h2{
+
+font-size:42px;
+
+}
+
+.about-content{
+
+text-align:center;
+
+}
+
+.about-content h3{
+
+font-size:38px;
+
+}
+
+.about-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.journey-card{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px 24px;
+
+}
+
+.journey-left{
+
+flex-direction:column;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.about-stats{
+
+grid-template-columns:1fr;
+
+}
+
+.profile-image{
+
+height:360px;
+
+}
+
+.profile-info{
+
+padding:28px 22px;
+
+}
+
+.profile-info h3{
+
+font-size:30px;
+
+}
+
+}
 /* =====================================================
                     QUOTE
 ===================================================== */
