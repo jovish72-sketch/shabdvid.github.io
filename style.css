@@ -4386,3 +4386,174 @@ opacity:1;
     transform:translateX(5px);
 
 }
+/* ==========================================
+        PROFILE IMAGE OVERLAY
+========================================== */
+
+.profile-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.profile-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:140px;
+
+    background:linear-gradient(
+        to top,
+        rgba(47,33,24,.92),
+        rgba(47,33,24,.45),
+        transparent
+    );
+
+}
+
+
+/* ==========================================
+        IMAGE HOVER
+========================================== */
+
+.profile-image img{
+
+    transition:.6s ease;
+
+}
+
+.about-profile:hover .profile-image img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================================
+        INFO PANEL
+========================================== */
+
+.profile-info{
+
+    position:relative;
+
+    margin-top:-1px;
+
+    border-top:1px solid rgba(212,175,106,.15);
+
+}
+
+
+/* ==========================================
+        NAME
+========================================== */
+
+.profile-info h3{
+
+    font-size:36px;
+
+    font-weight:600;
+
+    line-height:1.2;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* ==========================================
+        FOUNDER
+========================================== */
+
+.profile-role{
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    color:#D4AF6A;
+
+}
+
+
+/* ==========================================
+        DESIGNATION LIST
+========================================== */
+
+.profile-designations{
+
+    margin-top:28px;
+
+}
+
+.profile-designations span{
+
+    display:block;
+
+    padding:14px 0;
+
+    font-size:15px;
+
+    color:#F4EFE8;
+
+    letter-spacing:.5px;
+
+    transition:.35s;
+
+}
+
+.profile-designations span:hover{
+
+    color:#D4AF6A;
+
+    padding-left:8px;
+
+}
+
+
+/* ==========================================
+        GOLD TOP LINE
+========================================== */
+
+.profile-info::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:70px;
+
+    height:3px;
+
+    background:#D4AF6A;
+
+    border-radius:50px;
+
+}
+
+
+/* ==========================================
+        CARD SHADOW
+========================================== */
+
+.about-profile{
+
+    border:1px solid rgba(212,175,106,.18);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.10),
+        0 5px 15px rgba(212,175,106,.08);
+
+}
