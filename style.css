@@ -5573,7 +5573,7 @@ font-size:24px;
 
     margin:0 auto 70px;
 
-    padding:55px;
+     padding:35px 30px;
 
     background:#ffffff;
 
@@ -5770,7 +5770,7 @@ font-size:40px;
 
     max-width:980px;
 
-    margin:0 auto 120px;
+    margin: 0 auto 70px;
 
     padding:0 40px;
 
@@ -5789,7 +5789,7 @@ font-size:40px;
 
     left:-10px;
 
-    font-size:180px;
+    font-size:120px;
 
     font-weight:700;
 
@@ -5854,7 +5854,7 @@ font-size:40px;
 
     font-family:"Cinzel", serif;
 
-    font-size:46px;
+    font-size:36px;
 
     color:#2F2118;
 
@@ -5871,7 +5871,7 @@ font-size:40px;
 
 .chapter-content h3{
 
-    font-size:22px;
+    font-size:19px;
 
     color:#9A6B2F;
 
@@ -5889,10 +5889,10 @@ font-size:40px;
 
     font-family:"Cormorant Garamond", serif;
 
-    font-size:24px;
+    font-size:20px;
 
-    line-height:1.95;
-
+    line-height:1.85;
+  
     color:#555;
 
     text-align:justify;
@@ -5972,7 +5972,7 @@ font-size:40px;
 
     );
 
-    margin:70px auto 0;
+   margin-top:40px;
 
 }
 
