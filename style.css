@@ -5491,3 +5491,257 @@ font-size:24px;
 }
 
 }
+/* =====================================================
+                JOURNEY TRANSITION
+===================================================== */
+
+.journey-transition{
+
+    padding:120px 0 80px;
+
+    background:#FBF8F2;
+
+    text-align:center;
+
+}
+
+.transition-tag{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border:1px solid #D4AF6A;
+
+    border-radius:40px;
+
+    color:#C89A52;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+    margin-bottom:22px;
+
+}
+
+.journey-transition h2{
+
+    font-size:56px;
+
+    color:#2F2118;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.journey-transition p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+
+/* =====================================================
+                JOURNEY CHAPTERS
+===================================================== */
+
+.journey-chapters{
+
+    padding:20px 0 120px;
+
+    background:#FBF8F2;
+
+}
+
+.chapter-card{
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+    padding:55px;
+
+    background:#ffffff;
+
+    border-left:6px solid #D4AF6A;
+
+    border-radius:22px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.05);
+
+    transition:.35s;
+
+}
+
+.chapter-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.08);
+
+}
+
+.chapter-number{
+
+    display:inline-block;
+
+    color:#C89A52;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.chapter-card h2{
+
+    font-size:42px;
+
+    color:#2F2118;
+
+    margin-bottom:10px;
+
+}
+
+.chapter-card h3{
+
+    color:#8C6A3D;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.chapter-card p{
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:2;
+
+    text-align:justify;
+
+}
+
+
+/* Gold Divider */
+
+.chapter-card::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:3px;
+
+    background:#D4AF6A;
+
+    margin-top:35px;
+
+    border-radius:20px;
+
+}
+
+
+
+/* Final Chapter */
+
+.final-chapter{
+
+    background:linear-gradient(
+        135deg,
+        #2F2118,
+        #4B3526
+    );
+
+    color:#fff;
+
+}
+
+.final-chapter h2{
+
+    color:#ffffff;
+
+}
+
+.final-chapter h3{
+
+    color:#E7C98A;
+
+}
+
+.final-chapter p{
+
+    color:rgba(255,255,255,.88);
+
+}
+
+.final-chapter::after{
+
+    background:#ffffff;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.chapter-card{
+
+padding:35px 28px;
+
+}
+
+.chapter-card h2{
+
+font-size:32px;
+
+}
+
+.chapter-card h3{
+
+font-size:20px;
+
+}
+
+.chapter-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.journey-transition h2{
+
+font-size:40px;
+
+}
+
+}
