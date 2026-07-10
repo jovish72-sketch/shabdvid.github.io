@@ -5745,3 +5745,993 @@ font-size:40px;
 }
 
 }
+/* =====================================================
+                JOURNEY CHAPTERS
+===================================================== */
+
+.journey-chapters{
+
+    position:relative;
+
+    background:#FBF8F2;
+
+    padding:40px 0 140px;
+
+}
+
+
+/* =====================================================
+            CHAPTER CARD
+===================================================== */
+
+.chapter-card{
+
+    position:relative;
+
+    max-width:980px;
+
+    margin:0 auto 120px;
+
+    padding:0 40px;
+
+}
+
+
+/* =====================================================
+            WATERMARK NUMBER
+===================================================== */
+
+.chapter-watermark{
+
+    position:absolute;
+
+    top:-30px;
+
+    left:-10px;
+
+    font-size:180px;
+
+    font-weight:700;
+
+    font-family:"Cinzel", serif;
+
+    color:rgba(212,175,106,.08);
+
+    line-height:1;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+            CONTENT
+===================================================== */
+
+.chapter-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:760px;
+
+    margin-left:120px;
+
+}
+
+
+/* =====================================================
+            CHAPTER NUMBER
+===================================================== */
+
+.chapter-number{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:#C89A52;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+            TITLE
+===================================================== */
+
+.chapter-content h2{
+
+    font-family:"Cinzel", serif;
+
+    font-size:46px;
+
+    color:#2F2118;
+
+    margin-bottom:12px;
+
+    line-height:1.2;
+
+}
+
+
+/* =====================================================
+            COMPANY
+===================================================== */
+
+.chapter-content h3{
+
+    font-size:22px;
+
+    color:#9A6B2F;
+
+    font-weight:600;
+
+    margin-bottom:30px;
+
+}
+
+/* =====================================================
+            CHAPTER DESCRIPTION
+===================================================== */
+
+.chapter-content p{
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:24px;
+
+    line-height:1.95;
+
+    color:#555;
+
+    text-align:justify;
+
+    margin-bottom:45px;
+
+}
+
+
+/* =====================================================
+            QUOTE
+===================================================== */
+
+.chapter-content blockquote{
+
+    position:relative;
+
+    margin:0;
+
+    padding-left:35px;
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:28px;
+
+    font-style:italic;
+
+    line-height:1.7;
+
+    color:#8A6738;
+
+}
+
+
+.chapter-content blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    left:0;
+
+    top:-12px;
+
+    font-size:70px;
+
+    color:#D4AF6A;
+
+    opacity:.35;
+
+}
+
+
+/* =====================================================
+            BOOK DIVIDER
+===================================================== */
+
+.chapter-card::after{
+
+    content:"";
+
+    display:block;
+
+    width:180px;
+
+    height:1px;
+
+    background:linear-gradient(
+
+        to right,
+
+        transparent,
+
+        #D4AF6A,
+
+        transparent
+
+    );
+
+    margin:70px auto 0;
+
+}
+
+
+/* =====================================================
+            LAST CHAPTER
+===================================================== */
+
+.final-chapter{
+
+    margin-top:150px;
+
+}
+
+
+.final-chapter .chapter-watermark{
+
+    color:rgba(212,175,106,.12);
+
+}
+
+
+.final-chapter h2{
+
+    color:#2F2118;
+
+}
+
+
+.final-chapter blockquote{
+
+    color:#B68A45;
+
+}
+
+
+/* =====================================================
+            HOVER
+===================================================== */
+
+.chapter-card{
+
+    transition:all .45s ease;
+
+}
+
+
+.chapter-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.chapter-card:hover .chapter-watermark{
+
+    transform:scale(1.08);
+
+    transition:.45s;
+
+}
+
+
+/* =====================================================
+            SPACING
+===================================================== */
+
+.chapter-card:last-child{
+
+    margin-bottom:20px;
+
+}
+/* =====================================================
+            EDITORIAL BOOK LAYOUT
+===================================================== */
+
+.chapter-card{
+
+    position:relative;
+
+    max-width:980px;
+
+    margin:0 auto 140px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:90px;
+
+}
+
+
+/* =====================================================
+            LEFT SIDE NUMBER
+===================================================== */
+
+.chapter-watermark{
+
+    position:sticky;
+
+    top:140px;
+
+    flex:0 0 180px;
+
+    font-size:170px;
+
+    font-family:"Cinzel", serif;
+
+    font-weight:700;
+
+    line-height:.9;
+
+    color:rgba(212,175,106,.10);
+
+    text-align:center;
+
+}
+
+
+/* =====================================================
+            RIGHT CONTENT
+===================================================== */
+
+.chapter-content{
+
+    flex:1;
+
+    margin:0;
+
+}
+
+
+/* =====================================================
+            GOLD VERTICAL LINE
+===================================================== */
+
+.chapter-content{
+
+    border-left:2px solid rgba(212,175,106,.35);
+
+    padding-left:45px;
+
+}
+
+
+/* =====================================================
+            SMALL DECORATIVE LINE
+===================================================== */
+
+.chapter-number{
+
+    position:relative;
+
+    display:inline-block;
+
+    padding-bottom:14px;
+
+}
+
+
+.chapter-number::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:70px;
+
+    height:2px;
+
+    background:#D4AF6A;
+
+}
+
+
+/* =====================================================
+            BOOK PAGE WIDTH
+===================================================== */
+
+.chapter-content p{
+
+    max-width:700px;
+
+}
+
+/* =====================================================
+            LUXURY BOOK DETAILS
+===================================================== */
+
+/* First Letter (Drop Cap) */
+
+.chapter-content p::first-letter{
+
+    float:left;
+
+    font-family:"Cinzel", serif;
+
+    font-size:74px;
+
+    line-height:58px;
+
+    padding-right:14px;
+
+    padding-top:10px;
+
+    color:#C89A52;
+
+}
+
+
+
+/* Quote */
+
+.chapter-content blockquote{
+
+    position:relative;
+
+    margin-top:45px;
+
+    padding:20px 0 20px 35px;
+
+    border-left:3px solid #D4AF6A;
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:26px;
+
+    font-style:italic;
+
+    color:#7B5B34;
+
+    line-height:1.8;
+
+}
+
+
+
+/* Decorative Quote */
+
+.chapter-content blockquote::before{
+
+    content:"❝";
+
+    position:absolute;
+
+    left:-10px;
+
+    top:-15px;
+
+    font-size:70px;
+
+    color:#D4AF6A;
+
+    opacity:.25;
+
+}
+
+
+
+/* Chapter Divider */
+
+.chapter-card::after{
+
+    content:"❦";
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:65px;
+
+    font-size:28px;
+
+    color:#C89A52;
+
+    letter-spacing:8px;
+
+}
+
+
+
+/* Last Chapter Divider */
+
+.final-chapter::after{
+
+    content:"✦";
+
+}
+
+
+
+/* Smooth Transition */
+
+.chapter-card{
+
+    transition:.45s ease;
+
+}
+
+
+
+/* Hover */
+
+.chapter-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.chapter-card:hover .chapter-watermark{
+
+    color:rgba(212,175,106,.16);
+
+}
+
+
+
+/* Chapter Title */
+
+.chapter-content h2{
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+
+
+.chapter-content h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-12px;
+
+    width:90px;
+
+    height:2px;
+
+    background:#D4AF6A;
+
+}
+
+
+
+/* Better Spacing */
+
+.chapter-content h3{
+
+    margin-top:28px;
+
+}
+/* =====================================================
+            CHAPTER ANIMATIONS
+===================================================== */
+
+/* Smooth Animation */
+
+.chapter-card{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    animation:chapterReveal .9s ease forwards;
+
+}
+
+
+/* Stagger Delay */
+
+.chapter-card:nth-child(1){
+
+    animation-delay:.15s;
+
+}
+
+.chapter-card:nth-child(2){
+
+    animation-delay:.30s;
+
+}
+
+.chapter-card:nth-child(3){
+
+    animation-delay:.45s;
+
+}
+
+.chapter-card:nth-child(4){
+
+    animation-delay:.60s;
+
+}
+
+.chapter-card:nth-child(5){
+
+    animation-delay:.75s;
+
+}
+
+.chapter-card:nth-child(6){
+
+    animation-delay:.90s;
+
+}
+
+.chapter-card:nth-child(7){
+
+    animation-delay:1.05s;
+
+}
+
+.chapter-card:nth-child(8){
+
+    animation-delay:1.20s;
+
+}
+
+
+
+/* Reveal */
+
+@keyframes chapterReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Watermark Animation */
+
+.chapter-watermark{
+
+    transition:.8s ease;
+
+}
+
+.chapter-card:hover .chapter-watermark{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* Heading */
+
+.chapter-content h2{
+
+    transition:.35s;
+
+}
+
+.chapter-card:hover h2{
+
+    color:#A97833;
+
+}
+
+
+
+/* Company */
+
+.chapter-content h3{
+
+    transition:.35s;
+
+}
+
+.chapter-card:hover h3{
+
+    letter-spacing:.8px;
+
+}
+
+
+
+/* Quote */
+
+.chapter-content blockquote{
+
+    transition:.35s;
+
+}
+
+.chapter-card:hover blockquote{
+
+    transform:translateX(8px);
+
+}
+
+
+
+/* Divider */
+
+.chapter-card::after{
+
+    transition:.35s;
+
+}
+
+.chapter-card:hover::after{
+
+    letter-spacing:16px;
+
+}
+
+
+
+/* Reading Effect */
+
+.chapter-content{
+
+    transition:.45s;
+
+}
+
+.chapter-card:hover .chapter-content{
+
+    transform:translateX(6px);
+
+}
+
+
+
+/* Cursor */
+
+.chapter-card{
+
+    cursor:default;
+
+}
+/* =====================================================
+                JOURNEY FINAL POLISH
+===================================================== */
+
+/* Smooth Scroll */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* Section Spacing */
+
+.journey-hero,
+.journey-timeline,
+.journey-transition,
+.journey-chapters,
+.journey-finale{
+
+    position:relative;
+
+}
+
+
+/* Better Reading Width */
+
+.chapter-content{
+
+    max-width:720px;
+
+}
+
+
+/* Better Paragraph Spacing */
+
+.chapter-content p{
+
+    margin-bottom:32px;
+
+}
+
+
+/* Better Quote Width */
+
+.chapter-content blockquote{
+
+    max-width:640px;
+
+}
+
+
+/* Final Chapter */
+
+.final-chapter{
+
+    padding-bottom:60px;
+
+}
+
+
+/* Journey Finale */
+
+.journey-finale{
+
+    padding:140px 0;
+
+    background:#2F2118;
+
+    color:#fff;
+
+    text-align:center;
+
+}
+
+
+.journey-final-tag{
+
+    display:inline-block;
+
+    padding:10px 24px;
+
+    border:1px solid rgba(212,175,106,.45);
+
+    color:#D4AF6A;
+
+    border-radius:40px;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+
+}
+
+
+.journey-finale h2{
+
+    font-family:"Cinzel", serif;
+
+    font-size:54px;
+
+    line-height:1.2;
+
+    margin-bottom:28px;
+
+}
+
+
+.journey-finale p{
+
+    max-width:760px;
+
+    margin:0 auto 35px;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+.journey-finale blockquote{
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:30px;
+
+    font-style:italic;
+
+    color:#E7C98A;
+
+    line-height:1.7;
+
+}
+
+
+.journey-finale .journey-btn{
+
+    margin-top:15px;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .chapter-watermark{
+
+        font-size:90px;
+
+        left:0;
+
+        top:-10px;
+
+    }
+
+    .chapter-content{
+
+        margin-left:0;
+
+        padding-left:0;
+
+        border-left:none;
+
+    }
+
+    .chapter-card{
+
+        padding:0 20px;
+
+        gap:20px;
+
+        display:block;
+
+    }
+
+    .journey-finale h2{
+
+        font-size:36px;
+
+    }
+
+    .journey-finale p{
+
+        font-size:17px;
+
+    }
+
+    .journey-finale blockquote{
+
+        font-size:22px;
+
+    }
+
+}
