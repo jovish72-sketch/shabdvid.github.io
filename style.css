@@ -5818,7 +5818,7 @@ font-size:40px;
 
     max-width:760px;
 
-    margin-left:120px;
+    margin-left:70px;
 
 }
 
@@ -6061,7 +6061,7 @@ font-size:40px;
 
     align-items:flex-start;
 
-    gap:90px;
+    gap:45px;
 
 }
 
@@ -6076,22 +6076,21 @@ font-size:40px;
 
     top:140px;
 
-    flex:0 0 180px;
+    flex:0 0 120px;
 
-    font-size:170px;
+    font-size:95px;
 
     font-family:"Cinzel", serif;
 
     font-weight:700;
 
-    line-height:.9;
+    line-height:1;
 
-    color:rgba(212,175,106,.10);
+    color:rgba(212,175,106,.08);
 
     text-align:center;
 
 }
-
 
 /* =====================================================
             RIGHT CONTENT
