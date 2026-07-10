@@ -985,6 +985,9 @@ transform:translateY(0);
     display:block;
 
     transition:.6s;
+   
+    object-position:center 8%;
+
 
 }
 
@@ -1127,6 +1130,10 @@ transform:translateY(0);
     color:#555;
 
     margin-bottom:16px;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 
 }
 
