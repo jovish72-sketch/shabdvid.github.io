@@ -5854,7 +5854,9 @@ font-size:40px;
 
     font-family:"Cinzel", serif;
 
-    font-size:36px;
+    font-size:28px;
+
+    font-weight:600;
 
     color:#2F2118;
 
@@ -5885,19 +5887,17 @@ font-size:40px;
             CHAPTER DESCRIPTION
 ===================================================== */
 
-.chapter-content p{
+.chapter-content h3{
 
-    font-family:"Cormorant Garamond", serif;
+    font-family:"Cinzel", serif;
 
-    font-size:20px;
+    font-size:38px;
 
-    line-height:1.85;
-  
-    color:#555;
+    font-weight:700;
 
-    text-align:justify;
+    color:#2F2118;
 
-    margin-bottom:45px;
+    margin-bottom:22px;
 
 }
 
@@ -5916,7 +5916,7 @@ font-size:40px;
 
     font-family:"Cormorant Garamond", serif;
 
-    font-size:28px;
+    font-size:15px;
 
     font-style:italic;
 
