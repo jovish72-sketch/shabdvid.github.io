@@ -4754,3 +4754,255 @@ grid-template-columns:repeat(2,1fr);
 }
 
 }
+
+/* =====================================================
+                    JOURNEY HERO
+===================================================== */
+
+.journey-hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:140px 0 100px;
+
+    background:linear-gradient(
+        135deg,
+        #1E1611 0%,
+        #2F2118 50%,
+        #4A3426 100%
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Gold Glow */
+
+.journey-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,106,.08);
+
+    filter:blur(120px);
+
+    top:-180px;
+
+    right:-180px;
+
+}
+
+
+/* Content */
+
+.journey-hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+
+/* Subtitle */
+
+.journey-subtitle{
+
+    display:inline-block;
+
+    color:#D4AF6A;
+
+    letter-spacing:5px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Main Heading */
+
+.journey-hero h1{
+
+    font-size:72px;
+
+    color:#fff;
+
+    line-height:1.1;
+
+    margin-bottom:18px;
+
+}
+
+
+/* Second Heading */
+
+.journey-hero h2{
+
+    font-size:36px;
+
+    color:#D4AF6A;
+
+    font-weight:400;
+
+    line-height:1.4;
+
+    margin-bottom:30px;
+
+}
+
+
+/* Description */
+
+.journey-hero p{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    font-size:19px;
+
+    line-height:2;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+/* Button */
+
+.journey-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:45px;
+
+    padding:18px 36px;
+
+    border-radius:60px;
+
+    background:#D4AF6A;
+
+    color:#2F2118;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+
+.journey-btn:hover{
+
+    background:#fff;
+
+    transform:translateY(-5px);
+
+}
+
+
+/* Arrow */
+
+.journey-btn span{
+
+    font-size:20px;
+
+    animation:arrowMove 1.4s infinite;
+
+}
+
+
+@keyframes arrowMove{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(5px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================
+        Responsive
+========================== */
+
+@media(max-width:768px){
+
+.journey-hero{
+
+padding:120px 20px 80px;
+
+}
+
+.journey-hero h1{
+
+font-size:48px;
+
+}
+
+.journey-hero h2{
+
+font-size:26px;
+
+}
+
+.journey-hero p{
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+.journey-btn{
+
+padding:16px 28px;
+
+}
+
+}
