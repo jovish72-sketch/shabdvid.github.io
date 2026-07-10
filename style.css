@@ -6509,3 +6509,55 @@ html{
     }
 
 }
+
+/* =====================================================
+        FINAL CHAPTER FIX
+===================================================== */
+
+.final-chapter{
+
+    background:#2F2118;
+
+    border-radius:28px;
+
+    padding:60px;
+
+}
+
+.final-chapter .chapter-number{
+
+    color:#D4AF6A;
+
+}
+
+.final-chapter h2{
+
+    color:#FFFFFF !important;
+
+}
+
+.final-chapter h3{
+
+    color:#D4AF6A !important;
+
+    font-size:34px;
+
+}
+
+.final-chapter p{
+
+    color:rgba(255,255,255,.92);
+
+}
+
+.final-chapter blockquote{
+
+    color:#E6C47A;
+
+}
+
+.final-chapter .chapter-watermark{
+
+    color:rgba(212,175,106,.10);
+
+}
