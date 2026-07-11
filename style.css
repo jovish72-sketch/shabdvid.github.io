@@ -6565,3 +6565,202 @@ html{
     color:rgba(212,175,106,.10);
 
 }
+/* =====================================================
+        COMPLETE WRITING EXPERTISE
+===================================================== */
+
+.services-list-wrapper{
+
+    margin-top:90px;
+
+    padding-top:70px;
+
+    border-top:1px solid rgba(212,175,106,.25);
+
+}
+
+
+.services-list-heading{
+
+    text-align:center;
+
+    margin-bottom:55px;
+
+}
+
+
+.services-list-heading span{
+
+    display:inline-block;
+
+    color:#C89A52;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+
+.services-list-heading h3{
+
+    font-family:"Cinzel",serif;
+
+    font-size:42px;
+
+    color:#2F2118;
+
+    margin-bottom:18px;
+
+}
+
+
+.services-list-heading p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#666;
+
+}
+
+
+
+/* ===============================
+        SERVICES GRID
+================================ */
+
+.services-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:18px 35px;
+
+}
+
+
+
+/* ===============================
+        SERVICE ITEM
+================================ */
+
+.service-item{
+
+    position:relative;
+
+    padding-left:22px;
+
+    font-size:17px;
+
+    color:#444;
+
+    line-height:1.8;
+
+    transition:.35s;
+
+    cursor:default;
+
+}
+
+
+
+/* Gold Dot */
+
+.service-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:12px;
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#D4AF6A;
+
+    transition:.35s;
+
+}
+
+
+
+/* Hover */
+
+.service-item:hover{
+
+    color:#2F2118;
+
+    transform:translateX(8px);
+
+}
+
+
+
+.service-item:hover::before{
+
+    transform:scale(1.6);
+
+}
+
+
+
+/* ===============================
+        RESPONSIVE
+================================ */
+
+@media(max-width:1100px){
+
+.services-list{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.services-list{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.services-list-heading h3{
+
+font-size:32px;
+
+}
+
+}
+
+
+@media(max-width:480px){
+
+.services-list{
+
+grid-template-columns:1fr;
+
+}
+
+}
