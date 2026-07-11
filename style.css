@@ -6856,3 +6856,191 @@ font-size:17px;
 }
 
 }
+/* =====================================================
+                FEATURED SERVICES
+===================================================== */
+
+.featured-services{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+
+/* ==========================================
+            SERVICE CARD
+========================================== */
+
+.featured-service{
+
+    position:relative;
+
+    background:#FFFFFF;
+
+    border:1px solid rgba(212,175,106,.22);
+
+    border-radius:24px;
+
+    padding:40px 35px;
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+.featured-service:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#D4AF6A;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.10);
+
+}
+
+
+/* ==========================================
+            NUMBER
+========================================== */
+
+.service-no{
+
+    display:block;
+
+    font-family:"Cinzel",serif;
+
+    font-size:48px;
+
+    color:rgba(212,175,106,.35);
+
+    margin-bottom:18px;
+
+}
+
+
+/* ==========================================
+            TITLE
+========================================== */
+
+.featured-service h3{
+
+    font-family:"Cinzel",serif;
+
+    font-size:28px;
+
+    color:#2F2118;
+
+    margin-bottom:18px;
+
+    line-height:1.3;
+
+}
+
+
+/* ==========================================
+            DESCRIPTION
+========================================== */
+
+.featured-service p{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:21px;
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+
+
+/* ==========================================
+            GOLD LINE
+========================================== */
+
+.featured-service::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:35px;
+
+    bottom:30px;
+
+    width:70px;
+
+    height:2px;
+
+    background:#D4AF6A;
+
+    transition:.35s;
+
+}
+
+
+.featured-service:hover::after{
+
+    width:120px;
+
+}
+
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.featured-services{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.featured-services{
+
+grid-template-columns:1fr;
+
+}
+
+.featured-service{
+
+padding:30px 25px;
+
+}
+
+.service-no{
+
+font-size:36px;
+
+}
+
+.featured-service h3{
+
+font-size:24px;
+
+}
+
+.featured-service p{
+
+font-size:18px;
+
+}
+
+}
