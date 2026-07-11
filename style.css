@@ -7051,7 +7051,7 @@ font-size:18px;
 
 }
 /* =====================================================
-            CREATIVE COLLECTIONS
+                CREATIVE COLLECTIONS
 ===================================================== */
 
 .collections{
@@ -7062,33 +7062,41 @@ font-size:18px;
 
 }
 
+
+/* ==========================
+        GRID
+========================== */
+
 .collections-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(3,1fr);
 
-    gap:35px;
+    gap:30px;
 
-    margin-top:70px;
+    margin-top:65px;
 
 }
 
+
+/* ==========================
+        CARD
+========================== */
+
 .collection-card{
 
-    background:#FFFFFF;
+    background:#ffffff;
 
-    border:1px solid rgba(212,175,106,.25);
+    border:1px solid rgba(212,175,106,.18);
 
-    border-radius:24px;
-
-    padding:40px;
-
-    transition:.4s ease;
-
-    position:relative;
+    border-radius:22px;
 
     overflow:hidden;
+
+    transition:.40s ease;
+
+    box-shadow:0 10px 28px rgba(0,0,0,.05);
 
 }
 
@@ -7098,45 +7106,114 @@ font-size:18px;
 
     border-color:#D4AF6A;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.08);
+    box-shadow:0 22px 45px rgba(0,0,0,.10);
 
 }
+/* =====================================================
+            COLLECTION IMAGE
+===================================================== */
+
+.collection-image{
+
+    height:140px;
+
+    overflow:hidden;
+
+    border-bottom:1px solid rgba(212,175,106,.15);
+
+}
+
+.collection-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.45s ease;
+
+}
+
+.collection-card:hover .collection-image img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* =====================================================
+            CARD CONTENT
+===================================================== */
 
 .collection-card h3{
 
     font-family:"Cinzel",serif;
 
-    font-size:30px;
+    font-size:24px;
+
+    font-weight:600;
 
     color:#2F2118;
 
-    margin-bottom:18px;
+    line-height:1.35;
+
+    margin:24px 25px 10px;
+
+}
+
+.collection-card h3::after{
+
+    content:"";
+
+    display:block;
+
+    width:55px;
+
+    height:2px;
+
+    background:#D4AF6A;
+
+    margin-top:12px;
 
 }
 
 .collection-card p{
 
-    font-size:17px;
+    margin:0 25px;
 
-    line-height:1.9;
+    font-size:15px;
 
-    color:#666;
+    line-height:1.7;
 
-    margin-bottom:30px;
+    color:#7A6F66;
+
+    min-height:45px;
 
 }
+
+
+/* =====================================================
+            LINK
+===================================================== */
 
 .collection-card a{
 
     display:inline-block;
 
+    margin:20px 25px 25px;
+
     text-decoration:none;
 
-    color:#C89A52;
+    font-size:14px;
 
     font-weight:600;
 
     letter-spacing:.5px;
+
+    color:#C89A52;
 
     transition:.35s;
 
@@ -7148,67 +7225,189 @@ font-size:18px;
 
 }
 
-.collection-card::before{
+
+/* =====================================================
+            COMING SOON
+===================================================== */
+
+.coming-soon{
+
+    background:#F8F4EC;
+
+}
+
+.coming-badge{
+
+    display:inline-block;
+
+    margin:20px 25px 25px;
+
+    padding:8px 18px;
+
+    border:1px solid #D4AF6A;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    color:#A67C2E;
+
+    text-transform:uppercase;
+
+}
+/* =====================================================
+            FINAL POLISH
+===================================================== */
+
+/* Uniform Card Height */
+
+.collection-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+
+/* Description */
+
+.collection-card p{
+
+    flex-grow:1;
+
+}
+
+
+/* Better Hover */
+
+.collection-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+
+/* Image Overlay */
+
+.collection-image{
+
+    position:relative;
+
+}
+
+.collection-image::after{
 
     content:"";
 
     position:absolute;
 
-    left:40px;
+    inset:0;
 
-    top:30px;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.22),
+        rgba(0,0,0,0)
+    );
 
-    width:55px;
-
-    height:2px;
-
-    background:#D4AF6A;
-
-}
-
-.collection-card h3{
-
-    margin-top:20px;
+    pointer-events:none;
 
 }
 
-@media(max-width:992px){
 
-.collections-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-/* ==========================================
-        COLLECTION IMAGE
-========================================== */
-
-.collection-image{
-
-    margin:-40px -40px 30px;
-
-    overflow:hidden;
-
-}
+/* Rounded Image */
 
 .collection-image img{
 
-    width:100%;
-
-    height:240px;
-
-    object-fit:cover;
-
-    transition:.5s ease;
-
-    display:block;
+    border-radius:22px 22px 0 0;
 
 }
 
-.collection-card:hover .collection-image img{
+
+/* Explore Link */
+
+.collection-card a{
+
+    margin-top:auto;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+/* Desktop */
+
+@media (max-width:1200px){
+
+    .collections-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* Tablet */
+
+@media (max-width:768px){
+
+    .collections{
+
+        padding:90px 0;
+
+    }
+
+    .collections-grid{
+
+        gap:24px;
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width:576px){
+
+    .collections-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .collection-card h3{
+
+        font-size:21px;
+
+    }
+
+    .collection-card p{
+
+        font-size:14px;
+
+    }
+
+    .collection-image{
+
+        height:130px;
+
+    }
+
+}
 
     transform:scale(1.08);
 
