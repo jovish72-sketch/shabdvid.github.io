@@ -7050,22 +7050,75 @@ font-size:18px;
 }
 
 }
-/* =====================================================
-                CREATIVE COLLECTIONS
-===================================================== */
+/*==================================================
+        CREATIVE COLLECTIONS
+==================================================*/
 
 .collections{
 
-    padding:120px 0;
+    padding:110px 0;
 
-    background:#FBF8F2;
+    background:#F8F5EF;
+
+}
+
+.collections .section-title{
+
+    text-align:center;
+
+    max-width:720px;
+
+    margin:0 auto 60px;
+
+}
+
+.collections .section-title span{
+
+    display:inline-block;
+
+    color:#C39A53;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.collections .section-title h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:46px;
+
+    font-weight:600;
+
+    color:#2E241C;
+
+    margin-bottom:18px;
+
+}
+
+.collections .section-title p{
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#6F655C;
 
 }
 
 
-/* ==========================
+
+/*==================================================
         GRID
-========================== */
+==================================================*/
 
 .collections-grid{
 
@@ -7073,30 +7126,26 @@ font-size:18px;
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:30px;
-
-    margin-top:65px;
+    gap:34px;
 
 }
-
-
-/* ==========================
-        CARD
-========================== */
+/*==================================================
+        COLLECTION CARD
+==================================================*/
 
 .collection-card{
 
     background:#ffffff;
 
-    border:1px solid rgba(212,175,106,.18);
-
     border-radius:22px;
 
     overflow:hidden;
 
-    transition:.40s ease;
+    border:1px solid rgba(212,175,106,.18);
 
-    box-shadow:0 10px 28px rgba(0,0,0,.05);
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+    transition:.40s ease;
 
 }
 
@@ -7106,20 +7155,25 @@ font-size:18px;
 
     border-color:#D4AF6A;
 
-    box-shadow:0 22px 45px rgba(0,0,0,.10);
+    box-shadow:0 22px 50px rgba(0,0,0,.12);
 
 }
-/* =====================================================
-            COLLECTION IMAGE
-===================================================== */
+
+
+
+/*==================================================
+        POSTER
+==================================================*/
 
 .collection-image{
 
-    height:140px;
+    width:100%;
+
+    height:165px;
 
     overflow:hidden;
 
-    border-bottom:1px solid rgba(212,175,106,.15);
+    position:relative;
 
 }
 
@@ -7131,9 +7185,9 @@ font-size:18px;
 
     object-fit:cover;
 
-    display:block;
+    transition:.6s ease;
 
-    transition:.45s ease;
+    display:block;
 
 }
 
@@ -7144,165 +7198,8 @@ font-size:18px;
 }
 
 
-/* =====================================================
-            CARD CONTENT
-===================================================== */
 
-.collection-card h3{
-
-    font-family:"Cinzel",serif;
-
-    font-size:24px;
-
-    font-weight:600;
-
-    color:#2F2118;
-
-    line-height:1.35;
-
-    margin:24px 25px 10px;
-
-}
-
-.collection-card h3::after{
-
-    content:"";
-
-    display:block;
-
-    width:55px;
-
-    height:2px;
-
-    background:#D4AF6A;
-
-    margin-top:12px;
-
-}
-
-.collection-card p{
-
-    margin:0 25px;
-
-    font-size:15px;
-
-    line-height:1.7;
-
-    color:#7A6F66;
-
-    min-height:45px;
-
-}
-
-
-/* =====================================================
-            LINK
-===================================================== */
-
-.collection-card a{
-
-    display:inline-block;
-
-    margin:20px 25px 25px;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    letter-spacing:.5px;
-
-    color:#C89A52;
-
-    transition:.35s;
-
-}
-
-.collection-card:hover a{
-
-    transform:translateX(8px);
-
-}
-
-
-/* =====================================================
-            COMING SOON
-===================================================== */
-
-.coming-soon{
-
-    background:#F8F4EC;
-
-}
-
-.coming-badge{
-
-    display:inline-block;
-
-    margin:20px 25px 25px;
-
-    padding:8px 18px;
-
-    border:1px solid #D4AF6A;
-
-    border-radius:40px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-    letter-spacing:1px;
-
-    color:#A67C2E;
-
-    text-transform:uppercase;
-
-}
-/* =====================================================
-            FINAL POLISH
-===================================================== */
-
-/* Uniform Card Height */
-
-.collection-card{
-
-    display:flex;
-
-    flex-direction:column;
-
-    height:100%;
-
-}
-
-
-/* Description */
-
-.collection-card p{
-
-    flex-grow:1;
-
-}
-
-
-/* Better Hover */
-
-.collection-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
-
-}
-
-
-/* Image Overlay */
-
-.collection-image{
-
-    position:relative;
-
-}
+/* Dark Overlay */
 
 .collection-image::after{
 
@@ -7313,43 +7210,124 @@ font-size:18px;
     inset:0;
 
     background:linear-gradient(
+
         to top,
-        rgba(0,0,0,.22),
-        rgba(0,0,0,0)
+
+        rgba(0,0,0,.28),
+
+        rgba(0,0,0,.02)
+
     );
 
-    pointer-events:none;
-
 }
 
 
-/* Rounded Image */
 
-.collection-image img{
+/*==================================================
+        CONTENT
+==================================================*/
 
-    border-radius:22px 22px 0 0;
+.collection-content{
+
+    padding:24px;
+
+    text-align:center;
 
 }
 
+.collection-content h3{
 
-/* Explore Link */
+    font-family:"Cinzel",serif;
 
-.collection-card a{
+    font-size:24px;
 
-    margin-top:auto;
+    font-weight:600;
+
+    color:#2F2118;
+
+    line-height:1.4;
+
+    margin-bottom:18px;
+
+}
+
+/*==================================================
+        LINK
+==================================================*/
+
+.collection-content a{
+
+    display:inline-block;
+
+    margin-top:8px;
 
     font-size:14px;
 
-    text-transform:uppercase;
+    font-weight:600;
 
     letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    text-decoration:none;
+
+    color:#C89A52;
+
+    transition:.35s ease;
+
+}
+
+.collection-card:hover .collection-content a{
+
+    transform:translateX(8px);
 
 }
 
 
-/* Desktop */
 
-@media (max-width:1200px){
+/*==================================================
+        COMING SOON
+==================================================*/
+
+.coming-soon .collection-content{
+
+    padding-bottom:28px;
+
+}
+
+.coming-badge{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:10px 22px;
+
+    border:1px solid #D4AF6A;
+
+    border-radius:50px;
+
+    background:#FFF9EE;
+
+    color:#B78633;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+/*==================================================
+        RESPONSIVE
+==================================================*/
+
+@media(max-width:1100px){
 
     .collections-grid{
 
@@ -7359,10 +7337,7 @@ font-size:18px;
 
 }
 
-
-/* Tablet */
-
-@media (max-width:768px){
+@media(max-width:768px){
 
     .collections{
 
@@ -7370,18 +7345,21 @@ font-size:18px;
 
     }
 
+    .collections .section-title h2{
+
+        font-size:38px;
+
+    }
+
     .collections-grid{
 
-        gap:24px;
+        gap:26px;
 
     }
 
 }
 
-
-/* Mobile */
-
-@media (max-width:576px){
+@media(max-width:576px){
 
     .collections-grid{
 
@@ -7389,21 +7367,15 @@ font-size:18px;
 
     }
 
-    .collection-card h3{
-
-        font-size:21px;
-
-    }
-
-    .collection-card p{
-
-        font-size:14px;
-
-    }
-
     .collection-image{
 
-        height:130px;
+        height:180px;
+
+    }
+
+    .collection-content h3{
+
+        font-size:21px;
 
     }
 
