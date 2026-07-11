@@ -6764,3 +6764,95 @@ grid-template-columns:1fr;
 }
 
 }
+/* =====================================================
+                SERVICES CTA
+===================================================== */
+
+.services-cta{
+
+    margin-top:100px;
+
+    padding:70px 50px;
+
+    text-align:center;
+
+    background:#2F2118;
+
+    border-radius:28px;
+
+}
+
+
+.services-cta span{
+
+    display:inline-block;
+
+    color:#D4AF6A;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    margin-bottom:18px;
+
+}
+
+
+.services-cta h3{
+
+    font-family:"Cinzel",serif;
+
+    font-size:44px;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+}
+
+
+.services-cta p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    margin-bottom:40px;
+
+}
+
+
+.services-cta .primary-btn{
+
+    display:inline-block;
+
+}
+
+
+@media(max-width:768px){
+
+.services-cta{
+
+padding:50px 25px;
+
+}
+
+.services-cta h3{
+
+font-size:30px;
+
+}
+
+.services-cta p{
+
+font-size:17px;
+
+}
+
+}
