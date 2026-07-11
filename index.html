@@ -1972,17 +1972,27 @@ const intro = document.getElementById("intro-screen");
 
 if(intro){
 
-    intro.addEventListener("click",()=>{
+    if(sessionStorage.getItem("introShown")){
 
-        intro.classList.add("hide");
+        intro.style.display = "none";
 
-        setTimeout(()=>{
+    }else{
 
-            intro.style.display="none";
+        intro.addEventListener("click",()=>{
 
-        },1000);
+            sessionStorage.setItem("introShown","true");
 
-    });
+            intro.classList.add("hide");
+
+            setTimeout(()=>{
+
+                intro.style.display="none";
+
+            },1000);
+
+        });
+
+    }
 
 }
    
