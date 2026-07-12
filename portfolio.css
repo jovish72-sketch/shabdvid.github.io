@@ -87,23 +87,11 @@ HEADER
 ==========================*/
 
 .portfolio-header{
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    padding:35px 0;
-
-    background:transparent;
-
-    border:none;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
 }
 
 .portfolio-header .container{
@@ -153,11 +141,8 @@ HERO
 ==========================*/
 
 .hero-section{
-
-    padding-top:0;
-
-    padding-bottom:70px;
-
+    position: relative;
+    z-index: 1;
 }
 
 .hero-poster{
