@@ -116,20 +116,6 @@ HEADER
 
 }
 
-
-.logo{
-
-    color:#ffffff;
-
-    font-family:"Cinzel",serif;
-
-    font-size:32px;
-
-    letter-spacing:4px;
-
-}
-
-
 .back-btn{
 
     color:#ffffff;
@@ -146,6 +132,21 @@ HEADER
 
 }
 
+.catalog-btn{
+
+    color:#ffffff;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.catalog-btn:hover{
+
+    color:var(--gold);
+
+}
 
 /*==========================
 HERO
