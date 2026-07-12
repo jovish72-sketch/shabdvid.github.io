@@ -119,13 +119,13 @@ HEADER
 
 .logo{
 
+    color:#ffffff;
+
     font-family:"Cinzel",serif;
 
-    font-size:28px;
+    font-size:32px;
 
-    color:var(--dark);
-
-    letter-spacing:3px;
+    letter-spacing:4px;
 
 }
 
@@ -153,10 +153,11 @@ HERO
 
 .hero-section{
 
-     padding:60px 0 40px;
+    padding-top:0;
+
+    padding-bottom:70px;
 
 }
-
 
 .hero-poster{
 
