@@ -1,1 +1,468 @@
+/*==================================================
+                PORTFOLIO PAGE
+==================================================*/
 
+:root{
+
+    --primary:#C89A52;
+    --dark:#2C2118;
+    --text:#5D544C;
+    --bg:#F8F5EF;
+    --white:#ffffff;
+
+}
+
+body{
+
+    margin:0;
+
+    background:var(--bg);
+
+    color:var(--dark);
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+.container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:110px 0;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:0 auto 70px;
+
+}
+
+.section-title span{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.section-title h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:58px;
+
+    font-weight:600;
+
+    line-height:1.2;
+
+    color:var(--dark);
+
+    margin-bottom:20px;
+
+}
+
+.section-title p{
+
+    font-size:18px;
+
+    color:var(--text);
+
+    line-height:1.9;
+
+}
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+.portfolio-header{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:100;
+
+    padding:28px 0;
+
+}
+
+.back-btn{
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+
+.back-btn:hover{
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+                    HERO
+==================================================*/
+
+.portfolio-hero{
+
+    position:relative;
+
+    height:100vh;
+
+    min-height:750px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+.hero-banner{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to right,
+        rgba(20,15,10,.82) 15%,
+        rgba(20,15,10,.55) 45%,
+        rgba(20,15,10,.20) 100%
+    );
+
+    z-index:1;
+
+}
+
+.portfolio-hero .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero-content{
+
+    max-width:700px;
+
+    color:#ffffff;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    color:#D8B06B;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:24px;
+
+}
+
+.hero-content h1{
+
+    font-family:"Cinzel",serif;
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    font-weight:600;
+
+    margin-bottom:28px;
+
+}
+
+.hero-content p{
+
+    max-width:620px;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.88);
+
+    margin-bottom:42px;
+
+}
+/*==================================================
+                HERO BUTTONS
+==================================================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 38px;
+
+    background:#C89A52;
+
+    color:#ffffff;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+    background:#B6853D;
+
+    transform:translateY(-3px);
+
+}
+
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 38px;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    color:#ffffff;
+
+    border-radius:10px;
+
+    transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+    background:#ffffff;
+
+    color:#2C2118;
+
+}
+/*==================================================
+                OVERVIEW
+==================================================*/
+
+.portfolio-overview{
+
+    background:#ffffff;
+
+}
+
+.overview-content{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+}
+
+.overview-content p{
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:var(--text);
+
+    margin-bottom:30px;
+
+}
+
+
+
+/*==================================================
+            OVERVIEW HIGHLIGHTS
+==================================================*/
+
+.overview-highlights{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.highlight-box{
+
+    background:#FAF7F2;
+
+    border:1px solid rgba(200,154,82,.18);
+
+    border-radius:18px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.highlight-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.08);
+
+}
+
+.highlight-box h3{
+
+    font-family:"Cinzel",serif;
+
+    font-size:46px;
+
+    color:var(--primary);
+
+    margin-bottom:12px;
+
+}
+
+.highlight-box span{
+
+    display:block;
+
+    font-size:15px;
+
+    color:var(--text);
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+<div class="overview-highlights">
+
+    <div class="highlight-box">
+
+        <h3>10+</h3>
+
+        <span>Years Experience</span>
+
+    </div>
+
+    <div class="highlight-box">
+
+        <h3>400+</h3>
+
+        <span>Projects Completed</span>
+
+    </div>
+
+    <div class="highlight-box">
+
+        <h3>30+</h3>
+
+        <span>Documentaries</span>
+
+    </div>
+
+    <div class="highlight-box">
+
+        <h3>100%</h3>
+
+        <span>Original Storytelling</span>
+
+    </div>
+
+</div>
