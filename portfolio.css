@@ -88,14 +88,23 @@ HEADER
 
 .portfolio-header{
 
-    padding:28px 0;
+    position:absolute;
 
-    background:white;
+    top:0;
 
-    border-bottom:1px solid var(--border);
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    padding:35px 0;
+
+    background:transparent;
+
+    border:none;
 
 }
-
 
 .portfolio-header .container{
 
@@ -123,7 +132,7 @@ HEADER
 
 .back-btn{
 
-    color:var(--gold);
+    color:#ffffff;
 
     font-weight:500;
 
@@ -131,13 +140,11 @@ HEADER
 
 }
 
-
 .back-btn:hover{
 
-    opacity:.7;
+    color:var(--gold);
 
 }
-
 
 
 /*==========================
