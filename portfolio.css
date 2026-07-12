@@ -155,9 +155,7 @@ HERO
 
 .hero-poster{
 
-    max-width:900px;
-
-    margin:auto;
+    width:100%;
 
     border-radius:20px;
 
@@ -166,7 +164,6 @@ HERO
     box-shadow:0 25px 60px rgba(0,0,0,.12);
 
 }
-
 
 .hero-poster img{
 
