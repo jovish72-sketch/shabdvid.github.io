@@ -469,13 +469,25 @@ VIDEO GRID
 
     align-items:center;
 
+    justify-content:center;
+
     gap:8px;
 
-    color:var(--gold);
+    padding:12px 24px;
 
-    font-size:16px;
+    width:max-content;
+
+    background:#C89A52;
+
+    color:#fff !important;
+
+    border-radius:50px;
+
+    font-size:15px;
 
     font-weight:600;
+
+    text-decoration:none;
 
     transition:.35s;
 
@@ -483,9 +495,9 @@ VIDEO GRID
 
 .watch-btn:hover{
 
-    color:#A97835;
+    background:#A97835;
 
-    gap:14px;
+    color:#fff !important;
 
 }
 /*==================================================
