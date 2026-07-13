@@ -414,24 +414,34 @@ VIDEO GRID
 }
 
 /*==================================================
-                    VIDEO CONTENT
+                VIDEO CONTENT
 ==================================================*/
 
 .video-content{
 
-    padding:25px;
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
 
 }
 
 .video-content h3{
 
-    font-size:22px;
+    font-family:"Cinzel",serif;
 
-    margin-bottom:18px;
+    font-size:21px;
+
+    line-height:1.45;
 
     color:var(--dark);
 
-    font-family:"Cinzel",serif;
+    margin-bottom:14px;
+
+    min-height:92px;
 
 }
 
@@ -439,36 +449,45 @@ VIDEO GRID
 
     color:var(--text);
 
+    font-size:15px;
+
     line-height:1.8;
 
-    margin-bottom:22px;
+    margin-bottom:24px;
+
+    flex:1;
 
 }
 
-
 /*==================================================
-                    WATCH BUTTON
+                WATCH BUTTON
 ==================================================*/
 
 .watch-btn{
 
-    display:inline-block;
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
 
     color:var(--gold);
 
+    font-size:16px;
+
     font-weight:600;
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
 .watch-btn:hover{
 
-    letter-spacing:1px;
+    color:#A97835;
+
+    gap:14px;
 
 }
-
-
 /*==================================================
                 PORTFOLIO BUTTON
 ==================================================*/
