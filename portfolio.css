@@ -704,3 +704,200 @@ INTRO
     }
 
 }
+/*==================================================
+        TELEVISION & PRODUCTION HOUSE
+==================================================*/
+
+/* Broadcast Partner Cards */
+
+.video-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+.video-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.video-content p{
+
+    color:var(--text);
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.watch-btn{
+
+    margin-top:auto;
+
+    font-size:15px;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+}
+
+.watch-btn:hover{
+
+    letter-spacing:2px;
+
+}
+
+
+/* Card Image */
+
+.video-card img{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    transition:.45s ease;
+
+}
+
+.video-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+
+/* Card Border Animation */
+
+.video-card{
+
+    position:relative;
+
+}
+
+.video-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:1px solid transparent;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.video-card:hover::after{
+
+    border-color:var(--gold);
+
+}
+
+
+/* Section Heading */
+
+.section-heading{
+
+    margin-bottom:70px;
+
+}
+
+.section-heading h2{
+
+    letter-spacing:1px;
+
+}
+
+
+/* CTA */
+
+.portfolio-cta{
+
+    border-top:1px solid var(--border);
+
+}
+
+
+/* Footer */
+
+.portfolio-footer{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+    .video-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:28px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .video-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .video-content{
+
+        padding:22px;
+
+    }
+
+    .video-content h3{
+
+        font-size:24px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .section-heading h2{
+
+        font-size:32px;
+
+    }
+
+    .video-content p{
+
+        font-size:15px;
+
+    }
+
+}
