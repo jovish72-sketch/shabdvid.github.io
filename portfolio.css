@@ -901,3 +901,38 @@ INTRO
     }
 
 }
+/*==================================================
+                CHANNEL BADGE
+==================================================*/
+
+.channel-badge{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:22px 20px 10px;
+
+    background:#ffffff;
+
+}
+
+.channel-logo{
+
+    width:140px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    transition:.35s ease;
+
+}
+
+.video-card:hover .channel-logo{
+
+    transform:scale(1.08);
+
+}
