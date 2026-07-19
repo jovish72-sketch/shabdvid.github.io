@@ -896,3 +896,20 @@ INTRO
     }
 
 }
+/* ==========================
+   ROLE BADGE
+========================== */
+
+.role-badge{
+    display:inline-block;
+    margin:12px 0 18px;
+    padding:6px 14px;
+    border:1px solid rgba(212,175,55,.35);
+    border-radius:30px;
+    color:#D4AF37;
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    background:rgba(212,175,55,.08);
+}
