@@ -354,18 +354,12 @@ INTRO
                     VIDEO IMAGE
 ==================================================*/
 
-.video-card img{
-
+..video-card img{
     width:100%;
-
-    aspect-ratio:16/9;
-
+    height:420px;
     object-fit:cover;
-
+    object-position:center;
     display:block;
-
-    transition:transform .5s ease;
-
 }
 
 .video-card:hover img{
