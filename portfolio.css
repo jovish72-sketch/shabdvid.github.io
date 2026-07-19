@@ -737,9 +737,9 @@ INTRO
 
     aspect-ratio:16/9;
 
-    object-fit:cover;
+    object-fit:contain;
 
-    transition:.45s ease;
+    background:#111;
 
 }
 
