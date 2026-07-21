@@ -732,15 +732,12 @@ INTRO
 /* Card Image */
 
 .video-card img{
-
     width:100%;
-
-    aspect-ratio:16/9;
-
-    object-fit:cover;
-
-    object-position:center top;
-
+    height:280px;
+    object-fit:contain;
+    object-position:center;
+    background:#111;
+    display:block;
 }
 
 .video-card:hover img{
@@ -842,16 +839,16 @@ INTRO
 
     .video-content{
 
-        padding:22px;
+        padding:20px;
 
     }
 
     .video-content h3{
-
-        font-size:24px;
-
-    }
-
+    font-size:18px;
+    line-height:1.4;
+    min-height:auto;
+    margin-bottom:12px;
+}
 }
 
 @media(max-width:576px){
@@ -862,11 +859,11 @@ INTRO
 
     }
 
-    .video-content p{
-
-        font-size:15px;
-
-    }
+   .video-content p{
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:18px;
+}
 
 }
 /* ==========================
