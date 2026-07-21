@@ -315,9 +315,9 @@ INTRO
 
 .video-grid{
     display:grid;
-    grid-template-columns:repeat(2, minmax(0, 480px));
-    justify-content:center;
-    gap:35px;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:30px;
+    margin-top:60px;
 }
 
 /*==================================================
@@ -734,10 +734,9 @@ INTRO
 
 .video-card img{
     width:100%;
-    height:280px;
-    object-fit:contain;
-    object-position:center;
-    background:#111;
+    height:210px;
+    object-fit:cover;
+    object-position:center top;
     display:block;
 }
 
@@ -818,38 +817,39 @@ INTRO
    Responsive
 ========================== */
 
-@media(max-width:992px){
+/* Tablet */
+
+@media (max-width:992px){
 
     .video-grid{
-
         grid-template-columns:repeat(2,1fr);
-
-        gap:28px;
-
     }
 
 }
 
-@media(max-width:768px){
+/* Mobile */
+
+@media (max-width:768px){
 
     .video-grid{
-
         grid-template-columns:1fr;
-
     }
 
+}
     .video-content{
-
-        padding:20px;
-
-    }
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
 
     .video-content h3{
-    font-size:18px;
+    font-family:"Cinzel",serif;
+    font-size:1.3rem;
+    color:var(--dark);
     line-height:1.4;
+    margin-bottom:10px;
     min-height:auto;
-    margin-bottom:12px;
-}
 }
 
 @media(max-width:576px){
@@ -861,11 +861,11 @@ INTRO
     }
 
    .video-content p{
-    font-size:14px;
+    color:var(--text);
+    font-size:.95rem;
     line-height:1.7;
     margin-bottom:18px;
 }
-
 }
 /* ==========================
    ROLE BADGE
@@ -873,14 +873,14 @@ INTRO
 
 .role-badge{
     display:inline-block;
-    margin:12px 0 18px;
-    padding:6px 14px;
+    margin:8px 0 14px;
+    padding:5px 12px;
     border:1px solid rgba(212,175,55,.35);
     border-radius:30px;
     color:#D4AF37;
-    font-size:.85rem;
+    background:rgba(212,175,55,.08);
+    font-size:.72rem;
     font-weight:600;
     letter-spacing:.8px;
     text-transform:uppercase;
-    background:rgba(212,175,55,.08);
 }
