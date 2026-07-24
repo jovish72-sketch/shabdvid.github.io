@@ -197,14 +197,12 @@ section{
 
 .intro-section{
 
-    padding-top:20px;
-    padding-bottom:70px;
-
+   padding:10px 0 55px;
 }
 
 .intro-content{
 
-    max-width:760px;
+    max-width:690px;
     margin:0 auto;
     text-align:center;
 
@@ -213,16 +211,17 @@ section{
 .intro-content h1{
 
     font-family:"Cinzel",serif;
-    font-size:52px;
-    margin-bottom:22px;
+    font-size:48px;
+    margin-bottom:18px;
     color:var(--dark);
+    line-height:1.2;
 
 }
 
 .intro-content p{
 
     font-size:18px;
-    line-height:1.9;
+    line-height:1.85;
     color:var(--text);
 
 }
