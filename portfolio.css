@@ -1219,12 +1219,12 @@ section{
 .all-collections-btn {
     will-change: transform;
 }
-
-/*=====================================================
-  HERO SECTION
-=====================================================*/
+/* =====================================================
+        STATE GOVERNMENT HERO (OVERRIDE)
+===================================================== */
 
 .page-hero{
+
     position:relative;
     min-height:100vh;
     display:flex;
@@ -1235,79 +1235,75 @@ section{
 
     background:
     linear-gradient(180deg,
-    rgba(8,8,8,.92) 0%,
-    rgba(8,8,8,.85) 55%,
-    #0b0b0b 100%);
+    #0b0b0b 0%,
+    #111111 55%,
+    #171717 100%);
+
 }
 
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:
-    radial-gradient(circle at top,
-    rgba(212,175,55,.12),
-    transparent 55%);
-    pointer-events:none;
-}
-
-.hero-content{
+.page-hero .container{
 
     position:relative;
     z-index:5;
 
+}
+
+.page-hero .hero-content{
+
+    position:static;
+    transform:none;
+
+    width:100%;
     max-width:900px;
 
     margin:0 auto;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
 
 }
 
-.hero-subtitle{
+.page-hero .hero-subtitle{
 
     display:inline-block;
 
-    margin-bottom:28px;
+    margin-bottom:25px;
 
     padding:10px 24px;
 
     border:1px solid rgba(212,175,55,.30);
 
-    border-radius:40px;
-
-    color:#D4AF37;
+    border-radius:50px;
 
     background:rgba(212,175,55,.08);
 
-    text-transform:uppercase;
-
-    letter-spacing:2px;
+    color:#D4AF37;
 
     font-size:.82rem;
 
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
 }
 
-.hero-content h1{
+.page-hero h1{
 
-    font-size:5rem;
+    font-family:"Cinzel",serif;
+
+    font-size:72px;
 
     line-height:1.15;
 
-    color:#fff;
+    color:#ffffff;
 
-    margin-bottom:30px;
-
-    font-family:'Cinzel',serif;
+    margin-bottom:25px;
 
 }
 
-.hero-content h1 span{
+.page-hero h1 span{
 
     display:block;
 
@@ -1315,19 +1311,62 @@ section{
 
 }
 
-.hero-content p{
+.page-hero p{
 
     max-width:760px;
 
-    margin:0 auto;
+    color:#d2d2d2;
 
-    color:#d4d4d4;
+    font-size:18px;
 
-    font-size:1.15rem;
-
-    line-height:2;
+    line-height:1.9;
 
 }
+
+.page-hero .scroll-indicator{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:translateX(-50%);
+
+}
+
+.page-hero .mouse{
+
+    width:30px;
+
+    height:48px;
+
+    border:2px solid rgba(255,255,255,.6);
+
+    border-radius:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding-top:8px;
+
+}
+
+.page-hero .wheel{
+
+    width:4px;
+
+    height:10px;
+
+    border-radius:10px;
+
+    background:#ffffff;
+
+    animation:scrollDown 2s infinite;
+
+}
+
 
 .scroll-indicator{
 
