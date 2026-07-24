@@ -1221,95 +1221,169 @@ section{
 }
 
 /*=====================================================
-  STATE GOVERNMENT PROJECTS
-  PART 1 : HERO SECTION
+  HERO SECTION
 =====================================================*/
 
 .page-hero{
     position:relative;
-    min-height:90vh;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    overflow:hidden;
     text-align:center;
-    background:
-        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.78)),
-        url("images/backgrounds/state-government-banner.jpg")
-        center center/cover no-repeat;
-}
+    overflow:hidden;
 
-.page-hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
     background:
-        radial-gradient(circle at top,
-        rgba(212,175,55,.18),
-        transparent 60%);
-    pointer-events:none;
+    linear-gradient(180deg,
+    rgba(8,8,8,.92) 0%,
+    rgba(8,8,8,.85) 55%,
+    #0b0b0b 100%);
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
     background:
-        linear-gradient(
-        180deg,
-        rgba(0,0,0,.10) 0%,
-        rgba(0,0,0,.40) 40%,
-        rgba(0,0,0,.78) 100%);
-    z-index:1;
+    radial-gradient(circle at top,
+    rgba(212,175,55,.12),
+    transparent 55%);
+    pointer-events:none;
 }
 
 .hero-content{
+
     position:relative;
-    z-index:2;
+    z-index:5;
+
     max-width:900px;
-    margin:auto;
+
+    margin:0 auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
 }
 
 .hero-subtitle{
+
     display:inline-block;
-    margin-bottom:20px;
-    padding:8px 20px;
-    border:1px solid rgba(212,175,55,.35);
+
+    margin-bottom:28px;
+
+    padding:10px 24px;
+
+    border:1px solid rgba(212,175,55,.30);
+
     border-radius:40px;
+
+    color:#D4AF37;
+
     background:rgba(212,175,55,.08);
-    color:var(--primary-color);
-    font-size:.9rem;
-    letter-spacing:2px;
+
     text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:.82rem;
+
 }
 
 .hero-content h1{
-    font-size:4rem;
+
+    font-size:5rem;
+
     line-height:1.15;
-    font-weight:700;
+
     color:#fff;
-    margin-bottom:22px;
+
+    margin-bottom:30px;
+
+    font-family:'Cinzel',serif;
+
 }
 
 .hero-content h1 span{
-    color:var(--primary-color);
+
+    display:block;
+
+    color:#D4AF37;
+
 }
 
 .hero-content p{
+
     max-width:760px;
-    margin:auto;
+
+    margin:0 auto;
+
+    color:#d4d4d4;
+
     font-size:1.15rem;
-    line-height:1.9;
-    color:#d7d7d7;
+
+    line-height:2;
+
 }
 
-.page-hero .scroll-indicator{
+.scroll-indicator{
+
     position:absolute;
+
+    bottom:45px;
+
     left:50%;
-    bottom:35px;
+
     transform:translateX(-50%);
-    z-index:5;
+
+    z-index:10;
+
 }
 
+@media(max-width:992px){
+
+.hero-content h1{
+
+font-size:4rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.page-hero{
+
+padding:120px 20px 80px;
+
+min-height:85vh;
+
+}
+
+.hero-content h1{
+
+font-size:3rem;
+
+}
+
+.hero-content p{
+
+font-size:1rem;
+
+}
+
+.hero-subtitle{
+
+font-size:.72rem;
+
+letter-spacing:1px;
+
+}
+
+}
 /*=====================================================
   STATE GOVERNMENT PROJECTS
   PART 2 : INTRODUCTION SECTION
@@ -1318,7 +1392,7 @@ section{
 .portfolio-intro{
     position:relative;
     padding:120px 0;
-    background:#0b0b0b;
+    background:#121212;
     overflow:hidden;
 }
 
@@ -1558,15 +1632,23 @@ section{
     line-height:1.35;
 }
 
-..project-role{
+.project-role{
 
-    color:#D4AF37 !important;
+display:inline-block;
 
-    border:1px solid rgba(212,175,55,.35);
+padding:10px 20px;
 
-    background:rgba(212,175,55,.12);
+margin:18px 0;
 
-    font-weight:600;
+background:#D4AF37;
+
+color:#111;
+
+font-weight:600;
+
+border-radius:30px;
+
+font-size:.82rem;
 
 }
 
