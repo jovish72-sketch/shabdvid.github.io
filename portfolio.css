@@ -1558,17 +1558,16 @@ section{
     line-height:1.35;
 }
 
-.project-role{
-    display:inline-block;
-    margin-bottom:18px;
-    padding:8px 16px;
-    border-radius:30px;
+..project-role{
+
+    color:#D4AF37 !important;
+
+    border:1px solid rgba(212,175,55,.35);
+
     background:rgba(212,175,55,.12);
-    border:1px solid rgba(212,175,55,.25);
-    color:var(--primary-color);
-    font-size:.82rem;
+
     font-weight:600;
-    letter-spacing:.5px;
+
 }
 
 .video-content p{
