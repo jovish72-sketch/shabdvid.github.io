@@ -1355,3 +1355,118 @@ letter-spacing:1px;
     }
 
 }
+/*==================================================
+        SONGS & JINGLES - CARD FIX
+        Only affects songs-and-jingles.html
+==================================================*/
+
+.songs-page .video-card{
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+/* Poster */
+
+.songs-page .video-card > a,
+.songs-page .video-card > img{
+    width:100%;
+    display:block;
+    flex-shrink:0;
+}
+
+.songs-page .video-card > a img,
+.songs-page .video-card > img{
+    width:100%;
+    height:auto;
+    aspect-ratio:2 / 3;
+    object-fit:contain;
+    object-position:center;
+    background:#111;
+    transform:none;
+}
+
+/* Do not zoom/crop song posters */
+
+.songs-page .video-card:hover > a img,
+.songs-page .video-card:hover > img{
+    transform:none;
+}
+
+/* Card Details */
+
+.songs-page .video-content{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    padding:26px 26px 28px;
+}
+
+/* Song Title */
+
+.songs-page .video-content h3{
+    min-height:0;
+    margin-bottom:10px;
+    font-size:22px;
+    line-height:1.35;
+}
+
+/* Role / Song Type */
+
+.songs-page .role-badge{
+    align-self:flex-start;
+    margin:0 0 16px;
+    white-space:normal;
+    line-height:1.5;
+}
+
+/* Description */
+
+.songs-page .video-content p{
+    display:block;
+    overflow:visible;
+    height:auto;
+    min-height:0;
+    margin-bottom:24px;
+    line-height:1.75;
+}
+
+/* Watch / Coming Soon Button */
+
+.songs-page .watch-btn{
+    margin-top:auto;
+}
+
+/* Coming Soon button */
+
+.songs-page .disabled-btn{
+    cursor:default;
+    opacity:.8;
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+    .songs-page .video-card > a img,
+    .songs-page .video-card > img{
+        aspect-ratio:2 / 3;
+        height:auto;
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:767px){
+
+    .songs-page .video-content{
+        padding:22px;
+    }
+
+    .songs-page .video-content h3{
+        font-size:21px;
+    }
+
+}
