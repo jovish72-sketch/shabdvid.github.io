@@ -1356,117 +1356,156 @@ letter-spacing:1px;
 
 }
 /*==================================================
-        SONGS & JINGLES - CARD FIX
-        Only affects songs-and-jingles.html
+        SONGS & JINGLES - FINAL POSTER FIX
 ==================================================*/
 
+/* Card */
+
 .songs-page .video-card{
-    height:auto;
+    height:100%;
     display:flex;
     flex-direction:column;
     overflow:hidden;
 }
 
-/* Poster */
 
-.songs-page .video-card > a,
-.songs-page .video-card > img{
-    width:100%;
+/*==================================================
+        SONG POSTER - FULL IMAGE
+==================================================*/
+
+.songs-page .video-card > a{
     display:block;
-    flex-shrink:0;
+    width:100%;
+    overflow:hidden;
+    background:#111;
 }
 
 .songs-page .video-card > a img,
 .songs-page .video-card > img{
+
+    display:block;
+
     width:100%;
-    height:auto;
-    aspect-ratio:2 / 3;
-    object-fit:contain;
-    object-position:center;
-    background:#111;
-    transform:none;
+
+    /* IMPORTANT */
+    height:auto !important;
+
+    aspect-ratio:auto !important;
+
+    object-fit:contain !important;
+
+    object-position:center !important;
+
+    transform:none !important;
+
 }
 
-/* Do not zoom/crop song posters */
+
+/* Disable common portfolio image zoom */
 
 .songs-page .video-card:hover > a img,
 .songs-page .video-card:hover > img{
-    transform:none;
+
+    transform:none !important;
+
 }
 
-/* Card Details */
+
+/*==================================================
+        CARD CONTENT
+==================================================*/
 
 .songs-page .video-content{
+
     display:flex;
+
     flex-direction:column;
+
     flex:1;
-    padding:26px 26px 28px;
+
+    padding:28px 28px 30px;
+
 }
 
-/* Song Title */
+
+/* Title */
 
 .songs-page .video-content h3{
-    min-height:0;
-    margin-bottom:10px;
+
+    min-height:0 !important;
+
+    height:auto;
+
     font-size:22px;
+
     line-height:1.35;
+
+    margin:0 0 16px;
+
 }
 
-/* Role / Song Type */
+
+/* Badge */
 
 .songs-page .role-badge{
+
     align-self:flex-start;
-    margin:0 0 16px;
-    white-space:normal;
-    line-height:1.5;
+
+    width:auto;
+
+    margin:0 0 18px;
+
+    padding:6px 14px;
+
+    line-height:1.4;
+
 }
+
 
 /* Description */
 
 .songs-page .video-content p{
+
     display:block;
-    overflow:visible;
+
     height:auto;
+
     min-height:0;
-    margin-bottom:24px;
-    line-height:1.75;
+
+    overflow:visible;
+
+    margin-bottom:26px;
+
+    line-height:1.8;
+
 }
 
-/* Watch / Coming Soon Button */
+
+/* Button */
 
 .songs-page .watch-btn{
+
     margin-top:auto;
-}
-
-/* Coming Soon button */
-
-.songs-page .disabled-btn{
-    cursor:default;
-    opacity:.8;
-}
-
-/* Tablet */
-
-@media(max-width:991px){
-
-    .songs-page .video-card > a img,
-    .songs-page .video-card > img{
-        aspect-ratio:2 / 3;
-        height:auto;
-    }
 
 }
 
-/* Mobile */
+
+/*==================================================
+        MOBILE
+==================================================*/
 
 @media(max-width:767px){
 
     .songs-page .video-content{
+
         padding:22px;
+
     }
 
     .songs-page .video-content h3{
-        font-size:21px;
+
+        font-size:20px;
+
     }
 
 }
