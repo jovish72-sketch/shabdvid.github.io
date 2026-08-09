@@ -1509,3 +1509,63 @@ letter-spacing:1px;
     }
 
 }
+
+
+/*==================================================
+        BOOKS & ARTICLES - PORTRAIT CARDS
+==================================================*/
+
+.book-cover,
+.article-cover{
+    width:100%;
+    aspect-ratio:2 / 3;
+    overflow:hidden;
+    background:#F8F5EF;
+}
+
+.book-cover img,
+.article-cover img{
+    width:100%;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center;
+    display:block;
+    transform:none !important;
+}
+
+
+/* Prevent image zoom on hover */
+
+.video-card:hover .book-cover img,
+.video-card:hover .article-cover img{
+    transform:none !important;
+}
+
+
+/* Keep all book cards equal */
+
+.video-grid .video-card{
+    height:100%;
+}
+
+
+/* Book card content */
+
+.book-cover + .video-content,
+.article-cover + .video-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+
+/* Mobile */
+
+@media(max-width:767px){
+
+    .book-cover,
+    .article-cover{
+        aspect-ratio:2 / 3;
+    }
+
+}
