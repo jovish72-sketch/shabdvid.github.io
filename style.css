@@ -689,7 +689,13 @@ transform:translateY(18px);
 }
 
 }
+/* =====================================================
+   VOICE OVER SCROLL INDICATOR FIX
+===================================================== */
 
+.voiceover-page .scroll-indicator{
+    bottom:20px !important;
+}
 
 /* =====================================================
                 HERO RESPONSIVE
