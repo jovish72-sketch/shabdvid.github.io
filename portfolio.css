@@ -1845,3 +1845,27 @@ letter-spacing:1px;
     max-width: 850px;
     margin: 0 auto;
 }
+
+/* =====================================================
+   VOICEOVERS HERO — FINAL SIZE OVERRIDE
+===================================================== */
+
+body.voiceovers-page .hero-section {
+    height: 70vh !important;
+    min-height: 500px !important;
+    max-height: 700px !important;
+    overflow: hidden !important;
+}
+
+body.voiceovers-page .hero-poster {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+body.voiceovers-page .hero-poster img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
