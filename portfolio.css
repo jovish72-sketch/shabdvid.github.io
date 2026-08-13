@@ -1569,3 +1569,126 @@ letter-spacing:1px;
     }
 
 }
+
+   /* =====================================================
+       VOICEOVER CARDS
+===================================================== */
+
+.video-grid .video-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+/* Voiceover Visual Area */
+
+.video-card .video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #f4eee5,
+        #e8ded1
+    );
+}
+
+
+/* Microphone Placeholder */
+
+.video-card .video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+/* Microphone Icon */
+
+.video-card .video-placeholder i {
+    font-size: 58px;
+    opacity: 0.65;
+}
+
+
+/* Subtle Audio Wave */
+
+.video-card .video-placeholder::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 42px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            currentColor 10%,
+            transparent 20%,
+            currentColor 30%,
+            transparent 40%,
+            currentColor 50%,
+            transparent 60%,
+            currentColor 70%,
+            transparent 80%,
+            currentColor 90%,
+            transparent 100%
+        );
+
+    opacity: 0.12;
+}
+
+
+/* Card Content */
+
+.video-card .video-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Description */
+
+.video-card .video-content p {
+    margin-bottom: 22px;
+}
+
+
+/* Button stays at bottom */
+
+.video-card .watch-btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+
+/* Coming Soon Card */
+
+.video-card .disabled-btn {
+    opacity: 0.55;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+                    MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .video-card .video-thumbnail {
+        height: 220px;
+    }
+
+    .video-card .video-placeholder i {
+        font-size: 50px;
+    }
+
+}
