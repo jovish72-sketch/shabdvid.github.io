@@ -1692,3 +1692,118 @@ letter-spacing:1px;
     }
 
 }
+
+/* =====================================================
+            VOICEOVERS PAGE - HERO
+===================================================== */
+
+.portfolio-hero {
+    padding: 150px 0 110px;
+    background: var(--bg);
+    text-align: center;
+}
+
+.portfolio-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.portfolio-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.portfolio-hero h1 {
+    font-family: "Cinzel", serif;
+    font-size: 58px;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.portfolio-hero h1 span {
+    color: var(--gold);
+}
+
+.portfolio-hero p {
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+
+/* =====================================================
+            VOICEOVERS PAGE - INTRO
+===================================================== */
+
+.portfolio-intro {
+    padding: 100px 0;
+    background: var(--bg);
+}
+
+.portfolio-intro .intro-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.portfolio-intro .intro-content > span {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.portfolio-intro .intro-content h2 {
+    font-family: "Cinzel", serif;
+    font-size: 44px;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.portfolio-intro .intro-content h2 em {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.portfolio-intro .intro-content p {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+                VOICEOVERS - MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .portfolio-hero {
+        padding: 120px 0 80px;
+    }
+
+    .portfolio-hero h1 {
+        font-size: 38px;
+    }
+
+    .portfolio-hero p {
+        font-size: 16px;
+    }
+
+    .portfolio-intro {
+        padding: 75px 0;
+    }
+
+    .portfolio-intro .intro-content h2 {
+        font-size: 34px;
+    }
+
+}
