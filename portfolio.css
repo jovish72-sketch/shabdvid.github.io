@@ -1869,3 +1869,27 @@ body.voiceovers-page .hero-poster img {
     object-fit: cover !important;
     display: block !important;
 }
+
+/* =====================================================
+   VOICEOVER POSTER FINAL FIX
+===================================================== */
+
+.voiceover-page .video-thumbnail{
+    width:100%;
+    height:auto;
+    aspect-ratio:16 / 9;
+    overflow:hidden;
+}
+
+.voiceover-page .video-thumbnail img{
+    width:100% !important;
+    height:100% !important;
+    display:block;
+    object-fit:cover !important;
+    object-position:center center !important;
+    transform:none !important;
+}
+
+.voiceover-page .video-card:hover .video-thumbnail img{
+    transform:none !important;
+}
