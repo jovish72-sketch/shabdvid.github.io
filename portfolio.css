@@ -713,9 +713,9 @@ section{
 
     height:210px;
 
-    object-fit:cover;
+    object-fit:contain;
 
-    object-position:center top;
+    object-position:center center વ;
 
     display:block;
 
