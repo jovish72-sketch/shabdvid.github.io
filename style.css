@@ -7401,29 +7401,6 @@ font-size:18px;
 }
 
 
-/* ================= SECTION HEADING ================= */
-
-.spotlight-heading {
-    max-width: 720px;
-    margin: 0 auto 65px;
-    text-align: center;
-}
-
-.spotlight-heading > span {
-    display: inline-block;
-    margin-bottom: 12px;
-}
-
-.spotlight-heading h2 {
-    margin-bottom: 18px;
-}
-
-.spotlight-heading p {
-    max-width: 620px;
-    margin: 0 auto;
-}
-
-
 /* =====================================================
                     MAIN GRID
 ===================================================== */
