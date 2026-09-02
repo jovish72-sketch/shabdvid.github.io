@@ -1,1 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <!-- ================= META ================= -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Writing | Shabdvid</title>
+
+    <meta name="description"
+          content="Digital Writing projects by Vishal H. Joshi – Shabdvid.">
+
+
+    <!-- ================= FAVICON ================= -->
+
+    <link rel="icon"
+          href="images/favicon.png">
+
+
+    <!-- ================= GOOGLE FONTS ================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ================= FONT AWESOME ================= -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- ================= CSS ================= -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="stylesheet"
+          href="portfolio.css">
+
+</head>
+
+
+<body class="digital-writing-page">
+
+
+<!-- =====================================================
+                        HEADER
+===================================================== -->
+
+<header class="portfolio-header">
+
+    <div class="container">
+
+        <a href="index.html"
+           class="back-btn">
+
+            ← Home
+
+        </a>
+
+
+        <a href="index.html#collections"
+           class="catalog-btn">
+
+            All Collections →
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+                        HERO
+===================================================== -->
+
+<section class="hero-section"
+         style="height:82vh !important;
+                min-height:0 !important;
+                padding:0 !important;
+                margin:0 !important;
+                position:relative !important;
+                overflow:hidden !important;">
+
+    <div class="hero-poster"
+         style="width:100% !important;
+                height:100% !important;
+                margin:0 !important;
+                padding:0 !important;
+                overflow:hidden !important;">
+
+        <img src="images/digital-writing.jpg"
+             alt="Digital Writing"
+             style="display:block !important;
+                    width:100% !important;
+                    height:100% !important;
+                    max-width:none !important;
+                    object-fit:cover !important;
+                    object-position:center center !important;">
+
+    </div>
+
+
+    <a href="#intro"
+       class="scroll-indicator">
+
+        <div class="mouse">
+
+            <span></span>
+
+        </div>
+
+
+        <div class="chevrons">
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+                        INTRO
+===================================================== -->
+
+<section class="intro-section"
+         id="intro">
+
+    <div class="container">
+
+        <div class="intro-content">
+
+            <h1>
+
+                Digital Writing
+
+            </h1>
+
+
+            <p>
+
+                Words have the power to inform, inspire and create meaningful
+                connections. This collection showcases digital writing created
+                for websites, online platforms, campaigns and other digital
+                communication formats, where every idea is shaped with clarity,
+                creativity and purpose.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+                    JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+
+    const navbar =
+        document.querySelector(".navbar");
+
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener("click", () => {
+
+            navbar.classList.toggle("active");
+
+            menuToggle.classList.toggle("active");
+
+        });
+
+    }
+
+
+    window.addEventListener("scroll", () => {
+
+        const header =
+            document.querySelector(".header");
+
+
+        if (header) {
+
+            if (window.scrollY > 60) {
+
+                header.classList.add("header-scrolled");
+
+            } else {
+
+                header.classList.remove("header-scrolled");
+
+            }
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
+
+<!-- =====================================================
+                DIGITAL WRITING PROJECTS
+===================================================== -->
+
+<section class="featured-videos">
+
+    <div class="container">
+
+
+        <!-- ================= SECTION HEADING ================= -->
+
+        <div class="section-heading">
+
+            <span>
+
+                DIGITAL WRITING PROJECTS
+
+            </span>
+
+
+            <h2>
+
+                Selected Digital Writing Works
+
+            </h2>
+
+
+            <p>
+
+                A selection of digital writing projects created for
+                online platforms, digital campaigns and meaningful
+                communication.
+
+            </p>
+
+        </div>
+
+
+        <!-- =====================================================
+                    DIGITAL WRITING CARDS
+        ===================================================== -->
+
+        <div class="video-grid">
+
+
+            <!-- ================= CARD 01 ================= -->
+
+            <article class="video-card">
+
+                <div class="video-thumbnail">
+
+                    <!-- COVER IMAGE WILL BE ADDED LATER -->
+
+                </div>
+
+
+                <div class="video-content">
+
+                    <span class="role-badge">
+
+                        Digital Writing
+
+                    </span>
+
+
+                    <h3>
+
+                        Project Title
+
+                    </h3>
+
+
+                    <p>
+
+                        Project details will be added soon.
+
+                    </p>
+
+
+                    <a href="#"
+                       class="watch-btn">
+
+                        <i class="fas fa-arrow-right"></i>
+
+                        Explore
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= CARD 02 ================= -->
+
+            <article class="video-card">
+
+                <div class="video-thumbnail">
+
+                    <!-- COVER IMAGE WILL BE ADDED LATER -->
+
+                </div>
+
+
+                <div class="video-content">
+
+                    <span class="role-badge">
+
+                        Digital Writing
+
+                    </span>
+
+
+                    <h3>
+
+                        Project Title
+
+                    </h3>
+
+
+                    <p>
+
+                        Project details will be added soon.
+
+                    </p>
+
+
+                    <a href="#"
+                       class="watch-btn">
+
+                        <i class="fas fa-arrow-right"></i>
+
+                        Explore
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= CARD 03 ================= -->
+
+            <article class="video-card">
+
+                <div class="video-thumbnail">
+
+                    <!-- COVER IMAGE WILL BE ADDED LATER -->
+
+                </div>
+
+
+                <div class="video-content">
+
+                    <span class="role-badge">
+
+                        Coming Soon
+
+                    </span>
+
+
+                    <h3>
+
+                        More Digital Writing
+
+                    </h3>
+
+
+                    <p>
+
+                        More digital writing projects and creative
+                        works are coming soon.
+
+                    </p>
+
+
+                    <span class="watch-btn disabled-btn">
+
+                        Coming Soon
+
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ===============================
+     COLLECTION NAVIGATION
+================================ -->
+
+<div class="collection-navigation">
+
+
+    <!-- ================= PREVIOUS ================= -->
+
+    <a href="voiceover.html"
+       class="collection-nav prev">
+
+        <i class="fas fa-arrow-left"></i>
+
+
+        <span>
+
+            Previous
+
+        </span>
+
+    </a>
+
+
+    <!-- ================= ALL COLLECTIONS ================= -->
+
+    <a href="index.html#collections"
+       class="all-collections-btn">
+
+        View All Collections
+
+    </a>
+
+
+    <!-- ================= NEXT ================= -->
+
+    <a href="#"
+       class="collection-nav next">
+
+        <span>
+
+            Next
+
+        </span>
+
+
+        <i class="fas fa-arrow-right"></i>
+
+    </a>
+
+</div>
+<!-- =====================================================
+                    CALL TO ACTION
+===================================================== -->
+
+<section class="portfolio-cta">
+
+    <div class="container">
+
+        <div class="cta-content">
+
+            <span>
+
+                LET'S CREATE SOMETHING MEANINGFUL
+
+            </span>
+
+
+            <h2>
+
+                Looking For Words That
+                Create An Impact?
+
+            </h2>
+
+
+            <p>
+
+                From websites and digital platforms to campaigns,
+                creative content and meaningful communication,
+                let's craft words that connect with your audience
+                and give every idea a clear voice.
+
+            </p>
+
+
+            <a href="index.html#contact"
+               class="cta-btn">
+
+                Let's Discuss Your Project
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+                        FOOTER
+===================================================== -->
+
+<footer class="portfolio-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <h3>
+
+                SHABDVID
+
+            </h3>
+
+
+            <p>
+
+                Crafting Stories That Inspire.
+
+            </p>
+
+
+            <p>
+
+                © 2026 Shabdvid.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
