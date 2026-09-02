@@ -7833,3 +7833,71 @@ font-size:18px;
     }
 
 }
+
+/* =====================================================
+     SPOTLIGHT RIGHT SIDE - EXACT BOTTOM ALIGNMENT
+===================================================== */
+
+@media (min-width: 993px) {
+
+    /* બંને columns સરખી heightમાં stretch થાય */
+
+    .spotlight-grid {
+        align-items: stretch;
+    }
+
+
+    /* LEFT SIDE */
+
+    .spotlight-main {
+        height: 100%;
+    }
+
+
+    /* RIGHT SIDE - આખી height LEFT SIDE જેટલી */
+
+    .spotlight-sidebar {
+        height: 100%;
+        align-self: stretch;
+
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+        gap: 28px;
+    }
+
+
+    /* બંને right-side boxes grid row પ્રમાણે fit થાય */
+
+    .instagram-box,
+    .photo-highlights-box {
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* Instagram થોડું મોટું દેખાય તે માટે */
+
+    .instagram-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .instagram-feed-placeholder {
+        flex: 1;
+        min-height: 300px;
+    }
+
+
+    /* Photo Highlights પણ પોતાની rowની આખી height લે */
+
+    .photo-highlights-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photo-highlight-placeholder {
+        flex: 1;
+    }
+
+}
