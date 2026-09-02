@@ -1893,3 +1893,28 @@ body.voiceovers-page .hero-poster img {
 .voiceover-page .video-card:hover .video-thumbnail img{
     transform:none !important;
 }
+
+/* =========================================
+   DIGITAL WRITING – POSTER IMAGE FIX
+========================================= */
+
+.video-thumbnail {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+}
+
+.video-thumbnail img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
