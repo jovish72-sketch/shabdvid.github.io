@@ -2061,380 +2061,239 @@ Contact
 <!-- ==========================================
                 JAVASCRIPT
 ========================================== -->
-
 <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+    const spotlight = document.getElementById("spotlight");
+
+    if (!spotlight) return;
 
 
-    /* ==========================================
-            HEADER SCROLL
-    ========================================== */
+    /* =====================================================
+       CREATE THE STAGE LIGHT
+    ===================================================== */
 
-    const header = document.querySelector(".header");
+    const beam = document.createElement("div");
 
-    window.addEventListener("scroll",()=>{
+    beam.className = "stage-light-beam";
 
-        if(window.scrollY>50){
+    spotlight.appendChild(beam);
 
-            header.classList.add("header-scrolled");
 
-        }
+    /* =====================================================
+       FIND THE SPOTLIGHT SOURCE
+       The light starts from the SPOTLIGHT heading
+    ===================================================== */
 
-        else{
+    const heading =
+        spotlight.querySelector(".spotlight-heading") ||
+        spotlight.querySelector(".section-heading");
 
-            header.classList.remove("header-scrolled");
 
-        }
+    /* =====================================================
+       FIND THE THINGS WE CAN FOCUS
+    ===================================================== */
 
-    });
+    const targets = spotlight.querySelectorAll(
+        ".featured-story-card, " +
+        ".news-preview-card, " +
+        ".instagram-box, " +
+        ".photo-highlights-box"
+    );
 
-/* ==========================================
-        INTRO SCREEN
-========================================== */
 
-const intro = document.getElementById("intro-screen");
+    /* =====================================================
+       MOVE THE LIGHT TO THE MOUSE TARGET
+    ===================================================== */
 
-if(intro){
+    function moveLight(target) {
 
-    if(sessionStorage.getItem("introShown")){
+        if (!heading || !target) return;
 
-        intro.style.display = "none";
 
-    }else{
+        const spotlightRect =
+            spotlight.getBoundingClientRect();
 
-        intro.addEventListener("click",()=>{
+        const headingRect =
+            heading.getBoundingClientRect();
 
-            sessionStorage.setItem("introShown","true");
+        const targetRect =
+            target.getBoundingClientRect();
 
-            intro.classList.add("hide");
 
-            setTimeout(()=>{
+        /* ---------------------------------------------
+           SOURCE POINT
+           Center of the Spotlight heading
+        --------------------------------------------- */
 
-                intro.style.display="none";
+        const startX =
+            headingRect.left +
+            headingRect.width / 2 -
+            spotlightRect.left;
 
-            },1000);
+        const startY =
+            headingRect.top +
+            headingRect.height * 0.45 -
+            spotlightRect.top;
+
+
+        /* ---------------------------------------------
+           TARGET POINT
+           Center of the hovered card
+        --------------------------------------------- */
+
+        const endX =
+            targetRect.left +
+            targetRect.width / 2 -
+            spotlightRect.left;
+
+        const endY =
+            targetRect.top +
+            targetRect.height * 0.45 -
+            spotlightRect.top;
+
+
+        /* ---------------------------------------------
+           DISTANCE
+        --------------------------------------------- */
+
+        const dx = endX - startX;
+        const dy = endY - startY;
+
+        const distance =
+            Math.sqrt(dx * dx + dy * dy);
+
+
+        /* ---------------------------------------------
+           ANGLE
+        --------------------------------------------- */
+
+        const angle =
+            Math.atan2(dx, dy) * 180 / Math.PI;
+
+
+        /* ---------------------------------------------
+           BEAM WIDTH
+
+           Wider for larger cards.
+        --------------------------------------------- */
+
+        const beamWidth =
+            Math.max(
+                180,
+                Math.min(targetRect.width * 0.75, 420)
+            );
+
+
+        /* ---------------------------------------------
+           POSITION THE BEAM
+
+           The beam starts at the heading
+           and ENDS at the hovered target.
+        --------------------------------------------- */
+
+        beam.style.left =
+            startX + "px";
+
+        beam.style.top =
+            startY + "px";
+
+        beam.style.width =
+            beamWidth + "px";
+
+        beam.style.height =
+            distance + "px";
+
+        beam.style.transform =
+            "translateX(-50%) rotate(" +
+            angle +
+            "deg)";
+
+        beam.style.opacity = "1";
+
+
+        /* ---------------------------------------------
+           LIGHT THE TARGET
+        --------------------------------------------- */
+
+        targets.forEach(function (item) {
+            item.classList.remove("is-lit");
+        });
+
+        target.classList.add("is-lit");
+    }
+
+
+    /* =====================================================
+       MOUSE ENTER
+    ===================================================== */
+
+    targets.forEach(function (target) {
+
+        target.classList.add("spotlight-focus-target");
+
+        target.addEventListener("mouseenter", function () {
+
+            moveLight(target);
 
         });
 
-    }
+    });
 
-}
-   
-    /* ==========================================
-            FADE IN ANIMATION
-    ========================================== */
 
-    const revealItems = document.querySelectorAll(
+    /* =====================================================
+       WHEN MOUSE LEAVES SPOTLIGHT
+    ===================================================== */
 
-        ".section-title,.service-card,.portfolio-card,.info-card,.journey-card,.client-card,.spotlight-wrapper,.creating-card,.contact-item,.contact-form"
+    spotlight.addEventListener("mouseleave", function () {
 
-    );
+        beam.style.opacity = "0";
 
-    const observer = new IntersectionObserver(
-
-        entries=>{
-
-            entries.forEach(entry=>{
-
-                if(entry.isIntersecting){
-
-                    entry.target.classList.add("show");
-
-                }
-
-            });
-
-        },
-
-        {
-
-            threshold:.15
-
-        }
-
-    );
-
-    revealItems.forEach(item=>{
-
-        observer.observe(item);
+        targets.forEach(function (item) {
+            item.classList.remove("is-lit");
+        });
 
     });
 
 
+    /* =====================================================
+       ACTIVATE DARK STAGE WHEN SPOTLIGHT IS ON SCREEN
+    ===================================================== */
 
-    /* ==========================================
-            COUNTER ANIMATION
-    ========================================== */
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
 
-    const counters = document.querySelectorAll(".stat h3");
+                entries.forEach(function (entry) {
 
-    let counterStarted = false;
+                    if (entry.isIntersecting) {
 
-    function runCounter(){
+                        document.body.classList.add(
+                            "spotlight-active"
+                        );
 
-        if(counterStarted) return;
+                    } else {
 
-        counterStarted = true;
+                        document.body.classList.remove(
+                            "spotlight-active"
+                        );
 
-        counters.forEach(counter=>{
+                    }
 
-            const target = parseInt(counter.innerText);
-
-            let value = 0;
-
-            const speed = target/80;
-
-            const update = ()=>{
-
-                value += speed;
-
-                if(value<target){
-
-                    counter.innerText=Math.floor(value)+"+";
-
-                    requestAnimationFrame(update);
-
-                }
-
-                else{
-
-                    counter.innerText=target+"+";
-
-                }
-
-            };
-
-            update();
-
-        });
-
-    }
-
-    const stats=document.querySelector(".hero-stats");
-
-    if(stats){
-
-        const statsObserver=new IntersectionObserver(
-
-            entries=>{
-
-                if(entries[0].isIntersecting){
-
-                    runCounter();
-
-                }
+                });
 
             },
-
             {
-
-                threshold:.5
-
+                threshold: 0.35
             }
-
         );
-
-        statsObserver.observe(stats);
-
-    }
-
-
-
-    /* ==========================================
-            ACTIVE NAVIGATION
-    ========================================== */
-
-    const sections=document.querySelectorAll("section");
-
-    const navLinks=document.querySelectorAll(".navbar a");
-
-    window.addEventListener("scroll",()=>{
-
-        let current="";
-
-        sections.forEach(section=>{
-
-            const top=section.offsetTop-140;
-
-            const height=section.offsetHeight;
-
-            if(pageYOffset>=top){
-
-                current=section.getAttribute("id");
-
-            }
-
-        });
-
-        navLinks.forEach(link=>{
-
-            link.classList.remove("active");
-
-            if(link.getAttribute("href")==="#"+current){
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    });
-
-});
-
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const spotlight = document.getElementById("spotlight");
-
-    if (!spotlight) return;
-
-
-    /* ==========================================
-            MOUSE FOLLOWING SPOTLIGHT
-    ========================================== */
-
-    spotlight.addEventListener("mousemove", function (event) {
-
-        const rect = spotlight.getBoundingClientRect();
-
-        const x = ((event.clientX - rect.left) / rect.width) * 100;
-        const y = ((event.clientY - rect.top) / rect.height) * 100;
-
-        spotlight.style.setProperty(
-            "--spot-x",
-            x + "%"
-        );
-
-        spotlight.style.setProperty(
-            "--spot-y",
-            y + "%"
-        );
-
-    });
-
-
-    /* ==========================================
-            RESET LIGHT WHEN MOUSE LEAVES
-    ========================================== */
-
-    spotlight.addEventListener("mouseleave", function () {
-
-        spotlight.style.setProperty(
-            "--spot-x",
-            "50%"
-        );
-
-        spotlight.style.setProperty(
-            "--spot-y",
-            "12%"
-        );
-
-    });
-
-
-    /* ==========================================
-            DIM OTHER SECTIONS
-    ========================================== */
-
-    const observer = new IntersectionObserver(
-        function (entries) {
-
-            entries.forEach(function (entry) {
-
-                if (entry.isIntersecting) {
-
-                    document.body.classList.add(
-                        "spotlight-active"
-                    );
-
-                } else {
-
-                    document.body.classList.remove(
-                        "spotlight-active"
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.45
-        }
-    );
 
 
     observer.observe(spotlight);
 
 });
 </script>
-
- <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const spotlight = document.getElementById("spotlight");
-
-    if (!spotlight) return;
-
-    /* =========================================
-       MOVING STAGE LIGHT
-    ========================================= */
-
-    spotlight.addEventListener("mousemove", function (event) {
-
-        const rect = spotlight.getBoundingClientRect();
-
-        let x = ((event.clientX - rect.left) / rect.width) * 100;
-
-        /* Keep the spotlight inside the section */
-        x = Math.max(8, Math.min(92, x));
-
-        spotlight.style.setProperty("--spot-x", x + "%");
-    });
-
-
-    /* Return light to centre */
-    spotlight.addEventListener("mouseleave", function () {
-
-        spotlight.style.setProperty("--spot-x", "50%");
-    });
-
-
-    /* =========================================
-       ACTIVATE SPOTLIGHT WHEN SECTION IS VISIBLE
-    ========================================= */
-
-    const observer = new IntersectionObserver(
-        function (entries) {
-
-            entries.forEach(function (entry) {
-
-                if (entry.isIntersecting) {
-
-                    document.body.classList.add("spotlight-active");
-
-                } else {
-
-                    document.body.classList.remove("spotlight-active");
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.45
-        }
-    );
-
-    observer.observe(spotlight);
-
-});
-</script>  
+   
 </body>
 
 </html>
