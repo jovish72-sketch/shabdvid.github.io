@@ -2373,6 +2373,68 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const spotlight = document.getElementById("spotlight");
+
+    if (!spotlight) return;
+
+    /* =========================================
+       MOVING STAGE LIGHT
+    ========================================= */
+
+    spotlight.addEventListener("mousemove", function (event) {
+
+        const rect = spotlight.getBoundingClientRect();
+
+        let x = ((event.clientX - rect.left) / rect.width) * 100;
+
+        /* Keep the spotlight inside the section */
+        x = Math.max(8, Math.min(92, x));
+
+        spotlight.style.setProperty("--spot-x", x + "%");
+    });
+
+
+    /* Return light to centre */
+    spotlight.addEventListener("mouseleave", function () {
+
+        spotlight.style.setProperty("--spot-x", "50%");
+    });
+
+
+    /* =========================================
+       ACTIVATE SPOTLIGHT WHEN SECTION IS VISIBLE
+    ========================================= */
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    document.body.classList.add("spotlight-active");
+
+                } else {
+
+                    document.body.classList.remove("spotlight-active");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.45
+        }
+    );
+
+    observer.observe(spotlight);
+
+});
+</script>  
 </body>
 
 </html>
