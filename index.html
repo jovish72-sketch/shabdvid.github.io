@@ -2058,7 +2058,218 @@ Contact
 
 
 </main>
+<script>
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ==========================================
+       INTRO SCREEN
+    ========================================== */
+
+    const intro = document.getElementById("intro-screen");
+
+    if (intro) {
+
+        intro.addEventListener("click", function () {
+
+            intro.classList.add("hide");
+
+            setTimeout(function () {
+                intro.style.display = "none";
+            }, 1200);
+
+        });
+
+    }
+
+
+    /* ==========================================
+       HEADER SCROLL EFFECT
+    ========================================== */
+
+    const header = document.querySelector(".header");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+
+
+    /* ==========================================
+       FADE IN ON SCROLL
+    ========================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".service-card, .collection-card, .client-card, .creating-card, .contact-item, .contact-form"
+    );
+
+    const revealObserver = new IntersectionObserver(function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+
+    revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+    });
+
+
+    /* ==========================================
+       COUNTERS
+    ========================================== */
+
+    const counters = document.querySelectorAll(".about-stat h3");
+
+    counters.forEach(function (counter) {
+
+        const text = counter.innerText;
+        const number = parseInt(text);
+
+        if (isNaN(number)) return;
+
+        counter.innerText = "0";
+
+        let current = 0;
+        const increment = Math.max(1, Math.ceil(number / 60));
+
+        const updateCounter = function () {
+
+            current += increment;
+
+            if (current >= number) {
+                counter.innerText = text;
+                return;
+            }
+
+            counter.innerText = current + (text.includes("+") ? "+" : "%");
+
+            requestAnimationFrame(updateCounter);
+
+        };
+
+        const counterObserver = new IntersectionObserver(function (entries) {
+
+            if (entries[0].isIntersecting) {
+
+                updateCounter();
+                counterObserver.disconnect();
+
+            }
+
+        });
+
+        counterObserver.observe(counter);
+
+    });
+
+
+    /* ==========================================
+       SPOTLIGHT EFFECT
+    ========================================== */
+
+    const spotlight = document.querySelector(".spotlight-section");
+
+    if (spotlight) {
+
+        const beam = document.createElement("div");
+
+        beam.className = "spotlight-beam";
+
+        spotlight.prepend(beam);
+
+
+        const targets = spotlight.querySelectorAll(
+            ".featured-story-card, .news-preview-card, .instagram-box, .photo-highlights-box"
+        );
+
+
+        targets.forEach(function (target) {
+
+            target.addEventListener("mouseenter", function () {
+
+                spotlight.classList.add("spotlight-active");
+
+                targets.forEach(function (item) {
+                    item.classList.remove("spotlight-focus");
+                });
+
+                target.classList.add("spotlight-focus");
+
+                updateSpotlight(target);
+
+            });
+
+        });
+
+
+        spotlight.addEventListener("mouseleave", function () {
+
+            spotlight.classList.remove("spotlight-active");
+
+            targets.forEach(function (item) {
+                item.classList.remove("spotlight-focus");
+            });
+
+            beam.style.opacity = "0";
+
+        });
+
+
+        function updateSpotlight(target) {
+
+            const spotlightRect = spotlight.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+
+            const startX = spotlightRect.width / 2;
+
+            const targetX =
+                targetRect.left -
+                spotlightRect.left +
+                targetRect.width / 2;
+
+            const targetY =
+                targetRect.top -
+                spotlightRect.top;
+
+            const deltaX = targetX - startX;
+            const deltaY = targetY;
+
+            const length = Math.sqrt(
+                (deltaX * deltaX) +
+                (deltaY * deltaY)
+            );
+
+            const angle =
+                Math.atan2(deltaX, deltaY) * 180 / Math.PI;
+
+            beam.style.height = length + "px";
+
+            beam.style.transform =
+                "translateX(-50%) rotate(" + angle + "deg)";
+
+            beam.style.opacity = "1";
+
+        }
+
+    }
+
+});
+
+</script>
 </body>
 
 </html>
