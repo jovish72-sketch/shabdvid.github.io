@@ -8453,3 +8453,269 @@ body.spotlight-active #spotlight {
     visibility:visible !important;
     transform:none !important;
 }
+
+/* =====================================================
+   SHABDVID SPOTLIGHT — CINEMATIC STAGE EFFECT
+===================================================== */
+
+.spotlight-section{
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+    isolation:isolate;
+
+    background:
+        radial-gradient(
+            ellipse 55% 65% at 50% 15%,
+            rgba(255,240,205,.18) 0%,
+            rgba(255,220,160,.07) 35%,
+            transparent 72%
+        ),
+        linear-gradient(
+            180deg,
+            #24201b 0%,
+            #191613 55%,
+            #151210 100%
+        );
+
+    color:#f5eee4;
+}
+
+
+/* =====================================================
+   CONTENT ABOVE THE LIGHT
+===================================================== */
+
+.spotlight-section .container{
+    position:relative;
+    z-index:10;
+}
+
+.spotlight-heading{
+    position:relative;
+    z-index:20;
+}
+
+
+/* =====================================================
+   SOFT LIGHT AROUND THE TOP
+===================================================== */
+
+.spotlight-heading::before{
+    content:"";
+
+    position:absolute;
+
+    top:-150px;
+    left:50%;
+
+    width:300px;
+    height:300px;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,248,225,.30) 0%,
+            rgba(255,225,170,.12) 35%,
+            transparent 72%
+        );
+
+    filter:blur(25px);
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+
+/* =====================================================
+   THE ACTUAL STAGE SPOTLIGHT BEAM
+===================================================== */
+
+.spotlight-beam{
+    position:absolute;
+
+    top:80px;
+    left:50%;
+
+    width:560px;
+    height:650px;
+
+    transform-origin:top center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,250,232,.90) 0%,
+            rgba(255,239,199,.62) 22%,
+            rgba(255,220,160,.30) 52%,
+            rgba(255,205,130,.10) 82%,
+            transparent 100%
+        );
+
+    clip-path:polygon(
+        44% 0%,
+        56% 0%,
+        100% 100%,
+        0% 100%
+    );
+
+    filter:blur(9px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:4;
+
+    transition:
+        opacity .4s ease,
+        transform .45s cubic-bezier(.22,.61,.36,1),
+        height .45s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* =====================================================
+   ALL SPOTLIGHT CARDS
+===================================================== */
+
+.spotlight-section .featured-story-card,
+.spotlight-section .news-preview-card,
+.spotlight-section .instagram-box,
+.spotlight-section .photo-highlights-box{
+
+    position:relative;
+
+    z-index:8;
+
+    transition:
+        transform .45s cubic-bezier(.22,.61,.36,1),
+        filter .45s ease,
+        opacity .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
+}
+
+
+/* =====================================================
+   WHEN MOUSE ENTERS SPOTLIGHT
+===================================================== */
+
+.spotlight-section.spotlight-active
+.featured-story-card:not(.spotlight-focus),
+
+.spotlight-section.spotlight-active
+.news-preview-card:not(.spotlight-focus),
+
+.spotlight-section.spotlight-active
+.instagram-box:not(.spotlight-focus),
+
+.spotlight-section.spotlight-active
+.photo-highlights-box:not(.spotlight-focus){
+
+    filter:
+        brightness(.62)
+        saturate(.65);
+
+    opacity:.70;
+}
+
+
+/* =====================================================
+   SELECTED CARD — UNDER THE SPOTLIGHT
+===================================================== */
+
+.spotlight-section .spotlight-focus{
+
+    position:relative;
+
+    z-index:30;
+
+    transform:
+        translateY(-7px)
+        scale(1.018);
+
+    filter:
+        brightness(1.16)
+        saturate(1.08);
+
+    opacity:1;
+
+    border-color:
+        rgba(218,174,91,.90) !important;
+
+    box-shadow:
+        0 0 0 1px rgba(218,174,91,.45),
+        0 20px 55px rgba(0,0,0,.45),
+        0 0 50px rgba(218,174,91,.20);
+}
+
+
+/* =====================================================
+   GOLD TEXT DETAILS
+===================================================== */
+
+.spotlight-section .spotlight-label,
+.spotlight-section .spotlight-subheading span,
+.spotlight-section .sidebar-box-heading span{
+
+    color:#d8ad62;
+}
+
+
+/* =====================================================
+   SLIGHT STAGE VIGNETTE
+===================================================== */
+
+.spotlight-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(0,0,0,.16) 75%,
+            rgba(0,0,0,.30) 100%
+        );
+
+    pointer-events:none;
+
+    z-index:2;
+}
+
+
+/* =====================================================
+   MAKE BEAM VISIBLE ABOVE BACKGROUND
+===================================================== */
+
+.spotlight-section.spotlight-active
+.spotlight-beam{
+
+    opacity:1;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    .spotlight-section{
+        min-height:auto;
+    }
+
+    .spotlight-beam{
+        width:360px;
+        height:550px;
+        filter:blur(10px);
+    }
+
+}
