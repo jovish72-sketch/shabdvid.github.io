@@ -8430,3 +8430,16 @@ body.spotlight-active #spotlight {
     }
 
 }
+
+/* ==========================================
+   RESTORE ABOUT CONTENT
+========================================== */
+
+.about-section .info-card,
+.about-section .journey-card,
+.info-card,
+.journey-card{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+}
