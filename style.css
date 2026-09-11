@@ -8042,3 +8042,107 @@ font-size:18px;
     transition:
         background-position 0.08s linear;
 }
+/* =====================================================
+        SPOTLIGHT — MOVING LIGHT EFFECT
+===================================================== */
+
+#spotlight {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* Top light source */
+
+#spotlight::before {
+    content: "";
+    position: absolute;
+
+    top: -220px;
+    left: var(--spot-x, 50%);
+
+    width: 520px;
+    height: 620px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255, 220, 130, 0.32) 0%,
+            rgba(212, 175, 55, 0.16) 22%,
+            rgba(212, 175, 55, 0.06) 48%,
+            transparent 72%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    transition: left 0.12s ease-out;
+}
+
+
+/* Moving spotlight */
+
+#spotlight::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle 240px at var(--spot-x, 50%) var(--spot-y, 15%),
+            rgba(255, 225, 150, 0.22) 0%,
+            rgba(212, 175, 55, 0.10) 25%,
+            rgba(212, 175, 55, 0.035) 48%,
+            transparent 72%
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+#spotlight > .container {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =====================================================
+        DIM OTHER SECTIONS
+===================================================== */
+
+main > section {
+    transition:
+        opacity 0.6s ease,
+        filter 0.6s ease,
+        transform 0.6s ease;
+}
+
+
+body.spotlight-active main > section:not(#spotlight) {
+    opacity: 0.48;
+    filter: saturate(0.65) brightness(0.82);
+}
+
+
+body.spotlight-active #spotlight {
+    opacity: 1;
+    filter: none;
+}
+
+
+/* Keep Spotlight itself completely clear */
+
+#spotlight {
+    opacity: 1 !important;
+}
