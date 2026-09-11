@@ -2176,100 +2176,201 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+<script>
 
-    /* ==========================================
-       SPOTLIGHT EFFECT
-    ========================================== */
+/* =====================================================
+   SHABDVID SPOTLIGHT — FINAL MOUSE TRACKING
+===================================================== */
 
-    const spotlight = document.querySelector(".spotlight-section");
+const spotlight = document.querySelector(".spotlight-section");
 
-    if (spotlight) {
+if (spotlight) {
 
-        const beam = document.createElement("div");
+    /* Create the beam only once */
+    let beam = spotlight.querySelector(".spotlight-beam");
 
+    if (!beam) {
+        beam = document.createElement("div");
         beam.className = "spotlight-beam";
-
         spotlight.prepend(beam);
+    }
 
 
-        const targets = spotlight.querySelectorAll(
-            ".featured-story-card, .news-preview-card, .instagram-box, .photo-highlights-box"
-        );
+    /* All spotlight targets */
+    const targets = spotlight.querySelectorAll(
+        ".featured-story-card, " +
+        ".news-preview-card, " +
+        ".instagram-box, " +
+        ".photo-highlights-box"
+    );
 
 
-        targets.forEach(function (target) {
+    /* -------------------------------------------------
+       MOUSE ENTER CARD
+    ------------------------------------------------- */
 
-            target.addEventListener("mouseenter", function () {
+    targets.forEach(function(target) {
 
-                spotlight.classList.add("spotlight-active");
+        target.addEventListener("mouseenter", function() {
 
-                targets.forEach(function (item) {
-                    item.classList.remove("spotlight-focus");
-                });
-
-                target.classList.add("spotlight-focus");
-
-                updateSpotlight(target);
-
-            });
-
-        });
+            spotlight.classList.add("spotlight-active");
 
 
-        spotlight.addEventListener("mouseleave", function () {
-
-            spotlight.classList.remove("spotlight-active");
-
-            targets.forEach(function (item) {
+            /* Remove old focus */
+            targets.forEach(function(item) {
                 item.classList.remove("spotlight-focus");
             });
 
-            beam.style.opacity = "0";
+
+            /* Focus current card */
+            target.classList.add("spotlight-focus");
+
+
+            updateSpotlight(target);
 
         });
 
+    });
 
-        function updateSpotlight(target) {
 
-            const spotlightRect = spotlight.getBoundingClientRect();
-            const targetRect = target.getBoundingClientRect();
+    /* -------------------------------------------------
+       MOUSE LEAVE SPOTLIGHT SECTION
+    ------------------------------------------------- */
 
-            const startX = spotlightRect.width / 2;
+    spotlight.addEventListener("mouseleave", function() {
 
-            const targetX =
-                targetRect.left -
-                spotlightRect.left +
-                targetRect.width / 2;
+        spotlight.classList.remove("spotlight-active");
 
-            const targetY =
-                targetRect.top -
-                spotlightRect.top;
+        targets.forEach(function(item) {
+            item.classList.remove("spotlight-focus");
+        });
 
-            const deltaX = targetX - startX;
-            const deltaY = targetY;
+        beam.style.opacity = "0";
 
-            const length = Math.sqrt(
-                (deltaX * deltaX) +
-                (deltaY * deltaY)
+    });
+
+
+    /* -------------------------------------------------
+       CALCULATE BEAM POSITION
+    ------------------------------------------------- */
+
+    function updateSpotlight(target) {
+
+        const sectionRect =
+            spotlight.getBoundingClientRect();
+
+        const targetRect =
+            target.getBoundingClientRect();
+
+
+        /* ---------------------------------------------
+           BEAM START
+           Exact horizontal center of Spotlight heading
+        --------------------------------------------- */
+
+        const heading =
+            spotlight.querySelector(".spotlight-heading");
+
+
+        let startX =
+            sectionRect.width / 2;
+
+        let startY = 80;
+
+
+        if (heading) {
+
+            const headingRect =
+                heading.getBoundingClientRect();
+
+            startX =
+                headingRect.left -
+                sectionRect.left +
+                headingRect.width / 2;
+
+            startY =
+                headingRect.bottom -
+                sectionRect.top -
+                10;
+        }
+
+
+        /* ---------------------------------------------
+           TARGET POINT
+           Center of selected card
+        --------------------------------------------- */
+
+        const targetX =
+            targetRect.left -
+            sectionRect.left +
+            targetRect.width / 2;
+
+
+        const targetY =
+            targetRect.top -
+            sectionRect.top +
+            5;
+
+
+        /* ---------------------------------------------
+           DISTANCE
+        --------------------------------------------- */
+
+        const deltaX =
+            targetX - startX;
+
+        const deltaY =
+            targetY - startY;
+
+
+        const distance =
+            Math.sqrt(
+                deltaX * deltaX +
+                deltaY * deltaY
             );
 
-            const angle =
-                Math.atan2(deltaX, deltaY) * 180 / Math.PI;
 
-            beam.style.height = length + "px";
+        /* ---------------------------------------------
+           IMPORTANT:
+           Correct direction of the beam
+        --------------------------------------------- */
 
-            beam.style.transform =
-                "translateX(-50%) rotate(" + angle + "deg)";
+        const angle =
+            Math.atan2(
+                deltaX,
+                deltaY
+            ) * 180 / Math.PI;
 
-            beam.style.opacity = "1";
 
-        }
+        /* ---------------------------------------------
+           POSITION BEAM
+        --------------------------------------------- */
+
+        beam.style.left =
+            startX + "px";
+
+        beam.style.top =
+            startY + "px";
+
+
+        beam.style.height =
+            Math.max(distance, 150) + "px";
+
+
+        beam.style.transform =
+            "translateX(-50%) rotate(" +
+            angle +
+            "deg)";
+
+
+        beam.style.opacity =
+            "1";
 
     }
 
-});
-
+}
 </script>
+    
 </body>
 
 </html>
