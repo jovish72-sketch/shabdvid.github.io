@@ -2285,6 +2285,94 @@ if(intro){
 
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const spotlight = document.getElementById("spotlight");
+
+    if (!spotlight) return;
+
+
+    /* ==========================================
+            MOUSE FOLLOWING SPOTLIGHT
+    ========================================== */
+
+    spotlight.addEventListener("mousemove", function (event) {
+
+        const rect = spotlight.getBoundingClientRect();
+
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+        spotlight.style.setProperty(
+            "--spot-x",
+            x + "%"
+        );
+
+        spotlight.style.setProperty(
+            "--spot-y",
+            y + "%"
+        );
+
+    });
+
+
+    /* ==========================================
+            RESET LIGHT WHEN MOUSE LEAVES
+    ========================================== */
+
+    spotlight.addEventListener("mouseleave", function () {
+
+        spotlight.style.setProperty(
+            "--spot-x",
+            "50%"
+        );
+
+        spotlight.style.setProperty(
+            "--spot-y",
+            "12%"
+        );
+
+    });
+
+
+    /* ==========================================
+            DIM OTHER SECTIONS
+    ========================================== */
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    document.body.classList.add(
+                        "spotlight-active"
+                    );
+
+                } else {
+
+                    document.body.classList.remove(
+                        "spotlight-active"
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.45
+        }
+    );
+
+
+    observer.observe(spotlight);
+
+});
+</script>
+
 </body>
 
 </html>
