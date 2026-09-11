@@ -8719,3 +8719,98 @@ body.spotlight-active #spotlight {
     }
 
 }
+/* =====================================================
+   SPOTLIGHT FINAL LAYOUT FIX
+===================================================== */
+
+/* Original section spacing પાછું */
+.spotlight-section{
+    min-height:0 !important;
+    height:auto !important;
+
+    /* માત્ર background effect */
+    background:
+        radial-gradient(
+            ellipse 55% 65% at 50% 18%,
+            rgba(255,240,205,.15) 0%,
+            rgba(255,220,160,.05) 38%,
+            transparent 72%
+        ),
+        #17130f !important;
+}
+
+
+/* Containerનું original positioning જાળવો */
+.spotlight-section .container{
+    position:relative;
+    z-index:10;
+}
+
+
+/* Gridની width/placementમાં કોઈ ફેરફાર નહીં */
+.spotlight-section .spotlight-grid{
+    position:relative;
+    z-index:10;
+}
+
+
+/* Beam માટે */
+.spotlight-beam{
+    position:absolute !important;
+
+    width:500px !important;
+
+    transform-origin:top center !important;
+
+    pointer-events:none !important;
+
+    z-index:4 !important;
+
+    opacity:0;
+
+    transition:
+        opacity .35s ease,
+        transform .35s cubic-bezier(.22,.61,.36,1),
+        height .35s cubic-bezier(.22,.61,.36,1),
+        left .35s cubic-bezier(.22,.61,.36,1),
+        top .35s ease;
+}
+
+
+/* Selected card */
+.spotlight-section .spotlight-focus{
+    transform:translateY(-4px) scale(1.01) !important;
+
+    filter:brightness(1.12) saturate(1.05) !important;
+
+    opacity:1 !important;
+
+    z-index:20 !important;
+}
+
+
+/* બીજા cards માત્ર થોડા dark */
+.spotlight-section.spotlight-active
+.featured-story-card:not(.spotlight-focus),
+.spotlight-section.spotlight-active
+.news-preview-card:not(.spotlight-focus),
+.spotlight-section.spotlight-active
+.instagram-box:not(.spotlight-focus),
+.spotlight-section.spotlight-active
+.photo-highlights-box:not(.spotlight-focus){
+
+    filter:brightness(.72) saturate(.78) !important;
+    opacity:.82 !important;
+}
+
+
+/* Spotlight sectionની overall darkness બહુ વધારે નહીં */
+.spotlight-section.spotlight-active{
+    background:
+        radial-gradient(
+            ellipse 50% 70% at 50% 25%,
+            rgba(255,240,205,.13),
+            transparent 70%
+        ),
+        #191613 !important;
+}
