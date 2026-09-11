@@ -7955,3 +7955,90 @@ font-size:18px;
     }
 
 }
+
+/* =====================================================
+        SPOTLIGHT — FULL SCREEN EXPERIENCE
+===================================================== */
+
+#spotlight {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* Spotlight content ઉપર રહે */
+
+#spotlight > .container {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =====================================================
+        TOP LIGHT SOURCE
+===================================================== */
+
+#spotlight::before {
+    content: "";
+    position: absolute;
+
+    top: -180px;
+    left: 50%;
+
+    width: 420px;
+    height: 420px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(212, 175, 55, 0.22) 0%,
+            rgba(212, 175, 55, 0.10) 28%,
+            rgba(212, 175, 55, 0.035) 52%,
+            transparent 72%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+        MOUSE FOLLOWING LIGHT
+===================================================== */
+
+#spotlight::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle 190px at var(--spot-x, 50%) var(--spot-y, 12%),
+            rgba(255, 225, 150, 0.16) 0%,
+            rgba(212, 175, 55, 0.08) 22%,
+            rgba(212, 175, 55, 0.025) 45%,
+            transparent 72%
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    transition:
+        background-position 0.08s linear;
+}
