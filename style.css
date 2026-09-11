@@ -8443,3 +8443,13 @@ body.spotlight-active #spotlight {
     visibility:visible !important;
     transform:none !important;
 }
+
+/* ==========================================
+   RESTORE TRUSTED BY LOGOS
+========================================== */
+
+.client-card{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+}
