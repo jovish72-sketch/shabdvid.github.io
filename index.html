@@ -2178,6 +2178,245 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+   /* =========================================================
+   SHABDVID — CINEMATIC SPOTLIGHT CONTROLLER
+   ========================================================= */
+
+const spotlightSection = document.getElementById("spotlight");
+
+if (spotlightSection) {
+
+    const spotlightCards = spotlightSection.querySelectorAll(
+        ".featured-story-card, " +
+        ".news-preview-card, " +
+        ".instagram-box, " +
+        ".photo-highlights-box"
+    );
+
+    /* Create the beam safely */
+    const spotlightBeam = document.createElement("div");
+
+    spotlightBeam.className = "spotlight-beam";
+
+    spotlightSection.insertBefore(
+        spotlightBeam,
+        spotlightSection.firstElementChild
+    );
+
+    let activeCard = null;
+
+    /* -----------------------------------------------------
+       Set focused card
+       ----------------------------------------------------- */
+
+    function setSpotlightCard(card) {
+
+        if (activeCard === card) return;
+
+        spotlightCards.forEach(function(item) {
+            item.classList.remove("spotlight-focus");
+        });
+
+        if (card) {
+
+            card.classList.add("spotlight-focus");
+
+            activeCard = card;
+
+            spotlightSection.classList.add("spotlight-active");
+
+            updateSpotlightBeam(card);
+
+        } else {
+
+            activeCard = null;
+
+            spotlightSection.classList.remove(
+                "spotlight-active"
+            );
+
+            spotlightBeam.style.opacity = "0";
+        }
+    }
+
+    /* -----------------------------------------------------
+       Position beam from top toward selected card
+       ----------------------------------------------------- */
+
+    function updateSpotlightBeam(card) {
+
+        if (!card) return;
+
+        const sectionRect =
+            spotlightSection.getBoundingClientRect();
+
+        const cardRect =
+            card.getBoundingClientRect();
+
+        const cardCenter =
+            cardRect.left +
+            (cardRect.width / 2);
+
+        const beamX =
+            cardCenter -
+            sectionRect.left;
+
+        const targetY =
+            cardRect.top -
+            sectionRect.top;
+
+        const beamHeight =
+            Math.max(
+                180,
+                targetY
+            );
+
+        const beamWidth =
+            Math.max(
+                360,
+                Math.min(
+                    620,
+                    cardRect.width * 1.25
+                )
+            );
+
+        spotlightBeam.style.left =
+            beamX + "px";
+
+        spotlightBeam.style.top =
+            "0px";
+
+        spotlightBeam.style.height =
+            beamHeight + "px";
+
+        spotlightBeam.style.width =
+            beamWidth + "px";
+
+        spotlightBeam.style.transform =
+            "translateX(-50%)";
+
+        spotlightBeam.style.opacity =
+            ".92";
+    }
+
+    /* -----------------------------------------------------
+       Mouse movement
+       ----------------------------------------------------- */
+
+    spotlightSection.addEventListener(
+        "mousemove",
+        function(event) {
+
+            let hoveredCard = null;
+
+            spotlightCards.forEach(function(card) {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                if (
+                    event.clientX >= rect.left &&
+                    event.clientX <= rect.right &&
+                    event.clientY >= rect.top &&
+                    event.clientY <= rect.bottom
+                ) {
+
+                    hoveredCard = card;
+
+                }
+
+            });
+
+            /* If mouse is directly over a card */
+            if (hoveredCard) {
+
+                setSpotlightCard(
+                    hoveredCard
+                );
+
+                return;
+            }
+
+            /* Otherwise select the nearest card horizontally */
+            let closestCard = null;
+            let closestDistance = Infinity;
+
+            spotlightCards.forEach(function(card) {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const center =
+                    rect.left +
+                    (rect.width / 2);
+
+                const distance =
+                    Math.abs(
+                        event.clientX -
+                        center
+                    );
+
+                if (
+                    distance <
+                    closestDistance
+                ) {
+
+                    closestDistance =
+                        distance;
+
+                    closestCard =
+                        card;
+                }
+
+            });
+
+            if (closestCard) {
+
+                setSpotlightCard(
+                    closestCard
+                );
+            }
+
+        }
+    );
+
+    /* -----------------------------------------------------
+       Keep beam correct after resize / scroll
+       ----------------------------------------------------- */
+
+    window.addEventListener(
+        "resize",
+        function() {
+
+            if (activeCard) {
+
+                updateSpotlightBeam(
+                    activeCard
+                );
+
+            }
+
+        }
+    );
+
+    window.addEventListener(
+        "scroll",
+        function() {
+
+            if (activeCard) {
+
+                updateSpotlightBeam(
+                    activeCard
+                );
+
+            }
+
+        },
+        { passive:true }
+    );
+
+}
+
 </script>
     
 </body>
