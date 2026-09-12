@@ -8814,3 +8814,233 @@ body.spotlight-active #spotlight {
         ),
         #191613 !important;
 }
+
+/* =========================================================
+   SHABDVID — FINAL CINEMATIC SPOTLIGHT
+   Mouse-following stage light
+   ========================================================= */
+
+#spotlight{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+/* Soft stage darkness */
+#spotlight::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+
+    background:
+        radial-gradient(
+            ellipse 70% 75% at 50% 20%,
+            rgba(255,242,210,.10),
+            rgba(0,0,0,.12) 55%,
+            rgba(0,0,0,.28) 100%
+        );
+}
+
+/* Keep content above lighting */
+#spotlight > .container{
+    position:relative;
+    z-index:10;
+}
+
+/* =========================================================
+   THE ACTUAL LIGHT BEAM
+   ========================================================= */
+
+#spotlight .spotlight-beam{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:520px;
+    height:500px;
+
+    pointer-events:none;
+
+    z-index:4;
+
+    transform-origin:50% 0%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,250,232,.55) 0%,
+            rgba(255,239,199,.30) 35%,
+            rgba(255,220,160,.12) 72%,
+            rgba(255,205,130,.025) 100%
+        );
+
+    clip-path:polygon(
+        44% 0%,
+        56% 0%,
+        100% 100%,
+        0% 100%
+    );
+
+    filter:blur(8px);
+
+    opacity:0;
+
+    transition:
+        left .16s ease-out,
+        height .20s ease-out,
+        width .20s ease-out,
+        opacity .30s ease;
+}
+
+/* Slight inner beam for richer cinematic light */
+
+#spotlight .spotlight-beam::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,245,.30),
+            rgba(255,235,190,.10) 55%,
+            transparent 100%
+        );
+
+    clip-path:polygon(
+        48% 0%,
+        52% 0%,
+        72% 100%,
+        28% 100%
+    );
+}
+
+/* =========================================================
+   SPOTLIGHT ACTIVE
+   ========================================================= */
+
+#spotlight.spotlight-active .spotlight-beam{
+    opacity:.92;
+}
+
+/* =========================================================
+   ALL FIVE SPOTLIGHT CARDS
+   ========================================================= */
+
+#spotlight .featured-story-card,
+#spotlight .news-preview-card,
+#spotlight .instagram-box,
+#spotlight .photo-highlights-box{
+
+    position:relative;
+    z-index:8;
+
+    transition:
+        filter .30s ease,
+        opacity .30s ease,
+        transform .30s ease,
+        box-shadow .30s ease,
+        border-color .30s ease;
+}
+
+/* =========================================================
+   WHEN SPOTLIGHT IS ACTIVE
+   OTHER CARDS BECOME SLIGHTLY DARK
+   ========================================================= */
+
+#spotlight.spotlight-active
+.featured-story-card:not(.spotlight-focus),
+#spotlight.spotlight-active
+.news-preview-card:not(.spotlight-focus),
+#spotlight.spotlight-active
+.instagram-box:not(.spotlight-focus),
+#spotlight.spotlight-active
+.photo-highlights-box:not(.spotlight-focus){
+
+    filter:
+        brightness(.72)
+        saturate(.72);
+
+    opacity:.84;
+}
+
+/* =========================================================
+   THE CARD UNDER THE LIGHT
+   ========================================================= */
+
+#spotlight .spotlight-focus{
+
+    z-index:30;
+
+    filter:
+        brightness(1.14)
+        saturate(1.08);
+
+    opacity:1;
+
+    transform:
+        translateY(-4px)
+        scale(1.012);
+
+    border-color:
+        rgba(218,174,91,.85) !important;
+
+    box-shadow:
+        0 0 0 1px rgba(218,174,91,.30),
+        0 18px 55px rgba(0,0,0,.38),
+        0 0 65px rgba(255,224,160,.16);
+}
+
+/* =========================================================
+   HEADING LIGHT
+   ========================================================= */
+
+#spotlight .spotlight-heading::before{
+    content:"";
+
+    position:absolute;
+
+    top:-130px;
+    left:50%;
+
+    width:280px;
+    height:280px;
+
+    transform:translateX(-50%);
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,248,225,.24) 0%,
+            rgba(255,225,170,.10) 38%,
+            transparent 72%
+        );
+
+    filter:blur(25px);
+
+    z-index:-1;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:768px){
+
+    #spotlight .spotlight-beam{
+        width:340px;
+        filter:blur(9px);
+    }
+
+    #spotlight .spotlight-focus{
+        transform:
+            translateY(-2px)
+            scale(1.005);
+    }
+
+}
