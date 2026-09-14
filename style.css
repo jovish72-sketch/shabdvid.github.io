@@ -8410,3 +8410,28 @@ body.spotlight-active #spotlight {
         opacity: 0.78;
     }
 }
+/* =========================================================
+   SPOTLIGHT — REMOVE LEGACY LIGHT CONFLICT
+   ========================================================= */
+
+/* જૂનો moving spotlight સંપૂર્ણ બંધ */
+#spotlight::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* નવા stage-dimming layerને સંપૂર્ણ sectionમાં રાખો */
+#spotlight.spotlight-active::before {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    transform: none !important;
+    filter: none !important;
+
+    z-index: 1 !important;
+}
