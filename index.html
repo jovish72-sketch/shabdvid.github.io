@@ -2451,6 +2451,321 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 })();
+
+/* =========================================================
+   SHABDVID SPOTLIGHT — MASTER FINAL CONTROLLER
+   FIXED SOURCE → HOVERED CARD
+   ========================================================= */
+
+(function () {
+
+    const spotlight =
+        document.getElementById("spotlight");
+
+    if (!spotlight) return;
+
+    const beam =
+        spotlight.querySelector(".spotlight-beam");
+
+    if (!beam) return;
+
+    /*
+     * IMPORTANT:
+     * The light source is the actual "SPOTLIGHT" label.
+     */
+    const source =
+        spotlight.querySelector(".spotlight-heading > span")
+        || spotlight.querySelector(".section-heading > span")
+        || spotlight.querySelector(".spotlight-heading")
+        || spotlight.querySelector(".section-heading");
+
+    if (!source) return;
+
+
+    /*
+     * EXACT FIVE FOCUS TARGETS
+     */
+
+    const targets = [
+        spotlight.querySelector(".featured-story-card"),
+
+        ...spotlight.querySelectorAll(
+            ".news-preview-card"
+        ),
+
+        spotlight.querySelector(".instagram-box"),
+
+        spotlight.querySelector(
+            ".photo-highlights-box"
+        )
+    ].filter(Boolean);
+
+
+    /*
+     * Mark them as Spotlight targets.
+     */
+
+    targets.forEach(function (target) {
+
+        target.classList.add(
+            "spotlight-focus-target"
+        );
+
+    });
+
+
+    /*
+     * ------------------------------------------------------
+     * SHOW LIGHT ON ONE CARD
+     * ------------------------------------------------------
+     */
+
+    function showSpotlight(target) {
+
+        const sectionRect =
+            spotlight.getBoundingClientRect();
+
+        const sourceRect =
+            source.getBoundingClientRect();
+
+        const targetRect =
+            target.getBoundingClientRect();
+
+
+        /*
+         * FIXED SOURCE
+         *
+         * This NEVER comes from mouse position.
+         * It ALWAYS comes from the center of
+         * the word "SPOTLIGHT".
+         */
+
+        const sourceX =
+            sourceRect.left +
+            (sourceRect.width / 2) -
+            sectionRect.left;
+
+
+        /*
+         * The beam starts directly below
+         * the SPOTLIGHT label.
+         */
+
+        const sourceY =
+            sourceRect.bottom -
+            sectionRect.top;
+
+
+        /*
+         * TARGET = CENTER OF HOVERED CARD
+         */
+
+        const targetX =
+            targetRect.left +
+            (targetRect.width / 2) -
+            sectionRect.left;
+
+
+        /*
+         * TARGET Y = TOP EDGE OF CARD
+         */
+
+        const targetY =
+            targetRect.top -
+            sectionRect.top;
+
+
+        /*
+         * Beam height.
+         */
+
+        const height =
+            Math.max(
+                20,
+                targetY - sourceY
+            );
+
+
+        /*
+         * TOP OF BEAM
+         */
+
+        beam.style.setProperty(
+            "top",
+            sourceY + "px",
+            "important"
+        );
+
+
+        /*
+         * HEIGHT OF BEAM
+         */
+
+        beam.style.setProperty(
+            "height",
+            height + "px",
+            "important"
+        );
+
+
+        /*
+         * FIXED SOURCE → MOVING TARGET
+         *
+         * Narrow at source.
+         * Wider at card.
+         */
+
+        const topHalf = 38;
+
+        const bottomHalf =
+            Math.max(
+                70,
+                Math.min(
+                    150,
+                    targetRect.width * 0.22
+                )
+            );
+
+
+        const polygon =
+            "polygon(" +
+
+            (sourceX - topHalf) +
+            "px 0%, " +
+
+            (sourceX + topHalf) +
+            "px 0%, " +
+
+            (targetX + bottomHalf) +
+            "px 100%, " +
+
+            (targetX - bottomHalf) +
+            "px 100%" +
+
+            ")";
+
+
+        /*
+         * This is the IMPORTANT part:
+         *
+         * Source = fixed.
+         * Target = hovered card.
+         */
+
+        beam.style.setProperty(
+            "clip-path",
+            polygon,
+            "important"
+        );
+
+
+        /*
+         * Clear every previous focus.
+         */
+
+        targets.forEach(function (item) {
+
+            item.classList.remove(
+                "spotlight-is-focused"
+            );
+
+        });
+
+
+        /*
+         * Focus ONLY current card.
+         */
+
+        target.classList.add(
+            "spotlight-is-focused"
+        );
+
+
+        /*
+         * Activate Spotlight.
+         */
+
+        spotlight.classList.add(
+            "spotlight-active"
+        );
+
+    }
+
+
+    /*
+     * ------------------------------------------------------
+     * CARD HOVER
+     * ------------------------------------------------------
+     */
+
+    targets.forEach(function (target) {
+
+        target.addEventListener(
+            "mouseenter",
+            function () {
+
+                showSpotlight(target);
+
+            }
+        );
+
+    });
+
+
+    /*
+     * ------------------------------------------------------
+     * LEAVE SPOTLIGHT SECTION
+     * ------------------------------------------------------
+     */
+
+    spotlight.addEventListener(
+        "mouseleave",
+        function () {
+
+            spotlight.classList.remove(
+                "spotlight-active"
+            );
+
+            targets.forEach(function (target) {
+
+                target.classList.remove(
+                    "spotlight-is-focused"
+                );
+
+            });
+
+            beam.style.opacity = "0";
+
+        }
+    );
+
+
+    /*
+     * ------------------------------------------------------
+     * WINDOW RESIZE
+     * ------------------------------------------------------
+     */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            const active =
+                spotlight.querySelector(
+                    ".spotlight-is-focused"
+                );
+
+            if (active) {
+
+                showSpotlight(active);
+
+            }
+
+        }
+    );
+
+
+})();
  
 </script>
     
