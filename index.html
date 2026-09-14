@@ -2558,8 +2558,9 @@ document.addEventListener("DOMContentLoaded", function () {
          */
 
         const sourceY =
-            sourceRect.bottom -
-            sectionRect.top;
+    sourceRect.bottom -
+    sectionRect.top +
+    18;
 
 
         /*
@@ -2884,17 +2885,43 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        beam.style.setProperty(
-            "top",
-            sourceY + "px",
-            "important"
-        );
+       beam.style.setProperty(
+    "top",
+    (sourceY + 32) + "px",
+    "important"
+);
 
-        beam.style.setProperty(
-            "height",
-            beamHeight + "px",
-            "important"
-        );
+beam.style.setProperty(
+    "height",
+    Math.max(
+        20,
+        targetY - sourceY - 32
+    ) + "px",
+    "important"
+);
+
+       /* -----------------------------------------------
+   FIXED STAGE LIGHT POSITION
+   Light sits directly below SPOTLIGHT label
+   ----------------------------------------------- */
+
+const sourceElement =
+    spotlight.querySelector(".spotlight-source");
+
+if (sourceElement) {
+
+    sourceElement.style.setProperty(
+        "left",
+        sourceX + "px",
+        "important"
+    );
+
+    sourceElement.style.setProperty(
+        "top",
+        sourceY + "px",
+        "important"
+    );
+}
 
 
         /* -----------------------------------------------
