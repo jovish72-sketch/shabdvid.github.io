@@ -8435,22 +8435,3 @@ body.spotlight-active #spotlight {
 
     z-index: 1 !important;
 }
-
-/* =========================================================
-   SPOTLIGHT — FIXED LIGHT SOURCE
-   Light always originates from SPOTLIGHT heading
-   ========================================================= */
-
-#spotlight .spotlight-beam {
-    left: 0 !important;
-    width: 100% !important;
-
-    transform: none !important;
-
-    clip-path: polygon(
-        calc(var(--spotlight-origin-x, 50%) - 65px) 0%,
-        calc(var(--spotlight-origin-x, 50%) + 65px) 0%,
-        calc(var(--spotlight-target-x, 50%) + var(--spotlight-target-half, 120px)) 100%,
-        calc(var(--spotlight-target-x, 50%) - var(--spotlight-target-half, 120px)) 100%
-    ) !important;
-}
