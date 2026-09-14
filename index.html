@@ -2772,6 +2772,305 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 })();
+
+   /* =========================================================
+   SHABDVID SPOTLIGHT — FIXED SOURCE / MOVING FIXTURE
+   ========================================================= */
+
+(function () {
+
+    const spotlight =
+        document.getElementById("spotlight");
+
+    if (!spotlight) return;
+
+    const beam =
+        spotlight.querySelector(".spotlight-beam");
+
+    const fixture =
+        spotlight.querySelector(".spotlight-fixture");
+
+    const source =
+        spotlight.querySelector(".spotlight-heading");
+
+    if (!beam || !fixture || !source) return;
+
+
+    /* -----------------------------------------------------
+       ALL TARGET CARDS
+       ----------------------------------------------------- */
+
+    const targets = [
+        spotlight.querySelector(".featured-story-card"),
+
+        ...spotlight.querySelectorAll(
+            ".news-preview-card"
+        ),
+
+        spotlight.querySelector(".instagram-box"),
+
+        spotlight.querySelector(
+            ".photo-highlights-box"
+        )
+    ].filter(Boolean);
+
+
+    targets.forEach(function (target) {
+
+        target.classList.add(
+            "spotlight-focus-target"
+        );
+
+    });
+
+
+    /* -----------------------------------------------------
+       MAIN FUNCTION
+       ----------------------------------------------------- */
+
+    function focusCard(target) {
+
+        const sectionRect =
+            spotlight.getBoundingClientRect();
+
+        const sourceRect =
+            source.getBoundingClientRect();
+
+        const targetRect =
+            target.getBoundingClientRect();
+
+
+        /* -----------------------------------------------
+           FIXED SOURCE
+           EXACTLY FROM SPOTLIGHT HEADING CENTER
+           ----------------------------------------------- */
+
+        const sourceX =
+            sourceRect.left +
+            sourceRect.width / 2 -
+            sectionRect.left;
+
+
+        const sourceY =
+            sourceRect.bottom -
+            sectionRect.top +
+            4;
+
+
+        /* -----------------------------------------------
+           TARGET CENTER
+           ----------------------------------------------- */
+
+        const targetX =
+            targetRect.left +
+            targetRect.width / 2 -
+            sectionRect.left;
+
+
+        const targetY =
+            targetRect.top -
+            sectionRect.top;
+
+
+        /* -----------------------------------------------
+           BEAM HEIGHT
+           STOPS AT CARD TOP
+           ----------------------------------------------- */
+
+        const beamHeight =
+            Math.max(
+                20,
+                targetY - sourceY
+            );
+
+
+        beam.style.setProperty(
+            "top",
+            sourceY + "px",
+            "important"
+        );
+
+        beam.style.setProperty(
+            "height",
+            beamHeight + "px",
+            "important"
+        );
+
+
+        /* -----------------------------------------------
+           WIDER BEAM
+           ----------------------------------------------- */
+
+        const topHalfWidth = 52;
+
+        const bottomHalfWidth =
+            Math.max(
+                120,
+                Math.min(
+                    210,
+                    targetRect.width * 0.30
+                )
+            );
+
+
+        const beamShape =
+            "polygon(" +
+
+            (sourceX - topHalfWidth) +
+            "px 0%, " +
+
+            (sourceX + topHalfWidth) +
+            "px 0%, " +
+
+            (targetX + bottomHalfWidth) +
+            "px 100%, " +
+
+            (targetX - bottomHalfWidth) +
+            "px 100%" +
+
+            ")";
+
+
+        beam.style.setProperty(
+            "clip-path",
+            beamShape,
+            "important"
+        );
+
+
+        /* -----------------------------------------------
+           MOVE THE SPOTLIGHT FIXTURE
+
+           SOURCE ITSELF DOES NOT MOVE.
+           ONLY THE FIXTURE ROTATES TOWARDS TARGET.
+           ----------------------------------------------- */
+
+        const dx =
+            targetX - sourceX;
+
+        const dy =
+            Math.max(
+                1,
+                targetY - sourceY
+            );
+
+
+        const angle =
+            Math.atan2(dx, dy) *
+            180 /
+            Math.PI;
+
+
+        fixture.style.setProperty(
+            "--spotlight-fixture-angle",
+            angle + "deg"
+        );
+
+
+        /* -----------------------------------------------
+           FOCUS CARD
+           ----------------------------------------------- */
+
+        targets.forEach(function (item) {
+
+            item.classList.remove(
+                "spotlight-is-focused"
+            );
+
+        });
+
+
+        target.classList.add(
+            "spotlight-is-focused"
+        );
+
+
+        spotlight.classList.add(
+            "spotlight-active"
+        );
+
+    }
+
+
+    /* -----------------------------------------------------
+       CARD HOVER
+       ----------------------------------------------------- */
+
+    targets.forEach(function (target) {
+
+        target.addEventListener(
+            "mouseenter",
+            function () {
+
+                focusCard(target);
+
+            }
+        );
+
+    });
+
+
+    /* -----------------------------------------------------
+       LEAVE SECTION
+       ----------------------------------------------------- */
+
+    spotlight.addEventListener(
+        "mouseleave",
+        function () {
+
+            spotlight.classList.remove(
+                "spotlight-active"
+            );
+
+
+            targets.forEach(function (target) {
+
+                target.classList.remove(
+                    "spotlight-is-focused"
+                );
+
+            });
+
+
+            beam.style.setProperty(
+                "opacity",
+                "0",
+                "important"
+            );
+
+
+            fixture.style.setProperty(
+                "--spotlight-fixture-angle",
+                "0deg"
+            );
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       RESIZE
+       ----------------------------------------------------- */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            const active =
+                spotlight.querySelector(
+                    ".spotlight-is-focused"
+                );
+
+            if (active) {
+
+                focusCard(active);
+
+            }
+
+        }
+    );
+
+})();
  
 </script>
     
