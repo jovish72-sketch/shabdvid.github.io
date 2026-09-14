@@ -8435,3 +8435,193 @@ body.spotlight-active #spotlight {
 
     z-index: 1 !important;
 }
+
+/* =========================================================
+   SHABDVID SPOTLIGHT — FINAL FIXED SOURCE BEAM
+   ========================================================= */
+
+#spotlight {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   STAGE DIMMING
+   --------------------------------------------------------- */
+
+#spotlight.spotlight-active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse 42% 70% at var(--spotlight-source-x, 50%) 28%,
+            rgba(255, 255, 255, 0.045) 0%,
+            rgba(212, 175, 55, 0.018) 35%,
+            rgba(0, 0, 0, 0.12) 100%
+        );
+}
+
+/* ---------------------------------------------------------
+   THE ACTUAL LIGHT BEAM
+   FULL WIDTH ELEMENT — SHAPE CREATED BY CLIP-PATH
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-beam {
+    position: absolute;
+
+    left: 0;
+    top: var(--spotlight-beam-top, 0px);
+
+    width: 100%;
+    height: var(--spotlight-beam-height, 0px);
+
+    z-index: 3;
+    pointer-events: none;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.13) 0%,
+            rgba(255, 230, 160, 0.09) 25%,
+            rgba(212, 175, 55, 0.055) 65%,
+            rgba(212, 175, 55, 0.018) 100%
+        );
+
+    clip-path: polygon(
+        var(--beam-top-left, 47%) 0%,
+        var(--beam-top-right, 53%) 0%,
+        var(--beam-bottom-right, 58%) 100%,
+        var(--beam-bottom-left, 42%) 100%
+    );
+
+    filter: blur(1.5px);
+
+    transition:
+        clip-path 0.38s cubic-bezier(.22,.61,.36,1),
+        top 0.38s ease,
+        height 0.38s ease,
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+/* Soft light inside the beam */
+
+#spotlight .spotlight-beam::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255,255,255,0.18) 0%,
+            rgba(255,215,120,0.075) 28%,
+            rgba(212,175,55,0.025) 58%,
+            transparent 78%
+        );
+
+    filter: blur(10px);
+}
+
+/* ---------------------------------------------------------
+   ACTIVE
+   --------------------------------------------------------- */
+
+#spotlight.spotlight-active .spotlight-beam {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------------------------------------------------------
+   FOCUS TARGETS
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-focus-target {
+    position: relative;
+    z-index: 4;
+
+    transition:
+        filter 0.35s ease,
+        opacity 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* Other cards become slightly dim */
+
+#spotlight.spotlight-active
+.spotlight-focus-target:not(.spotlight-is-focused) {
+    filter:
+        brightness(0.70)
+        saturate(0.58);
+
+    opacity: 0.74;
+}
+
+/* Focused card */
+
+#spotlight .spotlight-focus-target.spotlight-is-focused {
+    filter:
+        brightness(1.10)
+        saturate(1.08);
+
+    opacity: 1;
+
+    border-color: rgba(212, 175, 55, 0.72);
+
+    box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.16),
+        0 0 30px rgba(212, 175, 55, 0.17),
+        0 18px 55px rgba(0, 0, 0, 0.30);
+}
+
+/* ---------------------------------------------------------
+   NORMAL STATE
+   --------------------------------------------------------- */
+
+#spotlight:not(.spotlight-active)
+.spotlight-focus-target {
+    filter: none;
+    opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+    #spotlight.spotlight-active
+    .spotlight-focus-target:not(.spotlight-is-focused) {
+        filter:
+            brightness(0.76)
+            saturate(0.68);
+
+        opacity: 0.80;
+    }
+
+    #spotlight .spotlight-beam {
+        filter: blur(2px);
+    }
+}
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #spotlight .spotlight-beam,
+    #spotlight .spotlight-focus-target {
+        transition: none !important;
+    }
+}
