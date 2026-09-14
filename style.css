@@ -8761,3 +8761,348 @@ body.spotlight-active #spotlight {
     filter: none !important;
     opacity: 1 !important;
 }
+
+/* =========================================================
+   SHABDVID SPOTLIGHT — CINEMATIC MOVING FIXTURE
+   FIXED SOURCE + WIDER BEAM
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   OLD SPOTLIGHT LIGHTS — COMPLETELY OFF
+   --------------------------------------------------------- */
+
+#spotlight::before,
+#spotlight::after {
+    content:none !important;
+    display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   SPOTLIGHT SOURCE
+   This is the fixed point above the beam.
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-source {
+    position:absolute !important;
+
+    top:0 !important;
+    left:50% !important;
+
+    width:1px !important;
+    height:1px !important;
+
+    transform:none !important;
+
+    z-index:25 !important;
+
+    pointer-events:none !important;
+
+    overflow:visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOVABLE THEATRE SPOTLIGHT FIXTURE
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-fixture {
+
+    position:absolute !important;
+
+    left:50% !important;
+    top:0 !important;
+
+    width:58px !important;
+    height:34px !important;
+
+    transform:
+        translate(-50%, -3px)
+        rotate(var(--spotlight-fixture-angle, 0deg)) !important;
+
+    transform-origin:50% 8px !important;
+
+    border-radius:
+        8px 8px 15px 15px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e4c47b 0%,
+            #a9782d 45%,
+            #6d4819 100%
+        ) !important;
+
+    border:
+        1px solid rgba(255,230,160,.75) !important;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.45),
+        0 0 18px rgba(230,190,95,.22) !important;
+
+    pointer-events:none !important;
+
+    transition:
+        transform .30s cubic-bezier(.22,.61,.36,1) !important;
+}
+
+
+/* ---------------------------------------------------------
+   BLACK INNER BODY
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-fixture::before {
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    left:7px !important;
+    right:7px !important;
+
+    top:5px !important;
+
+    height:18px !important;
+
+    border-radius:
+        5px 5px 10px 10px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #25211c,
+            #080706
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.12) !important;
+}
+
+
+/* ---------------------------------------------------------
+   GLOWING LENS
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-lens {
+
+    position:absolute !important;
+
+    left:50% !important;
+    bottom:-5px !important;
+
+    width:19px !important;
+    height:19px !important;
+
+    transform:translateX(-50%) !important;
+
+    border-radius:50% !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,245,1) 0%,
+            rgba(255,226,150,.95) 25%,
+            rgba(212,175,55,.55) 48%,
+            transparent 72%
+        ) !important;
+
+    box-shadow:
+        0 0 7px rgba(255,242,190,.95),
+        0 0 20px rgba(212,175,55,.55),
+        0 0 35px rgba(212,175,55,.22) !important;
+}
+
+
+/* ---------------------------------------------------------
+   SMALL FIXTURE MOUNT
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-source::before {
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    left:50% !important;
+    top:-2px !important;
+
+    width:9px !important;
+    height:10px !important;
+
+    transform:translateX(-50%) !important;
+
+    border-radius:3px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #d7b66b,
+            #6d491d
+        ) !important;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.45) !important;
+}
+
+
+/* =========================================================
+   WIDER REAL BEAM
+   ========================================================= */
+
+#spotlight .spotlight-beam {
+
+    position:absolute !important;
+
+    left:0 !important;
+
+    width:100% !important;
+
+    transform:none !important;
+
+    pointer-events:none !important;
+
+    z-index:4 !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,250,225,.24) 0%,
+            rgba(255,231,170,.17) 20%,
+            rgba(218,184,105,.09) 58%,
+            rgba(212,175,55,.025) 100%
+        ) !important;
+
+    filter:blur(2px) !important;
+
+    opacity:0 !important;
+
+    visibility:hidden !important;
+
+    transition:
+        top .28s ease,
+        height .28s ease,
+        opacity .20s ease,
+        clip-path .30s cubic-bezier(.22,.61,.36,1) !important;
+}
+
+
+/* Soft central light inside beam */
+
+#spotlight .spotlight-beam::after {
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255,255,255,.25) 0%,
+            rgba(255,220,135,.13) 25%,
+            rgba(212,175,55,.045) 55%,
+            transparent 76%
+        ) !important;
+
+    filter:blur(14px) !important;
+}
+
+
+/* Beam visible */
+
+#spotlight.spotlight-active .spotlight-beam {
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+}
+
+
+/* =========================================================
+   WIDER BEAM + TARGET CARDS
+   ========================================================= */
+
+#spotlight .spotlight-focus-target {
+
+    position:relative !important;
+
+    z-index:8 !important;
+
+    transition:
+        filter .30s ease,
+        opacity .30s ease,
+        box-shadow .30s ease,
+        border-color .30s ease !important;
+}
+
+
+/* Other cards become dim */
+
+#spotlight.spotlight-active
+.spotlight-focus-target:not(.spotlight-is-focused) {
+
+    filter:
+        brightness(.68)
+        saturate(.55) !important;
+
+    opacity:.76 !important;
+}
+
+
+/* Focused card */
+
+#spotlight .spotlight-focus-target.spotlight-is-focused {
+
+    filter:
+        brightness(1.12)
+        saturate(1.08) !important;
+
+    opacity:1 !important;
+
+    border-color:
+        rgba(212,175,55,.72) !important;
+
+    box-shadow:
+        0 0 0 1px rgba(212,175,55,.18),
+        0 0 35px rgba(212,175,55,.20),
+        0 18px 55px rgba(0,0,0,.30) !important;
+}
+
+
+/* =========================================================
+   WHEN MOUSE LEAVES
+   ========================================================= */
+
+#spotlight:not(.spotlight-active)
+.spotlight-focus-target {
+
+    filter:none !important;
+
+    opacity:1 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:768px) {
+
+    #spotlight .spotlight-fixture {
+
+        width:48px !important;
+        height:29px !important;
+    }
+
+    #spotlight .spotlight-lens {
+
+        width:16px !important;
+        height:16px !important;
+    }
+
+    #spotlight .spotlight-beam {
+
+        filter:blur(3px) !important;
+    }
+}
