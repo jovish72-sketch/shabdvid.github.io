@@ -2179,7 +2179,163 @@ document.addEventListener("DOMContentLoaded", function () {
        });
 
     });
+/* =========================================================
+   SHABDVID SPOTLIGHT — CINEMATIC MOUSE FOCUS
+   ========================================================= */
 
+(function () {
+
+    const spotlight = document.getElementById("spotlight");
+    const beam = spotlight?.querySelector(".spotlight-beam");
+
+    if (!spotlight || !beam) return;
+
+    const targets = [
+        spotlight.querySelector(".featured-story-card"),
+        ...spotlight.querySelectorAll(".news-preview-card"),
+        spotlight.querySelector(".instagram-box"),
+        spotlight.querySelector(".photo-highlights-box")
+    ].filter(Boolean);
+
+    if (!targets.length) return;
+
+    targets.forEach((target) => {
+        target.classList.add("spotlight-focus-target");
+    });
+
+    function clearSpotlight() {
+
+        spotlight.classList.remove("spotlight-active");
+
+        targets.forEach((target) => {
+            target.classList.remove("spotlight-is-focused");
+        });
+
+        beam.style.opacity = "0";
+    }
+
+    function focusTarget(target) {
+
+        const spotlightRect = spotlight.getBoundingClientRect();
+        const heading = spotlight.querySelector(".spotlight-heading")
+            || spotlight.querySelector(".section-heading");
+
+        if (!heading) return;
+
+        const headingRect = heading.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+
+        /*
+         * Beam starts from the bottom-center of heading
+         */
+        const originX =
+            headingRect.left +
+            (headingRect.width / 2);
+
+        /*
+         * Beam ends exactly at the top edge of
+         * the selected card.
+         */
+        const targetX =
+            targetRect.left +
+            (targetRect.width / 2);
+
+        const beamTop =
+            headingRect.bottom -
+            spotlightRect.top;
+
+        const beamBottom =
+            targetRect.top -
+            spotlightRect.top;
+
+        const beamHeight =
+            Math.max(0, beamBottom - beamTop);
+
+        /*
+         * Horizontal position follows the selected card.
+         */
+        const x =
+            targetX -
+            spotlightRect.left;
+
+        /*
+         * Slightly wider beam for large cards,
+         * narrower for small cards.
+         */
+        const width =
+            Math.max(
+                150,
+                Math.min(
+                    230,
+                    targetRect.width * 0.32
+                )
+            );
+
+        spotlight.style.setProperty(
+            "--spotlight-x",
+            `${x}px`
+        );
+
+        spotlight.style.setProperty(
+            "--beam-top",
+            `${beamTop}px`
+        );
+
+        spotlight.style.setProperty(
+            "--beam-height",
+            `${beamHeight}px`
+        );
+
+        spotlight.style.setProperty(
+            "--beam-width",
+            `${width}px`
+        );
+
+        targets.forEach((item) => {
+            item.classList.remove("spotlight-is-focused");
+        });
+
+        target.classList.add("spotlight-is-focused");
+
+        spotlight.classList.add("spotlight-active");
+
+        beam.style.opacity = "1";
+    }
+
+    targets.forEach((target) => {
+
+        target.addEventListener("mouseenter", function () {
+            focusTarget(target);
+        });
+
+    });
+
+    spotlight.addEventListener("mouseleave", function () {
+        clearSpotlight();
+    });
+
+    /*
+     * Recalculate position if the browser window changes size.
+     */
+    window.addEventListener("resize", function () {
+
+        const activeTarget =
+            spotlight.querySelector(
+                ".spotlight-focus-target.spotlight-is-focused"
+            );
+
+        if (activeTarget) {
+            focusTarget(activeTarget);
+        }
+
+    });
+
+    /*
+     * Initial state — no card selected.
+     */
+    clearSpotlight();
+
+})();
  
 </script>
     
