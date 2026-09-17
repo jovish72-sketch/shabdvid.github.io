@@ -2566,68 +2566,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 })();
-
-       /* -----------------------------------------------------
-       LEAVE SECTION
-       ----------------------------------------------------- */
-
-    spotlight.addEventListener(
-        "mouseleave",
-        function () {
-
-            spotlight.classList.remove(
-                "spotlight-active"
-            );
-
-
-            targets.forEach(function (target) {
-
-                target.classList.remove(
-                    "spotlight-is-focused"
-                );
-
-            });
-
-
-            beam.style.setProperty(
-                "opacity",
-                "0",
-                "important"
-            );
-
-
-            fixture.style.setProperty(
-                "--spotlight-fixture-angle",
-                "0deg"
-            );
-
-        }
-    );
-
-
-    /* -----------------------------------------------------
-       RESIZE
-       ----------------------------------------------------- */
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            const active =
-                spotlight.querySelector(
-                    ".spotlight-is-focused"
-                );
-
-            if (active) {
-
-                focusCard(active);
-
-            }
-
-        }
-    );
-
-})();
  
 </script>
     
