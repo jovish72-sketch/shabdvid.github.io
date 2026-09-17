@@ -9311,3 +9311,328 @@ body.spotlight-active #spotlight {
         0 0 42px rgba(212,175,55,.24),
         0 18px 55px rgba(0,0,0,.32) !important;
 }
+
+/* =========================================================
+   SHABDVID SPOTLIGHT — FINAL STAGE PAR LIGHT
+   ========================================================= */
+
+/* Kill every old spotlight pseudo-light */
+#spotlight::before,
+#spotlight::after {
+    content:none !important;
+    display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   FIXED LIGHT SOURCE
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-source {
+    position:absolute !important;
+
+    left:0 !important;
+    top:0 !important;
+
+    width:1px !important;
+    height:1px !important;
+
+    z-index:50 !important;
+
+    pointer-events:none !important;
+
+    overflow:visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   REAL STAGE / PAR SPOTLIGHT BODY
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-fixture {
+
+    position:absolute !important;
+
+    width:92px !important;
+    height:58px !important;
+
+    left:0 !important;
+    top:0 !important;
+
+    transform:
+        translate(-50%, 0)
+        rotate(var(--spotlight-fixture-angle, 0deg)) !important;
+
+    transform-origin:50% 8px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #34302a 0%,
+            #14120f 48%,
+            #050504 100%
+        ) !important;
+
+    border:
+        2px solid rgba(205,165,75,.85) !important;
+
+    border-radius:
+        12px 12px 24px 24px !important;
+
+    box-shadow:
+        0 7px 15px rgba(0,0,0,.48),
+        0 0 24px rgba(212,175,55,.25) !important;
+
+    transition:
+        transform .28s cubic-bezier(.22,.61,.36,1) !important;
+}
+
+
+/* Stage spotlight front housing */
+
+#spotlight .spotlight-fixture::before {
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    left:9px !important;
+    right:9px !important;
+    top:7px !important;
+
+    height:37px !important;
+
+    border-radius:
+        9px 9px 20px 20px !important;
+
+    background:
+        radial-gradient(
+            ellipse at center 72%,
+            #29251d 0%,
+            #0b0a08 48%,
+            #030303 100%
+        ) !important;
+
+    border:
+        1px solid rgba(218,174,91,.48) !important;
+}
+
+
+/* Actual bright PAR lens */
+
+#spotlight .spotlight-lens {
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    bottom:-11px !important;
+
+    width:34px !important;
+    height:34px !important;
+
+    transform:translateX(-50%) !important;
+
+    border-radius:50% !important;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #fff0b4 18%,
+            #ffd76b 34%,
+            #d4af37 51%,
+            rgba(212,175,55,.28) 68%,
+            transparent 78%
+        ) !important;
+
+    box-shadow:
+        0 0 10px rgba(255,255,235,.98),
+        0 0 25px rgba(255,224,135,.85),
+        0 0 50px rgba(212,175,55,.42) !important;
+}
+
+
+/* ---------------------------------------------------------
+   STAGE LIGHT YOKE / BRACKET
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-source::before {
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    left:-47px !important;
+    top:4px !important;
+
+    width:94px !important;
+    height:52px !important;
+
+    border:
+        3px solid rgba(35,31,25,.95) !important;
+
+    border-bottom:0 !important;
+
+    border-radius:
+        45px 45px 0 0 !important;
+
+    opacity:.95 !important;
+}
+
+
+/* ---------------------------------------------------------
+   WIDE THEATRICAL BEAM
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-beam {
+
+    position:absolute !important;
+
+    left:0 !important;
+
+    width:100% !important;
+
+    z-index:4 !important;
+
+    pointer-events:none !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,240,.58) 0%,
+            rgba(255,239,194,.42) 16%,
+            rgba(255,220,145,.25) 40%,
+            rgba(218,184,105,.12) 70%,
+            rgba(212,175,55,.025) 100%
+        ) !important;
+
+    filter:blur(4px) !important;
+
+    opacity:0 !important;
+
+    visibility:hidden !important;
+
+    transition:
+        top .25s ease,
+        height .25s ease,
+        clip-path .30s cubic-bezier(.22,.61,.36,1),
+        opacity .20s ease !important;
+}
+
+
+/* Strong inner light */
+
+#spotlight .spotlight-beam::after {
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255,255,255,.62) 0%,
+            rgba(255,238,190,.36) 20%,
+            rgba(255,215,125,.17) 43%,
+            rgba(212,175,55,.05) 68%,
+            transparent 84%
+        ) !important;
+
+    filter:blur(18px) !important;
+}
+
+
+/* Additional broad light haze */
+
+#spotlight .spotlight-beam::before {
+
+    content:"" !important;
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 5%,
+            rgba(255,248,220,.28),
+            transparent 68%
+        ) !important;
+
+    filter:blur(28px) !important;
+}
+
+
+/* Show beam */
+
+#spotlight.spotlight-active .spotlight-beam {
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   TARGET CARDS
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-focus-target {
+
+    position:relative !important;
+
+    z-index:8 !important;
+
+    transition:
+        filter .28s ease,
+        opacity .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease !important;
+}
+
+
+/* Other cards dim */
+
+#spotlight.spotlight-active
+.spotlight-focus-target:not(.spotlight-is-focused) {
+
+    filter:
+        brightness(.58)
+        saturate(.48) !important;
+
+    opacity:.68 !important;
+}
+
+
+/* Selected card */
+
+#spotlight .spotlight-focus-target.spotlight-is-focused {
+
+    filter:
+        brightness(1.18)
+        saturate(1.12) !important;
+
+    opacity:1 !important;
+
+    border-color:
+        rgba(212,175,55,.85) !important;
+
+    box-shadow:
+        0 0 0 1px rgba(212,175,55,.22),
+        0 0 45px rgba(212,175,55,.25),
+        0 18px 55px rgba(0,0,0,.32) !important;
+}
+
+
+/* Normal state */
+
+#spotlight:not(.spotlight-active)
+.spotlight-focus-target {
+
+    filter:none !important;
+
+    opacity:1 !important;
+}
