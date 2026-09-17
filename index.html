@@ -2185,10 +2185,12 @@ document.addEventListener("DOMContentLoaded", function () {
        });
 
     });
+<script>
+
 /* =========================================================
-   SHABDVID SPOTLIGHT — FINAL CONTROLLER
-   FIXED SOURCE = SPOTLIGHT LABEL
-   TARGET = HOVERED CARD
+   SHABDVID — SPOTLIGHT FINAL CONTROLLER
+   ONE CONTROLLER ONLY
+   FIXED SOURCE → HOVERED CARD
    ========================================================= */
 
 (function () {
@@ -2207,12 +2209,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const fixture =
             spotlight.querySelector(".spotlight-fixture");
 
-
-        /* THIS IS THE IMPORTANT FIX:
-           We use ONLY the SPOTLIGHT label,
-           NOT the entire heading.
-        */
-
         const source =
             spotlight.querySelector(
                 ".spotlight-heading > span"
@@ -2221,6 +2217,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!beam || !fixture || !source) return;
 
+
+        /* -------------------------------------------------
+           EXACT FIVE SPOTLIGHT TARGETS
+           ------------------------------------------------- */
 
         const targets = [
             spotlight.querySelector(
@@ -2245,6 +2245,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!targets.length) return;
 
 
+        /* -------------------------------------------------
+           MARK TARGETS
+           ------------------------------------------------- */
+
         targets.forEach(function (target) {
 
             target.classList.add(
@@ -2254,7 +2258,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
+        /* -------------------------------------------------
+           MAIN FOCUS FUNCTION
+           ------------------------------------------------- */
+
         function focusTarget(target) {
+
+            if (!target) return;
+
 
             const sectionRect =
                 spotlight.getBoundingClientRect();
@@ -2267,8 +2278,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             /* ---------------------------------------------
-               FIXED SOURCE POINT
-               EXACTLY BELOW "SPOTLIGHT"
+               FIXED SOURCE X
+
+               NEVER follows mouse.
+
+               Always center of SPOTLIGHT word.
                --------------------------------------------- */
 
             const sourceX =
@@ -2277,14 +2291,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 sectionRect.left;
 
 
-           const sourceY =
+            /* ---------------------------------------------
+               FIXED SOURCE Y
+
+               PAR light sits directly below
+               SPOTLIGHT label.
+               --------------------------------------------- */
+
+            const sourceY =
                 sourceRect.bottom -
                 sectionRect.top +
-                12;
+                10;
 
 
             /* ---------------------------------------------
-               TARGET CENTER
+               TARGET X
+
+               Center of hovered card.
                --------------------------------------------- */
 
             const targetX =
@@ -2293,13 +2316,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 sectionRect.left;
 
 
+            /* ---------------------------------------------
+               TARGET Y
+
+               EXACTLY TOP EDGE OF CARD.
+               --------------------------------------------- */
+
             const targetY =
                 targetRect.top -
                 sectionRect.top;
 
 
             /* ---------------------------------------------
-               LIGHT FIXTURE POSITION
+               PAR FIXTURE POSITION
+
+               SOURCE NEVER MOVES.
+
+               Only fixture rotates.
                --------------------------------------------- */
 
             const sourceElement =
@@ -2326,15 +2359,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             /* ---------------------------------------------
-               BEAM STARTS FROM LENS
+               BEAM STARTS FROM PAR LENS
                --------------------------------------------- */
 
             const lensOffset = 42;
 
-
             const beamTop =
                 sourceY + lensOffset;
 
+
+            /* ---------------------------------------------
+               BEAM STOPS AT CARD TOP
+
+               NEVER GOES THROUGH CARD.
+               --------------------------------------------- */
 
             const beamHeight =
                 Math.max(
@@ -2361,15 +2399,15 @@ document.addEventListener("DOMContentLoaded", function () {
                WIDE THEATRICAL CONE
                --------------------------------------------- */
 
-            const topHalfWidth = 62;
+            const topHalfWidth = 58;
 
 
             const bottomHalfWidth =
                 Math.max(
-                    150,
+                    145,
                     Math.min(
-                        260,
-                        targetRect.width * .34
+                        270,
+                        targetRect.width * 0.36
                     )
                 );
 
@@ -2400,11 +2438,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             /* ---------------------------------------------
-               ROTATE STAGE LIGHT TOWARDS TARGET
+               FIXTURE DIRECTION
+
+               IMPORTANT:
+               NEGATIVE ANGLE FIXES THE PREVIOUS
+               REVERSE-DIRECTION PROBLEM.
                --------------------------------------------- */
 
             const dx =
                 targetX - sourceX;
+
 
             const dy =
                 Math.max(
@@ -2412,10 +2455,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     targetY - sourceY
                 );
 
-const angle =
-    -Math.atan2(dx, dy) *
-    180 /
-    Math.PI;
+
+            const angle =
+                -Math.atan2(dx, dy) *
+                180 /
+                Math.PI;
 
 
             fixture.style.setProperty(
@@ -2425,7 +2469,7 @@ const angle =
 
 
             /* ---------------------------------------------
-               CARD FOCUS
+               REMOVE PREVIOUS FOCUS
                --------------------------------------------- */
 
             targets.forEach(function (item) {
@@ -2437,59 +2481,97 @@ const angle =
             });
 
 
+            /* ---------------------------------------------
+               FOCUS ONLY CURRENT CARD
+               --------------------------------------------- */
+
             target.classList.add(
                 "spotlight-is-focused"
             );
 
 
+            /* ---------------------------------------------
+               ACTIVATE SPOTLIGHT
+               --------------------------------------------- */
+
             spotlight.classList.add(
                 "spotlight-active"
             );
 
-        }
 
-       /* ---------------------------------------------------------
-   RESTORE BEAM EVERY TIME A NEW CARD IS FOCUSED
-   Fixes the "works only once" problem
-   --------------------------------------------------------- */
+            /* ---------------------------------------------
+               CRITICAL FIX
 
-beam.style.setProperty(
-    "opacity",
-    "1",
-    "important"
-);
+               Every new hover FORCEFULLY restores
+               the beam.
 
-beam.style.setProperty(
-    "visibility",
-    "visible",
-    "important"
-);
+               This fixes the "works only once"
+               problem after leaving/re-entering.
+               --------------------------------------------- */
 
-
-        /* ---------------------------------------------
-           HOVER TARGETS
-           --------------------------------------------- */
-
-        targets.forEach(function (target) {
-
-            target.addEventListener(
-                "mouseenter",
-                function () {
-
-                    focusTarget(target);
-
-                }
+            beam.style.setProperty(
+                "opacity",
+                "1",
+                "important"
             );
 
-        });
+
+            beam.style.setProperty(
+                "visibility",
+                "visible",
+                "important"
+            );
+
+        }
 
 
-        /* ---------------------------------------------
-           LEAVE SPOTLIGHT
-           --------------------------------------------- */
+        /* -------------------------------------------------
+           ONE EVENT SYSTEM ONLY
+
+           No multiple mouseenter controllers.
+           ------------------------------------------------- */
 
         spotlight.addEventListener(
-            "mouseleave",
+            "pointerover",
+            function (event) {
+
+                const target =
+                    event.target.closest(
+                        ".spotlight-focus-target"
+                    );
+
+
+                if (!target) return;
+
+
+                if (!spotlight.contains(target)) {
+                    return;
+                }
+
+
+                /* Ignore pointer movement
+                   inside the same card. */
+
+                if (
+                    event.relatedTarget &&
+                    target.contains(event.relatedTarget)
+                ) {
+                    return;
+                }
+
+
+                focusTarget(target);
+
+            }
+        );
+
+
+        /* -------------------------------------------------
+           LEAVE ENTIRE SPOTLIGHT SECTION
+           ------------------------------------------------- */
+
+        spotlight.addEventListener(
+            "pointerleave",
             function () {
 
                 spotlight.classList.remove(
@@ -2508,12 +2590,23 @@ beam.style.setProperty(
                 );
 
 
+                /* Hide beam */
+
                 beam.style.setProperty(
                     "opacity",
                     "0",
                     "important"
                 );
 
+
+                beam.style.setProperty(
+                    "visibility",
+                    "hidden",
+                    "important"
+                );
+
+
+                /* Return fixture to neutral position */
 
                 fixture.style.setProperty(
                     "--spotlight-fixture-angle",
@@ -2524,32 +2617,40 @@ beam.style.setProperty(
         );
 
 
-        /* ---------------------------------------------
-           RECALCULATE WHEN WINDOW CHANGES
-           --------------------------------------------- */
+        /* -------------------------------------------------
+           RESIZE
+
+           Recalculate currently focused card.
+           ------------------------------------------------- */
 
         window.addEventListener(
             "resize",
             function () {
 
-                const active =
+                const activeTarget =
                     spotlight.querySelector(
-                        ".spotlight-is-focused"
+                        ".spotlight-focus-target.spotlight-is-focused"
                     );
 
-                if (active) {
 
-                    focusTarget(active);
+                if (activeTarget) {
+
+                    focusTarget(
+                        activeTarget
+                    );
 
                 }
 
             }
         );
 
+
     }
 
 
-    /* Normal page load */
+    /* -----------------------------------------------------
+       INITIALIZE ON PAGE LOAD
+       ----------------------------------------------------- */
 
     if (
         document.readyState === "loading"
@@ -2567,22 +2668,11 @@ beam.style.setProperty(
     }
 
 
-    /* ---------------------------------------------
-       IMPORTANT:
-       Re-initialize when returning to the section/page
-       --------------------------------------------- */
-
-    window.addEventListener(
-        "pageshow",
-        function () {
-
-            initSpotlight();
-
-        }
-    );
-
 })();
- 
+
+</script>
+
+   
 </script>
     
 </body>
