@@ -2277,10 +2277,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 sectionRect.left;
 
 
-            const sourceY =
+           const sourceY =
                 sourceRect.bottom -
                 sectionRect.top +
-                10;
+                12;
 
 
             /* ---------------------------------------------
@@ -2412,11 +2412,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     targetY - sourceY
                 );
 
-
-            const angle =
-                Math.atan2(dx, dy) *
-                180 /
-                Math.PI;
+const angle =
+    -Math.atan2(dx, dy) *
+    180 /
+    Math.PI;
 
 
             fixture.style.setProperty(
@@ -2448,6 +2447,23 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
         }
+
+       /* ---------------------------------------------------------
+   RESTORE BEAM EVERY TIME A NEW CARD IS FOCUSED
+   Fixes the "works only once" problem
+   --------------------------------------------------------- */
+
+beam.style.setProperty(
+    "opacity",
+    "1",
+    "important"
+);
+
+beam.style.setProperty(
+    "visibility",
+    "visible",
+    "important"
+);
 
 
         /* ---------------------------------------------
