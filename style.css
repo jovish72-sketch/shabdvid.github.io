@@ -9208,3 +9208,43 @@ body.spotlight-active #spotlight {
     }
 
 }
+/* =========================================================
+   SPOTLIGHT — RESTORE ORIGINAL SECTION FLOW
+   ========================================================= */
+
+#spotlight {
+    display: block !important;
+    min-height: 0 !important;
+    align-items: initial !important;
+    overflow: hidden !important;
+}
+
+#spotlight > .container {
+    width: min(1280px, 92%) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#spotlight .spotlight-grid {
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1.75fr)
+        minmax(300px, 0.75fr) !important;
+    gap: 28px !important;
+    align-items: start !important;
+}
+
+#spotlight .spotlight-main {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    height: auto !important;
+}
+
+#spotlight .spotlight-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    height: auto !important;
+    align-self: start !important;
+}
