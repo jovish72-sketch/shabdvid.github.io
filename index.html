@@ -2686,6 +2686,194 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 })();
+
+/* =========================================================
+   TGV INTERVIEW SWITCHER
+   ========================================================= */
+
+(function () {
+
+    const screen =
+        document.querySelector(".tgv-screen");
+
+    const poster =
+        document.getElementById("tgv-main-poster");
+
+    const video =
+        document.getElementById("tgv-main-video");
+
+    const playButton =
+        document.getElementById("tgv-play-button");
+
+    const languageLabel =
+        document.getElementById("tgv-language-label");
+
+    const title =
+        document.getElementById("tgv-main-title");
+
+    const description =
+        document.getElementById("tgv-main-description");
+
+    const options =
+        document.querySelectorAll(
+            ".tgv-interview-option"
+        );
+
+
+    if (
+        !screen ||
+        !poster ||
+        !video ||
+        !playButton
+    ) {
+        return;
+    }
+
+
+    /* ==============================================
+       SELECT INTERVIEW
+    ============================================== */
+
+    options.forEach(function (option) {
+
+        option.addEventListener(
+            "click",
+            function () {
+
+                const selectedPoster =
+                    option.dataset.poster;
+
+                const selectedLanguage =
+                    option.dataset.language;
+
+                const selectedTitle =
+                    option.dataset.title;
+
+                const selectedDescription =
+                    option.dataset.description;
+
+
+                /* Stop previous video */
+
+                video.src = "";
+
+                screen.classList.remove(
+                    "video-playing"
+                );
+
+
+                /* Change poster */
+
+                poster.src =
+                    selectedPoster;
+
+
+                /* Change text */
+
+                languageLabel.textContent =
+                    selectedLanguage;
+
+                title.textContent =
+                    selectedTitle;
+
+                description.textContent =
+                    selectedDescription;
+
+
+                /* Active button */
+
+                options.forEach(function (item) {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+                option.classList.add(
+                    "active"
+                );
+
+            }
+        );
+
+    });
+
+
+    /* ==============================================
+       PLAY SELECTED INTERVIEW
+    ============================================== */
+
+    playButton.addEventListener(
+        "click",
+        function () {
+
+            const activeOption =
+                document.querySelector(
+                    ".tgv-interview-option.active"
+                );
+
+
+            if (!activeOption) return;
+
+
+            let videoUrl =
+                activeOption.dataset.video;
+
+
+            /* Convert YouTube URL */
+
+            if (
+                videoUrl.includes("youtu.be/")
+            ) {
+
+                const id =
+                    videoUrl
+                    .split("youtu.be/")[1]
+                    .split("?")[0];
+
+                videoUrl =
+                    "https://www.youtube.com/embed/"
+                    + id
+                    + "?autoplay=1";
+
+            }
+
+
+            else if (
+                videoUrl.includes(
+                    "youtube.com/watch"
+                )
+            ) {
+
+                const url =
+                    new URL(videoUrl);
+
+                const id =
+                    url.searchParams.get("v");
+
+                videoUrl =
+                    "https://www.youtube.com/embed/"
+                    + id
+                    + "?autoplay=1";
+
+            }
+
+
+            video.src =
+                videoUrl;
+
+
+            screen.classList.add(
+                "video-playing"
+            );
+
+        }
+    );
+
+
+})();
  
 </script>
     
