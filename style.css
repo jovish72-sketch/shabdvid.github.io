@@ -8627,1416 +8627,224 @@ body.spotlight-active #spotlight {
 }
 
 /* =========================================================
-   SHABDVID SPOTLIGHT — MASTER FINAL OVERRIDE
-   FIXED SOURCE = "SPOTLIGHT" LABEL
-   TARGET = HOVERED CARD
+   SHABDVID — SPOTLIGHT FINAL
+   REAL PAR STAGE LIGHT
+   FIXED SOURCE → HOVERED CARD
    ========================================================= */
 
-/* Kill ALL old pseudo spotlight lights */
-#spotlight::before,
-#spotlight::after {
-    content: none !important;
-    display: none !important;
-}
-
-/* Keep the actual spotlight section geometry untouched */
-#spotlight {
-    position: relative !important;
-    overflow: hidden !important;
-    isolation: isolate !important;
-}
-
-/* ---------------------------------------------------------
-   REAL BEAM
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-beam {
-    position: absolute !important;
-
-    left: 0 !important;
-    width: 100% !important;
-
-    transform: none !important;
-
-    pointer-events: none !important;
-
-    z-index: 3 !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,0.16) 0%,
-            rgba(255,230,170,0.10) 25%,
-            rgba(212,175,55,0.055) 65%,
-            rgba(212,175,55,0.012) 100%
-        ) !important;
-
-    filter: blur(1px) !important;
-
-    clip-path: none !important;
-
-    opacity: 0 !important;
-    visibility: hidden !important;
-
-    transition:
-        top 0.28s ease,
-        height 0.28s ease,
-        opacity 0.20s ease,
-        clip-path 0.28s cubic-bezier(.22,.61,.36,1) !important;
-}
-
-/* Soft light inside the beam */
-
-#spotlight .spotlight-beam::after {
-    content: "" !important;
-    position: absolute !important;
-    inset: 0 !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(255,255,255,0.20) 0%,
-            rgba(255,220,130,0.08) 30%,
-            transparent 72%
-        ) !important;
-
-    filter: blur(12px) !important;
-}
-
-/* Beam visible only while a real card is focused */
-
-#spotlight.spotlight-active .spotlight-beam {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* ---------------------------------------------------------
-   CARD FOCUS
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-focus-target {
-    position: relative !important;
-    z-index: 4 !important;
-
-    transition:
-        filter 0.30s ease,
-        opacity 0.30s ease,
-        box-shadow 0.30s ease,
-        border-color 0.30s ease !important;
-}
-
-/* Other cards dim */
-
-#spotlight.spotlight-active
-.spotlight-focus-target:not(.spotlight-is-focused) {
-    filter:
-        brightness(0.68)
-        saturate(0.55) !important;
-
-    opacity: 0.72 !important;
-}
-
-/* Focused card stays bright */
-
-#spotlight .spotlight-focus-target.spotlight-is-focused {
-    filter:
-        brightness(1.10)
-        saturate(1.08) !important;
-
-    opacity: 1 !important;
-
-    border-color:
-        rgba(212,175,55,0.72) !important;
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,0.18),
-        0 0 30px rgba(212,175,55,0.18),
-        0 18px 55px rgba(0,0,0,0.30) !important;
-}
-
-/* Normal state */
-
-#spotlight:not(.spotlight-active)
-.spotlight-focus-target {
-    filter: none !important;
-    opacity: 1 !important;
-}
-
-/* =========================================================
-   SHABDVID SPOTLIGHT — CINEMATIC MOVING FIXTURE
-   FIXED SOURCE + WIDER BEAM
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   OLD SPOTLIGHT LIGHTS — COMPLETELY OFF
-   --------------------------------------------------------- */
-
-#spotlight::before,
-#spotlight::after {
-    content:none !important;
-    display:none !important;
-}
-
-
-/* ---------------------------------------------------------
-   SPOTLIGHT SOURCE
-   This is the fixed point above the beam.
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-source {
-    position:absolute !important;
-
-    top:0 !important;
-    left:50% !important;
-
-    width:1px !important;
-    height:1px !important;
-
-    transform:none !important;
-
-    z-index:25 !important;
-
-    pointer-events:none !important;
-
-    overflow:visible !important;
-}
-
-
-/* ---------------------------------------------------------
-   MOVABLE THEATRE SPOTLIGHT FIXTURE
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-fixture {
-
-    position:absolute !important;
-
-    left:50% !important;
-    top:0 !important;
-
-    width:58px !important;
-    height:34px !important;
-
-    transform:
-        translate(-50%, -3px)
-        rotate(var(--spotlight-fixture-angle, 0deg)) !important;
-
-    transform-origin:50% 8px !important;
-
-    border-radius:
-        8px 8px 15px 15px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #e4c47b 0%,
-            #a9782d 45%,
-            #6d4819 100%
-        ) !important;
-
-    border:
-        1px solid rgba(255,230,160,.75) !important;
-
-    box-shadow:
-        0 3px 8px rgba(0,0,0,.45),
-        0 0 18px rgba(230,190,95,.22) !important;
-
-    pointer-events:none !important;
-
-    transition:
-        transform .30s cubic-bezier(.22,.61,.36,1) !important;
-}
-
-
-/* ---------------------------------------------------------
-   BLACK INNER BODY
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-fixture::before {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:7px !important;
-    right:7px !important;
-
-    top:5px !important;
-
-    height:18px !important;
-
-    border-radius:
-        5px 5px 10px 10px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #25211c,
-            #080706
-        ) !important;
-
-    box-shadow:
-        inset 0 1px 2px rgba(255,255,255,.12) !important;
-}
-
-
-/* ---------------------------------------------------------
-   GLOWING LENS
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-lens {
-
-    position:absolute !important;
-
-    left:50% !important;
-    bottom:-5px !important;
-
-    width:19px !important;
-    height:19px !important;
-
-    transform:translateX(-50%) !important;
-
-    border-radius:50% !important;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,245,1) 0%,
-            rgba(255,226,150,.95) 25%,
-            rgba(212,175,55,.55) 48%,
-            transparent 72%
-        ) !important;
-
-    box-shadow:
-        0 0 7px rgba(255,242,190,.95),
-        0 0 20px rgba(212,175,55,.55),
-        0 0 35px rgba(212,175,55,.22) !important;
-}
-
-
-/* ---------------------------------------------------------
-   SMALL FIXTURE MOUNT
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-source::before {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:50% !important;
-    top:-2px !important;
-
-    width:9px !important;
-    height:10px !important;
-
-    transform:translateX(-50%) !important;
-
-    border-radius:3px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #d7b66b,
-            #6d491d
-        ) !important;
-
-    box-shadow:
-        0 2px 5px rgba(0,0,0,.45) !important;
-}
-
-
-/* =========================================================
-   WIDER REAL BEAM
-   ========================================================= */
-
-#spotlight .spotlight-beam {
-
-    position:absolute !important;
-
-    left:0 !important;
-
-    width:100% !important;
-
-    transform:none !important;
-
-    pointer-events:none !important;
-
-    z-index:4 !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,250,225,.24) 0%,
-            rgba(255,231,170,.17) 20%,
-            rgba(218,184,105,.09) 58%,
-            rgba(212,175,55,.025) 100%
-        ) !important;
-
-    filter:blur(2px) !important;
-
-    opacity:0 !important;
-
-    visibility:hidden !important;
-
-    transition:
-        top .28s ease,
-        height .28s ease,
-        opacity .20s ease,
-        clip-path .30s cubic-bezier(.22,.61,.36,1) !important;
-}
-
-
-/* Soft central light inside beam */
-
-#spotlight .spotlight-beam::after {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    inset:0 !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(255,255,255,.25) 0%,
-            rgba(255,220,135,.13) 25%,
-            rgba(212,175,55,.045) 55%,
-            transparent 76%
-        ) !important;
-
-    filter:blur(14px) !important;
-}
-
-
-/* Beam visible */
-
-#spotlight.spotlight-active .spotlight-beam {
-
-    opacity:1 !important;
-
-    visibility:visible !important;
-}
-
-
-/* =========================================================
-   WIDER BEAM + TARGET CARDS
-   ========================================================= */
-
-#spotlight .spotlight-focus-target {
-
-    position:relative !important;
-
-    z-index:8 !important;
-
-    transition:
-        filter .30s ease,
-        opacity .30s ease,
-        box-shadow .30s ease,
-        border-color .30s ease !important;
-}
-
-
-/* Other cards become dim */
-
-#spotlight.spotlight-active
-.spotlight-focus-target:not(.spotlight-is-focused) {
-
-    filter:
-        brightness(.68)
-        saturate(.55) !important;
-
-    opacity:.76 !important;
-}
-
-
-/* Focused card */
-
-#spotlight .spotlight-focus-target.spotlight-is-focused {
-
-    filter:
-        brightness(1.12)
-        saturate(1.08) !important;
-
-    opacity:1 !important;
-
-    border-color:
-        rgba(212,175,55,.72) !important;
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,.18),
-        0 0 35px rgba(212,175,55,.20),
-        0 18px 55px rgba(0,0,0,.30) !important;
-}
-
-
-/* =========================================================
-   WHEN MOUSE LEAVES
-   ========================================================= */
-
-#spotlight:not(.spotlight-active)
-.spotlight-focus-target {
-
-    filter:none !important;
-
-    opacity:1 !important;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width:768px) {
-
-    #spotlight .spotlight-fixture {
-
-        width:48px !important;
-        height:29px !important;
-    }
-
-    #spotlight .spotlight-lens {
-
-        width:16px !important;
-        height:16px !important;
-    }
-
-    #spotlight .spotlight-beam {
-
-        filter:blur(3px) !important;
-    }
-}
-/* =========================================================
-   SPOTLIGHT — REAL STAGE / PAR LIGHT
-   FIXTURE SITS BELOW "SPOTLIGHT"
-   ========================================================= */
-
-#spotlight .spotlight-source{
-    position:absolute !important;
-    width:1px !important;
-    height:1px !important;
-    z-index:30 !important;
-    pointer-events:none !important;
-    overflow:visible !important;
-}
-
-/* Real stage spotlight body */
-#spotlight .spotlight-fixture{
-    position:absolute !important;
-
-    width:82px !important;
-    height:52px !important;
-
-    left:0 !important;
-    top:0 !important;
-
-    transform:
-        translate(-50%, 0)
-        rotate(var(--spotlight-fixture-angle, 0deg)) !important;
-
-    transform-origin:50% 8px !important;
-
-    border-radius:10px 10px 18px 18px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #191713 0%,
-            #080706 58%,
-            #252018 100%
-        ) !important;
-
-    border:
-        2px solid rgba(190,151,72,.78) !important;
-
-    box-shadow:
-        0 5px 14px rgba(0,0,0,.45),
-        0 0 22px rgba(212,175,55,.20) !important;
-
-    transition:
-        transform .28s cubic-bezier(.22,.61,.36,1) !important;
-}
-
-/* Gold outer rim */
-#spotlight .spotlight-fixture::before{
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:7px !important;
-    right:7px !important;
-    top:6px !important;
-
-    height:29px !important;
-
-    border-radius:7px 7px 14px 14px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #3a3226,
-            #0a0907
-        ) !important;
-
-    border:
-        1px solid rgba(218,174,91,.42) !important;
-}
-
-/* Stage-light lens */
-#spotlight .spotlight-lens{
-    position:absolute !important;
-
-    left:50% !important;
-    bottom:-9px !important;
-
-    width:30px !important;
-    height:30px !important;
-
-    transform:translateX(-50%) !important;
-
-    border-radius:50% !important;
-
-    background:
-        radial-gradient(
-            circle,
-            #fffef0 0%,
-            #ffe7a0 22%,
-            #d4af37 43%,
-            rgba(212,175,55,.32) 62%,
-            transparent 76%
-        ) !important;
-
-    box-shadow:
-        0 0 10px rgba(255,248,210,.95),
-        0 0 28px rgba(255,221,130,.72),
-        0 0 55px rgba(212,175,55,.30) !important;
-}
-
-/* Small stage-light mounting yoke */
-#spotlight .spotlight-source::before{
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:50% !important;
-    top:-13px !important;
-
-    width:15px !important;
-    height:15px !important;
-
-    transform:translateX(-50%) !important;
-
-    border-radius:4px !important;
-
-    background:#8d692c !important;
-
-    box-shadow:
-        0 2px 5px rgba(0,0,0,.4) !important;
-}
-
-
-/* =========================================================
-   MUCH WIDER THEATRICAL BEAM
-   ========================================================= */
-
-#spotlight .spotlight-beam{
-    left:0 !important;
-    width:100% !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,251,230,.34) 0%,
-            rgba(255,235,180,.24) 18%,
-            rgba(255,220,145,.14) 45%,
-            rgba(212,175,55,.055) 78%,
-            transparent 100%
-        ) !important;
-
-    filter:blur(3px) !important;
-
-    z-index:4 !important;
-}
-
-/* Bright core of theatrical beam */
-#spotlight .spotlight-beam::after{
-    content:"" !important;
-
-    position:absolute !important;
-    inset:0 !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(255,255,245,.34) 0%,
-            rgba(255,231,170,.20) 24%,
-            rgba(212,175,55,.075) 54%,
-            transparent 80%
-        ) !important;
-
-    filter:blur(15px) !important;
-}
-
-
-/* =========================================================
-   OTHER CARDS DIM
-   ========================================================= */
-
-#spotlight.spotlight-active
-.spotlight-focus-target:not(.spotlight-is-focused){
-
-    filter:
-        brightness(.60)
-        saturate(.48) !important;
-
-    opacity:.70 !important;
-}
-
-
-/* Focused card stays clearly lit */
-
-#spotlight .spotlight-focus-target.spotlight-is-focused{
-
-    filter:
-        brightness(1.16)
-        saturate(1.10) !important;
-
-    opacity:1 !important;
-
-    border-color:
-        rgba(212,175,55,.82) !important;
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,.22),
-        0 0 42px rgba(212,175,55,.24),
-        0 18px 55px rgba(0,0,0,.32) !important;
-}
-
-/* =========================================================
-   SHABDVID SPOTLIGHT — FINAL STAGE PAR LIGHT
-   ========================================================= */
-
-/* Kill every old spotlight pseudo-light */
-#spotlight::before,
-#spotlight::after {
-    content:none !important;
-    display:none !important;
-}
-
-
-/* ---------------------------------------------------------
-   FIXED LIGHT SOURCE
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-source {
-    position:absolute !important;
-
-    left:0 !important;
-    top:0 !important;
-
-    width:1px !important;
-    height:1px !important;
-
-    z-index:50 !important;
-
-    pointer-events:none !important;
-
-    overflow:visible !important;
-}
-
-
-/* ---------------------------------------------------------
-   REAL STAGE / PAR SPOTLIGHT BODY
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-fixture {
-
-    position:absolute !important;
-
-    width:92px !important;
-    height:58px !important;
-
-    left:0 !important;
-    top:0 !important;
-
-    transform:
-        translate(-50%, 0)
-        rotate(var(--spotlight-fixture-angle, 0deg)) !important;
-
-    transform-origin:50% 8px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #34302a 0%,
-            #14120f 48%,
-            #050504 100%
-        ) !important;
-
-    border:
-        2px solid rgba(205,165,75,.85) !important;
-
-    border-radius:
-        12px 12px 24px 24px !important;
-
-    box-shadow:
-        0 7px 15px rgba(0,0,0,.48),
-        0 0 24px rgba(212,175,55,.25) !important;
-
-    transition:
-        transform .28s cubic-bezier(.22,.61,.36,1) !important;
-}
-
-
-/* Stage spotlight front housing */
-
-#spotlight .spotlight-fixture::before {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:9px !important;
-    right:9px !important;
-    top:7px !important;
-
-    height:37px !important;
-
-    border-radius:
-        9px 9px 20px 20px !important;
-
-    background:
-        radial-gradient(
-            ellipse at center 72%,
-            #29251d 0%,
-            #0b0a08 48%,
-            #030303 100%
-        ) !important;
-
-    border:
-        1px solid rgba(218,174,91,.48) !important;
-}
-
-
-/* Actual bright PAR lens */
-
-#spotlight .spotlight-lens {
-
-    position:absolute !important;
-
-    left:50% !important;
-
-    bottom:-11px !important;
-
-    width:34px !important;
-    height:34px !important;
-
-    transform:translateX(-50%) !important;
-
-    border-radius:50% !important;
-
-    background:
-        radial-gradient(
-            circle,
-            #ffffff 0%,
-            #fff0b4 18%,
-            #ffd76b 34%,
-            #d4af37 51%,
-            rgba(212,175,55,.28) 68%,
-            transparent 78%
-        ) !important;
-
-    box-shadow:
-        0 0 10px rgba(255,255,235,.98),
-        0 0 25px rgba(255,224,135,.85),
-        0 0 50px rgba(212,175,55,.42) !important;
-}
-
-
-/* ---------------------------------------------------------
-   STAGE LIGHT YOKE / BRACKET
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-source::before {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:-47px !important;
-    top:4px !important;
-
-    width:94px !important;
-    height:52px !important;
-
-    border:
-        3px solid rgba(35,31,25,.95) !important;
-
-    border-bottom:0 !important;
-
-    border-radius:
-        45px 45px 0 0 !important;
-
-    opacity:.95 !important;
-}
-
-
-/* ---------------------------------------------------------
-   WIDE THEATRICAL BEAM
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-beam {
-
-    position:absolute !important;
-
-    left:0 !important;
-
-    width:100% !important;
-
-    z-index:4 !important;
-
-    pointer-events:none !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,240,.58) 0%,
-            rgba(255,239,194,.42) 16%,
-            rgba(255,220,145,.25) 40%,
-            rgba(218,184,105,.12) 70%,
-            rgba(212,175,55,.025) 100%
-        ) !important;
-
-    filter:blur(4px) !important;
-
-    opacity:0 !important;
-
-    visibility:hidden !important;
-
-    transition:
-        top .25s ease,
-        height .25s ease,
-        clip-path .30s cubic-bezier(.22,.61,.36,1),
-        opacity .20s ease !important;
-}
-
-
-/* Strong inner light */
-
-#spotlight .spotlight-beam::after {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    inset:0 !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(255,255,255,.62) 0%,
-            rgba(255,238,190,.36) 20%,
-            rgba(255,215,125,.17) 43%,
-            rgba(212,175,55,.05) 68%,
-            transparent 84%
-        ) !important;
-
-    filter:blur(18px) !important;
-}
-
-
-/* Additional broad light haze */
-
-#spotlight .spotlight-beam::before {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    inset:0 !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 5%,
-            rgba(255,248,220,.28),
-            transparent 68%
-        ) !important;
-
-    filter:blur(28px) !important;
-}
-
-
-/* Show beam */
-
-#spotlight.spotlight-active .spotlight-beam {
-
-    opacity:1 !important;
-
-    visibility:visible !important;
-}
-
-
-/* ---------------------------------------------------------
-   TARGET CARDS
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-focus-target {
-
-    position:relative !important;
-
-    z-index:8 !important;
-
-    transition:
-        filter .28s ease,
-        opacity .28s ease,
-        box-shadow .28s ease,
-        border-color .28s ease !important;
-}
-
-
-/* Other cards dim */
-
-#spotlight.spotlight-active
-.spotlight-focus-target:not(.spotlight-is-focused) {
-
-    filter:
-        brightness(.58)
-        saturate(.48) !important;
-
-    opacity:.68 !important;
-}
-
-
-/* Selected card */
-
-#spotlight .spotlight-focus-target.spotlight-is-focused {
-
-    filter:
-        brightness(1.18)
-        saturate(1.12) !important;
-
-    opacity:1 !important;
-
-    border-color:
-        rgba(212,175,55,.85) !important;
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,.22),
-        0 0 45px rgba(212,175,55,.25),
-        0 18px 55px rgba(0,0,0,.32) !important;
-}
-
-
-/* Normal state */
-
-#spotlight:not(.spotlight-active)
-.spotlight-focus-target {
-
-    filter:none !important;
-
-    opacity:1 !important;
-}
-
-/* =========================================================
-   SHABDVID SPOTLIGHT — FINAL STAGE PAR FIX
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   FIXED SOURCE
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-source {
-    position:absolute !important;
-    width:1px !important;
-    height:1px !important;
-
-    z-index:50 !important;
-    pointer-events:none !important;
-
-    overflow:visible !important;
-}
-
-
-/* ---------------------------------------------------------
-   REAL STAGE PAR SPOTLIGHT
-   Compact professional theatre fixture
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-fixture {
-
-    width:86px !important;
-    height:40px !important;
-
-    left:0 !important;
-    top:0 !important;
-
-    transform:
-        translate(-50%, 0)
-        rotate(var(--spotlight-fixture-angle, 0deg)) !important;
-
-    transform-origin:50% 7px !important;
-
-    border-radius:
-        8px 8px 18px 18px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #37322a 0%,
-            #171511 48%,
-            #050504 100%
-        ) !important;
-
-    border:
-        2px solid rgba(205,165,75,.90) !important;
-
-    box-shadow:
-        0 5px 13px rgba(0,0,0,.48),
-        0 0 20px rgba(212,175,55,.20) !important;
-
-    transition:
-        transform .28s cubic-bezier(.22,.61,.36,1) !important;
-}
-
-
-/* Front reflector / PAR housing */
-
-#spotlight .spotlight-fixture::before {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:7px !important;
-    right:7px !important;
-    top:5px !important;
-
-    height:27px !important;
-
-    border-radius:
-        6px 6px 14px 14px !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 75%,
-            #353027 0%,
-            #11100d 48%,
-            #030303 100%
-        ) !important;
-
-    border:
-        1px solid rgba(221,181,101,.48) !important;
-}
-
-
-/* ---------------------------------------------------------
-   REAL BRIGHT PAR LENS
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-lens {
-
-    position:absolute !important;
-
-    left:50% !important;
-    bottom:-8px !important;
-
-    width:27px !important;
-    height:27px !important;
-
-    transform:translateX(-50%) !important;
-
-    border-radius:50% !important;
-
-    background:
-        radial-gradient(
-            circle,
-            #ffffff 0%,
-            #fff2bc 18%,
-            #ffd86c 34%,
-            #d4af37 52%,
-            rgba(212,175,55,.25) 70%,
-            transparent 80%
-        ) !important;
-
-    box-shadow:
-        0 0 9px rgba(255,255,235,1),
-        0 0 22px rgba(255,224,135,.85),
-        0 0 42px rgba(212,175,55,.40) !important;
-}
-
-
-/* Small top mounting bracket — stays INSIDE fixture */
-
-#spotlight .spotlight-fixture::after {
-
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:50% !important;
-    top:3px !important;
-
-    width:18px !important;
-    height:7px !important;
-
-    transform:translateX(-50%) !important;
-
-    border-radius:3px !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            #b58b3d,
-            #5b411b
-        ) !important;
-}
-
-
-/* Remove the old oversized outside bracket */
-
-#spotlight .spotlight-source::before {
-    display:none !important;
-    content:none !important;
-}
-
-
-/* ---------------------------------------------------------
-   STRONGER / WIDER THEATRICAL BEAM
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-beam {
-
-    left:0 !important;
-    width:100% !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,235,.68) 0%,
-            rgba(255,239,190,.50) 18%,
-            rgba(255,222,145,.31) 42%,
-            rgba(218,184,105,.14) 72%,
-            rgba(212,175,55,.035) 100%
-        ) !important;
-
-    filter:blur(2.5px) !important;
-
-    z-index:4 !important;
-
-    pointer-events:none !important;
-
-    transition:
-        top .25s ease,
-        height .25s ease,
-        clip-path .30s cubic-bezier(.22,.61,.36,1),
-        opacity .20s ease !important;
-}
-
-
-/* Strong beam core */
-
-#spotlight .spotlight-beam::after {
-
-    content:"" !important;
-
-    position:absolute !important;
-    inset:0 !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(255,255,255,.70) 0%,
-            rgba(255,236,180,.43) 22%,
-            rgba(255,214,120,.20) 45%,
-            rgba(212,175,55,.06) 70%,
-            transparent 86%
-        ) !important;
-
-    filter:blur(14px) !important;
-}
-
-
-/* ---------------------------------------------------------
-   FOCUS / DIM
-   --------------------------------------------------------- */
-
-#spotlight.spotlight-active
-.spotlight-focus-target:not(.spotlight-is-focused) {
-
-    filter:
-        brightness(.56)
-        saturate(.45) !important;
-
-    opacity:.66 !important;
-}
-
-
-#spotlight .spotlight-focus-target.spotlight-is-focused {
-
-    filter:
-        brightness(1.20)
-        saturate(1.12) !important;
-
-    opacity:1 !important;
-
-    border-color:
-        rgba(212,175,55,.88) !important;
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,.24),
-        0 0 48px rgba(212,175,55,.28),
-        0 18px 55px rgba(0,0,0,.30) !important;
-}
-
-/* =========================================================
-   SHABDVID SPOTLIGHT — FINAL PAR STAGE LIGHT
-   ========================================================= */
 
 /* ---------------------------------------------------------
    SPOTLIGHT SECTION
    --------------------------------------------------------- */
 
 #spotlight {
-    position: relative !important;
-    overflow: hidden !important;
-    isolation: isolate !important;
+    position:relative !important;
+    overflow:hidden !important;
+    isolation:isolate !important;
 }
 
-/* Remove ALL old Spotlight pseudo-light effects */
+
+/* ---------------------------------------------------------
+   REMOVE ALL OLD LIGHT EFFECTS
+   --------------------------------------------------------- */
+
 #spotlight::before,
 #spotlight::after {
-    content: none !important;
-    display: none !important;
+    content:none !important;
+    display:none !important;
 }
 
 
 /* ---------------------------------------------------------
    FIXED LIGHT SOURCE
+   The source point is positioned by JavaScript.
+   It NEVER follows the mouse.
    --------------------------------------------------------- */
 
 #spotlight .spotlight-source {
-    position: absolute !important;
+    position:absolute !important;
 
-    width: 110px !important;
-    height: 52px !important;
+    width:1px !important;
+    height:1px !important;
 
-    left: 50% !important;
-    top: 0 !important;
+    left:50% !important;
+    top:0 !important;
 
-    transform: translateX(-50%) !important;
+    transform:none !important;
 
-    z-index: 20 !important;
+    z-index:30 !important;
 
-    pointer-events: none !important;
+    pointer-events:none !important;
+
+    overflow:visible !important;
 }
 
 
 /* ---------------------------------------------------------
    REAL PAR FIXTURE
+   Actual PNG is used.
+   No fake CSS body.
+   No fake lens.
    --------------------------------------------------------- */
 
 #spotlight .spotlight-fixture {
-    position: absolute !important;
+    position:absolute !important;
 
-    left: 0 !important;
-    top: 0 !important;
+    left:0 !important;
+    top:0 !important;
 
-    width: 110px !important;
-    height: 52px !important;
+    width:58px !important;
+    height:58px !important;
+
+    padding:0 !important;
+    margin:0 !important;
+
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+
+    overflow:visible !important;
 
     transform:
-        translate(-50%, 0)
-        rotate(var(--spotlight-fixture-angle, 0deg))
+        translate(-50%,0)
+        rotate(var(--spotlight-fixture-angle,0deg))
         !important;
 
-    transform-origin: 50% 10px !important;
+    transform-origin:50% 8px !important;
 
     transition:
-        transform 0.30s cubic-bezier(.22,.61,.36,1)
+        transform .30s cubic-bezier(.22,.61,.36,1)
         !important;
 
-    pointer-events: none !important;
-
-    filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,.40))
-        drop-shadow(0 0 15px rgba(212,175,55,.22))
-        !important;
-}
-
-
-/* Actual PAR image */
-
-#spotlight .spotlight-fixture img {
-    display: block !important;
-
-    width: 110px !important;
-    height: 52px !important;
-
-    object-fit: contain !important;
-
-    object-position: center !important;
-
-    pointer-events: none !important;
-
-    user-select: none !important;
-}
-
-
-/* Old lens completely disabled */
-
-#spotlight .spotlight-lens {
-    display: none !important;
+    pointer-events:none !important;
 }
 
 
 /* ---------------------------------------------------------
-   THEATRICAL BEAM
+   ACTUAL PAR PNG
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-fixture img {
+    display:block !important;
+
+    width:58px !important;
+    height:58px !important;
+
+    max-width:none !important;
+
+    object-fit:contain !important;
+    object-position:center !important;
+
+    padding:0 !important;
+    margin:0 !important;
+
+    background:transparent !important;
+    border:none !important;
+
+    box-shadow:none !important;
+
+    pointer-events:none !important;
+    user-select:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE OLD FAKE FIXTURE ELEMENTS
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-fixture::before,
+#spotlight .spotlight-fixture::after,
+
+#spotlight .spotlight-source::before,
+#spotlight .spotlight-source::after {
+    content:none !important;
+    display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   OLD LENS — COMPLETELY OFF
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-lens {
+    display:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   THEATRICAL LIGHT BEAM
+   Fixed source → hovered card
    --------------------------------------------------------- */
 
 #spotlight .spotlight-beam {
-    position: absolute !important;
+    position:absolute !important;
 
-    left: 0 !important;
+    left:0 !important;
+    top:0 !important;
 
-    top: 0 !important;
+    width:100% !important;
+    height:0 !important;
 
-    width: 100% !important;
+    z-index:3 !important;
 
-    height: 0 !important;
+    pointer-events:none !important;
 
-    z-index: 2 !important;
-
-    pointer-events: none !important;
-
-    opacity: 0 !important;
-
-    visibility: hidden !important;
+    opacity:0 !important;
+    visibility:hidden !important;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(255,255,235,.52) 0%,
-            rgba(255,241,190,.36) 20%,
-            rgba(239,208,137,.22) 52%,
-            rgba(214,176,91,.10) 78%,
-            rgba(214,176,91,.025) 100%
+            rgba(255,255,240,.62) 0%,
+            rgba(255,239,185,.45) 20%,
+            rgba(255,222,145,.28) 45%,
+            rgba(218,184,105,.14) 70%,
+            rgba(212,175,55,.035) 100%
         ) !important;
 
-    filter: blur(10px) !important;
+    filter:blur(8px) !important;
 
-    clip-path: polygon(
-        45% 0%,
-        55% 0%,
-        100% 100%,
-        0% 100%
-    ) !important;
+    clip-path:
+        polygon(
+            45% 0%,
+            55% 0%,
+            100% 100%,
+            0% 100%
+        ) !important;
 
     transition:
         opacity .22s ease,
-        clip-path .28s ease,
+        clip-path .28s cubic-bezier(.22,.61,.36,1),
         top .20s ease,
         height .20s ease
         !important;
+}
+
+
+/* ---------------------------------------------------------
+   BEAM INNER GLOW
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-beam::after {
+    content:"" !important;
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255,255,255,.72) 0%,
+            rgba(255,239,185,.45) 20%,
+            rgba(255,218,130,.20) 45%,
+            rgba(212,175,55,.055) 70%,
+            transparent 88%
+        ) !important;
+
+    filter:blur(12px) !important;
+
+    pointer-events:none !important;
 }
 
 
@@ -10045,8 +8853,8 @@ body.spotlight-active #spotlight {
    --------------------------------------------------------- */
 
 #spotlight.spotlight-active .spotlight-beam {
-    opacity: 1 !important;
-    visibility: visible !important;
+    opacity:1 !important;
+    visibility:visible !important;
 }
 
 
@@ -10055,370 +8863,120 @@ body.spotlight-active #spotlight {
    --------------------------------------------------------- */
 
 #spotlight .spotlight-focus-target {
-    position: relative !important;
+    position:relative !important;
 
-    z-index: 6 !important;
+    z-index:8 !important;
 
     transition:
-        filter .28s ease,
-        opacity .28s ease,
-        box-shadow .28s ease,
-        transform .28s ease
+        filter .30s ease,
+        opacity .30s ease,
+        box-shadow .30s ease,
+        border-color .30s ease
         !important;
 }
 
 
 /* ---------------------------------------------------------
-   ALL OTHER CARDS = DIMMED
+   OTHER CARDS — DIMMED
+   Not black.
    --------------------------------------------------------- */
 
 #spotlight.spotlight-active
 .spotlight-focus-target:not(.spotlight-is-focused) {
 
-    opacity: .58 !important;
+    opacity:.58 !important;
 
     filter:
         brightness(.72)
-        saturate(.58)
+        saturate(.55)
         !important;
 }
 
 
 /* ---------------------------------------------------------
-   CURRENTLY LIT CARD
+   CURRENT HOVERED CARD — ILLUMINATED
    --------------------------------------------------------- */
 
 #spotlight
 .spotlight-focus-target.spotlight-is-focused {
 
-    opacity: 1 !important;
+    opacity:1 !important;
 
     filter:
-        brightness(1.13)
-        saturate(1.05)
+        brightness(1.14)
+        saturate(1.08)
         !important;
+
+    border-color:
+        rgba(212,175,55,.75) !important;
 
     box-shadow:
-        0 0 0 1px rgba(218,178,92,.58),
-        0 0 35px rgba(218,178,92,.24),
-        0 0 85px rgba(255,232,175,.13)
+        0 0 0 1px rgba(212,175,55,.18),
+        0 0 38px rgba(212,175,55,.22),
+        0 18px 55px rgba(0,0,0,.28)
         !important;
 }
 
 
 /* ---------------------------------------------------------
-   KEEP CONTENT ABOVE BEAM
+   NORMAL STATE
+   When mouse is outside Spotlight section.
    --------------------------------------------------------- */
 
-#spotlight > .container {
-    position: relative !important;
-
-    z-index: 5 !important;
-}
-
-
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
-
-@media (max-width: 768px) {
-
-    #spotlight .spotlight-source {
-        width: 82px !important;
-        height: 42px !important;
-    }
-
-    #spotlight .spotlight-fixture {
-        width: 82px !important;
-        height: 42px !important;
-    }
-
-    #spotlight .spotlight-fixture img {
-        width: 82px !important;
-        height: 42px !important;
-    }
-
-    #spotlight .spotlight-beam {
-        filter: blur(7px) !important;
-    }
-}
-
-/* =========================================================
-   SPOTLIGHT — ACTUAL PAR LIGHT FINAL OVERRIDE
-   ========================================================= */
-
-/* Remove EVERY old fake fixture graphic */
-#spotlight .spotlight-fixture::before,
-#spotlight .spotlight-fixture::after {
-    content: none !important;
-    display: none !important;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-
-/* Remove old source decoration */
-#spotlight .spotlight-source::before,
-#spotlight .spotlight-source::after {
-    content: none !important;
-    display: none !important;
-}
-
-
-/* ---------------------------------------------------------
-   FIXED SOURCE — EXACT CENTER OF SPOTLIGHT
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-source {
-    position: absolute !important;
-
-    width: 1px !important;
-    height: 1px !important;
-
-    left: 50% !important;
-    top: 0 !important;
-
-    transform: none !important;
-
-    z-index: 30 !important;
-
-    pointer-events: none !important;
-}
-
-
-/* ---------------------------------------------------------
-   ACTUAL PAR LIGHT
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-fixture {
-
-    position: absolute !important;
-
-    left: 0 !important;
-    top: 0 !important;
-
-    width: 52px !important;
-    height: 58px !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-
-    overflow: visible !important;
-
-    transform:
-        translate(-50%, 0)
-        rotate(var(--spotlight-fixture-angle, 0deg))
-        !important;
-
-    transform-origin: 50% 50% !important;
-
-    transition:
-        transform .28s cubic-bezier(.22,.61,.36,1)
-        !important;
-
-    pointer-events: none !important;
-
-    filter:
-        drop-shadow(0 4px 5px rgba(0,0,0,.25))
-        !important;
-}
-
-
-/* ---------------------------------------------------------
-   USE ONLY THE PROVIDED PAR LIGHT IMAGE
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-fixture img {
-
-    display: block !important;
-
-    width: 52px !important;
-    height: 58px !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-
-    pointer-events: none !important;
-    user-select: none !important;
-}
-
-
-/* Old artificial lens — completely OFF */
-#spotlight .spotlight-lens {
-    display: none !important;
-}
-
-
-/* ---------------------------------------------------------
-   KEEP PAR BELOW SPOTLIGHT TEXT
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-heading > span {
-    position: relative !important;
-    z-index: 31 !important;
-}
-
-
-/* ---------------------------------------------------------
-   BEAM
-   --------------------------------------------------------- */
-
-#spotlight .spotlight-beam {
-
-    position: absolute !important;
-
-    left: 0 !important;
-
-    width: 100% !important;
-
-    z-index: 2 !important;
-
-    pointer-events: none !important;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(255,248,215,.58),
-            rgba(255,232,166,.30) 35%,
-            rgba(230,193,112,.12) 75%,
-            rgba(230,193,112,.02)
-        ) !important;
-
-    filter: blur(7px) !important;
-}
-
-
-/* Active beam */
-#spotlight.spotlight-active .spotlight-beam {
-
-    opacity: 1 !important;
-
-    visibility: visible !important;
-}
-
-
-/* ---------------------------------------------------------
-   TARGET DIMMING
-   --------------------------------------------------------- */
-
-#spotlight.spotlight-active
-.spotlight-focus-target:not(.spotlight-is-focused) {
-
-    opacity: .62 !important;
-
-    filter:
-        brightness(.74)
-        saturate(.60)
-        !important;
-}
-
-
-/* Selected target */
-#spotlight
-.spotlight-focus-target.spotlight-is-focused {
-
-    opacity: 1 !important;
-
-    filter:
-        brightness(1.10)
-        saturate(1.05)
-        !important;
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,.48),
-        0 0 28px rgba(212,175,55,.20)
-        !important;
-}
-
-
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
-
-@media (max-width: 768px) {
-
-    #spotlight .spotlight-fixture {
-        width: 44px !important;
-        height: 50px !important;
-    }
-
-    #spotlight .spotlight-fixture img {
-        width: 44px !important;
-        height: 50px !important;
-    }
-}
-
-/* =========================================================
-   SPOTLIGHT — ONLY HOVERED CARD IS LIT
-   ========================================================= */
-
-/* When Spotlight is active, dim every other card */
-#spotlight.spotlight-active
-.spotlight-focus-target:not(.spotlight-is-focused) {
-
-    opacity: 0.42 !important;
-
-    filter:
-        brightness(0.68)
-        saturate(0.55)
-        contrast(0.92)
-        !important;
-
-    transition:
-        opacity 0.30s ease,
-        filter 0.30s ease,
-        box-shadow 0.30s ease
-        !important;
-}
-
-
-/* The card currently under the cursor stays fully illuminated */
-#spotlight.spotlight-active
-.spotlight-focus-target.spotlight-is-focused {
-
-    opacity: 1 !important;
-
-    filter:
-        brightness(1.08)
-        saturate(1)
-        contrast(1)
-        !important;
-
-    transition:
-        opacity 0.30s ease,
-        filter 0.30s ease,
-        box-shadow 0.30s ease
-        !important;
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,0.45),
-        0 0 28px rgba(212,175,55,0.20)
-        !important;
-}
-
-
-/* When Spotlight is not active, return everything to normal */
 #spotlight:not(.spotlight-active)
 .spotlight-focus-target {
 
-    opacity: 1 !important;
+    opacity:1 !important;
 
-    filter: none !important;
+    filter:none !important;
 
-    box-shadow: none !important;
+    box-shadow:none !important;
+}
+
+
+/* ---------------------------------------------------------
+   FIXTURE IMAGE SAFETY
+   Prevent global img rules from interfering.
+   --------------------------------------------------------- */
+
+#spotlight .spotlight-fixture img {
+    display:block !important;
+    width:58px !important;
+    height:58px !important;
+    max-width:none !important;
+    min-width:0 !important;
+    object-fit:contain !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width:768px) {
+
+    #spotlight .spotlight-fixture {
+        width:48px !important;
+        height:48px !important;
+    }
+
+    #spotlight .spotlight-fixture img {
+        width:48px !important;
+        height:48px !important;
+    }
+
+    #spotlight .spotlight-beam {
+        filter:blur(5px) !important;
+    }
+
+    #spotlight.spotlight-active
+    .spotlight-focus-target:not(.spotlight-is-focused) {
+
+        opacity:.68 !important;
+
+        filter:
+            brightness(.78)
+            saturate(.62)
+            !important;
+    }
 }
