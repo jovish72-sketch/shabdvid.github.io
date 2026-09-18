@@ -1209,134 +1209,152 @@ Contact
 
             <div class="spotlight-main">
 
+<!-- =====================================================
+     TGV PODCAST INTERVIEWS
+===================================================== -->
 
-                <!-- ============ FEATURED STORY ============ -->
+<article class="featured-story-card tgv-interview-card">
 
-                <article class="featured-story-card">
+    <!-- ===============================
+         LARGE VIDEO SCREEN
+    ================================ -->
 
-                    <div class="featured-media">
+    <div class="tgv-screen">
 
-                        <!-- PHOTO OR VIDEO WILL BE ADDED HERE -->
+        <!-- Default Poster -->
+        <img
+            id="tgv-main-poster"
+            src="interviews/tgv-gujarati.jpg"
+            alt="TGV The Guiding Voice Gujarati Interview"
+            class="tgv-main-poster"
+        >
 
-                        <div class="media-placeholder">
-
-                            <i class="fas fa-play"></i>
-
-                            <span>
-                                Featured Story / Video
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="featured-story-content">
-
-                        <span class="spotlight-label">
-
-                            FEATURED
-
-                        </span>
-
-
-                        <h3>
-
-                            Featured Story Coming Soon
-
-                        </h3>
+        <!-- Video -->
+        <iframe
+            id="tgv-main-video"
+            class="tgv-main-video"
+            src=""
+            title="TGV The Guiding Voice Interview"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
 
 
-                        <p>
+        <!-- Dark Overlay -->
 
-                            A special story, moment or creative
-                            journey will be featured here.
-
-                        </p>
+        <div class="tgv-screen-overlay"></div>
 
 
-                        <a href="#"
-                           class="spotlight-link">
+        <!-- Play Button -->
 
-                            Explore Story
+        <button
+            type="button"
+            class="tgv-play-button"
+            id="tgv-play-button"
+            aria-label="Play Interview">
 
-                            <i class="fas fa-arrow-right"></i>
+            <i class="fas fa-play"></i>
 
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ============ NEWS PLACEHOLDER ============ -->
-
-                <div class="spotlight-news-preview">
-
-                    <div class="spotlight-subheading">
-
-                        <span>IN THE NEWS</span>
-
-                        <h3>
-                            Latest Highlights
-                        </h3>
-
-                    </div>
+        </button>
 
 
-                    <div class="news-preview-grid">
+        <!-- Screen Label -->
+
+        <div class="tgv-screen-label">
+
+            <span id="tgv-language-label">
+                GUJARATI
+            </span>
+
+            <strong>
+                TGV • THE GUIDING VOICE
+            </strong>
+
+        </div>
+
+    </div>
 
 
-                        <!-- NEWS 01 -->
+    <!-- ===============================
+         INTERVIEW INFORMATION
+    ================================ -->
 
-                        <article class="news-preview-card">
+    <div class="featured-story-content tgv-interview-content">
 
-                            <div class="news-image-placeholder">
-
-                                <i class="fas fa-newspaper"></i>
-
-                            </div>
-
-
-                            <div class="news-preview-content">
-
-                                <span>
-                                    NEWS • COMING SOON
-                                </span>
-
-                                <h4>
-                                    News Story Title
-                                </h4>
-
-                            </div>
-
-                        </article>
+        <span class="spotlight-label">
+            PODCAST INTERVIEW
+        </span>
 
 
-                        <!-- NEWS 02 -->
-
-                        <article class="news-preview-card">
-
-                            <div class="news-image-placeholder">
-
-                                <i class="fas fa-newspaper"></i>
-
-                            </div>
+        <h3 id="tgv-main-title">
+            The Guiding Voice — Gujarati
+        </h3>
 
 
-                            <div class="news-preview-content">
+        <p id="tgv-main-description">
+            An insightful conversation on creativity,
+            writing and the journey behind Shabdvid.
+        </p>
 
-                                <span>
-                                    NEWS • COMING SOON
-                                </span>
 
-                                <h4>
-                                    Another News Highlight
-                                </h4>
+        <!-- ===============================
+             INTERVIEW SELECTOR
+        ================================ -->
 
-                            </div>
+        <div class="tgv-interview-selector">
 
-                        </article>
+            <!-- GUJARATI -->
+
+            <button
+                type="button"
+                class="tgv-interview-option active"
+                data-language="GUJARATI"
+                data-title="The Guiding Voice — Gujarati"
+                data-description="An insightful conversation on creativity, writing and the journey behind Shabdvid."
+                data-poster="interviews/tgv-gujarati.jpg"
+                data-video="GUJARATI_VIDEO_LINK">
+
+                <img
+                    src="interviews/tgv-gujarati.jpg"
+                    alt="TGV The Guiding Voice Gujarati">
+
+                <span>
+                    <small>TGV</small>
+                    Gujarati
+                </span>
+
+            </button>
+
+
+            <!-- HINDI -->
+
+            <button
+                type="button"
+                class="tgv-interview-option"
+                data-language="HINDI"
+                data-title="The Guiding Voice — Hindi"
+                data-description="An insightful conversation on creativity, writing and the journey behind Shabdvid."
+                data-poster="interviews/tgv-hindi.jpg"
+                data-video="HINDI_VIDEO_LINK">
+
+                <img
+                    src="interviews/tgv-hindi.jpg"
+                    alt="TGV The Guiding Voice Hindi">
+
+                <span>
+                    <small>TGV</small>
+                    Hindi
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</article>
+                
 
 
                     </div>
