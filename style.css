@@ -10362,3 +10362,63 @@ body.spotlight-active #spotlight {
         height: 50px !important;
     }
 }
+
+/* =========================================================
+   SPOTLIGHT — ONLY HOVERED CARD IS LIT
+   ========================================================= */
+
+/* When Spotlight is active, dim every other card */
+#spotlight.spotlight-active
+.spotlight-focus-target:not(.spotlight-is-focused) {
+
+    opacity: 0.42 !important;
+
+    filter:
+        brightness(0.68)
+        saturate(0.55)
+        contrast(0.92)
+        !important;
+
+    transition:
+        opacity 0.30s ease,
+        filter 0.30s ease,
+        box-shadow 0.30s ease
+        !important;
+}
+
+
+/* The card currently under the cursor stays fully illuminated */
+#spotlight.spotlight-active
+.spotlight-focus-target.spotlight-is-focused {
+
+    opacity: 1 !important;
+
+    filter:
+        brightness(1.08)
+        saturate(1)
+        contrast(1)
+        !important;
+
+    transition:
+        opacity 0.30s ease,
+        filter 0.30s ease,
+        box-shadow 0.30s ease
+        !important;
+
+    box-shadow:
+        0 0 0 1px rgba(212,175,55,0.45),
+        0 0 28px rgba(212,175,55,0.20)
+        !important;
+}
+
+
+/* When Spotlight is not active, return everything to normal */
+#spotlight:not(.spotlight-active)
+.spotlight-focus-target {
+
+    opacity: 1 !important;
+
+    filter: none !important;
+
+    box-shadow: none !important;
+}
