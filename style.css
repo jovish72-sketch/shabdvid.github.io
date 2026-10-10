@@ -9338,3 +9338,71 @@ body.spotlight-active #spotlight {
         align-self: center !important;
     }
 }
+
+/* ==========================================
+   RESTORE ABOUT: VISION, MISSION & VALUES
+========================================== */
+
+.about .about-content {
+    display: block !important;
+    min-width: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.about .about-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 30px !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.about .about-grid .info-card {
+    display: block !important;
+    min-width: 0 !important;
+    height: auto !important;
+    padding: 25px 20px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(212, 175, 106, 0.25) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+.about .about-grid .info-card h3,
+.about .about-grid .info-card p,
+.about .about-grid .info-card ul,
+.about .about-grid .info-card .info-icon {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.about .about-grid .info-card .info-icon {
+    display: flex !important;
+    margin: 0 auto 20px !important;
+}
+
+.about .about-grid .info-card h3 {
+    font-size: 24px !important;
+    margin: 15px 0 !important;
+}
+
+.about .about-grid .info-card p,
+.about .about-grid .info-card ul {
+    color: #666666 !important;
+    line-height: 1.8 !important;
+}
+
+@media (max-width: 1100px) {
+    .about .about-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
