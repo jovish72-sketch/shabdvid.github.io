@@ -2556,8 +2556,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })();
  
+const heroVideo = document.getElementById("heroVideo");
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        heroVideo.pause();
+        heroVideo.muted = true;
+    });
+});
+
+
 </script>
-    
+   
 </body>
 
 </html>
