@@ -107,7 +107,7 @@ Contact
 
     <!-- Background -->
 
-    <video
+    id="heroVideo"
     class="hero-image"
     autoplay
     loop
@@ -2552,7 +2552,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     );
+/* TYPEWRITER VIDEO SOUND CONTROL */
 
+const heroVideo = document.getElementById("heroVideo");
+
+if (heroVideo) {
+
+    heroVideo.addEventListener("pointerenter", function () {
+        heroVideo.muted = false;
+        heroVideo.play();
+    });
+
+    heroVideo.addEventListener("pointerleave", function () {
+        heroVideo.muted = true;
+    });
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest("a")) {
+            heroVideo.muted = true;
+        }
+    });
+
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            heroVideo.muted = true;
+            heroVideo.pause();
+        }
+    });
+
+}
 
 })();
  
