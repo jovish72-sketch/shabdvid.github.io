@@ -2556,6 +2556,65 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 })();
+
+   /* HERO VIDEO SOUND CONTROL */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const heroVideo = document.getElementById("heroVideo");
+    const heroSection = document.querySelector(".hero");
+
+    if (!heroVideo || !heroSection) return;
+
+    // શરૂઆતમાં અવાજ બંધ
+    heroVideo.muted = true;
+
+    // કર્સર Hero Video પર આવે ત્યારે અવાજ ચાલુ
+    heroSection.addEventListener("pointerenter", function () {
+
+        heroVideo.muted = false;
+
+        heroVideo.play().catch(function () {
+            heroVideo.muted = true;
+        });
+
+    });
+
+    // કર્સર Hero Video પરથી બહાર જાય ત્યારે અવાજ બંધ
+    heroSection.addEventListener("pointerleave", function () {
+
+        heroVideo.muted = true;
+
+    });
+
+    // બીજા ઓપ્શન અથવા લિંક પર ક્લિક થાય ત્યારે અવાજ બંધ
+    document.addEventListener("click", function (event) {
+
+        if (event.target.closest("a, button")) {
+            heroVideo.muted = true;
+        }
+
+    });
+
+    // બીજી ટેબ અથવા પેજ પર જતાં અવાજ બંધ
+    document.addEventListener("visibilitychange", function () {
+
+        if (document.hidden) {
+
+            heroVideo.muted = true;
+            heroVideo.pause();
+
+        } else {
+
+            heroVideo.muted = true;
+
+            heroVideo.play().catch(function () {});
+
+        }
+
+    });
+
+});
  
 </script>
    
