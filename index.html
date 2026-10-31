@@ -1771,45 +1771,46 @@ Contact
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ==========================================
-       INTRO SCREEN
-    ========================================== */
+   /* ==========================================
+   INTRO SCREEN
+========================================== */
 
-    const intro = document.getElementById("intro-screen");
+const intro = document.getElementById("intro-screen");
 
 if (intro) {
 
-  // જો URL માં કોઈ section નો hash હોય,
-  // તો Welcome Screen બતાવ્યા વગર સીધા section પર જવું.
-  if (window.location.hash &&
-    window.location.hash !== "#home") {
+    // URL માં section હોય તો Welcome Screen skip કરવી
+    if (window.location.hash &&
+        window.location.hash !== "#home") {
 
-    intro.classList.add("hide");
-    intro.style.display = "none";
-
-    const target = document.getElementById(
-      window.location.hash.substring(1)
-    );
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: "auto",
-        block: "start"
-      });
-    }
-
-  } else {
-
-    // Home page પર Welcome Screen ચાલુ રાખવી.
-    intro.addEventListener("click", function () {
-      intro.classList.add("hide");
-
-      setTimeout(function () {
+        intro.classList.add("hide");
         intro.style.display = "none";
-      }, 1200);
-    });
 
-  }
+        const target = document.getElementById(
+            window.location.hash.substring(1)
+        );
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: "auto",
+                block: "start"
+            });
+        }
+
+    } else {
+
+        // Home page પર Welcome Screen દેખાડવી
+        intro.addEventListener("click", function () {
+
+            intro.classList.add("hide");
+
+            setTimeout(function () {
+                intro.style.display = "none";
+            }, 1200);
+
+        });
+
+    }
 }
     /* ==========================================
        HEADER SCROLL EFFECT
