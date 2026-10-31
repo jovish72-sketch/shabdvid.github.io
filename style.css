@@ -7268,3 +7268,12 @@ font-size:18px;
         grid-template-columns: 1fr !important;
     }
 }
+
+/* FIX: Profile Designations Hover */
+
+.profile-designations span:hover{
+    background:rgba(255,255,255,.05);
+    color:#F5EFE6;
+    transform:none;
+    padding-left:0;
+}
