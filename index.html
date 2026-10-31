@@ -1781,7 +1781,8 @@ if (intro) {
 
   // જો URL માં કોઈ section નો hash હોય,
   // તો Welcome Screen બતાવ્યા વગર સીધા section પર જવું.
-  if (window.location.hash) {
+  if (window.location.hash &&
+    window.location.hash !== "#home") {
 
     intro.classList.add("hide");
     intro.style.display = "none";
