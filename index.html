@@ -1777,39 +1777,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const intro = document.getElementById("intro-screen");
 
+// Welcome Screen દૂર કરીને સીધું Home Page બતાવવું
+const intro = document.getElementById("intro-screen");
+
 if (intro) {
+    intro.style.display = "none";
+    intro.classList.add("hide");
+}
 
-    // URL માં section હોય તો Welcome Screen skip કરવી
-    if (window.location.hash &&
-        window.location.hash !== "#home") {
+// Collections અથવા Contact પર ક્લિક કર્યું હોય તો
+// સીધા એ વિભાગ પર જવું
+if (window.location.hash &&
+    window.location.hash !== "#home") {
 
-        intro.classList.add("hide");
-        intro.style.display = "none";
+    const target = document.getElementById(
+        window.location.hash.substring(1)
+    );
 
-        const target = document.getElementById(
-            window.location.hash.substring(1)
-        );
-
-        if (target) {
-            target.scrollIntoView({
-                behavior: "auto",
-                block: "start"
-            });
-        }
-
-    } else {
-
-        // Home page પર Welcome Screen દેખાડવી
-        intro.addEventListener("click", function () {
-
-            intro.classList.add("hide");
-
-            setTimeout(function () {
-                intro.style.display = "none";
-            }, 1200);
-
+    if (target) {
+        target.scrollIntoView({
+            behavior: "auto",
+            block: "start"
         });
-
     }
 }
     /* ==========================================
