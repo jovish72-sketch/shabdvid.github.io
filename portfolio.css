@@ -1919,20 +1919,28 @@ body.voiceovers-page .hero-poster img {
     padding: 0 !important;
 }
 
-/* SPIRITUAL DOCUMENTARY - FIXED 16:9 POSTER */
+/* ==========================================
+   SPIRITUAL DOCUMENTARY - FINAL POSTER FIX
+========================================== */
 
 .featured-videos .video-card > a {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: #ffffff;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
 }
 
 .featured-videos .video-card > a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
 }
+
+.featured-videos .video-card:hover > a img {
+    transform: none !important;
+}
+
