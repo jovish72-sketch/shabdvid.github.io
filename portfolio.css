@@ -1943,4 +1943,49 @@ body.voiceovers-page .hero-poster img {
 .featured-videos .video-card:hover > a img {
     transform: none !important;
 }
+/* ==========================================
+   PREMIUM PLAYLIST BUTTON
+========================================== */
+
+.featured-videos .playlist-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.featured-videos .playlist-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 32px;
+
+    border: 1px solid #C89A52;
+    border-radius: 50px;
+
+    background: #ffffff;
+    color: #A97835;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    box-shadow: 0 5px 18px rgba(200,154,82,0.12);
+
+    transition: all 0.35s ease;
+}
+
+.featured-videos .playlist-btn:hover {
+    background: #C89A52;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(200,154,82,0.25);
+}
 
