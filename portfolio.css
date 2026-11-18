@@ -1989,3 +1989,21 @@ body.voiceovers-page .hero-poster img {
     box-shadow: 0 10px 25px rgba(200,154,82,0.25);
 }
 
+/* ==========================================
+   TELEVISION PARTNERS - IMAGE SIZE FIX
+========================================== */
+
+.featured-videos .video-card > img {
+    display: block !important;
+    width: 100% !important;
+    height: 267px !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    margin: 0 !important;
+}
+
+.featured-videos .video-card:hover > img {
+    transform: none !important;
+}
+
