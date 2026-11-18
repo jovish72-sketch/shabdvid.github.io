@@ -1919,12 +1919,20 @@ body.voiceovers-page .hero-poster img {
     padding: 0 !important;
 }
 
-/* SPIRITUAL DOCUMENTARY - POSTER SIZE FIX */
+/* SPIRITUAL DOCUMENTARY - FIXED 16:9 POSTER */
 
-.featured-videos .video-card img {
+.featured-videos .video-card > a {
+    display: block;
     width: 100%;
-    height: auto !important;
-    max-width: 100%;
-    object-fit: initial !important;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.featured-videos .video-card > a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
     display: block;
 }
