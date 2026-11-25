@@ -519,42 +519,101 @@ section{
                     FOOTER
 ==================================================*/
 
-.portfolio-footer{
-
-    background:#1F1812;
-
-    padding:45px 0;
-
+.portfolio-footer {
+    background: #140F0B;
+    border-top: 1px solid rgba(212, 175, 106, 0.25);
+    padding: 60px 0 35px;
+    color: #ffffff;
 }
 
-.footer-content{
-
-    text-align:center;
-
+.portfolio-footer .footer-content {
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-.footer-content h3{
-
-    color:#fff;
-
-    font-family:"Cinzel",serif;
-
-    font-size:30px;
-
-    letter-spacing:4px;
-
-    margin-bottom:15px;
-
+.portfolio-footer .footer-logo-title {
+    color: #D4AF6A;
+    font-family: "Cinzel", serif;
+    font-size: 32px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
 }
 
-.footer-content p{
+.portfolio-footer .footer-subtitle {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
 
-    color:rgba(255,255,255,.75);
+.portfolio-footer .footer-nav-pills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin: 0 auto 28px;
+    padding: 0;
+    list-style: none;
+}
 
-    margin:8px 0;
+.portfolio-footer .footer-nav-pills a {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    text-decoration: none;
+    padding: 7px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 106, 0.30);
+    background: rgba(255, 255, 255, 0.04);
+    transition: all 0.25s ease;
+}
 
-    font-size:15px;
+.portfolio-footer .footer-nav-pills a:hover {
+    color: #FFFFFF;
+    background: #D4AF6A;
+    border-color: #D4AF6A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 106, 0.25);
+}
 
+.portfolio-footer .footer-contact-line {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 30px;
+}
+
+.portfolio-footer .footer-contact-line a {
+    color: #D4AF6A;
+    text-decoration: none;
+}
+
+.portfolio-footer .footer-contact-line i {
+    color: #D4AF6A;
+}
+
+.portfolio-footer .footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.portfolio-footer .footer-bottom-bar p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .portfolio-footer .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 }
 
 /*==================================================
@@ -1520,16 +1579,17 @@ letter-spacing:1px;
     width:100%;
     aspect-ratio:2 / 3;
     overflow:hidden;
-    background:#F8F5EF;
+    background:#FAF7F2;
+    border-radius:18px 18px 0 0;
 }
 
 .book-cover img,
 .article-cover img{
-    width:100%;
+    width:100% !important;
     height:100% !important;
-    object-fit:contain !important;
-    object-position:center;
-    display:block;
+    object-fit:cover !important;
+    object-position:center top !important;
+    display:block !important;
     transform:none !important;
 }
 
@@ -1538,14 +1598,20 @@ letter-spacing:1px;
 
 .video-card:hover .book-cover img,
 .video-card:hover .article-cover img{
-    transform:none !important;
+    transform:scale(1.02) !important;
+    transition:transform .4s ease !important;
 }
 
 
 /* Keep all book cards equal */
 
-.video-grid .video-card{
+.books-page .video-grid .video-card{
     height:100%;
+    display:flex;
+    flex-direction:column;
+    border-radius:18px;
+    overflow:hidden;
+    background:#ffffff;
 }
 
 
@@ -1556,6 +1622,14 @@ letter-spacing:1px;
     flex:1;
     display:flex;
     flex-direction:column;
+}
+
+.books-page .video-content h3{
+    min-height:56px;
+}
+
+.books-page .watch-btn{
+    margin-top:auto;
 }
 
 
@@ -1811,13 +1885,15 @@ letter-spacing:1px;
    VOICEOVERS — HERO SIZE FIX
 ===================================================== */
 
-.voiceovers-page .hero-section {
+.voiceovers-page .hero-section,
+.voiceover-page .hero-section {
     height: 72vh;
     min-height: 520px;
     max-height: 760px;
 }
 
-.voiceovers-page .hero-poster img {
+.voiceovers-page .hero-poster img,
+.voiceover-page .hero-poster img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1828,18 +1904,21 @@ letter-spacing:1px;
    VOICEOVERS — INTRO TYPOGRAPHY FIX
 ===================================================== */
 
-.voiceovers-page .intro-content span {
+.voiceovers-page .intro-content span,
+.voiceover-page .intro-content span {
     font-size: 14px;
     letter-spacing: 5px;
 }
 
-.voiceovers-page .intro-content h2 {
+.voiceovers-page .intro-content h2,
+.voiceover-page .intro-content h2 {
     font-size: 32px;
     line-height: 1.3;
     margin: 18px 0;
 }
 
-.voiceovers-page .intro-content p {
+.voiceovers-page .intro-content p,
+.voiceover-page .intro-content p {
     font-size: 18px;
     line-height: 1.8;
     max-width: 850px;
@@ -1850,20 +1929,23 @@ letter-spacing:1px;
    VOICEOVERS HERO — FINAL SIZE OVERRIDE
 ===================================================== */
 
-body.voiceovers-page .hero-section {
+body.voiceovers-page .hero-section,
+.voiceover-page .hero-section {
     height: 70vh !important;
     min-height: 500px !important;
     max-height: 700px !important;
     overflow: hidden !important;
 }
 
-body.voiceovers-page .hero-poster {
+body.voiceovers-page .hero-poster,
+body.voiceover-page .hero-poster {
     width: 100% !important;
     height: 100% !important;
     overflow: hidden !important;
 }
 
-body.voiceovers-page .hero-poster img {
+body.voiceovers-page .hero-poster img,
+.voiceover-page .hero-poster img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -1993,7 +2075,7 @@ body.voiceovers-page .hero-poster img {
    TELEVISION PARTNERS - IMAGE SIZE FIX
 ========================================== */
 
-.featured-videos .video-card > img {
+.television-page .featured-videos .video-card > img {
     display: block !important;
     width: 100% !important;
     height: 267px !important;
@@ -2007,3 +2089,108 @@ body.voiceovers-page .hero-poster img {
     transform: none !important;
 }
 
+
+/* ==========================================
+   COMING SOON BADGE - PORTFOLIO
+========================================== */
+.coming-soon-text {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 36px;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 40px;
+    background: rgba(200, 154, 82, 0.08);
+    box-shadow: 0 4px 18px rgba(200, 154, 82, 0.15);
+    transition: 0.3s ease;
+}
+
+.coming-soon-text:hover {
+    background: rgba(200, 154, 82, 0.16);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(200, 154, 82, 0.25);
+}
+
+/* ==========================================
+   SONGS POSTER OVERRIDE PROTECTION
+========================================== */
+.songs-page .video-card > a {
+    aspect-ratio: auto !important;
+}
+
+
+/* ==========================================
+   SONGS & JINGLES - COMPLETE POSTER FIX (NO CROPPING)
+========================================== */
+.songs-page .featured-videos .video-card > img,
+.songs-page .video-card > a img,
+.songs-page .video-card > img,
+.songs-page .video-card img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.songs-page .video-card:hover > a img,
+.songs-page .video-card:hover > img,
+.songs-page .video-card:hover img {
+    transform: none !important;
+}
+
+/* ==========================================
+   LIGHT & SOUND SHOWS - UNIFORM 16:9 POSTER FIX
+========================================== */
+.light-sound-page .video-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.light-sound-page .featured-videos .video-card > img,
+.light-sound-page .video-card > img,
+.light-sound-page .video-card img {
+    display: block !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    background: #0a0806 !important;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+.light-sound-page .video-card:hover > img,
+.light-sound-page .video-card:hover img {
+    transform: scale(1.03) !important;
+    transition: transform 0.4s ease !important;
+}
+
+.light-sound-page .video-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.light-sound-page .video-content h3 {
+    min-height: 56px;
+}
+
+.light-sound-page .watch-btn {
+    margin-top: auto;
+}

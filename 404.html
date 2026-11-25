@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Shabdvid</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    .not-found-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at center, #181512 0%, #0B0B0B 100%);
+    }
+    .not-found-number {
+      font-family: var(--font-serif);
+      font-size: clamp(80px, 16vw, 160px);
+      font-weight: 700;
+      color: var(--color-gold);
+      line-height: 1;
+      text-shadow: 0 0 35px var(--color-gold-glow);
+      margin-bottom: 20px;
+    }
+    .not-found-title {
+      font-size: clamp(24px, 3.5vw, 36px);
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .not-found-text {
+      color: var(--text-secondary);
+      font-size: 16px;
+      max-width: 500px;
+      margin-bottom: 35px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="not-found-wrapper">
+    <div class="not-found-number">404</div>
+    <h1 class="not-found-title">Story Not Found</h1>
+    <p class="not-found-text">
+      The page you are looking for might have been moved, renamed, or is currently taking a different shape.
+    </p>
+    <a href="index.html" class="primary-btn">
+      <i class="fas fa-home"></i> Back To Home
+    </a>
+  </div>
+
+</body>
+</html>
