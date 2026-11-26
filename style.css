@@ -10014,7 +10014,7 @@ body.mobile-nav-locked {
     background: rgba(10, 6, 4, 0.75);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    z-index: 999;
+    z-index: 100000 !important;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.35s ease;
@@ -10096,7 +10096,7 @@ body.mobile-nav-locked {
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
-        z-index: 1000 !important;
+        z-index: 100001 !important;
         visibility: hidden !important;
         pointer-events: none !important;
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease !important;
@@ -10221,19 +10221,31 @@ body.mobile-nav-locked {
 }
 
 /* =====================================================
-   MOBILE PHONES (<= 600px)
+   MOBILE PHONES (<= 600px) - LUXURY RESPONSIVE MASTER OVERHAUL
 ===================================================== */
 @media (max-width: 600px) {
-    /* Header & Logo */
+    /* Header & Navigation */
+    .header {
+        z-index: 100002 !important;
+    }
     .header-container {
         height: 66px !important;
     }
-
     .logo img {
         width: 145px !important;
         height: auto !important;
         max-height: none !important;
         object-fit: contain !important;
+    }
+    .mobile-nav-backdrop {
+        z-index: 100000 !important;
+    }
+    .navbar {
+        z-index: 100001 !important;
+    }
+    body.mobile-nav-locked .hero-sound-btn {
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
 
     /* Container */
@@ -10243,25 +10255,47 @@ body.mobile-nav-locked {
         padding-right: 16px !important;
     }
 
-    /* Hero section */
+    /* Typography & Text Justification Cleanups */
+    .about-bio p,
+    .chapter-card p,
+    .service-pillar-card p,
+    .section-title p,
+    .vision-card p,
+    .mission-card p,
+    .gallery-desc,
+    .research-text {
+        text-align: left !important;
+        text-justify: auto !important;
+        word-spacing: normal !important;
+        hyphens: auto !important;
+    }
+
+    /* Hero section & Typewriter Video */
     .hero {
         min-height: 80vh !important;
         padding: 90px 0 50px !important;
     }
-
+    #heroVideo {
+        object-position: 57% center !important; /* Centers paper so 'Welcome to Shabdvid' is unclipped */
+    }
+    .hero-sound-btn {
+        bottom: 20px !important;
+        right: 16px !important;
+        padding: 8px 14px !important;
+        font-size: 11px !important;
+        z-index: 9999 !important;
+    }
     .paper h1,
     .hero-title {
         font-size: clamp(26px, 8vw, 36px) !important;
         line-height: 1.25 !important;
         letter-spacing: 1px !important;
     }
-
     .hero-subtitle,
     .hero-line {
         font-size: clamp(14px, 4vw, 17px) !important;
         line-height: 1.5 !important;
     }
-
     .hero-buttons {
         flex-direction: column !important;
         width: 100% !important;
@@ -10269,7 +10303,6 @@ body.mobile-nav-locked {
         margin: 22px auto 0 !important;
         gap: 12px !important;
     }
-
     .hero-buttons .btn,
     .hero-buttons a {
         width: 100% !important;
@@ -10280,111 +10313,450 @@ body.mobile-nav-locked {
 
     /* Section titles */
     .section-title {
-        margin-bottom: 30px !important;
+        margin-bottom: 28px !important;
     }
-
     .section-title h2 {
-        font-size: clamp(24px, 7vw, 32px) !important;
+        font-size: clamp(23px, 7vw, 30px) !important;
         line-height: 1.25 !important;
     }
-
     .section-title p {
-        font-size: 14px !important;
+        font-size: 13.5px !important;
         line-height: 1.6 !important;
     }
 
-    /* About section 2x2 stats */
+    /* About section & Symmetrical 2x2 Stats */
     .about-stats,
     .about-stats-strip {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
-        margin-top: 30px !important;
+        margin-top: 26px !important;
     }
-
     .about-stat-item,
     .about-stats .stat-item,
     .about-stats > div {
-        padding: 18px 12px !important;
+        padding: 16px 10px !important;
         border-radius: 14px !important;
+        min-height: 112px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
     }
-
     .about-stats h3,
     .about-stat-item h3,
     .about-stats .stat-number {
-        font-size: clamp(24px, 6vw, 30px) !important;
+        font-size: clamp(22px, 5.5vw, 28px) !important;
         margin-bottom: 4px !important;
     }
-
     .about-stats p,
     .about-stat-item p,
     .about-stats .stat-label {
-        font-size: 11px !important;
-        letter-spacing: 1px !important;
+        font-size: 10.5px !important;
+        letter-spacing: 0.8px !important;
+        line-height: 1.35 !important;
     }
 
-    /* Collections 1 column */
+    /* Service Pillars Cards (Tight, Clean, Proportional) */
+    .featured-services,
+    .services-pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .service-pillar-card {
+        padding: 24px 18px !important;
+        border-radius: 20px !important;
+        min-height: auto !important;
+    }
+    .service-pillar-card::before {
+        width: 100% !important;
+        height: 3px !important;
+        border-radius: 20px 20px 0 0 !important;
+        opacity: 0.9 !important;
+    }
+    .service-pillar-card .pillar-header {
+        gap: 12px !important;
+        margin-bottom: 12px !important;
+    }
+    .service-pillar-card .pillar-icon {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 18px !important;
+        flex-shrink: 0 !important;
+    }
+    .service-pillar-card .pillar-title {
+        font-size: 18px !important;
+    }
+    .service-pillar-card .pillar-desc {
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 14px !important;
+    }
+    .service-pillar-card .service-tags {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        padding-top: 14px !important;
+    }
+    .service-pillar-card .service-tag {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+        border-radius: 10px !important;
+    }
+
+    /* Collections 1 column (16:9 Cinematic Posters) */
     .collections-grid {
         grid-template-columns: 1fr !important;
-        gap: 18px !important;
+        gap: 20px !important;
     }
-
+    .collection-card {
+        border-radius: 18px !important;
+    }
     .collection-image {
-        height: 200px !important;
+        aspect-ratio: 16 / 9 !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+    .collection-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    .collection-content {
+        padding: 18px 16px !important;
+    }
+    .collection-content h3 {
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
     }
 
     /* Spotlight section on mobile */
     .spotlight-theatrical-rig,
     .lamp-integrated-beam {
-        display: none !important; /* Hide overhead rig & beams on small phones to save space */
+        display: none !important;
     }
-
-    .spotlight-box {
-        padding: 18px 14px !important;
-        border-radius: 16px !important;
-    }
-
-    .gallery-cinema-screen {
-        height: 230px !important;
-        border-radius: 12px !important;
-    }
-
-    .gallery-cinema-nav {
-        width: 36px !important;
-        height: 36px !important;
-        font-size: 13px !important;
-    }
-
-    .gallery-cinema-meta {
+    .spotlight-stage-controls {
+        display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 6px !important;
+        gap: 8px !important;
+        width: 100% !important;
+        margin-bottom: 22px !important;
+    }
+    .spotlight-target-pill {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 10px 14px !important;
         font-size: 12px !important;
     }
+    .spotlight-showcase-layout,
+    .spotlight-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    .spotlight-box {
+        padding: 18px 14px !important;
+        border-radius: 18px !important;
+    }
+    .spotlight-active-indicator {
+        top: -10px !important;
+        right: 16px !important;
+        font-size: 9px !important;
+        padding: 3px 8px !important;
+    }
 
-    .spotlight-video-screen {
-        height: 210px !important;
+    /* Spotlight Box Header & Badge (Clean Flex Wrap) */
+    .spotlight-box-header {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        margin-bottom: 14px !important;
+        padding-bottom: 12px !important;
+    }
+    .box-icon {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 16px !important;
+    }
+    .box-meta {
+        flex: 1 1 auto !important;
+    }
+    .box-tag {
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+    }
+    .box-title {
+        font-size: 16px !important;
+    }
+    .gallery-counter-badge {
+        width: 100% !important;
+        text-align: center !important;
+        font-size: 11px !important;
+        padding: 5px 8px !important;
+        border-radius: 8px !important;
+        margin-top: 2px !important;
+    }
+
+    /* Full-Width Luxury Archive Selector */
+    .gallery-select-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        padding: 12px 14px !important;
+        margin-bottom: 14px !important;
+        background: rgba(18, 14, 10, 0.9) !important;
+        border: 1px solid rgba(212, 175, 106, 0.3) !important;
         border-radius: 12px !important;
     }
-
-    .video-play-btn-large,
-    .video-play-btn-glow {
-        width: 52px !important;
-        height: 52px !important;
-        font-size: 18px !important;
+    .gallery-select-label {
+        font-size: 11.5px !important;
+        letter-spacing: 0.8px !important;
+        text-transform: uppercase !important;
+        color: #D4AF6A !important;
     }
-
-    .playlist-item {
-        padding: 10px 12px !important;
+    .gallery-project-dropdown {
+        width: 100% !important;
         font-size: 13px !important;
+        padding: 10px 12px !important;
+        border-radius: 8px !important;
+        background: #17120D !important;
+        color: #FFFFFF !important;
+        border: 1px solid rgba(212, 175, 106, 0.4) !important;
+        line-height: 1.4 !important;
     }
 
-    .research-archive-card {
-        padding: 16px 12px !important;
+    /* Box 2: Fieldwork Cinema Screen & Photo Framing */
+    .gallery-cinema-screen {
+        height: 270px !important;
+        border-radius: 12px !important;
+        background: #080605 !important;
+        margin-bottom: 14px !important;
+    }
+    #galleryMainPhoto {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        object-fit: contain !important;
+    }
+    .gallery-cinema-nav {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 12px !important;
+        background: rgba(10, 8, 6, 0.8) !important;
+    }
+    .gallery-cinema-nav.prev {
+        left: 8px !important;
+    }
+    .gallery-cinema-nav.next {
+        right: 8px !important;
+    }
+    .gallery-fullscreen-btn {
+        top: 8px !important;
+        right: 8px !important;
+        padding: 4px 9px !important;
+        font-size: 10.5px !important;
     }
 
-    .research-archive-img {
-        height: 180px !important;
+    /* Fieldwork Metadata Details & Captions */
+    .gallery-cinema-details {
+        padding: 14px 12px !important;
+        margin-bottom: 14px !important;
+        border-radius: 12px !important;
+    }
+    .gallery-meta-tags {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        margin-bottom: 10px !important;
+    }
+    .gallery-badge {
+        font-size: 10.5px !important;
+        padding: 4px 8px !important;
+        border-radius: 10px !important;
+    }
+    .gallery-title {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+    }
+    .gallery-photo-caption-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+        padding: 8px 10px !important;
+        margin-bottom: 10px !important;
+    }
+    .photo-frame-tag {
+        font-size: 10.5px !important;
+    }
+    .photo-caption-title {
+        font-size: 12.5px !important;
+    }
+    .gallery-desc {
+        font-size: 12.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 12px !important;
+    }
+    .gallery-specs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        padding: 10px 12px !important;
+        margin-bottom: 12px !important;
+    }
+    .gallery-action-bar {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+    .gallery-quick-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 12px !important;
+        padding: 9px 12px !important;
+    }
+
+    /* Multi-Photo Filmstrip (Scrollable Strip) */
+    .filmstrip-header {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        font-size: 10.5px !important;
+        margin-bottom: 8px !important;
+    }
+    .filmstrip-header-right {
+        gap: 8px !important;
+    }
+    .gallery-filmstrip-wrap {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+        padding: 4px 0 8px !important;
+    }
+    .gallery-thumb-strip {
+        display: flex !important;
+        gap: 8px !important;
+        width: max-content !important;
+    }
+    .gallery-thumb-item {
+        width: 68px !important;
+        height: 48px !important;
+        flex-shrink: 0 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Box 1: Interviews & Visual Archives */
+    .spotlight-video-player-wrap {
+        aspect-ratio: 16 / 9 !important;
+        height: auto !important;
+        min-height: 195px !important;
+        border-radius: 12px !important;
+    }
+    .video-floating-badge {
+        font-size: 10.5px !important;
+        padding: 4px 8px !important;
+        bottom: 8px !important;
+        left: 8px !important;
+        max-width: 90% !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    .podcast-action-links {
+        gap: 6px !important;
+        margin-bottom: 10px !important;
+    }
+    .podcast-link-pill {
+        font-size: 11px !important;
+        padding: 5px 10px !important;
+    }
+    .playlist-item,
+    .playlist-btn {
+        padding: 8px 10px !important;
+        gap: 8px !important;
+    }
+    .pl-num {
+        font-size: 12px !important;
+    }
+    .pl-info strong {
+        font-size: 12.5px !important;
+    }
+    .pl-info small {
+        font-size: 11px !important;
+    }
+
+    /* Box 3: Research Archive (Bhagvad Geeta) */
+    .research-featured-card {
+        flex-direction: column !important;
+    }
+    .research-thumb-wrap {
+        width: 100% !important;
+        aspect-ratio: 16 / 9 !important;
+        height: auto !important;
+        max-height: 200px !important;
+        border-radius: 10px !important;
+    }
+    .research-card-content {
+        padding: 12px 0 0 !important;
+    }
+    .research-meta-row {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        font-size: 10.5px !important;
+    }
+    .research-headline {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 8px !important;
+    }
+    .research-text {
+        font-size: 12.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 12px !important;
+    }
+    .research-explore-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 12.5px !important;
+        padding: 10px 14px !important;
+    }
+
+    /* Lightbox Modal & Circular Close Button */
+    .lightbox-modal {
+        width: 95% !important;
+        max-width: 95% !important;
+        max-height: 92vh !important;
+        border-radius: 16px !important;
+        padding: 14px !important;
+    }
+    .lightbox-header {
+        padding-bottom: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    .lightbox-title-wrap h3 {
+        font-size: 15px !important;
+        line-height: 1.3 !important;
+    }
+    .lightbox-photo-caption {
+        font-size: 11.5px !important;
+    }
+    .lightbox-close {
+        width: 36px !important;
+        height: 36px !important;
+        flex-shrink: 0 !important;
+        aspect-ratio: 1 / 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 16px !important;
+        border-radius: 50% !important;
+    }
+    .lightbox-stage {
+        height: 48vh !important;
+        min-height: 240px !important;
+    }
+    .lightbox-img-wrap img {
+        max-height: 100% !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+    }
+    .lightbox-nav {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 13px !important;
     }
 
     /* Clients Carousel */
@@ -10392,34 +10764,52 @@ body.mobile-nav-locked {
         overflow: hidden !important;
         width: 100% !important;
     }
-
     .client-card {
         width: 130px !important;
         height: 80px !important;
         padding: 12px !important;
     }
-
     .client-card img {
         max-height: 48px !important;
     }
 
-    /* Contact Form on Mobile */
+    /* Contact Form & Luxury Golden Submit Button */
     .contact-form {
         padding: 24px 16px !important;
-        border-radius: 16px !important;
+        border-radius: 18px !important;
     }
-
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
         font-size: 16px !important; /* Prevent iOS zoom */
-        padding: 13px 14px !important;
+        padding: 12px 14px !important;
     }
-
-    .contact-form .btn-submit,
-    .contact-form button[type="submit"] {
+    .contact-form .primary-btn,
+    button.primary-btn {
+        background: linear-gradient(135deg, #D4AF6A 0%, #AA8232 100%) !important;
+        color: #171109 !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14.5px !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+        padding: 14px 24px !important;
+        border: none !important;
+        border-radius: 50px !important;
+        cursor: pointer !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        box-shadow: 0 8px 24px rgba(212, 175, 106, 0.35) !important;
         width: 100% !important;
-        padding: 14px 20px !important;
+        margin-top: 10px !important;
+        transition: all 0.3s ease !important;
+    }
+    .contact-form .primary-btn:hover,
+    button.primary-btn:hover {
+        background: linear-gradient(135deg, #FFE085 0%, #D4AF6A 100%) !important;
+        box-shadow: 0 12px 30px rgba(212, 175, 106, 0.5) !important;
     }
 
     /* Footer 1 Column Stack */
@@ -10428,35 +10818,29 @@ body.mobile-nav-locked {
         gap: 28px !important;
         text-align: center !important;
     }
-
     .footer-brand-header {
         align-items: center !important;
         justify-content: center !important;
     }
-
     .footer-brand-header .footer-logo {
         margin: 0 auto !important;
     }
-
     .footer-col-header {
         justify-content: center !important;
     }
-
     .footer-col ul {
         align-items: center !important;
         text-align: center !important;
     }
-
     .footer-social-center {
         gap: 12px !important;
     }
-
     .footer-social-center .social-circle-btn {
         width: 42px !important;
         height: 42px !important;
     }
 
-    /* Hide custom scrollbar track on touch screens for edge-to-edge luxury presentation */
+    /* Edge-to-edge touch presentation */
     ::-webkit-scrollbar {
         display: none !important;
         width: 0 !important;
