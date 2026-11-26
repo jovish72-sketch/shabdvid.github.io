@@ -1291,4 +1291,55 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    // ==========================================
+    // MOBILE NAVIGATION DRAWER & TOGGLE
+    // ==========================================
+    var mobileNavToggle = document.getElementById('mobileNavToggle');
+    var mainNavbar = document.getElementById('mainNavbar') || document.querySelector('.navbar');
+    var mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+    if (mobileNavToggle && mainNavbar) {
+        function toggleMobileNav(e) {
+            if (e) e.stopPropagation();
+            var isOpen = mobileNavToggle.classList.toggle('nav-open');
+            mainNavbar.classList.toggle('nav-active', isOpen);
+            if (mobileNavBackdrop) {
+                mobileNavBackdrop.classList.toggle('active', isOpen);
+            }
+            document.body.classList.toggle('mobile-nav-locked', isOpen);
+            mobileNavToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        function closeMobileNav() {
+            mobileNavToggle.classList.remove('nav-open');
+            mainNavbar.classList.remove('nav-active');
+            if (mobileNavBackdrop) {
+                mobileNavBackdrop.classList.remove('active');
+            }
+            document.body.classList.remove('mobile-nav-locked');
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        mobileNavToggle.addEventListener('click', toggleMobileNav);
+
+        if (mobileNavBackdrop) {
+            mobileNavBackdrop.addEventListener('click', closeMobileNav);
+        }
+
+        // Close drawer when any nav link is clicked
+        var navLinks = mainNavbar.querySelectorAll('a');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                closeMobileNav();
+            });
+        });
+
+        // Close drawer on ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mainNavbar.classList.contains('nav-active')) {
+                closeMobileNav();
+            }
+        });
+    }
 });
