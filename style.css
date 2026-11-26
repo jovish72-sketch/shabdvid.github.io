@@ -514,6 +514,8 @@ section{
 
     inset:0;
 
+    pointer-events:none !important;
+
     background:
     linear-gradient(
     rgba(20,12,8,.25),
@@ -696,39 +698,40 @@ transform:translateY(18px);
     position: absolute;
     bottom: 35px;
     right: 35px;
-    z-index: 100;
-    display: inline-flex;
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+    display: inline-flex !important;
     align-items: center;
     gap: 9px;
-    background: rgba(26, 16, 10, 0.88);
-    color: #e6c575;
-    border: 1px solid rgba(212, 175, 55, 0.45);
+    background: rgba(26, 16, 10, 0.92) !important;
+    color: #e6c575 !important;
+    border: 1.5px solid rgba(212, 175, 55, 0.6) !important;
     border-radius: 50px;
-    padding: 9px 18px;
+    padding: 10px 20px;
     font-family: 'Cinzel', serif;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.8px;
     cursor: pointer;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .hero-sound-btn:hover {
-    background: rgba(45, 28, 18, 0.95);
-    border-color: #d4af37;
-    color: #ffffff;
+    background: rgba(45, 28, 18, 0.98) !important;
+    border-color: #d4af37 !important;
+    color: #ffffff !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
 }
 
 .hero-sound-btn.is-active {
-    background: linear-gradient(135deg, rgba(184, 134, 11, 0.4), rgba(45, 28, 18, 0.95));
-    border-color: #f1d78a;
-    color: #ffffff;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, rgba(184, 134, 11, 0.6), rgba(45, 28, 18, 0.98)) !important;
+    border-color: #f1d78a !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
 }
 
 .hero-sound-btn.is-active i {
@@ -744,7 +747,7 @@ transform:translateY(18px);
     .hero-sound-btn {
         bottom: 25px;
         right: 18px;
-        padding: 7px 14px;
+        padding: 8px 14px;
         font-size: 11px;
         gap: 6px;
     }
