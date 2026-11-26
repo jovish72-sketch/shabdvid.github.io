@@ -104,6 +104,15 @@ document.addEventListener("DOMContentLoaded", function () {
         heroSection.addEventListener("pointerleave", function () {
             heroVideo.muted = true;
         });
+        heroSection.addEventListener("click", function (event) {
+            if (event.target.closest("a, button, .scroll-indicator")) return;
+            heroVideo.muted = !heroVideo.muted;
+            if (!heroVideo.muted) {
+                heroVideo.play().catch(function () {
+                    heroVideo.muted = true;
+                });
+            }
+        });
         document.addEventListener("click", function (event) {
             if (event.target.closest("a, button")) {
                 heroVideo.muted = true;
