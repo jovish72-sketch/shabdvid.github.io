@@ -10071,7 +10071,7 @@ body.mobile-nav-locked {
 
     .mobile-nav-toggle {
         display: flex !important;
-        z-index: 100006 !important;
+        z-index: 100010 !important;
     }
 
     .logo img {
@@ -10249,7 +10249,7 @@ body.mobile-nav-locked {
         object-fit: contain !important;
     }
     .mobile-nav-toggle {
-        z-index: 100008 !important; /* Higher than open drawer */
+        z-index: 100010 !important; /* Higher than open drawer */
     }
     .mobile-nav-backdrop {
         z-index: 100000 !important;
