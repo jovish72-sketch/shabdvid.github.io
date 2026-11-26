@@ -10284,11 +10284,15 @@ body.mobile-nav-locked {
 
     /* Hero section & Typewriter Video */
     .hero {
-        min-height: 80vh !important;
-        padding: 90px 0 50px !important;
+        min-height: 56vh !important;
+        height: 58vh !important;
+        max-height: 500px !important;
+        padding: 80px 0 35px !important;
+        background: #0C0907 !important;
     }
     #heroVideo {
-        object-position: 28% center !important; /* Centers paper as carriage moves left, completely preserving 'Welcome to Shabdvid' */
+        object-fit: cover !important;
+        object-position: 42% center !important; /* Perfectly balances typewriter paper so 'Welcome to Shabdvid' is 100% visible without left or right clipping */
     }
     .hero-sound-btn {
         bottom: 20px !important;
