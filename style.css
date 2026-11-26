@@ -10052,9 +10052,14 @@ body.mobile-nav-locked {
 @media (max-width: 992px) {
     /* Header layout */
     .header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
         background: rgba(26, 16, 11, 0.95) !important;
         backdrop-filter: blur(14px) !important;
         -webkit-backdrop-filter: blur(14px) !important;
+        z-index: 100005 !important; /* CRITICAL: Sits ABOVE .mobile-nav-backdrop (100000) on tablets */
     }
 
     .header-container {
@@ -10066,6 +10071,7 @@ body.mobile-nav-locked {
 
     .mobile-nav-toggle {
         display: flex !important;
+        z-index: 100006 !important;
     }
 
     .logo img {
@@ -10075,23 +10081,23 @@ body.mobile-nav-locked {
         object-fit: contain !important;
     }
 
-    /* Mobile Drawer */
+    /* Mobile / Tablet Drawer */
     .navbar {
         position: fixed !important;
         top: 0 !important;
-        right: -320px !important;
-        width: 300px !important;
+        right: -360px !important;
+        width: 340px !important;
         max-width: 85vw !important;
         height: 100vh !important;
         height: 100dvh !important;
-        background: linear-gradient(180deg, rgba(28, 17, 11, 0.98) 0%, rgba(18, 10, 6, 0.99) 100%) !important;
-        border-left: 1px solid rgba(223, 195, 122, 0.3) !important;
-        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.85) !important;
-        padding: 90px 28px 40px !important;
+        background: linear-gradient(180deg, rgba(28, 17, 11, 0.99) 0%, rgba(18, 10, 6, 0.99) 100%) !important;
+        border-left: 1px solid rgba(223, 195, 122, 0.35) !important;
+        box-shadow: -15px 0 45px rgba(0, 0, 0, 0.9) !important;
+        padding: 95px 32px 40px !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
-        z-index: 100001 !important;
+        z-index: 100007 !important;
         visibility: hidden !important;
         pointer-events: none !important;
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease !important;
@@ -10243,7 +10249,7 @@ body.mobile-nav-locked {
         object-fit: contain !important;
     }
     .mobile-nav-toggle {
-        z-index: 100005 !important; /* Higher than open drawer */
+        z-index: 100008 !important; /* Higher than open drawer */
     }
     .mobile-nav-backdrop {
         z-index: 100000 !important;
@@ -10251,7 +10257,7 @@ body.mobile-nav-locked {
     .navbar {
         width: 275px !important;
         max-width: 76vw !important;
-        z-index: 100001 !important;
+        z-index: 100007 !important;
     }
     body.mobile-nav-locked .logo {
         opacity: 0.2 !important;
