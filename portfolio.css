@@ -2259,7 +2259,7 @@ letter-spacing:1px;
         width: 100% !important;
         height: auto !important;
         aspect-ratio: 1942 / 809 !important;
-        object-fit: contain !important;
+        object-fit: cover !important;
         object-position: center center !important;
         transform: none !important;
     }

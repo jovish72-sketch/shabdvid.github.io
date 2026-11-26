@@ -10203,7 +10203,7 @@ body.mobile-nav-locked {
     .collection-image img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: contain !important;
+        object-fit: cover !important;
     }
 
     /* Spotlight section layout */
@@ -10445,7 +10445,7 @@ body.mobile-nav-locked {
     .collection-image img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: contain !important; /* Preserves 100% of the poster, zero cropping on left/right/top/bottom */
+        object-fit: cover !important; /* All 12 posters unified to 2.4:1 ratio; edge-to-edge fill with zero seams */
         display: block !important;
     }
     .collection-content {
