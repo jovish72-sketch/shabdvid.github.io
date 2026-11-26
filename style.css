@@ -10237,11 +10237,20 @@ body.mobile-nav-locked {
         max-height: none !important;
         object-fit: contain !important;
     }
+    .mobile-nav-toggle {
+        z-index: 100005 !important; /* Higher than open drawer */
+    }
     .mobile-nav-backdrop {
         z-index: 100000 !important;
     }
     .navbar {
+        width: 275px !important;
+        max-width: 76vw !important;
         z-index: 100001 !important;
+    }
+    body.mobile-nav-locked .logo {
+        opacity: 0.2 !important;
+        transition: opacity 0.3s ease !important;
     }
     body.mobile-nav-locked .hero-sound-btn {
         opacity: 0 !important;
@@ -10257,6 +10266,9 @@ body.mobile-nav-locked {
 
     /* Typography & Text Justification Cleanups */
     .about-bio p,
+    .info-card p,
+    .info-card,
+    .about-grid p,
     .chapter-card p,
     .service-pillar-card p,
     .section-title p,
@@ -10276,7 +10288,7 @@ body.mobile-nav-locked {
         padding: 90px 0 50px !important;
     }
     #heroVideo {
-        object-position: 57% center !important; /* Centers paper so 'Welcome to Shabdvid' is unclipped */
+        object-position: 28% center !important; /* Centers paper as carriage moves left, completely preserving 'Welcome to Shabdvid' */
     }
     .hero-sound-btn {
         bottom: 20px !important;
