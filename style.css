@@ -9973,8 +9973,10 @@ body.mobile-nav-locked {
         padding: 0 10px;
     }
     .logo img {
-        height: 56px !important;
-        max-height: 56px !important;
+        width: 185px !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
     }
     .navbar ul {
         gap: 18px;
@@ -10005,6 +10007,13 @@ body.mobile-nav-locked {
 
     .mobile-nav-toggle {
         display: flex !important;
+    }
+
+    .logo img {
+        width: 165px !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
     }
 
     /* Mobile Drawer */
@@ -10157,8 +10166,10 @@ body.mobile-nav-locked {
     }
 
     .logo img {
-        height: 42px !important;
-        max-height: 42px !important;
+        width: 145px !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
     }
 
     /* Container */
