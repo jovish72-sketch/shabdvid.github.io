@@ -93,37 +93,99 @@ document.addEventListener("DOMContentLoaded", function () {
     ========================================== */
     var heroVideo = document.getElementById("heroVideo");
     var heroSection = document.querySelector(".hero");
-    if (heroVideo && heroSection) {
-        heroVideo.muted = true;
-        heroSection.addEventListener("pointerenter", function () {
-            heroVideo.muted = false;
-            heroVideo.play().catch(function () {
+    var heroSoundBtn = document.getElementById("heroSoundBtn");
+    var heroSoundIcon = document.getElementById("heroSoundIcon");
+    var heroSoundText = document.getElementById("heroSoundText");
+
+    function updateHeroSoundUI(isActive) {
+        if (!heroSoundBtn) return;
+        if (isActive) {
+            heroSoundBtn.classList.add("is-active");
+            if (heroSoundIcon) heroSoundIcon.className = "fa-solid fa-volume-high";
+            if (heroSoundText) heroSoundText.textContent = "Audio: Playing";
+            heroSoundBtn.setAttribute("title", "Click to mute typewriter sound");
+        } else {
+            heroSoundBtn.classList.remove("is-active");
+            if (heroSoundIcon) heroSoundIcon.className = "fa-solid fa-volume-xmark";
+            if (heroSoundText) heroSoundText.textContent = "Typewriter Audio";
+            heroSoundBtn.setAttribute("title", "Click to hear authentic typewriter sound");
+        }
+    }
+
+    function enableHeroAudio() {
+        if (!heroVideo) return;
+        heroVideo.muted = false;
+        heroVideo.volume = 1.0;
+        var p = heroVideo.play();
+        if (p !== undefined) {
+            p.then(function () {
+                updateHeroSoundUI(true);
+            }).catch(function () {
                 heroVideo.muted = true;
+                updateHeroSoundUI(false);
             });
-        });
-        heroSection.addEventListener("pointerleave", function () {
-            heroVideo.muted = true;
-        });
-        heroSection.addEventListener("click", function (event) {
-            if (event.target.closest("a, button, .scroll-indicator")) return;
-            heroVideo.muted = !heroVideo.muted;
-            if (!heroVideo.muted) {
-                heroVideo.play().catch(function () {
-                    heroVideo.muted = true;
-                });
-            }
-        });
-        document.addEventListener("click", function (event) {
-            if (event.target.closest("a, button")) {
-                heroVideo.muted = true;
-            }
-        });
+        } else {
+            updateHeroSoundUI(true);
+        }
+    }
+
+    function disableHeroAudio() {
+        if (!heroVideo) return;
+        heroVideo.muted = true;
+        updateHeroSoundUI(false);
+    }
+
+    function toggleHeroAudio() {
+        if (!heroVideo) return;
+        if (heroVideo.muted) {
+            enableHeroAudio();
+        } else {
+            disableHeroAudio();
+        }
+    }
+
+    if (heroVideo) {
+        heroVideo.muted = true;
+        updateHeroSoundUI(false);
+
+        // Direct Sound Button Click
+        if (heroSoundBtn) {
+            heroSoundBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                toggleHeroAudio();
+            });
+        }
+
+        if (heroSection) {
+            // Click anywhere on hero background toggles sound
+            heroSection.addEventListener("click", function (event) {
+                if (event.target.closest("a, button, .scroll-indicator")) return;
+                toggleHeroAudio();
+            });
+
+            // Desktop Hover un-mutes
+            heroSection.addEventListener("pointerenter", function () {
+                enableHeroAudio();
+            });
+            heroSection.addEventListener("pointerleave", function () {
+                disableHeroAudio();
+            });
+        }
+
+        // On first user interaction with the document (click or keypress), attempt un-mute if cursor is on hero
+        function onDocumentFirstGesture() {
+            window.removeEventListener("click", onDocumentFirstGesture);
+            window.removeEventListener("touchstart", onDocumentFirstGesture);
+        }
+        window.addEventListener("click", onDocumentFirstGesture, { passive: true });
+        window.addEventListener("touchstart", onDocumentFirstGesture, { passive: true });
+
+        // Tab visibility management
         document.addEventListener("visibilitychange", function () {
             if (document.hidden) {
-                heroVideo.muted = true;
+                disableHeroAudio();
                 heroVideo.pause();
             } else {
-                heroVideo.muted = true;
                 heroVideo.play().catch(function () {});
             }
         });
