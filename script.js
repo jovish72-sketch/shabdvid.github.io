@@ -585,6 +585,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (isNaN(t)) t = idx;
                     showBeam(t);
                     stopAutoCycle();
+
+                    // Smoothly navigate directly to the targeted showcase box
+                    var targetId = (t === 0) ? 'galleryBox' : ((t === 1) ? 'videoBox' : 'newsBox');
+                    var targetBox = document.getElementById(targetId);
+                    if (targetBox) {
+                        var headerHeight = (window.innerWidth <= 992) ? 75 : 85;
+                        var elementTop = targetBox.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                            top: Math.max(0, elementTop - headerHeight),
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
 

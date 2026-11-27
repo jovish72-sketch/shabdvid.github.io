@@ -10463,6 +10463,40 @@ body.mobile-nav-locked {
     .mobile-all-toggle-btn.active i.mat-arrow {
         transform: rotate(180deg) !important;
     }
+
+    /* Spotlight section on Tablet & Mobile (<= 992px) */
+    .spotlight-theatrical-rig,
+    .lamp-integrated-beam {
+        display: none !important;
+    }
+    .spotlight-section {
+        padding: 60px 0 70px !important;
+    }
+    .spotlight-showcase-layout {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+}
+
+/* Ensure clean 1-column framing on all mobile/phablet screens <= 768px */
+@media (max-width: 768px) {
+    .service-pillar-card .service-tags,
+    .services-pillars-grid.is-single-view .service-pillar-card .service-tags {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .service-pillar-card .service-tag,
+    .services-pillars-grid.is-single-view .service-pillar-card .service-tag {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        grid-column: span 1 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
 }
 
 /* =====================================================
@@ -10736,212 +10770,335 @@ body.mobile-nav-locked {
         margin-bottom: 10px !important;
     }
 
-    /* Spotlight section on mobile */
+    /* Spotlight section on mobile - Unified Single-Screen Framing */
     .spotlight-theatrical-rig,
     .lamp-integrated-beam {
         display: none !important;
     }
+    .spotlight-section {
+        padding: 50px 0 60px !important;
+    }
+    .spotlight-title {
+        margin-bottom: 18px !important;
+    }
+    .spotlight-title h2 {
+        font-size: clamp(22px, 6vw, 28px) !important;
+        margin-bottom: 6px !important;
+    }
+    .spotlight-title p {
+        font-size: 12.5px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 14px !important;
+    }
     .spotlight-stage-controls {
         display: flex !important;
         flex-direction: column !important;
-        gap: 8px !important;
+        gap: 6px !important;
         width: 100% !important;
-        margin-bottom: 22px !important;
+        margin-bottom: 16px !important;
     }
     .spotlight-target-pill {
         width: 100% !important;
-        justify-content: center !important;
-        padding: 10px 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 9px 14px !important;
         font-size: 12px !important;
+        border-radius: 25px !important;
+        border: 1px solid rgba(212, 175, 106, 0.35) !important;
+        background: rgba(22, 16, 11, 0.85) !important;
+        color: #D4AF6A !important;
+        gap: 8px !important;
+        transition: all 0.25s ease !important;
+        cursor: pointer !important;
     }
+    .spotlight-target-pill.active {
+        background: linear-gradient(135deg, #D4AF6A 0%, #AA8232 100%) !important;
+        color: #171109 !important;
+        font-weight: 600 !important;
+        box-shadow: 0 4px 15px rgba(212, 175, 106, 0.35) !important;
+    }
+    .spotlight-target-pill i {
+        font-size: 13px !important;
+    }
+
     .spotlight-showcase-layout,
     .spotlight-cards-grid {
         grid-template-columns: 1fr !important;
-        gap: 24px !important;
+        gap: 20px !important;
+        width: 100% !important;
     }
     .spotlight-box {
-        padding: 18px 14px !important;
-        border-radius: 18px !important;
+        padding: 14px 12px !important;
+        border-radius: 16px !important;
+        border: 1.5px solid rgba(212, 175, 106, 0.28) !important;
+        background: rgba(14, 10, 7, 0.95) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+        position: relative !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .spotlight-box.is-active {
+        border-color: #D4AF6A !important;
+        box-shadow: 0 8px 30px rgba(212, 175, 106, 0.25) !important;
     }
     .spotlight-active-indicator {
-        top: -10px !important;
-        right: 16px !important;
-        font-size: 9px !important;
-        padding: 3px 8px !important;
+        display: none !important;
     }
 
-    /* Spotlight Box Header & Badge (Clean Flex Wrap) */
+    /* Box 0: Fieldwork Gallery Header */
     .spotlight-box-header {
-        flex-wrap: wrap !important;
-        gap: 10px !important;
-        margin-bottom: 14px !important;
-        padding-bottom: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin-bottom: 8px !important;
+        padding-bottom: 6px !important;
+        border-bottom: 1px solid rgba(212, 175, 106, 0.2) !important;
+        width: 100% !important;
     }
-    .box-icon {
-        width: 38px !important;
-        height: 38px !important;
-        font-size: 16px !important;
+    .box-icon,
+    .box-tag {
+        display: none !important;
     }
     .box-meta {
         flex: 1 1 auto !important;
     }
-    .box-tag {
-        font-size: 10px !important;
-        letter-spacing: 1px !important;
-    }
     .box-title {
-        font-size: 16px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #E8D8C3 !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
     }
     .gallery-counter-badge {
-        width: 100% !important;
-        text-align: center !important;
-        font-size: 11px !important;
-        padding: 5px 8px !important;
-        border-radius: 8px !important;
-        margin-top: 2px !important;
+        width: auto !important;
+        text-align: right !important;
+        font-size: 10px !important;
+        padding: 3px 8px !important;
+        border-radius: 12px !important;
+        background: rgba(212, 175, 106, 0.16) !important;
+        color: #F3E5AB !important;
+        border: 1px solid rgba(212, 175, 106, 0.3) !important;
+        margin: 0 !important;
+        font-weight: 500 !important;
+        white-space: nowrap !important;
     }
 
-    /* Full-Width Luxury Archive Selector */
+    /* Sleek Archive Dropdown Row */
     .gallery-select-row {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 8px !important;
-        padding: 12px 14px !important;
-        margin-bottom: 14px !important;
-        background: rgba(18, 14, 10, 0.9) !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 6px 10px !important;
+        margin-bottom: 8px !important;
+        background: rgba(22, 17, 12, 0.9) !important;
         border: 1px solid rgba(212, 175, 106, 0.3) !important;
-        border-radius: 12px !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     .gallery-select-label {
-        font-size: 11.5px !important;
-        letter-spacing: 0.8px !important;
+        font-size: 10.5px !important;
+        letter-spacing: 0.5px !important;
         text-transform: uppercase !important;
         color: #D4AF6A !important;
+        white-space: nowrap !important;
+        font-weight: 600 !important;
+        flex-shrink: 0 !important;
     }
     .gallery-project-dropdown {
         width: 100% !important;
-        font-size: 13px !important;
-        padding: 10px 12px !important;
-        border-radius: 8px !important;
-        background: #17120D !important;
+        flex: 1 1 auto !important;
+        font-size: 11.5px !important;
+        padding: 5px 8px !important;
+        height: 32px !important;
+        border-radius: 6px !important;
+        background: #0E0A07 !important;
         color: #FFFFFF !important;
-        border: 1px solid rgba(212, 175, 106, 0.4) !important;
-        line-height: 1.4 !important;
+        border: 1px solid rgba(212, 175, 106, 0.35) !important;
+        line-height: 1.3 !important;
+        min-width: 0 !important;
+        text-overflow: ellipsis !important;
     }
 
-    /* Box 2: Fieldwork Cinema Screen & Photo Framing */
+    /* Cinema Screen (Proportional & Compact: Height ~175px-210px) */
     .gallery-cinema-screen {
-        height: 270px !important;
-        border-radius: 12px !important;
-        background: #080605 !important;
-        margin-bottom: 14px !important;
+        height: clamp(170px, 44vw, 210px) !important;
+        border-radius: 10px !important;
+        background: #000000 !important;
+        margin-bottom: 8px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
     }
     #galleryMainPhoto {
+        width: 100% !important;
+        height: 100% !important;
         max-width: 100% !important;
         max-height: 100% !important;
         object-fit: contain !important;
+        display: block !important;
     }
     .gallery-cinema-nav {
-        width: 34px !important;
-        height: 34px !important;
-        font-size: 12px !important;
-        background: rgba(10, 8, 6, 0.8) !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 11px !important;
+        background: rgba(0, 0, 0, 0.65) !important;
+        border: 1px solid rgba(212, 175, 106, 0.4) !important;
+        color: #FFFFFF !important;
+        border-radius: 50% !important;
     }
     .gallery-cinema-nav.prev {
-        left: 8px !important;
+        left: 6px !important;
     }
     .gallery-cinema-nav.next {
-        right: 8px !important;
+        right: 6px !important;
     }
     .gallery-fullscreen-btn {
-        top: 8px !important;
-        right: 8px !important;
-        padding: 4px 9px !important;
-        font-size: 10.5px !important;
+        top: 6px !important;
+        right: 6px !important;
+        padding: 3px 8px !important;
+        font-size: 9.5px !important;
+        border-radius: 6px !important;
+        background: rgba(0, 0, 0, 0.7) !important;
+        border: 1px solid rgba(212, 175, 106, 0.4) !important;
     }
 
-    /* Fieldwork Metadata Details & Captions */
+    /* Unified Metadata Card (Photo + Key Info in ONE View) */
     .gallery-cinema-details {
-        padding: 14px 12px !important;
-        margin-bottom: 14px !important;
-        border-radius: 12px !important;
+        padding: 8px 10px !important;
+        margin-bottom: 8px !important;
+        border-radius: 8px !important;
+        background: rgba(20, 15, 10, 0.75) !important;
+        border: 1px solid rgba(212, 175, 106, 0.18) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     .gallery-meta-tags {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 6px !important;
-        margin-bottom: 10px !important;
+        gap: 5px !important;
+        margin-bottom: 5px !important;
     }
     .gallery-badge {
-        font-size: 10.5px !important;
-        padding: 4px 8px !important;
-        border-radius: 10px !important;
+        font-size: 9.5px !important;
+        padding: 2px 6px !important;
+        border-radius: 4px !important;
+        background: rgba(212, 175, 106, 0.12) !important;
+        color: #E8D8C3 !important;
+        border: 1px solid rgba(212, 175, 106, 0.25) !important;
+    }
+    .gallery-badge.count {
+        display: none !important; /* Frame counter below covers this */
     }
     .gallery-title {
-        font-size: 16px !important;
-        margin-bottom: 8px !important;
+        font-size: 14.5px !important;
+        font-weight: 700 !important;
+        color: #FFFFFF !important;
+        line-height: 1.3 !important;
+        margin-bottom: 4px !important;
+        letter-spacing: 0.2px !important;
     }
     .gallery-photo-caption-row {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 4px !important;
-        padding: 8px 10px !important;
-        margin-bottom: 10px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 3px 6px !important;
+        margin-bottom: 5px !important;
+        background: rgba(0, 0, 0, 0.35) !important;
+        border-radius: 4px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     .photo-frame-tag {
-        font-size: 10.5px !important;
+        font-size: 9.5px !important;
+        color: #D4AF6A !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
     }
     .photo-caption-title {
-        font-size: 12.5px !important;
+        font-size: 10.5px !important;
+        color: #DFCBB5 !important;
+        line-height: 1.25 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
     .gallery-desc {
-        font-size: 12.5px !important;
-        line-height: 1.55 !important;
-        margin-bottom: 12px !important;
-    }
-    .gallery-specs-grid {
-        grid-template-columns: 1fr !important;
-        gap: 8px !important;
-        padding: 10px 12px !important;
-        margin-bottom: 12px !important;
-    }
-    .gallery-action-bar {
-        flex-direction: column !important;
-        gap: 8px !important;
-    }
-    .gallery-quick-btn {
-        width: 100% !important;
-        justify-content: center !important;
-        font-size: 12px !important;
-        padding: 9px 12px !important;
+        font-size: 11.5px !important;
+        line-height: 1.45 !important;
+        color: #BDB0A2 !important;
+        margin: 0 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
     }
 
-    /* Multi-Photo Filmstrip (Scrollable Strip) */
+    /* Curate away bloated technical tables on mobile to keep photo & story in 1 screen */
+    .gallery-specs-grid,
+    .gallery-action-bar {
+        display: none !important;
+    }
+
+    /* Multi-Photo Filmstrip (Compact & Touch-Friendly) */
+    .gallery-filmstrip-section {
+        background: rgba(14, 10, 7, 0.6) !important;
+        padding: 6px 8px !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(212, 175, 106, 0.15) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
     .filmstrip-header {
-        flex-wrap: wrap !important;
-        gap: 6px !important;
-        font-size: 10.5px !important;
-        margin-bottom: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        font-size: 9px !important;
+        margin-bottom: 4px !important;
+        color: #D4AF6A !important;
+        letter-spacing: 0.5px !important;
     }
     .filmstrip-header-right {
-        gap: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
     }
     .gallery-filmstrip-wrap {
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
         width: 100% !important;
-        padding: 4px 0 8px !important;
+        padding: 2px 0 2px !important;
     }
     .gallery-thumb-strip {
         display: flex !important;
-        gap: 8px !important;
+        gap: 5px !important;
         width: max-content !important;
     }
+    .g-thumb-item,
     .gallery-thumb-item {
-        width: 68px !important;
-        height: 48px !important;
+        width: 46px !important;
+        height: 32px !important;
+        border-radius: 4px !important;
         flex-shrink: 0 !important;
-        border-radius: 8px !important;
+        border: 1px solid rgba(212, 175, 106, 0.25) !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+    }
+    .g-thumb-item.active,
+    .gallery-thumb-item.active {
+        border-color: #D4AF6A !important;
+        box-shadow: 0 0 8px rgba(212, 175, 106, 0.6) !important;
+    }
+    .g-thumb-item img,
+    .gallery-thumb-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
     }
 
     /* Box 1: Interviews & Visual Archives */
