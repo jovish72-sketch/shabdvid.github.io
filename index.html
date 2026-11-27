@@ -14,7 +14,7 @@ Shabdvid | Where Ideas Transform Into Meaningful Stories
 
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=20261127_services_framed">
+    <link rel="stylesheet" href="style.css?v=20261127_services_acc">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
@@ -469,109 +469,166 @@ Contact
             </div>
         </div>
 
-        <!-- 4 Core Creative Pillars Grid (2x2 Balanced Luxury Layout) -->
-        <div class="services-pillars-grid">
+        <!-- 4 Core Creative Pillars Grid (2x2 Balanced Desktop Layout & Direct Mobile Accordion) -->
+        <div class="services-pillars-grid" id="servicesPillarsGrid">
 
             <!-- Pillar 01: Screen & Cinema -->
-            <article class="service-pillar-card" data-category="screen">
-                <div class="pillar-header">
-                    <div class="pillar-badge">
-                        <span class="pillar-no">01</span>
-                        <div class="pillar-icon"><i class="fas fa-film"></i></div>
+            <div class="service-pillar-item is-open" data-category="screen">
+                <button type="button" class="pillar-accordion-toggle" data-filter="screen" aria-expanded="true">
+                    <span class="pat-left">
+                        <i class="fas fa-film"></i>
+                        <span class="pat-title">Screen & Cinema</span>
+                    </span>
+                    <span class="pat-right">
+                        <span class="pat-count">6 Services</span>
+                        <i class="fas fa-chevron-down pat-arrow"></i>
+                    </span>
+                </button>
+                <article class="service-pillar-card" data-category="screen">
+                    <div class="pillar-header">
+                        <div class="pillar-badge">
+                            <span class="pillar-no">01</span>
+                            <div class="pillar-icon"><i class="fas fa-film"></i></div>
+                        </div>
+                        <div class="pillar-meta">
+                            <span class="pillar-count-tag">6 Writing Services</span>
+                            <h3 class="pillar-title">Screen & Scriptwriting</h3>
+                        </div>
                     </div>
-                    <div class="pillar-meta">
-                        <span class="pillar-count-tag">6 Writing Services</span>
-                        <h3 class="pillar-title">Screen & Scriptwriting</h3>
+                    <p class="pillar-lead">
+                        Cinematic story structures, dramatic pacing, character dialogues, and visual scripts crafted for big-screen releases, OTT series, broadcast television, and documentaries.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag"><i class="fas fa-circle"></i> Feature Film Script</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Web Series / OTT Script</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Short Film Script</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Documentary Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> TV Show Script</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Anchor Script</span>
                     </div>
-                </div>
-                <p class="pillar-lead">
-                    Cinematic story structures, dramatic pacing, character dialogues, and visual scripts crafted for big-screen releases, OTT series, broadcast television, and documentaries.
-                </p>
-                <div class="service-tags">
-                    <span class="service-tag"><i class="fas fa-circle"></i> Feature Film Script</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Web Series / OTT Script</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Short Film Script</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Documentary Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> TV Show Script</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Anchor Script</span>
-                </div>
-            </article>
+                </article>
+            </div>
 
             <!-- Pillar 02: Books & Publishing -->
-            <article class="service-pillar-card" data-category="books">
-                <div class="pillar-header">
-                    <div class="pillar-badge">
-                        <span class="pillar-no">02</span>
-                        <div class="pillar-icon"><i class="fas fa-book-open"></i></div>
+            <div class="service-pillar-item" data-category="books">
+                <button type="button" class="pillar-accordion-toggle" data-filter="books" aria-expanded="false">
+                    <span class="pat-left">
+                        <i class="fas fa-book-open"></i>
+                        <span class="pat-title">Books & Publishing</span>
+                    </span>
+                    <span class="pat-right">
+                        <span class="pat-count">6 Services</span>
+                        <i class="fas fa-chevron-down pat-arrow"></i>
+                    </span>
+                </button>
+                <article class="service-pillar-card" data-category="books">
+                    <div class="pillar-header">
+                        <div class="pillar-badge">
+                            <span class="pillar-no">02</span>
+                            <div class="pillar-icon"><i class="fas fa-book-open"></i></div>
+                        </div>
+                        <div class="pillar-meta">
+                            <span class="pillar-count-tag">6 Writing Services</span>
+                            <h3 class="pillar-title">Books, Biographies & Publishing</h3>
+                        </div>
                     </div>
-                    <div class="pillar-meta">
-                        <span class="pillar-count-tag">6 Writing Services</span>
-                        <h3 class="pillar-title">Books, Biographies & Publishing</h3>
+                    <p class="pillar-lead">
+                        Profound life journeys, heritage archives, and comprehensive research transformed into authored books, memoirs, prestigious coffee table editions, and verified manuscripts.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag"><i class="fas fa-circle"></i> Book Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Biography Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Autobiography Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Coffee Table Book</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Ghostwriting</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Research & Editing</span>
                     </div>
-                </div>
-                <p class="pillar-lead">
-                    Profound life journeys, heritage archives, and comprehensive research transformed into authored books, memoirs, prestigious coffee table editions, and verified manuscripts.
-                </p>
-                <div class="service-tags">
-                    <span class="service-tag"><i class="fas fa-circle"></i> Book Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Biography Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Autobiography Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Coffee Table Book</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Ghostwriting</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Research & Editing</span>
-                </div>
-            </article>
+                </article>
+            </div>
 
             <!-- Pillar 03: Corporate & Brand -->
-            <article class="service-pillar-card" data-category="corporate">
-                <div class="pillar-header">
-                    <div class="pillar-badge">
-                        <span class="pillar-no">03</span>
-                        <div class="pillar-icon"><i class="fas fa-building"></i></div>
+            <div class="service-pillar-item" data-category="corporate">
+                <button type="button" class="pillar-accordion-toggle" data-filter="corporate" aria-expanded="false">
+                    <span class="pat-left">
+                        <i class="fas fa-building"></i>
+                        <span class="pat-title">Corporate & Brand</span>
+                    </span>
+                    <span class="pat-right">
+                        <span class="pat-count">7 Services</span>
+                        <i class="fas fa-chevron-down pat-arrow"></i>
+                    </span>
+                </button>
+                <article class="service-pillar-card" data-category="corporate">
+                    <div class="pillar-header">
+                        <div class="pillar-badge">
+                            <span class="pillar-no">03</span>
+                            <div class="pillar-icon"><i class="fas fa-building"></i></div>
+                        </div>
+                        <div class="pillar-meta">
+                            <span class="pillar-count-tag">7 Writing Services</span>
+                            <h3 class="pillar-title">Corporate & Brand Storytelling</h3>
+                        </div>
                     </div>
-                    <div class="pillar-meta">
-                        <span class="pillar-count-tag">7 Writing Services</span>
-                        <h3 class="pillar-title">Corporate & Brand Storytelling</h3>
+                    <p class="pillar-lead">
+                        High-stakes corporate communications, commercial ad copy, and executive company profiles that articulate brand legacy, investor confidence, and leadership vision.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag"><i class="fas fa-circle"></i> Corporate Film Script</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Brand Storytelling</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Advertising Copywriting</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Company Profile Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Website Content</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Brochure Content</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Annual Report Writing</span>
                     </div>
-                </div>
-                <p class="pillar-lead">
-                    High-stakes corporate communications, commercial ad copy, and executive company profiles that articulate brand legacy, investor confidence, and leadership vision.
-                </p>
-                <div class="service-tags">
-                    <span class="service-tag"><i class="fas fa-circle"></i> Corporate Film Script</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Brand Storytelling</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Advertising Copywriting</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Company Profile Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Website Content</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Brochure Content</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Annual Report Writing</span>
-                </div>
-            </article>
+                </article>
+            </div>
 
             <!-- Pillar 04: Digital Media, Lyrics & Strategy -->
-            <article class="service-pillar-card" data-category="digital">
-                <div class="pillar-header">
-                    <div class="pillar-badge">
-                        <span class="pillar-no">04</span>
-                        <div class="pillar-icon"><i class="fas fa-microphone-alt"></i></div>
+            <div class="service-pillar-item" data-category="digital">
+                <button type="button" class="pillar-accordion-toggle" data-filter="digital" aria-expanded="false">
+                    <span class="pat-left">
+                        <i class="fas fa-microphone-alt"></i>
+                        <span class="pat-title">Digital & Strategy</span>
+                    </span>
+                    <span class="pat-right">
+                        <span class="pat-count">6 Services</span>
+                        <i class="fas fa-chevron-down pat-arrow"></i>
+                    </span>
+                </button>
+                <article class="service-pillar-card" data-category="digital">
+                    <div class="pillar-header">
+                        <div class="pillar-badge">
+                            <span class="pillar-no">04</span>
+                            <div class="pillar-icon"><i class="fas fa-microphone-alt"></i></div>
+                        </div>
+                        <div class="pillar-meta">
+                            <span class="pillar-count-tag">6 Writing Services</span>
+                            <h3 class="pillar-title">Digital Media, Lyrics & Strategy</h3>
+                        </div>
                     </div>
-                    <div class="pillar-meta">
-                        <span class="pillar-count-tag">6 Writing Services</span>
-                        <h3 class="pillar-title">Digital Media, Lyrics & Strategy</h3>
+                    <p class="pillar-lead">
+                        Soulful musical lyrics, memorable keynote speeches, engaging podcast audio scripts, and high-level creative consulting designed for modern creators and visionary leaders.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag"><i class="fas fa-circle"></i> Lyrics Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Speech Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Podcast Script</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> YouTube Script Writing</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Creative Content Strategy</span>
+                        <span class="service-tag"><i class="fas fa-circle"></i> Content Consultancy</span>
                     </div>
-                </div>
-                <p class="pillar-lead">
-                    Soulful musical lyrics, memorable keynote speeches, engaging podcast audio scripts, and high-level creative consulting designed for modern creators and visionary leaders.
-                </p>
-                <div class="service-tags">
-                    <span class="service-tag"><i class="fas fa-circle"></i> Lyrics Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Speech Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Podcast Script</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> YouTube Script Writing</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Creative Content Strategy</span>
-                    <span class="service-tag"><i class="fas fa-circle"></i> Content Consultancy</span>
-                </div>
-            </article>
+                </article>
+            </div>
+
+            <!-- Mobile 'All Disciplines' Footer Toggle -->
+            <div class="mobile-all-disciplines-wrap">
+                <button type="button" class="mobile-all-toggle-btn" id="mobileAllToggleBtn">
+                    <i class="fas fa-th-large"></i>
+                    <span>View All 25 Disciplines Together</span>
+                    <i class="fas fa-chevron-down mat-arrow"></i>
+                </button>
+            </div>
 
         </div>
 
@@ -1824,7 +1881,7 @@ Contact
 
 
 </main>
-<script src="script.js?v=20261127_client_speed"></script>
+<script src="script.js?v=20261127_services_acc"></script>
 </body>
 
 </html>

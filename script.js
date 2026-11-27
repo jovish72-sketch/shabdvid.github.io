@@ -191,41 +191,178 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Services Category Filter Logic
+    // =========================================================
+    // SERVICES CATEGORY FILTER & DIRECT MOBILE ACCORDION LOGIC
+    // Desktop: 2x2 grid / single category view via filter pills
+    // Mobile: Direct accordion pairing each button with its service
+    // =========================================================
     var svcFilterBtns = document.querySelectorAll('.svc-filter-btn');
+    var svcPillarItems = document.querySelectorAll('.service-pillar-item');
     var svcPillarCards = document.querySelectorAll('.service-pillar-card');
     var pillarsGrid = document.querySelector('.services-pillars-grid');
+    var accordionToggles = document.querySelectorAll('.pillar-accordion-toggle');
+    var mobileAllBtn = document.getElementById('mobileAllToggleBtn');
 
-    if (svcFilterBtns.length && svcPillarCards.length && pillarsGrid) {
+    function applyCategorySelection(filterKey, isMobileToggle) {
+        var isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+            // Mobile Direct Accordion Mode
+            if (filterKey === 'all') {
+                var isCurrentlyAll = mobileAllBtn && mobileAllBtn.classList.contains('active');
+                if (isCurrentlyAll && isMobileToggle) {
+                    // Collapse to just the first one
+                    svcPillarItems.forEach(function (item, idx) {
+                        var toggle = item.querySelector('.pillar-accordion-toggle');
+                        if (idx === 0) {
+                            item.classList.add('is-open');
+                            if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                        } else {
+                            item.classList.remove('is-open');
+                            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    if (mobileAllBtn) {
+                        mobileAllBtn.classList.remove('active');
+                        var label = mobileAllBtn.querySelector('span');
+                        if (label) label.textContent = 'View All 25 Disciplines Together';
+                    }
+                } else {
+                    // Expand all 4 categories together
+                    svcPillarItems.forEach(function (item) {
+                        item.classList.add('is-open');
+                        var toggle = item.querySelector('.pillar-accordion-toggle');
+                        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                    });
+                    if (mobileAllBtn) {
+                        mobileAllBtn.classList.add('active');
+                        var label = mobileAllBtn.querySelector('span');
+                        if (label) label.textContent = 'Collapse To Compact View';
+                    }
+                }
+            } else {
+                // Single category toggle
+                svcPillarItems.forEach(function (item) {
+                    var itemCat = item.getAttribute('data-category');
+                    var toggle = item.querySelector('.pillar-accordion-toggle');
+                    if (itemCat === filterKey) {
+                        if (isMobileToggle && item.classList.contains('is-open')) {
+                            // If tapping the already-open button, collapse it
+                            item.classList.remove('is-open');
+                            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                        } else {
+                            // Open this item and close others
+                            item.classList.add('is-open');
+                            if (toggle) toggle.setAttribute('aria-expanded', 'true');
+
+                            // Smooth scroll right to the opened button
+                            setTimeout(function () {
+                                var rect = item.getBoundingClientRect();
+                                var headerOffset = 80;
+                                if (rect.top < headerOffset || rect.top > window.innerHeight - 150) {
+                                    window.scrollTo({
+                                        top: window.pageYOffset + rect.top - headerOffset,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }, 60);
+                        }
+                    } else {
+                        item.classList.remove('is-open');
+                        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                if (mobileAllBtn) {
+                    mobileAllBtn.classList.remove('active');
+                    var label = mobileAllBtn.querySelector('span');
+                    if (label) label.textContent = 'View All 25 Disciplines Together';
+                }
+            }
+        } else {
+            // Desktop 2x2 Grid / Single View Mode
+            if (filterKey === 'all') {
+                if (pillarsGrid) pillarsGrid.classList.remove('is-single-view');
+                svcPillarItems.forEach(function (item) {
+                    item.style.display = 'flex';
+                    var card = item.querySelector('.service-pillar-card');
+                    if (card) {
+                        card.style.display = 'flex';
+                        card.classList.remove('active-single');
+                    }
+                });
+            } else {
+                if (pillarsGrid) pillarsGrid.classList.add('is-single-view');
+                svcPillarItems.forEach(function (item) {
+                    var itemCat = item.getAttribute('data-category');
+                    var card = item.querySelector('.service-pillar-card');
+                    if (itemCat === filterKey) {
+                        item.style.display = 'flex';
+                        if (card) {
+                            card.style.display = 'flex';
+                            card.classList.add('active-single');
+                        }
+                    } else {
+                        item.style.display = 'none';
+                        if (card) {
+                            card.style.display = 'none';
+                            card.classList.remove('active-single');
+                        }
+                    }
+                });
+            }
+        }
+    }
+
+    // Attach listeners to Desktop Filter Buttons
+    if (svcFilterBtns.length) {
         svcFilterBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
                 svcFilterBtns.forEach(function (b) { b.classList.remove('active'); });
                 btn.classList.add('active');
                 var filter = btn.getAttribute('data-filter');
-
-                if (filter === 'all') {
-                    // 4 cards in 4 equal parts (2x2 square cards grid)
-                    pillarsGrid.classList.remove('is-single-view');
-                    svcPillarCards.forEach(function (card) {
-                        card.style.display = 'flex';
-                        card.classList.remove('active-single');
-                    });
-                } else {
-                    // Single centered rectangular box (લંબચોરસ બોક્સ)
-                    pillarsGrid.classList.add('is-single-view');
-                    svcPillarCards.forEach(function (card) {
-                        if (card.getAttribute('data-category') === filter) {
-                            card.style.display = 'flex';
-                            card.classList.add('active-single');
-                        } else {
-                            card.style.display = 'none';
-                            card.classList.remove('active-single');
-                        }
-                    });
-                }
+                applyCategorySelection(filter, false);
             });
         });
     }
+
+    // Attach listeners to Mobile Accordion Toggles
+    if (accordionToggles.length) {
+        accordionToggles.forEach(function (toggle) {
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                var filter = toggle.getAttribute('data-filter');
+                applyCategorySelection(filter, true);
+            });
+        });
+    }
+
+    // Attach listener to Mobile 'All Disciplines' Button
+    if (mobileAllBtn) {
+        mobileAllBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            applyCategorySelection('all', true);
+        });
+    }
+
+    // Handle initial state and window resize
+    function syncServicesResponsiveMode() {
+        if (window.innerWidth <= 768) {
+            // Default to first category open if none open
+            var hasOpen = document.querySelector('.service-pillar-item.is-open');
+            if (!hasOpen) {
+                applyCategorySelection('screen', false);
+            }
+        } else {
+            // Desktop: restore active filter button selection
+            var activeBtn = document.querySelector('.svc-filter-btn.active');
+            var filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+            applyCategorySelection(filter, false);
+        }
+    }
+
+    syncServicesResponsiveMode();
+    window.addEventListener('resize', syncServicesResponsiveMode);
 
     // Directory Drawer Toggle Logic
     var dirToggleBtn = document.getElementById('directoryToggleBtn');
