@@ -1,7 +1,8 @@
 // Shabdvid - Creative Writing Studio
 // Official Website Scripts
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
+    function initShabdvidApp() {
 
     /* ==========================================
        INTRO SCREEN
@@ -206,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function applyCategorySelection(filterKey, isMobileToggle) {
         var isMobile = window.innerWidth <= 992;
 
-        if (isMobile) {
+        if (isMobileToggle || isMobile) {
             // Mobile Direct Accordion Mode
             if (filterKey === 'all') {
                 var isCurrentlyAll = mobileAllBtn && mobileAllBtn.classList.contains('active');
@@ -393,9 +394,9 @@ document.addEventListener("DOMContentLoaded", function () {
         var totalCards = clientCards.length;
         
         // Continuous linear speed (pixels per frame for silky-smooth motion)
-        // Balanced mobile speed: neither rushing nor crawling, smoothly gliding across the screen
-        var SPEED_DESKTOP = 0.65;
-        var SPEED_MOBILE = 0.48;
+        // Lively, prominent motion: clearly gliding across the screen so logos cycle actively
+        var SPEED_DESKTOP = 0.85;
+        var SPEED_MOBILE = 1.15;
         var currentX = 0;
         var oneSetWidth = 0;
         var activeCenterIdx = -1;
@@ -1561,4 +1562,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-});
+}
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initShabdvidApp);
+    } else {
+        initShabdvidApp();
+    }
+})();
