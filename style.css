@@ -10274,9 +10274,9 @@ body.mobile-nav-locked {
 }
 
 /* =====================================================
-   SERVICES MOBILE DIRECT ACCORDION (<= 768px)
+   SERVICES MOBILE & TABLET DIRECT ACCORDION (<= 992px)
 ===================================================== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     /* Hide the 5 standalone filter buttons at the top */
     .services-filter-nav {
         display: none !important;

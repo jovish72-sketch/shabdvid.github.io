@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var mobileAllBtn = document.getElementById('mobileAllToggleBtn');
 
     function applyCategorySelection(filterKey, isMobileToggle) {
-        var isMobile = window.innerWidth <= 768;
+        var isMobile = window.innerWidth <= 992;
 
         if (isMobile) {
             // Mobile Direct Accordion Mode
@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle initial state and horizontal-only window resize (orientation changes)
     var lastWindowWidth = window.innerWidth;
     function syncServicesResponsiveMode() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 992) {
             // Default to first category open if none open
             var hasOpen = document.querySelector('.service-pillar-item.is-open');
             if (!hasOpen) {
@@ -446,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (delta > 3) delta = 1;
             lastTime = timestamp;
 
-            var activeSpeed = (window.innerWidth <= 768) ? SPEED_MOBILE : SPEED_DESKTOP;
+            var activeSpeed = (window.innerWidth <= 992) ? SPEED_MOBILE : SPEED_DESKTOP;
             currentX -= activeSpeed * delta;
 
             // Seamless infinite wrap-around
