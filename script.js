@@ -394,9 +394,9 @@
         var totalCards = clientCards.length;
         
         // Continuous linear speed (pixels per frame for silky-smooth motion)
-        // Lively, prominent motion: clearly gliding across the screen so logos cycle actively
-        var SPEED_DESKTOP = 0.85;
-        var SPEED_MOBILE = 1.15;
+        // Balanced, comfortable cruising speed: steady and readable, neither rushing nor crawling
+        var SPEED_DESKTOP = 0.70;
+        var SPEED_MOBILE = 0.70;
         var currentX = 0;
         var oneSetWidth = 0;
         var activeCenterIdx = -1;

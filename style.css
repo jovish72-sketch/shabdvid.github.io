@@ -11256,18 +11256,38 @@ body.mobile-nav-locked {
         font-size: 13px !important;
     }
 
-    /* Clients Carousel */
+    /* Clients Carousel - Prominent, High-Visibility Mobile Logo Display */
     .clients-slider {
         overflow: hidden !important;
         width: 100% !important;
+        padding: 35px 0 45px !important;
+    }
+    .clients-slider::before,
+    .clients-slider::after {
+        width: 45px !important;
     }
     .client-card {
-        width: 130px !important;
-        height: 80px !important;
-        padding: 12px !important;
+        width: 210px !important;
+        height: 130px !important;
+        margin: 0 -12px !important;
+        padding: 10px 14px !important;
+        border-radius: 18px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
     }
     .client-card img {
-        max-height: 48px !important;
+        max-width: 175px !important;
+        max-height: 92px !important;
+        width: 88% !important;
+        height: 88% !important;
+        object-fit: contain !important;
+        padding: 4px !important;
+    }
+    .client-card.is-center {
+        transform: scale(1.14) translateY(-4px) !important;
+        box-shadow: 0 16px 40px rgba(212, 175, 106, 0.4), 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+    }
+    .client-card.is-center img {
+        transform: scale(1.10) !important;
     }
 
     /* Contact Form & Luxury Golden Submit Button */
