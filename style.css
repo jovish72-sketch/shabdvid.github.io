@@ -10537,10 +10537,13 @@ body.mobile-nav-locked {
     }
 
     /* Container */
-    .container {
+    .container,
+    .spotlight-container {
         width: 100% !important;
+        max-width: 100% !important;
         padding-left: 16px !important;
         padding-right: 16px !important;
+        box-sizing: border-box !important;
     }
 
     /* Typography & Text Justification Cleanups */
@@ -10828,7 +10831,10 @@ body.mobile-nav-locked {
         gap: 20px !important;
         width: 100% !important;
     }
-    .spotlight-box {
+    .spotlight-box,
+    .spotlight-gallery-master {
+        min-height: auto !important;
+        height: auto !important;
         padding: 14px 12px !important;
         border-radius: 16px !important;
         border: 1.5px solid rgba(212, 175, 106, 0.28) !important;
@@ -10836,6 +10842,7 @@ body.mobile-nav-locked {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
         position: relative !important;
         width: 100% !important;
+        max-width: 100% !important;
         box-sizing: border-box !important;
     }
     .spotlight-box.is-active {
