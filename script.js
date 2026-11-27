@@ -254,18 +254,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             // Open this item and close others
                             item.classList.add('is-open');
                             if (toggle) toggle.setAttribute('aria-expanded', 'true');
-
-                            // Smooth scroll right to the opened button
-                            setTimeout(function () {
-                                var rect = item.getBoundingClientRect();
-                                var headerOffset = 80;
-                                if (rect.top < headerOffset || rect.top > window.innerHeight - 150) {
-                                    window.scrollTo({
-                                        top: window.pageYOffset + rect.top - headerOffset,
-                                        behavior: 'smooth'
-                                    });
-                                }
-                            }, 60);
                         }
                     } else {
                         item.classList.remove('is-open');
@@ -345,7 +333,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Handle initial state and window resize
+    // Handle initial state and horizontal-only window resize (orientation changes)
+    var lastWindowWidth = window.innerWidth;
     function syncServicesResponsiveMode() {
         if (window.innerWidth <= 768) {
             // Default to first category open if none open
@@ -362,7 +351,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     syncServicesResponsiveMode();
-    window.addEventListener('resize', syncServicesResponsiveMode);
+    window.addEventListener('resize', function () {
+        // ONLY trigger on real horizontal width changes (desktop resize or device rotation)
+        // NEVER trigger on mobile vertical address-bar show/hide during scrolling!
+        if (Math.abs(window.innerWidth - lastWindowWidth) > 30) {
+            lastWindowWidth = window.innerWidth;
+            syncServicesResponsiveMode();
+        }
+    });
 
     // Directory Drawer Toggle Logic
     var dirToggleBtn = document.getElementById('directoryToggleBtn');
