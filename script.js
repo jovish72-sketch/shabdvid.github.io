@@ -393,9 +393,9 @@ document.addEventListener("DOMContentLoaded", function () {
         var totalCards = clientCards.length;
         
         // Continuous linear speed (pixels per frame for silky-smooth motion)
-        // Desktop is majestic and smooth; mobile speed is gentle and readable so logos can be comfortably read
+        // Balanced mobile speed: neither rushing nor crawling, smoothly gliding across the screen
         var SPEED_DESKTOP = 0.65;
-        var SPEED_MOBILE = 0.28;
+        var SPEED_MOBILE = 0.48;
         var currentX = 0;
         var oneSetWidth = 0;
         var activeCenterIdx = -1;
